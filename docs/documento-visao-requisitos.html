@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>sgp - documento de visao e requisitos - equipe 8</title>
+<style>
+  @page { size: A4; margin: 2.5cm 2.2cm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    font-size: 11.5pt;
+    line-height: 1.45;
+    color: #222;
+    max-width: 21cm;
+    margin: 0 auto;
+    padding: 2.5cm 2.2cm;
+    background: #fff;
+  }
+  h1, h2, h3 { color: #1f4e79; margin-bottom: .4em; }
+  h1 { font-size: 20pt; }
+  h2 { font-size: 14pt; margin-top: 1.6em; border-bottom: 1px solid #d0d7de; padding-bottom: .2em; }
+  h3 { font-size: 12pt; margin-top: 1.2em; }
+  p { margin: .5em 0; text-align: justify; }
+  ul { margin: .4em 0 .8em 0; padding-left: 1.4em; }
+  li { margin: .25em 0; }
+  table { border-collapse: collapse; width: 100%; margin: .8em 0 1.2em 0; font-size: 10.5pt; }
+  th { background: #1f4e79; color: #fff; text-align: left; padding: 6px 8px; font-weight: 600; }
+  td { border: 1px solid #c8d1da; padding: 6px 8px; vertical-align: top; }
+  tr:nth-child(even) td { background: #f6f8fa; }
+  .cod { white-space: nowrap; font-weight: 600; width: 62px; }
+  .capa { text-align: center; page-break-after: always; padding-top: 3cm; }
+  .capa .inst { font-size: 12pt; letter-spacing: .5px; color: #444; }
+  .capa .titulo { font-size: 24pt; color: #1f4e79; font-weight: bold; margin-top: 4cm; }
+  .capa .sub { font-size: 14pt; color: #444; margin-top: .4cm; }
+  .capa .equipe { margin-top: 3.5cm; font-size: 12pt; line-height: 1.9; }
+  .capa .rodape { margin-top: 3cm; font-size: 11pt; color: #555; }
+  .box { background: #eef3f8; border-left: 4px solid #1f4e79; padding: 10px 14px; margin: 1em 0; }
+  .sumario ol { padding-left: 1.4em; }
+  .sumario li { margin: .3em 0; }
+  @media print { body { padding: 0; } h2 { page-break-after: avoid; } table { page-break-inside: avoid; } }
+</style>
+</head>
+<body>
+
+<div class="capa">
+  <div class="inst">unicesumar<br>analise e desenvolvimento de sistemas<br>imersao profissional - projeto de software</div>
+  <div class="titulo">sgp - sistema de gestao de prestadores</div>
+  <div class="sub">documento de visao e requisitos<br>1ª entrega - equipe 8</div>
+  <div class="equipe">
+    <strong>integrantes</strong><br>
+    luis gustavo boratto de oliveira<br>
+    igor schiniegoski pallisser<br>
+    lucas mendes
+  </div>
+  <div class="rodape">agosto de 2026</div>
+</div>
+
+<h1>sgp - sistema de gestao de prestadores</h1>
+<p style="text-align:left"><em>documento de visao e requisitos - versao 1.0 - 14/08/2026</em></p>
+
+<div class="sumario">
+<h2>sumario</h2>
+<ol>
+  <li>identificacao do projeto</li>
+  <li>contexto e problema</li>
+  <li>objetivos</li>
+  <li>publico-alvo e perfis de usuario</li>
+  <li>escopo</li>
+  <li>requisitos funcionais</li>
+  <li>requisitos nao funcionais</li>
+  <li>regras de negocio</li>
+  <li>glossario</li>
+  <li>referencias</li>
+</ol>
+</div>
+
+<h2>1. identificacao do projeto</h2>
+
+<table>
+  <tr><th style="width:28%">item</th><th>descricao</th></tr>
+  <tr><td>nome provisorio do sistema</td><td>sgp - sistema de gestao de prestadores</td></tr>
+  <tr><td>tema da equipe</td><td>plataforma para controle de prestadores de servicos</td></tr>
+  <tr><td>equipe</td><td>equipe 8</td></tr>
+  <tr><td>integrantes</td><td>luis gustavo boratto de oliveira<br>igor schiniegoski pallisser<br>lucas mendes</td></tr>
+  <tr><td>versao do documento</td><td>1.0 - primeira entrega</td></tr>
+</table>
+
+<p>o sgp é um sistema web para empresas que trabalham com prestadores de servico terceirizados. ele reune em um lugar só o cadastro dos prestadores, dos clientes e das categorias de servico, guarda os documentos e contratos de cada prestador com a data de validade, e controla as ordens de servico desde a abertura ate a conclusao, passando pela atribuicao a um prestador. no fim de cada atendimento o cliente avalia o servico, e essas notas alimentam o historico e os relatórios de desempenho que ajudam o gestor a decidir quem chamar da próxima vez.</p>
+
+<h2>2. contexto e problema</h2>
+
+<h3>2.1 situacao que motivou a criacao do sistema</h3>
+<p>muita empresa de pequeno e médio porte não executa todos os servicos com equipe própria. ela mantém uma rede de prestadores terceirizados (autônomos, mei e pequenas empresas) que são acionados conforme a demanda: manutencao predial, instalacao, limpeza, assistência técnica, treinamentos e por aí vai. o problema é que esse controle quase sempre é feito fora de qualquer sistema.</p>
+
+<p>o que se vê na prática é o cadastro dos prestadores em uma planilha do excel, os documentos (rg, cpf, cnpj, certidões, comprovante de curso, apólice de seguro) espalhados em pastas do drive ou no email, os contratos impressos em um armário, e a distribuicao dos servicos acontecendo por grupo de whatsapp. cada uma dessas partes funciona sozinha, mas nenhuma conversa com a outra.</p>
+
+<h3>2.2 quem enfrenta o problema</h3>
+<p>quem sente primeiro é o responsável por contratar e acompanhar os terceirizados, que pode ser o gestor operacional, o setor administrativo ou o dono da empresa. ele é cobrado quando um servico atrasa, quando o cliente reclama e quando aparece uma fiscalizacao pedindo a documentacao de quem esteve na obra. o prestador também é prejudicado, porque não tem clareza do que foi atribuido a ele, dos prazos e do que já entregou. e o cliente final fica sem nenhuma previsibilidade de quando o servico vai ser feito e por quem.</p>
+
+<h3>2.3 como o processo ocorre atualmente</h3>
+<ul>
+  <li>o prestador é cadastrado em uma planilha, com os campos que quem digitou achou importante na hora;</li>
+  <li>os documentos são pedidos por whatsapp ou email e ficam guardados sem controle de validade, então ninguém percebe quando vencem;</li>
+  <li>quando surge uma demanda, o gestor lembra "de cabeça" de quem costuma atender aquele tipo de servico e chama no whatsapp;</li>
+  <li>o acompanhamento é feito por mensagem solta, sem status formal, e a conclusao é registrada, quando é, em outra planilha;</li>
+  <li>a avaliacao do atendimento não existe de forma estruturada, ela fica no "fulano é bom" ou "com esse não dá certo";</li>
+  <li>quando alguém pede um histórico ou um número consolidado, é preciso garimpar planilha, conversa e email pra montar a resposta.</li>
+</ul>
+
+<h3>2.4 justificativa</h3>
+<p>esse jeito de trabalhar gera problema real e mensurável. contratar um prestador com documento vencido expõe a empresa a risco jurídico e a multa, e em alguns setores impede que o profissional entre no local do servico. a falta de um registro único faz o mesmo servico ser cobrado duas vezes ou simplesmente ser esquecido. sem histórico de avaliacao, a escolha de quem contratar continua sendo por impressão pessoal, e o conhecimento vai embora junto com o funcionário que saiu da empresa.</p>
+
+<p>vale desenvolver o sistema porque o processo é repetitivo, tem regra clara e volume suficiente pra justificar a automatizacao. as ferramentas de mercado que resolvem isso ou são caras demais pro porte do cliente ou são erps completos, em que o controle de terceirizados é um módulo pequeno e complicado de configurar. um sistema focado só nesse recorte entrega valor rápido e é viável de construir no prazo da disciplina.</p>
+
+<h2>3. objetivos</h2>
+
+<h3>3.1 objetivo geral</h3>
+<p>desenvolver uma plataforma web para controlar o cadastro, a documentacao e a execucao dos servicos prestados por profissionais terceirizados, centralizando em um único sistema as informacões que hoje ficam espalhadas em planilhas, mensagens e arquivos.</p>
+
+<h3>3.2 objetivos especificos</h3>
+<ul>
+  <li>centralizar o cadastro de prestadores, clientes e categorias de servico em uma base única e padronizada;</li>
+  <li>controlar a validade dos documentos e dos contratos de cada prestador, avisando o gestor antes do vencimento;</li>
+  <li>registrar, atribuir e acompanhar as ordens de servico do início ao fim, com status e responsável definidos em cada etapa;</li>
+  <li>manter o histórico completo dos atendimentos e das avaliacões recebidas por cada prestador;</li>
+  <li>gerar relatórios de desempenho que apoiem a decisao de qual prestador acionar em uma nova demanda;</li>
+  <li>garantir que cada perfil de usuário só enxergue e altere o que é da sua responsabilidade.</li>
+</ul>
+
+<h2>4. publico-alvo e perfis de usuario</h2>
+
+<p>o público-alvo são empresas de pequeno e médio porte que contratam servico terceirizado com frequência, e os próprios prestadores que atendem essas empresas. o sistema prevê três perfis.</p>
+
+<table>
+  <tr><th style="width:16%">perfil</th><th style="width:30%">necessidades</th><th style="width:27%">responsabilidades</th><th>permissões</th></tr>
+  <tr>
+    <td><strong>administrador</strong><br>(gestor da empresa contratante)</td>
+    <td>enxergar toda a rede de prestadores, saber quem está apto a atender, distribuir as demandas e acompanhar o resultado</td>
+    <td>cadastrar prestadores e clientes, conferir documentos, manter contratos, abrir e atribuir ordens de servico</td>
+    <td>acesso total: cria, edita, consulta e inativa qualquer registro, altera situacao cadastral, cancela ordem e emite todos os relatórios</td>
+  </tr>
+  <tr>
+    <td><strong>prestador de servico</strong></td>
+    <td>saber o que foi atribuido a ele, o prazo e o que já entregou, e manter a documentacao em dia sem depender de cobranca</td>
+    <td>enviar e renovar seus documentos, aceitar ou recusar a atribuicao, atualizar o andamento e concluir o servico</td>
+    <td>acesso restrito: vê e edita apenas o próprio cadastro, os próprios documentos e as ordens atribuidas a ele. não vê dado de outro prestador nem valor de contrato de terceiros</td>
+  </tr>
+  <tr>
+    <td><strong>cliente</strong></td>
+    <td>solicitar um servico, saber em que pé está e registrar se foi bem atendido</td>
+    <td>abrir a solicitacao com a descricao do que precisa e avaliar o atendimento depois de concluído</td>
+    <td>acesso restrito: abre solicitacao, consulta as próprias ordens e o próprio histórico, e lanca a avaliacao. não vê a lista de prestadores nem os dados internos da empresa</td>
+  </tr>
+</table>
+
+<h2>5. escopo</h2>
+
+<h3>5.1 o que faz parte da primeira versao</h3>
+<ul>
+  <li>autenticacao por login e senha, com controle de acesso por perfil;</li>
+  <li>cadastro de prestadores, clientes e categorias de servico;</li>
+  <li>catálogo de servicos vinculado às categorias;</li>
+  <li>upload de documentos do prestador com tipo e data de validade, e painel de vencimentos;</li>
+  <li>cadastro de contratos com vigência, valor e arquivo anexo;</li>
+  <li>controle da situacao cadastral do prestador (ativo, pendente, bloqueado, inativo);</li>
+  <li>abertura, atribuicao e acompanhamento das ordens de servico por status;</li>
+  <li>avaliacao do atendimento pelo cliente ao final da ordem;</li>
+  <li>histórico de atendimentos por prestador e por cliente;</li>
+  <li>relatórios de desempenho e de servicos realizados por período;</li>
+  <li>registro de log das acões críticas do sistema.</li>
+</ul>
+
+<h3>5.2 o que nao faz parte do projeto neste momento</h3>
+<ul>
+  <li>pagamento online ao prestador e integracao com meio de pagamento ou banco;</li>
+  <li>emissao de nota fiscal e integracao com sistema fiscal ou contábil;</li>
+  <li>assinatura digital de contrato com certificado icp-brasil (o contrato é anexado já assinado);</li>
+  <li>aplicativo nativo pra android e ios, o acesso é pelo navegador do celular;</li>
+  <li>chat interno e envio automático de mensagem por whatsapp;</li>
+  <li>geolocalizacao e rastreio do prestador em tempo real;</li>
+  <li>controle de estoque, de material e de folha de pagamento;</li>
+  <li>integracao com erp ou com sistema legado do cliente.</li>
+</ul>
+
+<h3>5.3 restricões</h3>
+<table>
+  <tr><th style="width:20%">tipo</th><th>restricao</th></tr>
+  <tr><td>prazo</td><td>o desenvolvimento acontece dentro do calendário da disciplina, com as entregas em 14/08, 08/09 e 25/09 de 2026. o escopo do mvp foi reduzido pra caber nesse período</td></tr>
+  <tr><td>equipe</td><td>três integrantes, conciliando o projeto com as demais disciplinas do curso</td></tr>
+  <tr><td>tecnologia</td><td>serão usadas tecnologias que a equipe já domina ou consegue aprender no prazo, priorizando ferramenta gratuita ou com plano free</td></tr>
+  <tr><td>hospedagem</td><td>o sistema será publicado em servico de nuvem com plano gratuito, o que limita processamento, espaco de armazenamento e volume de dados de teste</td></tr>
+  <tr><td>acesso</td><td>o uso exige internet, o sistema não funciona offline</td></tr>
+  <tr><td>dados</td><td>não haverá integracao com base externa, os dados de teste serão fictícios pra não expor dado pessoal real (lgpd)</td></tr>
+</table>
+
+<h2>6. requisitos funcionais</h2>
+
+<table>
+  <tr><th class="cod">código</th><th style="width:26%">requisito</th><th>descricao</th></tr>
+  <tr><td class="cod">RF01</td><td>autenticar usuário</td><td>o sistema deve permitir o acesso por email e senha, identificando o perfil do usuário e liberando apenas as funcões correspondentes</td></tr>
+  <tr><td class="cod">RF02</td><td>manter cadastro de prestadores</td><td>o sistema deve permitir cadastrar, consultar, editar e inativar prestadores, com nome ou razao social, cpf ou cnpj, telefone, email e endereco</td></tr>
+  <tr><td class="cod">RF03</td><td>manter cadastro de clientes</td><td>o sistema deve permitir cadastrar, consultar, editar e inativar clientes, com os dados de identificacao e contato</td></tr>
+  <tr><td class="cod">RF04</td><td>manter categorias de servico</td><td>o sistema deve permitir cadastrar e editar categorias de servico (ex: elétrica, hidráulica, limpeza) usadas pra classificar servicos e prestadores</td></tr>
+  <tr><td class="cod">RF05</td><td>manter catalogo de servicos</td><td>o sistema deve permitir cadastrar servicos com nome, descricao, categoria, valor de referência e prazo padrao de execucao</td></tr>
+  <tr><td class="cod">RF06</td><td>habilitar prestador em categorias</td><td>o sistema deve permitir vincular um prestador a uma ou mais categorias, indicando em que tipo de servico ele está habilitado a atuar</td></tr>
+  <tr><td class="cod">RF07</td><td>enviar documentos do prestador</td><td>o sistema deve permitir anexar documentos ao cadastro do prestador, informando o tipo, a data de emissao e a data de validade</td></tr>
+  <tr><td class="cod">RF08</td><td>alertar documentos vencidos</td><td>o sistema deve exibir ao administrador um painel com os documentos vencidos e os que vencem nos próximos 30 dias</td></tr>
+  <tr><td class="cod">RF09</td><td>controlar situacao cadastral</td><td>o sistema deve permitir alterar a situacao do prestador entre ativo, pendente, bloqueado e inativo, registrando o motivo, a data e o usuário responsável</td></tr>
+  <tr><td class="cod">RF10</td><td>manter contratos</td><td>o sistema deve permitir cadastrar contratos vinculados ao prestador, com data de início, data de término, valor e arquivo anexo</td></tr>
+  <tr><td class="cod">RF11</td><td>registrar ordem de servico</td><td>o sistema deve permitir abrir uma ordem de servico informando cliente, servico, descricao do problema, prazo desejado e prioridade</td></tr>
+  <tr><td class="cod">RF12</td><td>atribuir ordem a um prestador</td><td>o sistema deve permitir que o administrador atribua uma ordem de servico a um prestador apto, exibindo apenas os prestadores habilitados na categoria do servico</td></tr>
+  <tr><td class="cod">RF13</td><td>acompanhar a ordem de servico</td><td>o sistema deve controlar o status da ordem (aberta, atribuida, em execucao, concluída, cancelada) e registrar a data, o usuário e a observacao de cada mudanca</td></tr>
+  <tr><td class="cod">RF14</td><td>consultar ordens do prestador</td><td>o sistema deve exibir ao prestador logado apenas as ordens atribuidas a ele, permitindo atualizar o andamento e concluir o servico</td></tr>
+  <tr><td class="cod">RF15</td><td>avaliar o atendimento</td><td>o sistema deve permitir que o cliente registre uma nota de 1 a 5 e um comentário depois que a ordem for concluída</td></tr>
+  <tr><td class="cod">RF16</td><td>consultar historico de atendimentos</td><td>o sistema deve exibir o histórico de ordens por prestador e por cliente, com filtro por período, status e categoria</td></tr>
+  <tr><td class="cod">RF17</td><td>gerar relatorio de desempenho</td><td>o sistema deve gerar um relatório por prestador com a quantidade de servicos concluídos, a nota média recebida e o percentual de servicos entregues dentro do prazo</td></tr>
+  <tr><td class="cod">RF18</td><td>gerar relatorio de servicos por periodo</td><td>o sistema deve gerar um relatório de ordens abertas, concluídas e canceladas em um intervalo de datas, agrupadas por categoria</td></tr>
+  <tr><td class="cod">RF19</td><td>registrar log de acões criticas</td><td>o sistema deve registrar em log a mudanca de situacao cadastral, a atribuicao e o cancelamento de ordem, guardando usuário, data e hora</td></tr>
+</table>
+
+<h2>7. requisitos nao funcionais</h2>
+
+<table>
+  <tr><th class="cod">código</th><th style="width:20%">categoria</th><th>requisito</th></tr>
+  <tr><td class="cod">RNF01</td><td>seguranca</td><td>as senhas devem ser armazenadas com hash (bcrypt ou equivalente), nunca em texto puro no banco</td></tr>
+  <tr><td class="cod">RNF02</td><td>seguranca</td><td>toda regra de permissao deve ser validada no servidor, e não apenas escondendo o botao na tela. uma requisicao feita por um perfil sem direito deve ser recusada</td></tr>
+  <tr><td class="cod">RNF03</td><td>seguranca</td><td>o sistema deve encerrar a sessao automaticamente após 30 minutos sem atividade</td></tr>
+  <tr><td class="cod">RNF04</td><td>usabilidade</td><td>a interface deve ser responsiva e utilizável em tela de notebook (1366x768) e em celular, sem rolagem horizontal</td></tr>
+  <tr><td class="cod">RNF05</td><td>usabilidade</td><td>toda acao que altera ou apaga dado deve exibir confirmacao e mensagem de retorno informando se deu certo ou qual foi o erro</td></tr>
+  <tr><td class="cod">RNF06</td><td>desempenho</td><td>as listagens devem usar paginacao e responder em até 3 segundos com uma base de 5 mil registros</td></tr>
+  <tr><td class="cod">RNF07</td><td>compatibilidade</td><td>o sistema deve funcionar nas versões atuais do google chrome, microsoft edge e mozilla firefox</td></tr>
+  <tr><td class="cod">RNF08</td><td>disponibilidade</td><td>o sistema deve ser hospedado em nuvem, com backup diário do banco de dados e possibilidade de restauracao</td></tr>
+  <tr><td class="cod">RNF09</td><td>armazenamento</td><td>o upload de documentos deve aceitar os formatos pdf, jpg e png, com limite de 10 mb por arquivo</td></tr>
+  <tr><td class="cod">RNF10</td><td>privacidade</td><td>os dados pessoais devem ficar visíveis apenas aos perfis autorizados, atendendo a lgpd, e a conta deve poder ser excluída ou anonimizada mediante solicitacao</td></tr>
+  <tr><td class="cod">RNF11</td><td>manutenibilidade</td><td>o código deve ser versionado no github, com padrao de nomes definido, readme e commits identificáveis por integrante</td></tr>
+</table>
+
+<h2>8. regras de negocio</h2>
+
+<table>
+  <tr><th class="cod">código</th><th style="width:26%">regra</th><th>descricao</th></tr>
+  <tr><td class="cod">RN01</td><td>prestador precisa estar ativo</td><td>uma ordem de servico só pode ser atribuida a um prestador cuja situacao cadastral esteja como "ativo"</td></tr>
+  <tr><td class="cod">RN02</td><td>documento vencido bloqueia o prestador</td><td>quando um documento obrigatório do prestador vence, a situacao dele passa automaticamente pra "pendente" e ele deixa de aparecer na lista de atribuicao até regularizar</td></tr>
+  <tr><td class="cod">RN03</td><td>contrato vigente obrigatorio</td><td>prestador sem contrato dentro da vigência não pode receber nova atribuicao, mas continua podendo concluir as ordens que já estavam em execucao</td></tr>
+  <tr><td class="cod">RN04</td><td>atribuicao respeita a categoria</td><td>o prestador só pode ser atribuido a uma ordem cujo servico pertenca a uma categoria em que ele está habilitado</td></tr>
+  <tr><td class="cod">RN05</td><td>sequencia dos status</td><td>a ordem segue a sequência aberta &rarr; atribuida &rarr; em execucao &rarr; concluída. não é permitido pular etapa nem voltar pra um status anterior</td></tr>
+  <tr><td class="cod">RN06</td><td>ordem concluida é imutavel</td><td>depois de concluída, a ordem não pode mais ser editada. a correcao de um erro só pode ser feita pelo administrador, por meio de cancelamento com justificativa e abertura de uma nova ordem</td></tr>
+  <tr><td class="cod">RN07</td><td>cancelamento exige motivo</td><td>o cancelamento de uma ordem só pode acontecer antes da conclusao, exige um motivo com no mínimo 10 caracteres e fica registrado no log</td></tr>
+  <tr><td class="cod">RN08</td><td>avaliacao unica e pelo cliente</td><td>a avaliacao só pode ser lancada pelo cliente vinculado à ordem, somente depois que ela for concluída, e apenas uma vez por ordem</td></tr>
+  <tr><td class="cod">RN09</td><td>calculo da nota media</td><td>a nota média do prestador é a média aritmética das avaliacões dos últimos 12 meses. prestador com menos de três avaliacões no período aparece como "sem histórico suficiente"</td></tr>
+  <tr><td class="cod">RN10</td><td>cpf e cnpj unicos</td><td>não pode existir mais de um cadastro ativo com o mesmo cpf ou cnpj, e o número precisa ser válido pelo dígito verificador</td></tr>
+  <tr><td class="cod">RN11</td><td>prestador com ordem aberta nao é inativado</td><td>não é permitido inativar um prestador que tenha ordem atribuida ou em execucao. antes é preciso concluir ou realocar essas ordens</td></tr>
+  <tr><td class="cod">RN12</td><td>prazo e atraso</td><td>a ordem é considerada em atraso quando a data atual passa do prazo combinado e o status ainda não é "concluída". esse indicador entra no relatório de desempenho</td></tr>
+</table>
+
+<h2>9. glossario</h2>
+<table>
+  <tr><th style="width:26%">termo</th><th>significado</th></tr>
+  <tr><td>prestador</td><td>profissional autônomo, mei ou empresa contratada pra executar um servico, sem vínculo empregatício com a contratante</td></tr>
+  <tr><td>ordem de servico (os)</td><td>registro de uma demanda de servico, do pedido do cliente até a conclusao pelo prestador</td></tr>
+  <tr><td>situacao cadastral</td><td>estado do prestador dentro do sistema: ativo, pendente, bloqueado ou inativo</td></tr>
+  <tr><td>categoria de servico</td><td>agrupamento que classifica os servicos e define em que área o prestador está habilitado</td></tr>
+  <tr><td>mvp</td><td>produto mínimo viável, a menor versao do sistema que já entrega valor e permite usar o fluxo completo</td></tr>
+</table>
+
+<h2>10. referencias</h2>
+<ul>
+  <li>orientacões para as entregas - projeto de software, 1º bimestre. documento da disciplina, unicesumar, 2026.</li>
+  <li>sommerville, i. <em>engenharia de software</em>. 10. ed. sao paulo: pearson, 2018.</li>
+  <li>brasil. lei nº 13.709, de 14 de agosto de 2018. lei geral de protecao de dados pessoais (lgpd).</li>
+  <li>levantamento informal feito pela equipe com base na rotina observada em empresas que contratam servico terceirizado.</li>
+</ul>
+
+<div class="box">
+  <strong>historico de alteracões</strong><br>
+  versao 1.0 - 14/08/2026 - primeira versao do documento, entregue na 1ª entrega.
+</div>
+
+</body>
+</html>
