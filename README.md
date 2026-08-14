@@ -11,7 +11,6 @@ equipe 8 - 1º bimestre de 2026.
 |---|---|
 | luis gustavo boratto de oliveira | [@Tox1469](https://github.com/Tox1469) |
 | igor schiniegoski pallisser | [@igorschiniegoski](https://github.com/igorschiniegoski) |
-| lucas mendes | - |
 
 ## o problema
 
