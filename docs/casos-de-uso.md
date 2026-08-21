@@ -80,7 +80,7 @@ o diagrama abaixo apresenta a visao macro do sistema. para caber em uma pagina e
 
 *fonte: elaborado pela equipe. arquivo fonte em [diagramas/caso-de-uso-geral.puml](../diagramas/caso-de-uso-geral.puml)*
 
-o preenchimento das elipses indica a prioridade moscow definida na secao 6: azul mais escuro para *must have*, azul claro para *should have* e branco para *could have*.
+o preenchimento das elipses indica o nivel da escala moscow definido na secao 6: azul mais escuro para **M - must have**, azul claro para **S - should have** e branco para **C - could have**. os itens de nivel **W - wont have** nao aparecem no diagrama, justamente por estarem fora do escopo desta versao, e estao listados na secao 6.3.
 
 ---
 
@@ -126,30 +126,30 @@ consolida o que ja foi registrado. UC19 é o unico caso de uso deste modulo aces
 
 | codigo | caso de uso | ator principal | ator secundario | RF de origem | regras aplicaveis | prioridade |
 |---|---|---|---|---|---|---|
-| UC01 | autenticar usuario | usuario | - | RF01 | RNF01, RNF02 | must have |
-| UC02 | encerrar sessao | usuario | - | derivado do RNF03 | RNF03 | must have |
-| UC03 | manter cadastro de prestadores | administrador | - | RF02 | RN10, RN11 | must have |
-| UC04 | manter cadastro de clientes | administrador | - | RF03 | RN10 | must have |
-| UC05 | manter categorias de servico | administrador | - | RF04 | - | must have |
-| UC06 | manter catalogo de servicos | administrador | - | RF05 | - | must have |
-| UC07 | habilitar prestador em categorias | administrador | - | RF06 | RN04 | must have |
-| UC08 | enviar documentos do prestador | prestador | administrador | RF07 | RN02, RNF09 | must have |
-| UC09 | consultar painel de vencimentos | administrador | - | RF08 | RN02 | must have |
-| UC10 | manter contratos | administrador | - | RF10 | RN03, RNF09 | should have |
-| UC11 | alterar situacao cadastral do prestador | administrador | - | RF09 | RN02, RN11 | must have |
-| UC12 | abrir ordem de servico | cliente | administrador | RF11 | - | must have |
-| UC13 | atribuir ordem a um prestador | administrador | - | RF12 | RN01, RN02, RN03, RN04, RN05 | must have |
-| UC14 | aceitar ou recusar atribuicao | prestador | administrador | RF13, RF14 | RN05 | should have |
-| UC15 | atualizar andamento da ordem | prestador | - | RF13, RF14 | RN05, RN06 | must have |
-| UC16 | concluir ordem de servico | prestador | - | RF13, RF14 | RN05, RN06, RN12 | must have |
-| UC17 | cancelar ordem de servico | administrador | - | RF13 | RN06, RN07 | must have |
-| UC18 | avaliar atendimento | cliente | - | RF15 | RN08, RN09 | must have |
-| UC19 | consultar historico de atendimentos | usuario | - | RF16 | RNF02 | should have |
-| UC20 | gerar relatorio de desempenho do prestador | administrador | - | RF17 | RN09, RN12 | should have |
-| UC21 | gerar relatorio de servicos por periodo | administrador | - | RF18 | - | could have |
-| UC22 | verificar aptidao do prestador | *incluido por UC13* | - | RF12 | RN01, RN02, RN03, RN04 | must have |
-| UC23 | registrar log de acao critica | *incluido por UC11, UC13, UC17* | - | RF19 | - | should have |
-| UC24 | exportar relatorio em pdf ou csv | administrador | - | derivado do RF17, RF18 | - | could have |
+| UC01 | autenticar usuario | usuario | - | RF01 | RNF01, RNF02 | M - must have |
+| UC02 | encerrar sessao | usuario | - | derivado do RNF03 | RNF03 | M - must have |
+| UC03 | manter cadastro de prestadores | administrador | - | RF02 | RN10, RN11 | M - must have |
+| UC04 | manter cadastro de clientes | administrador | - | RF03 | RN10 | M - must have |
+| UC05 | manter categorias de servico | administrador | - | RF04 | - | M - must have |
+| UC06 | manter catalogo de servicos | administrador | - | RF05 | - | M - must have |
+| UC07 | habilitar prestador em categorias | administrador | - | RF06 | RN04 | M - must have |
+| UC08 | enviar documentos do prestador | prestador | administrador | RF07 | RN02, RNF09 | M - must have |
+| UC09 | consultar painel de vencimentos | administrador | - | RF08 | RN02 | M - must have |
+| UC10 | manter contratos | administrador | - | RF10 | RN03, RNF09 | S - should have |
+| UC11 | alterar situacao cadastral do prestador | administrador | - | RF09 | RN02, RN11 | M - must have |
+| UC12 | abrir ordem de servico | cliente | administrador | RF11 | - | M - must have |
+| UC13 | atribuir ordem a um prestador | administrador | - | RF12 | RN01, RN02, RN03, RN04, RN05 | M - must have |
+| UC14 | aceitar ou recusar atribuicao | prestador | administrador | RF13, RF14 | RN05 | S - should have |
+| UC15 | atualizar andamento da ordem | prestador | - | RF13, RF14 | RN05, RN06 | M - must have |
+| UC16 | concluir ordem de servico | prestador | - | RF13, RF14 | RN05, RN06, RN12 | M - must have |
+| UC17 | cancelar ordem de servico | administrador | - | RF13 | RN06, RN07 | M - must have |
+| UC18 | avaliar atendimento | cliente | - | RF15 | RN08, RN09 | M - must have |
+| UC19 | consultar historico de atendimentos | usuario | - | RF16 | RNF02 | S - should have |
+| UC20 | gerar relatorio de desempenho do prestador | administrador | - | RF17 | RN09, RN12 | S - should have |
+| UC21 | gerar relatorio de servicos por periodo | administrador | - | RF18 | - | C - could have |
+| UC22 | verificar aptidao do prestador | *incluido por UC13* | - | RF12 | RN01, RN02, RN03, RN04 | M - must have |
+| UC23 | registrar log de acao critica | *incluido por UC11, UC13, UC17* | - | RF19 | - | S - should have |
+| UC24 | exportar relatorio em pdf ou csv | administrador | - | derivado do RF17, RF18 | - | C - could have |
 
 UC22 e UC23 nao sao iniciados por nenhum ator. eles existem porque um comportamento se repete em mais de um caso de uso e foi fatorado com `<<include>>`, o que evita descrever a mesma verificacao e o mesmo registro de log tres vezes.
 
@@ -157,41 +157,47 @@ UC22 e UC23 nao sao iniciados por nenhum ator. eles existem porque um comportame
 
 ## 6. priorizacao do escopo
 
-### 6.1 criterio adotado
+### 6.1 a escala moscow
 
-a priorizacao usa a tecnica **moscow** (must, should, could, wont). a escolha se deve a duas caracteristicas do projeto: o prazo é fixo e nao negociavel, porque acompanha o calendario da disciplina, e a equipe tem dois integrantes conciliando o projeto com as demais materias. em um cenario de prazo fixo e capacidade limitada, o que precisa ser negociado é o escopo, e o moscow é justamente uma tecnica de negociacao de escopo.
+a priorizacao usa a **escala moscow**, uma escala ordinal de quatro niveis proposta por dai clegg em 1994. o nome é um acronimo formado pela inicial de cada nivel, e as duas letras "o" existem apenas para a sigla ficar pronunciavel:
 
-cada caso de uso foi classificado respondendo a uma pergunta objetiva:
+> **M**ust have &nbsp;·&nbsp; **S**hould have &nbsp;·&nbsp; **C**ould have &nbsp;·&nbsp; **W**ont have
 
-| categoria | pergunta de decisao | consequencia |
-|---|---|---|
-| **must have** | sem este caso de uso o fluxo principal do sistema (solicitar → atribuir → executar → avaliar) quebra, ou uma regra de negocio critica deixa de ser cumprida? | entra no mvp. se algum must have nao ficar pronto, a entrega é considerada incompleta |
-| **should have** | é importante e agrega valor real, mas existe contorno manual aceitavel durante o periodo do trabalho? | entra depois que todos os must estiverem concluidos e testados |
-| **could have** | é desejavel e melhora a experiencia, mas a ausencia nao impede o uso do sistema? | so entra se sobrar tempo apos os should have |
-| **wont have** | esta fora do escopo desta versao, por decisao consciente e nao por esquecimento? | fica documentado como escopo futuro, para nao voltar a discussao a cada reuniao |
+por ser uma escala ordinal, os niveis tem ordem entre si mas nao tem distancia definida: um must have é mais prioritario que um should have, porem nao existe a nocao de "duas vezes mais prioritario". o que a escala define é a **ordem de construcao** e o que pode ser sacrificado quando o prazo aperta.
 
-### 6.2 distribuicao dos casos de uso
+| sigla | nivel | definicao | pergunta de decisao | consequencia no projeto |
+|---|---|---|---|---|
+| **M** | must have | obrigatorio. sem ele nao existe produto entregavel | sem este caso de uso o fluxo principal (solicitar → atribuir → executar → avaliar) quebra, ou uma regra de negocio critica deixa de ser cumprida? | entra no mvp. se um unico must have nao ficar pronto, a entrega é considerada incompleta |
+| **S** | should have | importante, mas nao vital. tem contorno possivel | é importante e agrega valor real, mas existe contorno manual aceitavel durante o periodo do trabalho? | entra depois que todos os must estiverem concluidos e testados |
+| **C** | could have | desejavel. o primeiro a sair se o prazo apertar | é desejavel e melhora a experiencia, mas a ausencia nao impede o uso do sistema? | so entra se sobrar tempo apos os should have |
+| **W** | wont have | fora desta versao, por decisao e nao por esquecimento | esta fora do escopo agora, mas reconhecido como pertinente ao dominio? | fica documentado como escopo futuro, para nao voltar a discussao a cada reuniao |
+
+**por que esta escala e nao outra:** o projeto tem duas caracteristicas que praticamente definem a escolha. o prazo é fixo e nao negociavel, porque acompanha o calendario da disciplina, e a equipe tem dois integrantes conciliando o projeto com as demais materias. em um cenario de prazo fixo e capacidade limitada, o que precisa ser negociado é o escopo, e o moscow é justamente uma escala de negociacao de escopo. uma escala puramente numerica, de 1 a 5, diria qual item é mais importante, mas nao diria onde esta a linha de corte do que pode ser entregue.
+
+nas tabelas deste documento a prioridade aparece sempre no formato `sigla - nivel`, por exemplo `M - must have`.
+
+### 6.2 distribuicao dos casos de uso na escala
 
 | prioridade | quantidade | casos de uso |
 |---|---|---|
-| must have | 16 | UC01, UC02, UC03, UC04, UC05, UC06, UC07, UC08, UC09, UC11, UC12, UC13, UC15, UC16, UC18, UC22 |
-| should have | 5 | UC10, UC14, UC19, UC20, UC23 |
-| could have | 2 | UC21, UC24 |
+| M - must have | 16 | UC01, UC02, UC03, UC04, UC05, UC06, UC07, UC08, UC09, UC11, UC12, UC13, UC15, UC16, UC18, UC22 |
+| S - should have | 5 | UC10, UC14, UC19, UC20, UC23 |
+| C - could have | 2 | UC21, UC24 |
 | **total** | **23** | |
 
 **justificativa dos casos que ficaram fora do mvp:**
 
-| caso de uso | prioridade | por que nao é must have |
+| caso de uso | nivel | por que nao é must have |
 |---|---|---|
-| UC10 - manter contratos | should have | o contrato é anexado ja assinado e nao bloqueia o fluxo de execucao. enquanto UC10 nao existir, a RN03 (contrato vigente obrigatorio) fica desativada por configuracao e a verificacao de aptidao (UC22) considera apenas situacao cadastral, documentacao e categoria |
-| UC14 - aceitar ou recusar atribuicao | should have | no mvp a ordem ja nasce atribuida quando o administrador escolhe o prestador, seguindo direto de "aberta" para "atribuida". o aceite formal do prestador é um refinamento do fluxo, nao um pre-requisito dele |
-| UC19 - consultar historico | should have | os dados existem desde o mvp nas telas de listagem com filtro. o que UC19 acrescenta é a visao consolidada por prestador e por cliente |
-| UC20 - relatorio de desempenho | should have | o gestor chega a mesma informacao pelo historico, ainda que sem o calculo pronto da nota media e do percentual no prazo |
-| UC23 - registrar log | should have | é exigencia do RF19 e sera implementado, mas a ausencia do log nao impede nenhuma operacao do usuario. foi posicionado logo apos os must have |
-| UC21 - relatorio por periodo | could have | é o relatorio de menor uso previsto entre os tres perfis |
-| UC24 - exportar relatorio | could have | ajuda o gestor que precisa levar o dado para fora do sistema, mas a consulta em tela ja atende |
+| UC10 - manter contratos | S - should have | o contrato é anexado ja assinado e nao bloqueia o fluxo de execucao. enquanto UC10 nao existir, a RN03 (contrato vigente obrigatorio) fica desativada por configuracao e a verificacao de aptidao (UC22) considera apenas situacao cadastral, documentacao e categoria |
+| UC14 - aceitar ou recusar atribuicao | S - should have | no mvp a ordem ja nasce atribuida quando o administrador escolhe o prestador, seguindo direto de "aberta" para "atribuida". o aceite formal do prestador é um refinamento do fluxo, nao um pre-requisito dele |
+| UC19 - consultar historico | S - should have | os dados existem desde o mvp nas telas de listagem com filtro. o que UC19 acrescenta é a visao consolidada por prestador e por cliente |
+| UC20 - relatorio de desempenho | S - should have | o gestor chega a mesma informacao pelo historico, ainda que sem o calculo pronto da nota media e do percentual no prazo |
+| UC23 - registrar log | S - should have | é exigencia do RF19 e sera implementado, mas a ausencia do log nao impede nenhuma operacao do usuario. foi posicionado logo apos os must have |
+| UC21 - relatorio por periodo | C - could have | é o relatorio de menor uso previsto entre os tres perfis |
+| UC24 - exportar relatorio | C - could have | ajuda o gestor que precisa levar o dado para fora do sistema, mas a consulta em tela ja atende |
 
-### 6.3 wont have - fora do escopo desta versao
+### 6.3 nivel W - wont have (fora do escopo desta versao)
 
 os itens abaixo foram avaliados, considerados pertinentes ao dominio e conscientemente deixados de fora. eles reproduzem a secao 5.2 do documento de visao, agora com o impacto de cada um no modelo de casos de uso.
 
@@ -245,7 +251,7 @@ os fluxos alternativos e de excecao sao numerados a partir do passo do fluxo pri
 |---|---|
 | objetivo | permitir que o usuario acesse o sistema com as permissões do seu perfil |
 | ator principal | usuario (administrador, prestador ou cliente) |
-| prioridade | must have |
+| prioridade | M - must have |
 | requisitos | RF01, RNF01, RNF02 |
 | frequencia | varias vezes ao dia, por todos os perfis |
 
@@ -283,7 +289,7 @@ os fluxos alternativos e de excecao sao numerados a partir do passo do fluxo pri
 |---|---|
 | objetivo | encerrar o acesso do usuario, por acao dele ou por inatividade |
 | ator principal | usuario |
-| prioridade | must have |
+| prioridade | M - must have |
 | requisitos | RNF03 |
 
 **pre-condicões:** existe sessao ativa.
@@ -334,11 +340,11 @@ os cinco casos de uso de cadastro compartilham o mesmo comportamento: incluir, c
 
 | caso de uso | prioridade | campos principais | validacões proprias | bloqueio de inativacao |
 |---|---|---|---|---|
-| **UC03** manter cadastro de prestadores | must have | nome ou razao social, cpf ou cnpj, telefone, email, endereco, tipo (pf ou pj) | cpf ou cnpj valido pelo digito verificador e sem duplicidade entre cadastros ativos (RN10) | prestador com ordem atribuida ou em execucao nao pode ser inativado (RN11) |
-| **UC04** manter cadastro de clientes | must have | nome ou razao social, cpf ou cnpj, telefone, email, endereco | cpf ou cnpj valido e sem duplicidade (RN10) | cliente com ordem em aberto nao pode ser inativado |
-| **UC05** manter categorias de servico | must have | nome, descricao | nome unico entre as categorias ativas | categoria vinculada a servico ativo nao pode ser inativada |
-| **UC06** manter catalogo de servicos | must have | nome, descricao, categoria, valor de referencia, prazo padrao em dias | categoria obrigatoria, valor e prazo nao negativos | servico com ordem em aberto nao pode ser inativado |
-| **UC10** manter contratos | should have | prestador, data de inicio, data de termino, valor, arquivo anexo | data de termino posterior a de inicio, arquivo em pdf de ate 10 mb (RNF09), sem sobreposicao de vigencia para o mesmo prestador | contrato vinculado a ordem em execucao nao pode ser excluido |
+| **UC03** manter cadastro de prestadores | M - must have | nome ou razao social, cpf ou cnpj, telefone, email, endereco, tipo (pf ou pj) | cpf ou cnpj valido pelo digito verificador e sem duplicidade entre cadastros ativos (RN10) | prestador com ordem atribuida ou em execucao nao pode ser inativado (RN11) |
+| **UC04** manter cadastro de clientes | M - must have | nome ou razao social, cpf ou cnpj, telefone, email, endereco | cpf ou cnpj valido e sem duplicidade (RN10) | cliente com ordem em aberto nao pode ser inativado |
+| **UC05** manter categorias de servico | M - must have | nome, descricao | nome unico entre as categorias ativas | categoria vinculada a servico ativo nao pode ser inativada |
+| **UC06** manter catalogo de servicos | M - must have | nome, descricao, categoria, valor de referencia, prazo padrao em dias | categoria obrigatoria, valor e prazo nao negativos | servico com ordem em aberto nao pode ser inativado |
+| **UC10** manter contratos | S - should have | prestador, data de inicio, data de termino, valor, arquivo anexo | data de termino posterior a de inicio, arquivo em pdf de ate 10 mb (RNF09), sem sobreposicao de vigencia para o mesmo prestador | contrato vinculado a ordem em execucao nao pode ser excluido |
 
 ---
 
@@ -348,7 +354,7 @@ os cinco casos de uso de cadastro compartilham o mesmo comportamento: incluir, c
 |---|---|
 | objetivo | registrar em que tipos de servico o prestador esta habilitado a atuar |
 | ator principal | administrador |
-| prioridade | must have |
+| prioridade | M - must have |
 | requisitos | RF06 |
 
 **pre-condicões:** prestador cadastrado (UC03) e ao menos uma categoria cadastrada (UC05).
@@ -377,7 +383,7 @@ os cinco casos de uso de cadastro compartilham o mesmo comportamento: incluir, c
 | objetivo | anexar ao cadastro do prestador os documentos exigidos, com controle de validade |
 | ator principal | prestador de servico |
 | ator secundario | administrador (pode enviar em nome do prestador) |
-| prioridade | must have |
+| prioridade | M - must have |
 | requisitos | RF07, RNF09 |
 | frequencia | na entrada do prestador e a cada renovacao de documento |
 
@@ -418,7 +424,7 @@ os cinco casos de uso de cadastro compartilham o mesmo comportamento: incluir, c
 |---|---|
 | objetivo | dar ao administrador a visao dos documentos vencidos e dos que estao proximos do vencimento |
 | ator principal | administrador |
-| prioridade | must have |
+| prioridade | M - must have |
 | requisitos | RF08 |
 | frequencia | diaria |
 
@@ -452,7 +458,7 @@ os cinco casos de uso de cadastro compartilham o mesmo comportamento: incluir, c
 |---|---|
 | objetivo | mudar o estado do prestador entre ativo, pendente, bloqueado e inativo, com justificativa registrada |
 | ator principal | administrador |
-| prioridade | must have |
+| prioridade | M - must have |
 | requisitos | RF09, RF19 |
 | inclui | UC23 - registrar log de acao critica |
 
@@ -492,7 +498,7 @@ os cinco casos de uso de cadastro compartilham o mesmo comportamento: incluir, c
 | objetivo | registrar uma demanda de servico para que ela possa ser atribuida e executada |
 | ator principal | cliente |
 | ator secundario | administrador (abre em nome do cliente quando a solicitacao chega por telefone) |
-| prioridade | must have |
+| prioridade | M - must have |
 | requisitos | RF11 |
 | frequencia | varias vezes por dia |
 
@@ -528,7 +534,7 @@ os cinco casos de uso de cadastro compartilham o mesmo comportamento: incluir, c
 |---|---|
 | objetivo | designar um prestador apto para executar uma ordem aberta |
 | ator principal | administrador |
-| prioridade | must have |
+| prioridade | M - must have |
 | requisitos | RF12, RF19 |
 | inclui | UC22 - verificar aptidao do prestador, UC23 - registrar log de acao critica |
 | frequencia | varias vezes por dia. é a operacao central do administrador |
@@ -569,7 +575,7 @@ os cinco casos de uso de cadastro compartilham o mesmo comportamento: incluir, c
 |---|---|
 | objetivo | permitir que o prestador confirme ou devolva a ordem que lhe foi designada |
 | ator principal | prestador de servico |
-| prioridade | should have |
+| prioridade | S - should have |
 | requisitos | RF13, RF14 |
 
 **pre-condicões:** existe ordem com status "atribuida" para o prestador logado.
@@ -601,7 +607,7 @@ os cinco casos de uso de cadastro compartilham o mesmo comportamento: incluir, c
 |---|---|
 | objetivo | manter o cliente e o administrador informados sobre o progresso da execucao |
 | ator principal | prestador de servico |
-| prioridade | must have |
+| prioridade | M - must have |
 | requisitos | RF13, RF14 |
 
 **pre-condicões:** ordem atribuida ao prestador logado, com status "atribuida" ou "em execucao".
@@ -631,7 +637,7 @@ os cinco casos de uso de cadastro compartilham o mesmo comportamento: incluir, c
 |---|---|
 | objetivo | encerrar a execucao e liberar a ordem para avaliacao do cliente |
 | ator principal | prestador de servico |
-| prioridade | must have |
+| prioridade | M - must have |
 | requisitos | RF13, RF14 |
 
 **pre-condicões:** ordem com status "em execucao" e atribuida ao prestador logado.
@@ -662,7 +668,7 @@ os cinco casos de uso de cadastro compartilham o mesmo comportamento: incluir, c
 |---|---|
 | objetivo | encerrar uma ordem que nao sera executada, mantendo o registro do motivo |
 | ator principal | administrador |
-| prioridade | must have |
+| prioridade | M - must have |
 | requisitos | RF13, RF19 |
 | inclui | UC23 - registrar log de acao critica |
 
@@ -696,7 +702,7 @@ os cinco casos de uso de cadastro compartilham o mesmo comportamento: incluir, c
 |---|---|
 | objetivo | registrar a percepcao do cliente sobre o servico prestado, alimentando o historico do prestador |
 | ator principal | cliente |
-| prioridade | must have |
+| prioridade | M - must have |
 | requisitos | RF15 |
 
 **pre-condicões:** ordem com status "concluida", vinculada ao cliente logado e ainda sem avaliacao.
@@ -727,7 +733,7 @@ os cinco casos de uso de cadastro compartilham o mesmo comportamento: incluir, c
 |---|---|
 | objetivo | determinar se um prestador pode receber uma nova ordem em determinada categoria |
 | ator principal | nenhum. é incluido por UC13 |
-| prioridade | must have |
+| prioridade | M - must have |
 | requisitos | RF12 |
 
 **pre-condicões:** existe uma ordem em processo de atribuicao e um conjunto de prestadores a avaliar.
@@ -756,11 +762,11 @@ os cinco casos de uso de cadastro compartilham o mesmo comportamento: incluir, c
 
 | caso de uso | ator | prioridade | fluxo resumido | regras e observacões |
 |---|---|---|---|---|
-| **UC19** consultar historico de atendimentos | usuario | should have | 1. o usuario acessa o historico. 2. o sistema aplica o recorte do perfil: administrador ve tudo, prestador ve as ordens dele, cliente ve as ordens dele. 3. o usuario filtra por periodo, status e categoria. 4. o sistema exibe o resultado paginado | o recorte é aplicado no servidor (RNF02). listagem paginada com resposta em ate 3 segundos (RNF06) |
-| **UC20** gerar relatorio de desempenho do prestador | administrador | should have | 1. o administrador informa o periodo. 2. o sistema calcula, por prestador, a quantidade de ordens concluidas, a nota media e o percentual entregue no prazo. 3. o sistema exibe o resultado ordenavel por qualquer coluna | prestador com menos de tres avaliacões nos ultimos 12 meses aparece como "sem historico suficiente" (RN09). o percentual no prazo usa RN12 |
-| **UC21** gerar relatorio de servicos por periodo | administrador | could have | 1. o administrador informa o intervalo de datas. 2. o sistema totaliza as ordens abertas, concluidas e canceladas. 3. o sistema agrupa o resultado por categoria | excecao: intervalo com data final anterior a inicial é recusado |
-| **UC23** registrar log de acao critica | nenhum. incluido por UC11, UC13 e UC17 | should have | 1. o caso de uso chamador informa a acao, a entidade afetada, o usuario e o momento. 2. o sistema grava o registro em tabela propria, sem permitir alteracao nem exclusao posterior | o log é somente leitura, inclusive para o administrador. atende ao RF19 |
-| **UC24** exportar relatorio em pdf ou csv | administrador | could have | 1. com o relatorio ja gerado em tela, o administrador aciona exportar. 2. o sistema gera o arquivo com os mesmos filtros aplicados na consulta. 3. o navegador faz o download | estende UC20 e UC21. o arquivo carrega no cabecalho o periodo e a data de emissao |
+| **UC19** consultar historico de atendimentos | usuario | S - should have | 1. o usuario acessa o historico. 2. o sistema aplica o recorte do perfil: administrador ve tudo, prestador ve as ordens dele, cliente ve as ordens dele. 3. o usuario filtra por periodo, status e categoria. 4. o sistema exibe o resultado paginado | o recorte é aplicado no servidor (RNF02). listagem paginada com resposta em ate 3 segundos (RNF06) |
+| **UC20** gerar relatorio de desempenho do prestador | administrador | S - should have | 1. o administrador informa o periodo. 2. o sistema calcula, por prestador, a quantidade de ordens concluidas, a nota media e o percentual entregue no prazo. 3. o sistema exibe o resultado ordenavel por qualquer coluna | prestador com menos de tres avaliacões nos ultimos 12 meses aparece como "sem historico suficiente" (RN09). o percentual no prazo usa RN12 |
+| **UC21** gerar relatorio de servicos por periodo | administrador | C - could have | 1. o administrador informa o intervalo de datas. 2. o sistema totaliza as ordens abertas, concluidas e canceladas. 3. o sistema agrupa o resultado por categoria | excecao: intervalo com data final anterior a inicial é recusado |
+| **UC23** registrar log de acao critica | nenhum. incluido por UC11, UC13 e UC17 | S - should have | 1. o caso de uso chamador informa a acao, a entidade afetada, o usuario e o momento. 2. o sistema grava o registro em tabela propria, sem permitir alteracao nem exclusao posterior | o log é somente leitura, inclusive para o administrador. atende ao RF19 |
+| **UC24** exportar relatorio em pdf ou csv | administrador | C - could have | 1. com o relatorio ja gerado em tela, o administrador aciona exportar. 2. o sistema gera o arquivo com os mesmos filtros aplicados na consulta. 3. o navegador faz o download | estende UC20 e UC21. o arquivo carrega no cabecalho o periodo e a data de emissao |
 
 ---
 
@@ -774,7 +780,7 @@ o campo "pontos" usa a sequencia de fibonacci (1, 2, 3, 5, 8) e representa esfor
 
 | id | historia | UC | prioridade | pontos |
 |---|---|---|---|---|
-| HU01 | eu, como usuario do sistema, quero entrar com meu email e minha senha, para acessar apenas as funcões do meu perfil | UC01 | must have | 3 |
+| HU01 | eu, como usuario do sistema, quero entrar com meu email e minha senha, para acessar apenas as funcões do meu perfil | UC01 | M - must have | 3 |
 
 **criterios de aceite HU01**
 - dado que informei email e senha corretos, quando confirmo o login, entao o sistema abre a tela inicial do meu perfil com o menu correspondente.
@@ -784,7 +790,7 @@ o campo "pontos" usa a sequencia de fibonacci (1, 2, 3, 5, 8) e representa esfor
 
 | id | historia | UC | prioridade | pontos |
 |---|---|---|---|---|
-| HU02 | eu, como usuario do sistema, quero que minha sessao seja encerrada quando eu sair ou ficar muito tempo parado, para que ninguem use meu acesso no computador que ficou aberto | UC02 | must have | 2 |
+| HU02 | eu, como usuario do sistema, quero que minha sessao seja encerrada quando eu sair ou ficar muito tempo parado, para que ninguem use meu acesso no computador que ficou aberto | UC02 | M - must have | 2 |
 
 **criterios de aceite HU02**
 - dado que aciono a opcao sair, quando confirmo, entao a sessao é invalidada no servidor e sou levado a tela de login.
@@ -794,11 +800,11 @@ o campo "pontos" usa a sequencia de fibonacci (1, 2, 3, 5, 8) e representa esfor
 
 | id | historia | UC | prioridade | pontos |
 |---|---|---|---|---|
-| HU03 | eu, como administrador, quero cadastrar e manter os prestadores, para ter em um lugar so a rede de terceirizados que hoje esta na planilha | UC03 | must have | 5 |
-| HU04 | eu, como administrador, quero cadastrar e manter os clientes, para vincular cada ordem de servico a quem solicitou | UC04 | must have | 3 |
-| HU05 | eu, como administrador, quero cadastrar categorias de servico, para classificar os servicos e saber em que area cada prestador atua | UC05 | must have | 2 |
-| HU06 | eu, como administrador, quero manter um catalogo de servicos com valor de referencia e prazo padrao, para padronizar a abertura das ordens | UC06 | must have | 3 |
-| HU07 | eu, como administrador, quero habilitar cada prestador nas categorias em que ele atua, para que o sistema so ofereca quem realmente sabe fazer aquele servico | UC07 | must have | 3 |
+| HU03 | eu, como administrador, quero cadastrar e manter os prestadores, para ter em um lugar so a rede de terceirizados que hoje esta na planilha | UC03 | M - must have | 5 |
+| HU04 | eu, como administrador, quero cadastrar e manter os clientes, para vincular cada ordem de servico a quem solicitou | UC04 | M - must have | 3 |
+| HU05 | eu, como administrador, quero cadastrar categorias de servico, para classificar os servicos e saber em que area cada prestador atua | UC05 | M - must have | 2 |
+| HU06 | eu, como administrador, quero manter um catalogo de servicos com valor de referencia e prazo padrao, para padronizar a abertura das ordens | UC06 | M - must have | 3 |
+| HU07 | eu, como administrador, quero habilitar cada prestador nas categorias em que ele atua, para que o sistema so ofereca quem realmente sabe fazer aquele servico | UC07 | M - must have | 3 |
 
 **criterios de aceite HU03**
 - dado que informo um cpf ou cnpj com digito verificador invalido, quando salvo, entao o sistema recusa e destaca o campo (RN10).
@@ -815,10 +821,10 @@ o campo "pontos" usa a sequencia de fibonacci (1, 2, 3, 5, 8) e representa esfor
 
 | id | historia | UC | prioridade | pontos |
 |---|---|---|---|---|
-| HU08 | eu, como prestador, quero enviar meus documentos com a data de validade, para comprovar que estou regular sem depender de cobranca por whatsapp | UC08 | must have | 5 |
-| HU09 | eu, como administrador, quero ver em um painel os documentos vencidos e os que vencem em 30 dias, para cobrar a renovacao antes de a fiscalizacao chegar | UC09 | must have | 5 |
-| HU10 | eu, como administrador, quero registrar os contratos com vigencia e arquivo anexo, para nao depender mais da via impressa no armario | UC10 | should have | 5 |
-| HU11 | eu, como administrador, quero alterar a situacao cadastral do prestador com motivo registrado, para controlar quem esta liberado a receber servico | UC11 | must have | 3 |
+| HU08 | eu, como prestador, quero enviar meus documentos com a data de validade, para comprovar que estou regular sem depender de cobranca por whatsapp | UC08 | M - must have | 5 |
+| HU09 | eu, como administrador, quero ver em um painel os documentos vencidos e os que vencem em 30 dias, para cobrar a renovacao antes de a fiscalizacao chegar | UC09 | M - must have | 5 |
+| HU10 | eu, como administrador, quero registrar os contratos com vigencia e arquivo anexo, para nao depender mais da via impressa no armario | UC10 | S - should have | 5 |
+| HU11 | eu, como administrador, quero alterar a situacao cadastral do prestador com motivo registrado, para controlar quem esta liberado a receber servico | UC11 | M - must have | 3 |
 
 **criterios de aceite HU08**
 - dado que seleciono um arquivo com extensao diferente de pdf, jpg ou png, quando envio, entao o sistema recusa e informa os formatos aceitos (RNF09).
@@ -842,13 +848,13 @@ o campo "pontos" usa a sequencia de fibonacci (1, 2, 3, 5, 8) e representa esfor
 
 | id | historia | UC | prioridade | pontos |
 |---|---|---|---|---|
-| HU12 | eu, como cliente, quero abrir uma solicitacao descrevendo o que preciso e ate quando, para nao depender de mandar mensagem no grupo e torcer para alguem ver | UC12 | must have | 5 |
-| HU13 | eu, como administrador, quero atribuir a ordem escolhendo entre os prestadores aptos, para nao correr o risco de mandar servico para quem esta com documento vencido | UC13 | must have | 8 |
-| HU14 | eu, como prestador, quero aceitar ou recusar a ordem que me foi atribuida, para nao ficar responsavel por um servico que eu nao consigo atender | UC14 | should have | 3 |
-| HU15 | eu, como prestador, quero registrar o andamento do servico, para que o cliente e o gestor acompanhem sem precisar me ligar | UC15 | must have | 3 |
-| HU16 | eu, como prestador, quero concluir a ordem descrevendo o que foi feito, para encerrar formalmente o atendimento | UC16 | must have | 3 |
-| HU17 | eu, como administrador, quero cancelar uma ordem informando o motivo, para que o cancelamento fique registrado e nao vire discussao depois | UC17 | must have | 3 |
-| HU18 | eu, como cliente, quero avaliar o atendimento com nota e comentario, para que a empresa saiba quem atende bem | UC18 | must have | 3 |
+| HU12 | eu, como cliente, quero abrir uma solicitacao descrevendo o que preciso e ate quando, para nao depender de mandar mensagem no grupo e torcer para alguem ver | UC12 | M - must have | 5 |
+| HU13 | eu, como administrador, quero atribuir a ordem escolhendo entre os prestadores aptos, para nao correr o risco de mandar servico para quem esta com documento vencido | UC13 | M - must have | 8 |
+| HU14 | eu, como prestador, quero aceitar ou recusar a ordem que me foi atribuida, para nao ficar responsavel por um servico que eu nao consigo atender | UC14 | S - should have | 3 |
+| HU15 | eu, como prestador, quero registrar o andamento do servico, para que o cliente e o gestor acompanhem sem precisar me ligar | UC15 | M - must have | 3 |
+| HU16 | eu, como prestador, quero concluir a ordem descrevendo o que foi feito, para encerrar formalmente o atendimento | UC16 | M - must have | 3 |
+| HU17 | eu, como administrador, quero cancelar uma ordem informando o motivo, para que o cancelamento fique registrado e nao vire discussao depois | UC17 | M - must have | 3 |
+| HU18 | eu, como cliente, quero avaliar o atendimento com nota e comentario, para que a empresa saiba quem atende bem | UC18 | M - must have | 3 |
 
 **criterios de aceite HU12**
 - dado que escrevo uma descricao com menos de 20 caracteres, quando salvo, entao o sistema recusa e pede mais detalhe.
@@ -882,11 +888,11 @@ o campo "pontos" usa a sequencia de fibonacci (1, 2, 3, 5, 8) e representa esfor
 
 | id | historia | UC | prioridade | pontos |
 |---|---|---|---|---|
-| HU19 | eu, como usuario do sistema, quero consultar o historico de atendimentos filtrando por periodo, status e categoria, para achar rapido um servico antigo | UC19 | should have | 5 |
-| HU20 | eu, como administrador, quero um relatorio de desempenho por prestador, para decidir quem chamar com base em dado e nao em impressao | UC20 | should have | 5 |
-| HU21 | eu, como administrador, quero um relatorio de servicos por periodo agrupado por categoria, para enxergar onde esta a maior demanda | UC21 | could have | 3 |
-| HU22 | eu, como administrador, quero que as acões criticas fiquem registradas em log, para conseguir responder quem fez o que e quando | UC23 | should have | 3 |
-| HU23 | eu, como administrador, quero exportar o relatorio em pdf ou csv, para enviar o dado a quem nao tem acesso ao sistema | UC24 | could have | 2 |
+| HU19 | eu, como usuario do sistema, quero consultar o historico de atendimentos filtrando por periodo, status e categoria, para achar rapido um servico antigo | UC19 | S - should have | 5 |
+| HU20 | eu, como administrador, quero um relatorio de desempenho por prestador, para decidir quem chamar com base em dado e nao em impressao | UC20 | S - should have | 5 |
+| HU21 | eu, como administrador, quero um relatorio de servicos por periodo agrupado por categoria, para enxergar onde esta a maior demanda | UC21 | C - could have | 3 |
+| HU22 | eu, como administrador, quero que as acões criticas fiquem registradas em log, para conseguir responder quem fez o que e quando | UC23 | S - should have | 3 |
+| HU23 | eu, como administrador, quero exportar o relatorio em pdf ou csv, para enviar o dado a quem nao tem acesso ao sistema | UC24 | C - could have | 2 |
 
 **criterios de aceite HU19**
 - dado que sou prestador, quando abro o historico, entao vejo apenas as ordens atribuidas a mim (RNF02).
@@ -899,16 +905,16 @@ o campo "pontos" usa a sequencia de fibonacci (1, 2, 3, 5, 8) e representa esfor
 
 ### 8.6 resumo do backlog
 
-| epico | historias | pontos | prioridade predominante |
+| epico | historias | pontos | nivel predominante na escala |
 |---|---|---|---|
-| 1 - acesso e seguranca | HU01, HU02 | 5 | must have |
-| 2 - cadastros de apoio | HU03 a HU07 | 16 | must have |
-| 3 - documentacao e situacao cadastral | HU08 a HU11 | 18 | must have |
-| 4 - ordens de servico | HU12 a HU18 | 28 | must have |
-| 5 - consultas, relatorios e auditoria | HU19 a HU23 | 18 | should have |
+| 1 - acesso e seguranca | HU01, HU02 | 5 | M - must have |
+| 2 - cadastros de apoio | HU03 a HU07 | 16 | M - must have |
+| 3 - documentacao e situacao cadastral | HU08 a HU11 | 18 | M - must have |
+| 4 - ordens de servico | HU12 a HU18 | 28 | M - must have |
+| 5 - consultas, relatorios e auditoria | HU19 a HU23 | 18 | S - should have |
 | **total** | **23 historias** | **85 pontos** | |
 
-do total de 85 pontos, 60 estao classificados como must have e formam o mvp descrito na secao 6.4.
+do total de 85 pontos, 60 estao no nivel **M - must have** e formam o mvp descrito na secao 6.4.
 
 ---
 
@@ -918,26 +924,26 @@ a matriz garante que nenhum requisito funcional levantado na 1ª entrega ficou s
 
 | RF de origem | caso de uso | historia | prioridade | entrega prevista |
 |---|---|---|---|---|
-| RF01 - autenticar usuario | UC01 | HU01 | must have | release 1 |
-| RNF03 (derivado) | UC02 | HU02 | must have | release 1 |
-| RF02 - manter prestadores | UC03 | HU03 | must have | release 1 |
-| RF03 - manter clientes | UC04 | HU04 | must have | release 1 |
-| RF04 - manter categorias | UC05 | HU05 | must have | release 1 |
-| RF05 - manter catalogo de servicos | UC06 | HU06 | must have | release 1 |
-| RF06 - habilitar prestador em categorias | UC07 | HU07 | must have | release 1 |
-| RF07 - enviar documentos | UC08 | HU08 | must have | release 2 |
-| RF08 - alertar documentos vencidos | UC09 | HU09 | must have | release 2 |
-| RF09 - controlar situacao cadastral | UC11 | HU11 | must have | release 2 |
-| RF10 - manter contratos | UC10 | HU10 | should have | release 4 |
-| RF11 - registrar ordem de servico | UC12 | HU12 | must have | release 3 |
-| RF12 - atribuir ordem a um prestador | UC13, UC22 | HU13 | must have | release 3 |
-| RF13 - acompanhar a ordem | UC14, UC15, UC16, UC17 | HU14, HU15, HU16, HU17 | must have (UC14 é should) | release 3 e 4 |
-| RF14 - consultar ordens do prestador | UC14, UC15, UC16 | HU14, HU15, HU16 | must have | release 3 |
-| RF15 - avaliar o atendimento | UC18 | HU18 | must have | release 3 |
-| RF16 - consultar historico | UC19 | HU19 | should have | release 4 |
-| RF17 - relatorio de desempenho | UC20, UC24 | HU20, HU23 | should have | release 4 |
-| RF18 - relatorio de servicos por periodo | UC21, UC24 | HU21, HU23 | could have | backlog |
-| RF19 - registrar log de acões criticas | UC23 | HU22 | should have | release 4 |
+| RF01 - autenticar usuario | UC01 | HU01 | M - must have | release 1 |
+| RNF03 (derivado) | UC02 | HU02 | M - must have | release 1 |
+| RF02 - manter prestadores | UC03 | HU03 | M - must have | release 1 |
+| RF03 - manter clientes | UC04 | HU04 | M - must have | release 1 |
+| RF04 - manter categorias | UC05 | HU05 | M - must have | release 1 |
+| RF05 - manter catalogo de servicos | UC06 | HU06 | M - must have | release 1 |
+| RF06 - habilitar prestador em categorias | UC07 | HU07 | M - must have | release 1 |
+| RF07 - enviar documentos | UC08 | HU08 | M - must have | release 2 |
+| RF08 - alertar documentos vencidos | UC09 | HU09 | M - must have | release 2 |
+| RF09 - controlar situacao cadastral | UC11 | HU11 | M - must have | release 2 |
+| RF10 - manter contratos | UC10 | HU10 | S - should have | release 4 |
+| RF11 - registrar ordem de servico | UC12 | HU12 | M - must have | release 3 |
+| RF12 - atribuir ordem a um prestador | UC13, UC22 | HU13 | M - must have | release 3 |
+| RF13 - acompanhar a ordem | UC14, UC15, UC16, UC17 | HU14, HU15, HU16, HU17 | M - must have (UC14 é S) | release 3 e 4 |
+| RF14 - consultar ordens do prestador | UC14, UC15, UC16 | HU14, HU15, HU16 | M - must have | release 3 |
+| RF15 - avaliar o atendimento | UC18 | HU18 | M - must have | release 3 |
+| RF16 - consultar historico | UC19 | HU19 | S - should have | release 4 |
+| RF17 - relatorio de desempenho | UC20, UC24 | HU20, HU23 | S - should have | release 4 |
+| RF18 - relatorio de servicos por periodo | UC21, UC24 | HU21, HU23 | C - could have | backlog |
+| RF19 - registrar log de acões criticas | UC23 | HU22 | S - should have | release 4 |
 
 **cobertura:** os 19 requisitos funcionais estao cobertos. os casos de uso UC02, UC22 e UC24 nao nascem de um RF especifico: UC02 vem do RNF03, UC22 é a fatoracao das regras RN01 a RN04 usadas dentro do RF12, e UC24 é um complemento dos RF17 e RF18 classificado como could have.
 

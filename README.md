@@ -38,7 +38,16 @@ a lista completa (19 requisitos funcionais, 11 nao funcionais e 12 regras de neg
 
 ## priorizacao
 
-o escopo foi priorizado com moscow, porque o prazo é fixo e a equipe tem duas pessoas: 16 casos de uso sao must have e formam o mvp (cadastro, documentacao, ordem de servico e avaliacao), 5 sao should have (contratos, aceite do prestador, historico, relatorio de desempenho e log) e 2 sao could have (relatorio por periodo e exportacao). o que ficou de fora e o porque estao na secao 6 do documento de casos de uso.
+o escopo foi priorizado na **escala moscow**, que tem quatro niveis: **M**ust have, **S**hould have, **C**ould have e **W**ont have. a escolha foi por o prazo ser fixo e a equipe ter duas pessoas, entao o que precisa ser negociado é o escopo e nao a data.
+
+| nivel | quantos | o que entrou |
+|---|---|---|
+| **M** - must have | 16 casos de uso | autenticacao, cadastros, documentacao, situacao cadastral e o fluxo completo da ordem de servico ate a avaliacao. é o mvp |
+| **S** - should have | 5 casos de uso | contratos, aceite da atribuicao pelo prestador, historico consolidado, relatorio de desempenho e log |
+| **C** - could have | 2 casos de uso | relatorio de servicos por periodo e exportacao em pdf ou csv |
+| **W** - wont have | 8 itens | pagamento online, nota fiscal, assinatura digital, app nativo, whatsapp, aviso automatico por email, geolocalizacao e integracao com erp |
+
+a definicao de cada nivel, o criterio de decisao e a justificativa item a item estao na secao 6 do [documento de casos de uso](docs/casos-de-uso.md).
 
 ## tecnologias previstas
 
@@ -95,6 +104,15 @@ pra gerar as imagens de novo depois de mexer em um `.puml`:
 ```
 java -jar plantuml.jar -tpng diagramas/*.puml
 java -jar plantuml.jar -tsvg diagramas/*.puml
+```
+
+### versao imprimivel dos documentos
+
+cada documento em markdown tem um `.html` equivalente, com capa, formatacao a4 e as imagens ja embutidas, pronto pra imprimir ou salvar em pdf. depois de mexer em algum `.md`, é so rodar:
+
+```
+pip install markdown
+python ferramentas/gerar-html.py
 ```
 
 ## entregas
