@@ -32,8 +32,8 @@ ADM -- UC07
 
 
 legend right
-  <b>prioridade (moscow)</b>
-  |<back:#cfe0f0>       </back>| must have |
-  |<back:#e8f0f8>       </back>| should have |
+  <b>escala moscow</b>
+  |<back:#cfe0f0>       </back>| <b>M</b> - must have |
+  |<back:#e8f0f8>       </back>| <b>S</b> - should have |
 endlegend
 @enduml

@@ -10,12 +10,14 @@ rectangle "sgp - consultas e relatorios" {
   usecase "UC19\nconsultar historico\nde atendimentos" as UC19 #e8f0f8
   usecase "UC20\ngerar relatorio de\ndesempenho do prestador" as UC20 #e8f0f8
   usecase "UC21\ngerar relatorio de\nservicos por periodo" as UC21 #f4f7fa
+  usecase "UC24\nexportar relatorio\nem pdf ou csv" as UC24 #f4f7fa
 }
 
 USR <|-- ADM
 USR -- UC19
 ADM -- UC20
 ADM -- UC21
+ADM -- UC24
 
 UC24 ..> UC20 : <<extend>>
 UC24 ..> UC21 : <<extend>>
@@ -27,8 +29,8 @@ note bottom of UC19
 end note
 
 legend right
-  <b>prioridade (moscow)</b>
-  |<back:#e8f0f8>       </back>| should have |
-  |<back:#f4f7fa>       </back>| could have |
+  <b>escala moscow</b>
+  |<back:#e8f0f8>       </back>| <b>S</b> - should have |
+  |<back:#f4f7fa>       </back>| <b>C</b> - could have |
 endlegend
 @enduml
