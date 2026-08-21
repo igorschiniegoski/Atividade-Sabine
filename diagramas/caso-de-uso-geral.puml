@@ -1,0 +1,64 @@
+@startuml caso-de-uso-geral
+' sgp - sistema de gestao de prestadores
+' equipe 8 - unicesumar - imersao profissional / projeto de software
+' diagrama de casos de uso - visao geral (2a entrega)
+!include _estilo.puml
+
+left to right direction
+
+actor "administrador" as ADM
+actor "prestador\nde servico" as PRE
+actor "cliente" as CLI
+
+rectangle "sgp - sistema de gestao de prestadores" {
+  usecase "manter cadastros\nbasicos\n(UC03 - UC07)" as G2 #cfe0f0
+  usecase "gerenciar contratos\n(UC10)" as G4 #e8f0f8
+  usecase "controlar situacao\ncadastral\n(UC11)" as G5 #cfe0f0
+  usecase "atribuir ordem\na um prestador\n(UC13)" as G7 #cfe0f0
+  usecase "cancelar ordem\nde servico\n(UC17)" as G9 #cfe0f0
+  usecase "gerar relatorios\ngerenciais\n(UC20 - UC21, UC24)" as G12 #e8f0f8
+  usecase "verificar aptidao\ndo prestador\n(UC22)" as G13 #cfe0f0
+  usecase "registrar log de\nacao critica\n(UC23)" as G14 #e8f0f8
+
+  usecase "gerenciar acesso\nao sistema\n(UC01 - UC02)" as G1 #cfe0f0
+  usecase "consultar historico\nde atendimentos\n(UC19)" as G11 #e8f0f8
+
+  usecase "gerenciar documentacao\ndo prestador\n(UC08 - UC09)" as G3 #cfe0f0
+  usecase "executar ordem\nde servico\n(UC14 - UC16)" as G8 #cfe0f0
+  usecase "solicitar servico\n(UC12)" as G6 #cfe0f0
+  usecase "avaliar atendimento\n(UC18)" as G10 #cfe0f0
+}
+
+ADM -- G2
+ADM -- G4
+ADM -- G5
+ADM -- G7
+ADM -- G9
+ADM -- G12
+ADM -- G3
+ADM -- G6
+ADM -- G1
+ADM -- G11
+
+G1 -- PRE
+G11 -- PRE
+G3 -- PRE
+G8 -- PRE
+
+G1 -- CLI
+G11 -- CLI
+G6 -- CLI
+G10 -- CLI
+
+G7 ..> G13 : <<include>>
+G7 ..> G14 : <<include>>
+G5 ..> G14 : <<include>>
+G9 ..> G14 : <<include>>
+
+legend right
+  <b>prioridade (moscow)</b>
+  |<back:#cfe0f0>       </back>| must have |
+  |<back:#e8f0f8>       </back>| should have |
+endlegend
+
+@enduml

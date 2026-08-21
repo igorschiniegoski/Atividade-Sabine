@@ -1,0 +1,39 @@
+@startuml caso-de-uso-acesso-cadastros
+' sgp - modulo de acesso e cadastros - equipe 8
+!include _estilo.puml
+left to right direction
+
+actor "usuario" as USR
+actor "administrador" as ADM
+actor "prestador\nde servico" as PRE
+actor "cliente" as CLI
+
+USR <|-- ADM
+USR <|-- PRE
+USR <|-- CLI
+
+rectangle "sgp - acesso e cadastros" {
+  usecase "UC01\nautenticar usuario" as UC01 #cfe0f0
+  usecase "UC02\nencerrar sessao" as UC02 #cfe0f0
+  usecase "UC03\nmanter cadastro\nde prestadores" as UC03 #cfe0f0
+  usecase "UC04\nmanter cadastro\nde clientes" as UC04 #cfe0f0
+  usecase "UC05\nmanter categorias\nde servico" as UC05 #cfe0f0
+  usecase "UC06\nmanter catalogo\nde servicos" as UC06 #e8f0f8
+  usecase "UC07\nhabilitar prestador\nem categorias" as UC07 #cfe0f0
+}
+
+USR -- UC01
+USR -- UC02
+ADM -- UC03
+ADM -- UC04
+ADM -- UC05
+ADM -- UC06
+ADM -- UC07
+
+
+legend right
+  <b>prioridade (moscow)</b>
+  |<back:#cfe0f0>       </back>| must have |
+  |<back:#e8f0f8>       </back>| should have |
+endlegend
+@enduml

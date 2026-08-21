@@ -34,38 +34,75 @@ centralizar em um sistema só o cadastro, a documentacao e a execucao dos servic
 
 sao 3 perfis de acesso: administrador, prestador e cliente. cada um enxerga só o que é da responsabilidade dele.
 
-a lista completa (19 requisitos funcionais, 11 nao funcionais e 12 regras de negocio) esta em [docs/documento-visao-requisitos.md](docs/documento-visao-requisitos.md).
+a lista completa (19 requisitos funcionais, 11 nao funcionais e 12 regras de negocio) esta em [docs/documento-visao-requisitos.md](docs/documento-visao-requisitos.md), e o desdobramento disso em casos de uso, historias de usuario e prioridades esta em [docs/casos-de-uso.md](docs/casos-de-uso.md).
+
+## priorizacao
+
+o escopo foi priorizado com moscow, porque o prazo é fixo e a equipe tem duas pessoas: 16 casos de uso sao must have e formam o mvp (cadastro, documentacao, ordem de servico e avaliacao), 5 sao should have (contratos, aceite do prestador, historico, relatorio de desempenho e log) e 2 sao could have (relatorio por periodo e exportacao). o que ficou de fora e o porque estao na secao 6 do documento de casos de uso.
 
 ## tecnologias previstas
 
-| camada | escolha |
-|---|---|
-| interface | next.js + react |
-| servidor | node.js (rotas de api do proprio next) |
-| banco | postgresql |
-| arquivos | storage em nuvem pros documentos e contratos |
-| hospedagem | vercel |
+| camada | escolha | por que |
+|---|---|---|
+| linguagem | typescript 5 | tipagem compartilhada entre tela e api |
+| interface | next.js 15 (app router) + react 19 | um projeto so entrega tela e api |
+| estilo | tailwind css + shadcn/ui | componentes responsivos prontos (RNF04) |
+| servidor | node.js 20 lts, rotas de api do proprio next | menos configuracao e um deploy so |
+| acesso a dados | prisma orm | migracões versionadas e schema como documentacao do modelo |
+| banco | postgresql 16 | restricao de unicidade nativa pra RN10 e tipos de data adequados |
+| autenticacao | auth.js v5 (credentials) + bcrypt | login por email e senha, sessao de 30 min (RF01, RNF01, RNF03) |
+| validacao | zod | o mesmo esquema valida no formulario e na api (RNF02) |
+| arquivos | storage de objetos em nuvem | documentos e contratos em pdf, jpg e png, ate 10 mb (RNF09) |
+| hospedagem | vercel | url publica e deploy a cada push |
+| testes | vitest e playwright | regras de negocio e fluxos criticos |
 
-a escolha foi por familiaridade da equipe e por serem ferramentas com plano gratuito, que é o que cabe no prazo e no orcamento do trabalho. nada disso esta fechado ainda, pode mudar até a 3ª entrega.
+a escolha foi por familiaridade da equipe e por serem ferramentas com plano gratuito, que é o que cabe no prazo e no orcamento do trabalho. o detalhamento de cada decisao, as alternativas descartadas e a arquitetura em camadas estao em [docs/tecnologias-e-arquitetura.md](docs/tecnologias-e-arquitetura.md). continua em aberto apenas o provedor do postgresql gerenciado e do storage.
 
 ## organizacao do repositorio
 
 ```
-docs/        documento de visao e requisitos
-diagramas/   casos de uso, atividades e arquitetura (2ª entrega)
+docs/        documentos das entregas
+diagramas/   fontes .puml e imagens dos diagramas
 banco-de-dados/  modelo conceitual, logico e dicionario (2ª entrega)
 prototipos/  mapa de navegacao e telas (3ª entrega)
-src/         codigo fonte
+src/         codigo fonte (3ª entrega)
 ```
 
-as pastas vao sendo criadas conforme cada entrega. hoje só existe a docs/.
+as pastas vao sendo criadas conforme cada entrega.
+
+### documentos
+
+| documento | entrega | conteudo |
+|---|---|---|
+| [documento-visao-requisitos.md](docs/documento-visao-requisitos.md) | 1ª | contexto, escopo, 19 RF, 11 RNF e 12 regras de negocio |
+| [casos-de-uso.md](docs/casos-de-uso.md) | 2ª | atores, diagramas de caso de uso, especificacao dos 24 casos de uso, 23 historias de usuario, priorizacao moscow e matriz de rastreabilidade |
+| [tecnologias-e-arquitetura.md](docs/tecnologias-e-arquitetura.md) | 2ª | stack definida com justificativa, arquitetura em camadas e como cada RNF sera atendido |
+
+### diagramas
+
+os diagramas sao escritos em plantuml e o arquivo `.puml` fica versionado junto com o `.png` e o `.svg` gerados, pra que qualquer alteracao apareca no diff.
+
+| diagrama | arquivo |
+|---|---|
+| casos de uso - visao geral | [diagramas/caso-de-uso-geral.png](diagramas/caso-de-uso-geral.png) |
+| casos de uso - acesso e cadastros | [diagramas/caso-de-uso-acesso-cadastros.png](diagramas/caso-de-uso-acesso-cadastros.png) |
+| casos de uso - documentacao e contratos | [diagramas/caso-de-uso-documentacao.png](diagramas/caso-de-uso-documentacao.png) |
+| casos de uso - ordens de servico | [diagramas/caso-de-uso-ordens.png](diagramas/caso-de-uso-ordens.png) |
+| casos de uso - consultas e relatorios | [diagramas/caso-de-uso-consultas.png](diagramas/caso-de-uso-consultas.png) |
+
+pra gerar as imagens de novo depois de mexer em um `.puml`:
+
+```
+java -jar plantuml.jar -tpng diagramas/*.puml
+java -jar plantuml.jar -tsvg diagramas/*.puml
+```
 
 ## entregas
 
 | entrega | data | conteudo | status |
 |---|---|---|---|
 | 1 | 14/08/2026 | documento de visao e requisitos | pronto |
-| 2 | 08/09/2026 | casos de uso, diagrama de classes e modelagem do banco | a fazer |
+| 2 | 08/09/2026 | casos de uso, diagrama de classes e modelagem do banco | em andamento (casos de uso e stack prontos, falta modelagem do banco e diagramas de atividade) |
 | 3 | 25/09/2026 | repositorio, prototipos e definicao do mvp | a fazer |
 
 ## como rodar

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>sgp - tecnologias e arquitetura - equipe 8</title>
+<style>
+  @page { size: A4; margin: 2.5cm 2.2cm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    font-size: 11.5pt;
+    line-height: 1.45;
+    color: #222;
+    max-width: 21cm;
+    margin: 0 auto;
+    padding: 2.5cm 2.2cm;
+    background: #fff;
+  }
+  h1, h2, h3 { color: #1f4e79; margin-bottom: .4em; }
+  h1 { font-size: 20pt; }
+  h2 { font-size: 14pt; margin-top: 1.6em; border-bottom: 1px solid #d0d7de; padding-bottom: .2em; }
+  h3 { font-size: 12pt; margin-top: 1.2em; }
+  p { margin: .5em 0; text-align: justify; }
+  ul { margin: .4em 0 .8em 0; padding-left: 1.4em; }
+  li { margin: .25em 0; }
+  table { border-collapse: collapse; width: 100%; margin: .8em 0 1.2em 0; font-size: 10.5pt; }
+  th { background: #1f4e79; color: #fff; text-align: left; padding: 6px 8px; font-weight: 600; }
+  td { border: 1px solid #c8d1da; padding: 6px 8px; vertical-align: top; }
+  tr:nth-child(even) td { background: #f6f8fa; }
+  .cod { white-space: nowrap; font-weight: 600; width: 62px; }
+  .capa { text-align: center; page-break-after: always; padding-top: 3cm; }
+  .capa .inst { font-size: 12pt; letter-spacing: .5px; color: #444; }
+  .capa .titulo { font-size: 24pt; color: #1f4e79; font-weight: bold; margin-top: 4cm; }
+  .capa .sub { font-size: 14pt; color: #444; margin-top: .4cm; }
+  .capa .equipe { margin-top: 3.5cm; font-size: 12pt; line-height: 1.9; }
+  .capa .rodape { margin-top: 3cm; font-size: 11pt; color: #555; }
+  .box { background: #eef3f8; border-left: 4px solid #1f4e79; padding: 10px 14px; margin: 1em 0; }
+  .sumario ol { padding-left: 1.4em; }
+  .sumario li { margin: .3em 0; }
+  @media print { body { padding: 0; } h2 { page-break-after: avoid; } table { page-break-inside: avoid; } }
+
+  img { max-width: 100%; height: auto; display: block; margin: 1em auto; }
+  figure { margin: 1.2em 0; text-align: center; page-break-inside: avoid; }
+  pre { background: #f6f8fa; border: 1px solid #d0d7de; padding: 10px 12px;
+        font-family: Consolas, "Courier New", monospace; font-size: 9.5pt;
+        line-height: 1.35; overflow-x: auto; page-break-inside: avoid; }
+  code { font-family: Consolas, "Courier New", monospace; font-size: 10pt;
+         background: #f0f3f6; padding: 1px 4px; border-radius: 3px; }
+  pre code { background: none; padding: 0; font-size: 9.5pt; }
+  h4 { color: #1f4e79; font-size: 11.5pt; margin-top: 1em; margin-bottom: .3em; }
+  hr { border: 0; border-top: 1px solid #d0d7de; margin: 1.6em 0; }
+  ol li, ul li { text-align: justify; }
+</style>
+</head>
+<body>
+
+<div class="capa">
+  <div class="inst">unicesumar<br>analise e desenvolvimento de sistemas<br>imersao profissional - projeto de software</div>
+  <div class="titulo">sgp - sistema de gestao de prestadores</div>
+  <div class="sub">especificacao de tecnologias e arquitetura<br>2&ordf; entrega - equipe 8</div>
+  <div class="equipe">
+    <strong>integrantes</strong><br>
+    luis gustavo boratto de oliveira<br>
+    igor schiniegoski pallisser
+  </div>
+  <div class="rodape">agosto de 2026</div>
+</div>
+
+<h2>1. objetivo</h2>
+<p>na 1ª entrega a equipe registrou a stack em nivel de intencao: next.js, node, postgresql e vercel. este documento fecha essa definicao, informando exatamente qual biblioteca sera usada em cada responsabilidade, por que ela foi escolhida, qual alternativa foi descartada e a qual requisito nao funcional a escolha responde. o objetivo é que, ao iniciar a codificacao na 3ª entrega, nenhuma decisao estrutural precise ser tomada no meio do caminho.</p>
+<hr />
+<h2>2. criterios de escolha</h2>
+<p>toda escolha desta secao foi avaliada por quatro criterios, nesta ordem:</p>
+<table>
+<thead>
+<tr>
+<th>criterio</th>
+<th>o que significa na pratica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>custo zero</strong></td>
+<td>precisa ter plano gratuito suficiente para o volume de dados de teste do trabalho. o projeto nao tem orcamento</td>
+</tr>
+<tr>
+<td><strong>familiaridade da equipe</strong></td>
+<td>com dois integrantes e um bimestre, nao ha folga para aprender uma tecnologia nova do zero no caminho critico</td>
+</tr>
+<tr>
+<td><strong>atendimento aos RNF</strong></td>
+<td>a escolha precisa ajudar a cumprir um requisito nao funcional do documento de visao, e nao criar trabalho extra para cumpri-lo</td>
+</tr>
+<tr>
+<td><strong>facilidade de entrega e demonstracao</strong></td>
+<td>o professor precisa conseguir abrir o sistema por um link, sem instalar nada</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. stack definida</h2>
+<h3>3.1 quadro geral</h3>
+<table>
+<thead>
+<tr>
+<th>camada</th>
+<th>tecnologia</th>
+<th>versao prevista</th>
+<th>responsabilidade no sgp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>linguagem</td>
+<td>typescript</td>
+<td>5.x</td>
+<td>tipagem estatica no front e no back, com o mesmo tipo compartilhado entre os dois</td>
+</tr>
+<tr>
+<td>framework web</td>
+<td>next.js (app router)</td>
+<td>15 ou superior</td>
+<td>renderizacao das telas e hospedagem das rotas de api no mesmo projeto</td>
+</tr>
+<tr>
+<td>biblioteca de interface</td>
+<td>react</td>
+<td>19</td>
+<td>componentes das telas</td>
+</tr>
+<tr>
+<td>estilo</td>
+<td>tailwind css + shadcn/ui</td>
+<td>tailwind 4, shadcn/ui atual</td>
+<td>layout responsivo e componentes prontos de formulario, tabela, dialogo e alerta</td>
+</tr>
+<tr>
+<td>runtime do servidor</td>
+<td>node.js</td>
+<td>20 lts ou superior</td>
+<td>execucao das rotas de api do proprio next</td>
+</tr>
+<tr>
+<td>acesso a dados</td>
+<td>prisma orm</td>
+<td>6.x</td>
+<td>mapeamento objeto-relacional, migracões versionadas e tipagem do banco</td>
+</tr>
+<tr>
+<td>banco de dados</td>
+<td>postgresql</td>
+<td>16 ou superior</td>
+<td>persistencia. instancia gerenciada com plano gratuito</td>
+</tr>
+<tr>
+<td>autenticacao</td>
+<td>auth.js (next-auth) v5, estrategia credentials</td>
+<td>5.x</td>
+<td>login por email e senha, sessao em cookie httponly e controle de perfil</td>
+</tr>
+<tr>
+<td>hash de senha</td>
+<td>bcrypt</td>
+<td>5.x</td>
+<td>armazenamento da senha conforme RNF01</td>
+</tr>
+<tr>
+<td>validacao</td>
+<td>zod</td>
+<td>3.x</td>
+<td>validacao dos dados no cliente e no servidor a partir do mesmo esquema</td>
+</tr>
+<tr>
+<td>armazenamento de arquivos</td>
+<td>storage de objetos do proprio provedor do banco</td>
+<td>-</td>
+<td>documentos e contratos em pdf, jpg e png</td>
+</tr>
+<tr>
+<td>hospedagem</td>
+<td>vercel</td>
+<td>plano hobby</td>
+<td>publicacao continua a cada push na branch principal</td>
+</tr>
+<tr>
+<td>versionamento</td>
+<td>git + github</td>
+<td>-</td>
+<td>repositorio unico, com commits identificaveis por integrante (RNF11)</td>
+</tr>
+<tr>
+<td>testes</td>
+<td>vitest (unidade) e playwright (fluxo)</td>
+<td>atual</td>
+<td>verificacao das regras de negocio e dos fluxos criticos</td>
+</tr>
+<tr>
+<td>modelagem</td>
+<td>plantuml</td>
+<td>1.2026</td>
+<td>diagramas versionados como texto junto do codigo</td>
+</tr>
+</tbody>
+</table>
+<h3>3.2 justificativa por escolha</h3>
+<table>
+<thead>
+<tr>
+<th>escolha</th>
+<th>por que</th>
+<th>alternativa considerada</th>
+<th>por que nao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>next.js com app router</strong></td>
+<td>um unico projeto entrega a interface e a api, o que reduz configuracao, deploy e tempo de setup. é o framework com que a equipe ja trabalhou</td>
+<td>react puro com api separada em express</td>
+<td>dois projetos, dois deploys e configuracao de cors, sem ganho para o porte deste sistema</td>
+</tr>
+<tr>
+<td><strong>typescript</strong></td>
+<td>erro de tipo aparece na hora da escrita e nao no teste. com duas pessoas mexendo no mesmo codigo, isso evita retrabalho</td>
+<td>javascript</td>
+<td>perde a checagem em um dominio com varias entidades e status</td>
+</tr>
+<tr>
+<td><strong>prisma</strong></td>
+<td>migracões versionadas em arquivo, que é o que permite reconstruir o banco identico no computador dos dois integrantes. o schema tambem serve como documentacao viva do modelo logico</td>
+<td>sql escrito na mao com driver <code>pg</code></td>
+<td>mais controle, mas custa tempo em algo que nao é o foco da avaliacao</td>
+</tr>
+<tr>
+<td><strong>postgresql</strong></td>
+<td>é o banco pedido na disciplina, tem tipos adequados (data, numerico, enum) e restricao de unicidade nativa para atender a RN10</td>
+<td>mysql</td>
+<td>atenderia, mas postgresql é o padrao adotado nas demais materias do curso</td>
+</tr>
+<tr>
+<td><strong>auth.js com credentials</strong></td>
+<td>resolve sessao, cookie e expiracao sem escrever isso do zero, e a estrategia credentials é a que corresponde ao RF01 (email e senha)</td>
+<td>jwt implementado manualmente</td>
+<td>implementar sessao segura na mao é justamente onde erro de seguranca costuma aparecer</td>
+</tr>
+<tr>
+<td><strong>tailwind + shadcn/ui</strong></td>
+<td>componentes acessiveis e responsivos prontos, o que ajuda a cumprir o RNF04 sem gastar o prazo escrevendo css</td>
+<td>bootstrap</td>
+<td>funciona, mas os componentes ficam com aparencia generica e a customizacao é mais trabalhosa</td>
+</tr>
+<tr>
+<td><strong>zod</strong></td>
+<td>o mesmo esquema valida no formulario e na rota de api, o que garante o RNF02 sem duplicar regra</td>
+<td>validacao so no formulario</td>
+<td>deixaria a api aceitando requisicao manipulada, violando o RNF02</td>
+</tr>
+<tr>
+<td><strong>vercel</strong></td>
+<td>deploy automatico a cada push, url publica para o professor e integracao direta com o next.js</td>
+<td>render, railway</td>
+<td>atendem, mas exigem mais configuracao e o plano gratuito hiberna o servico</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. arquitetura da aplicacao</h2>
+<h3>4.1 estilo arquitetural</h3>
+<p>o sgp segue uma arquitetura <strong>monolitica em camadas</strong>, publicada como aplicacao unica. a separacao em microsservicos foi descartada por nao haver ganho: o sistema tem um unico dominio, um unico time e uma base de dados so.</p>
+<pre><code>   navegador (chrome, edge, firefox)
+             |
+             | https
+             v
++---------------------------------------------+
+|  next.js na vercel                          |
+|                                             |
+|  camada de apresentacao                     |
+|  telas em react, componentes shadcn/ui      |
+|                                             |
+|  camada de aplicacao                        |
+|  rotas de api, autorizacao por perfil,      |
+|  validacao com zod                          |
+|                                             |
+|  camada de dominio                          |
+|  regras RN01 a RN12, maquina de estado      |
+|  da ordem de servico                        |
+|                                             |
+|  camada de acesso a dados                   |
+|  prisma orm                                 |
++---------------------------------------------+
+        |                        |
+        v                        v
++----------------+     +----------------------+
+|  postgresql    |     |  storage de objetos  |
+|  dados         |     |  documentos e        |
+|  transacionais |     |  contratos           |
++----------------+     +----------------------+
+</code></pre>
+<h3>4.2 responsabilidade de cada camada</h3>
+<table>
+<thead>
+<tr>
+<th>camada</th>
+<th>o que fica aqui</th>
+<th>o que nao pode ficar aqui</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apresentacao</td>
+<td>telas, formularios, mascaras de cpf e cnpj, exibicao de mensagem</td>
+<td>regra de negocio e decisao de permissao</td>
+</tr>
+<tr>
+<td>aplicacao</td>
+<td>recebimento da requisicao, verificacao do perfil, validacao de entrada, orquestracao</td>
+<td>consulta sql direta</td>
+</tr>
+<tr>
+<td>dominio</td>
+<td>as 12 regras de negocio, a transicao de status da ordem, o calculo da nota media e do atraso</td>
+<td>detalhe de banco ou de framework</td>
+</tr>
+<tr>
+<td>acesso a dados</td>
+<td>consultas, transacões e migracões</td>
+<td>regra de negocio</td>
+</tr>
+</tbody>
+</table>
+<p>a regra que sustenta essa divisao é o RNF02: <strong>nenhuma permissao é decidida na tela</strong>. esconder o botao é so conforto visual. a rota de api verifica o perfil e a titularidade do registro antes de qualquer operacao, e recusa a requisicao quando o perfil nao tem direito, mesmo que ela tenha sido montada fora da interface.</p>
+<h3>4.3 onde cada caso de uso critico é implementado</h3>
+<table>
+<thead>
+<tr>
+<th>caso de uso</th>
+<th>ponto de implementacao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UC01 - autenticar</td>
+<td>provider credentials do auth.js, com comparacao de hash bcrypt</td>
+</tr>
+<tr>
+<td>UC22 - verificar aptidao</td>
+<td>funcao unica na camada de dominio, chamada pela rota de atribuicao. concentra RN01 a RN04 em um lugar so</td>
+</tr>
+<tr>
+<td>UC13 - atribuir ordem</td>
+<td>transacao no banco: revalida a aptidao, grava o status e grava o log em uma operacao unica, para evitar atribuicao duplicada</td>
+</tr>
+<tr>
+<td>UC15, UC16 - andamento e conclusao</td>
+<td>maquina de estado da ordem, que recusa qualquer transicao fora da sequencia definida na RN05</td>
+</tr>
+<tr>
+<td>UC23 - log</td>
+<td>tabela sem rota de alteracao nem de exclusao. gravacao apenas por insercao</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>5. como cada requisito nao funcional é atendido</h2>
+<table>
+<thead>
+<tr>
+<th>RNF</th>
+<th>requisito</th>
+<th>como sera atendido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RNF01</td>
+<td>senha em hash</td>
+<td>bcrypt com fator de custo 10 na criacao e na troca de senha. a coluna guarda apenas o hash</td>
+</tr>
+<tr>
+<td>RNF02</td>
+<td>permissao validada no servidor</td>
+<td>verificacao de perfil e de titularidade em toda rota de api, com esquema zod na entrada</td>
+</tr>
+<tr>
+<td>RNF03</td>
+<td>sessao expira em 30 minutos</td>
+<td><code>maxAge</code> da sessao do auth.js configurado em 1800 segundos, renovado a cada requisicao valida</td>
+</tr>
+<tr>
+<td>RNF04</td>
+<td>interface responsiva</td>
+<td>tailwind com layout fluido, testado em 1366x768 e em largura de celular, sem rolagem horizontal</td>
+</tr>
+<tr>
+<td>RNF05</td>
+<td>confirmacao e mensagem de retorno</td>
+<td>dialogo de confirmacao do shadcn/ui em toda acao destrutiva e notificacao de sucesso ou erro apos cada operacao</td>
+</tr>
+<tr>
+<td>RNF06</td>
+<td>listagem paginada em ate 3 segundos com 5 mil registros</td>
+<td>paginacao no banco (<code>limit</code> e <code>offset</code>), indice nas colunas de filtro e carga de dados ficticios para medir o tempo</td>
+</tr>
+<tr>
+<td>RNF07</td>
+<td>compatibilidade com chrome, edge e firefox</td>
+<td>uso apenas de recursos suportados pelas versões atuais dos tres, sem api experimental</td>
+</tr>
+<tr>
+<td>RNF08</td>
+<td>hospedagem em nuvem com backup diario</td>
+<td>instancia gerenciada de postgresql com backup automatico diario incluido no plano gratuito</td>
+</tr>
+<tr>
+<td>RNF09</td>
+<td>upload de pdf, jpg e png ate 10 mb</td>
+<td>validacao de tipo mime e de tamanho na rota de upload, antes de enviar ao storage</td>
+</tr>
+<tr>
+<td>RNF10</td>
+<td>privacidade e lgpd</td>
+<td>dados pessoais visiveis apenas ao perfil autorizado, base de teste com dados ficticios e rotina de anonimizacao do cadastro mediante solicitacao</td>
+</tr>
+<tr>
+<td>RNF11</td>
+<td>codigo versionado com padrao</td>
+<td>repositorio no github, branch por funcionalidade, commits no padrao <code>tipo: descricao</code> e readme atualizado a cada entrega</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>6. organizacao prevista do repositorio</h2>
+<pre><code>/app                 rotas do next.js (telas e api)
+  /(auth)            login e recuperacao de acesso
+  /(admin)           telas do perfil administrador
+  /(prestador)       telas do perfil prestador
+  /(cliente)         telas do perfil cliente
+  /api               rotas de api
+/components          componentes reutilizaveis de interface
+/lib
+  /dominio           regras de negocio RN01 a RN12
+  /db                cliente prisma e consultas
+  /validacao         esquemas zod
+/prisma
+  schema.prisma      modelo de dados
+  /migrations        migracões versionadas
+/docs                documentacao das entregas
+/diagramas           fontes .puml e imagens geradas
+/prototipos          telas da 3a entrega
+</code></pre>
+<hr />
+<h2>7. ambiente de desenvolvimento</h2>
+<table>
+<thead>
+<tr>
+<th>item</th>
+<th>definicao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>editor</td>
+<td>vs code, com extensões de eslint, prettier e prisma</td>
+</tr>
+<tr>
+<td>gerenciador de pacotes</td>
+<td>npm</td>
+</tr>
+<tr>
+<td>banco local</td>
+<td>instancia postgresql em docker, para nao depender de internet durante o desenvolvimento</td>
+</tr>
+<tr>
+<td>variaveis de ambiente</td>
+<td>arquivo <code>.env.local</code>, fora do versionamento. o repositorio guarda apenas o <code>.env.example</code></td>
+</tr>
+<tr>
+<td>fluxo de trabalho</td>
+<td>branch por funcionalidade, pull request revisado pelo outro integrante antes do merge na principal</td>
+</tr>
+<tr>
+<td>publicacao</td>
+<td>automatica na vercel a cada merge na branch principal</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>8. decisões ainda em aberto</h2>
+<p>as definicões abaixo nao bloqueiam o inicio do desenvolvimento e serao fechadas ate a 3ª entrega.</p>
+<table>
+<thead>
+<tr>
+<th>item</th>
+<th>opcões em avaliacao</th>
+<th>quando decidir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>provedor do postgresql gerenciado</td>
+<td>neon ou supabase</td>
+<td>ao criar o projeto, junto com a definicao do storage, porque a escolha do banco arrasta o storage</td>
+</tr>
+<tr>
+<td>storage dos documentos</td>
+<td>vercel blob ou storage do supabase</td>
+<td>mesmo momento acima</td>
+</tr>
+<tr>
+<td>geracao do pdf do relatorio (UC24)</td>
+<td>biblioteca no servidor ou impressao pelo navegador</td>
+<td>apenas se UC24 sair do backlog</td>
+</tr>
+<tr>
+<td>biblioteca de grafico no relatorio</td>
+<td>recharts ou tabela simples sem grafico</td>
+<td>na construcao do UC20</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>9. riscos tecnicos</h2>
+<table>
+<thead>
+<tr>
+<th>risco</th>
+<th>impacto</th>
+<th>como a equipe pretende tratar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>limite do plano gratuito de storage ou de banco</td>
+<td>alto</td>
+<td>volume de teste controlado, com no maximo alguns megabytes de arquivo por prestador</td>
+</tr>
+<tr>
+<td>hibernacao da instancia gratuita do banco</td>
+<td>medio</td>
+<td>acessar o sistema antes de qualquer apresentacao, para a primeira requisicao nao pegar o banco frio</td>
+</tr>
+<tr>
+<td>a equipe nunca usou auth.js v5</td>
+<td>medio</td>
+<td>implementar a autenticacao logo na release 1, quando ainda ha prazo para trocar de abordagem</td>
+</tr>
+<tr>
+<td>indisponibilidade de um integrante</td>
+<td>alto</td>
+<td>commits pequenos e frequentes, e nenhuma parte do sistema conhecida por apenas uma pessoa</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>10. referencias</h2>
+<ul>
+<li>sgp - documento de visao e requisitos, versao 1.0, equipe 8, 14/08/2026.</li>
+<li>sgp - documento de casos de uso, historias de usuario e priorizacao, versao 1.0, equipe 8, 21/08/2026.</li>
+<li>sommerville, i. <em>engenharia de software</em>. 10. ed. sao paulo: pearson, 2018.</li>
+<li>documentacao oficial do next.js, prisma, auth.js e tailwind css, consultada em agosto de 2026.</li>
+</ul>
+<hr />
+<h2>historico de alteracões</h2>
+<table>
+<thead>
+<tr>
+<th>versao</th>
+<th>data</th>
+<th>alteracao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>21/08/2026</td>
+<td>primeira versao, detalhando a stack que estava indicada apenas em nivel de intencao na 1ª entrega</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

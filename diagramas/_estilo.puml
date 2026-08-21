@@ -1,0 +1,27 @@
+' estilo comum dos diagramas do sgp - equipe 8
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam defaultFontName Calibri
+skinparam defaultFontSize 13
+skinparam ArrowColor #44546a
+skinparam ArrowFontColor #44546a
+skinparam ArrowFontSize 11
+skinparam nodesep 30
+skinparam ranksep 80
+skinparam actor {
+  BorderColor #1f4e79
+  BackgroundColor #ffffff
+  FontColor #1f2328
+  FontStyle bold
+}
+skinparam usecase {
+  BorderColor #1f4e79
+  FontColor #1f2328
+  BackgroundColor #eef3f8
+}
+skinparam rectangle {
+  BorderColor #90a4b8
+  FontColor #1f4e79
+  FontSize 14
+  FontStyle bold
+}

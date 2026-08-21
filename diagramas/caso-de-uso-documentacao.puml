@@ -1,0 +1,31 @@
+@startuml caso-de-uso-documentacao
+' sgp - modulo de documentacao e contratos - equipe 8
+!include _estilo.puml
+left to right direction
+
+actor "administrador" as ADM
+actor "prestador\nde servico" as PRE
+
+rectangle "sgp - documentacao e contratos" {
+  usecase "UC08\nenviar documentos\ndo prestador" as UC08 #cfe0f0
+  usecase "UC09\nconsultar painel\nde vencimentos" as UC09 #cfe0f0
+  usecase "UC10\nmanter contratos" as UC10 #e8f0f8
+  usecase "UC11\nalterar situacao\ncadastral do prestador" as UC11 #cfe0f0
+  usecase "UC23\nregistrar log\nde acao critica" as UC23 #e8f0f8
+}
+
+ADM -- UC09
+ADM -- UC10
+ADM -- UC11
+ADM -- UC08
+UC08 -- PRE
+
+UC11 ..> UC23 : <<include>>
+UC11 ..> UC09 : <<extend>>
+
+legend right
+  <b>prioridade (moscow)</b>
+  |<back:#cfe0f0>       </back>| must have |
+  |<back:#e8f0f8>       </back>| should have |
+endlegend
+@enduml

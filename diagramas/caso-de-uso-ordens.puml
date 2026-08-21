@@ -1,0 +1,41 @@
+@startuml caso-de-uso-ordens
+' sgp - modulo de ordens de servico - equipe 8
+!include _estilo.puml
+left to right direction
+
+actor "administrador" as ADM
+actor "prestador\nde servico" as PRE
+actor "cliente" as CLI
+
+rectangle "sgp - ordens de servico" {
+  usecase "UC12\nabrir ordem\nde servico" as UC12 #cfe0f0
+  usecase "UC13\natribuir ordem\na um prestador" as UC13 #cfe0f0
+  usecase "UC17\ncancelar ordem\nde servico" as UC17 #cfe0f0
+  usecase "UC22\nverificar aptidao\ndo prestador" as UC22 #cfe0f0
+  usecase "UC23\nregistrar log\nde acao critica" as UC23 #e8f0f8
+  usecase "UC14\naceitar ou recusar\natribuicao" as UC14 #e8f0f8
+  usecase "UC15\natualizar andamento\nda ordem" as UC15 #cfe0f0
+  usecase "UC16\nconcluir ordem\nde servico" as UC16 #cfe0f0
+  usecase "UC18\navaliar atendimento" as UC18 #cfe0f0
+}
+
+ADM -- UC13
+ADM -- UC17
+ADM -- UC12
+
+UC14 -- PRE
+UC15 -- PRE
+UC16 -- PRE
+UC12 -- CLI
+UC18 -- CLI
+
+UC13 ..> UC22 : <<include>>
+UC13 ..> UC23 : <<include>>
+UC17 ..> UC23 : <<include>>
+
+legend right
+  <b>prioridade (moscow)</b>
+  |<back:#cfe0f0>       </back>| must have |
+  |<back:#e8f0f8>       </back>| should have |
+endlegend
+@enduml
