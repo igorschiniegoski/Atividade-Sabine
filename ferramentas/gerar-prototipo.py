@@ -42,9 +42,9 @@ MENUS = {
 }
 
 USUARIO = {
-    "administrador": ("Marina Prado", "Administradora"),
-    "prestador": ("Elétrica Boratto ME", "Prestador"),
-    "cliente": ("Supermercado Ponto Certo", "Cliente"),
+    "administrador": ("Rosangela Dias", "Administradora"),
+    "prestador": ("Elétrica Santos", "Prestador"),
+    "cliente": ("Supermercado Zanin", "Cliente"),
     "": ("", ""),
 }
 
@@ -163,24 +163,24 @@ if __name__ == "__main__":
               "Busca sem resultado mostra a mensagem de nenhum registro encontrado, nao uma tabela vazia.",
               "Prestador com ordem atribuida ou em execucao nao pode ser inativado (RN11)."))
 
-    tela("T04-prestador-dados.html", "T04", "Elétrica Boratto ME", "administrador", T.PRESTADOR_DADOS,
+    tela("T04-prestador-dados.html", "T04", "Elétrica Santos", "administrador", T.PRESTADOR_DADOS,
          subtitulo="Cadastro do prestador",
          obs=("O CNPJ é validado pelo digito verificador e nao pode se repetir entre cadastros ativos (RN10).",
               "Enquanto houver erro de validacao o formulario nao é enviado e o campo fica destacado.",
               "Toda gravacao devolve mensagem de confirmacao ou de erro (RNF05)."))
 
-    tela("T04b-prestador-categorias.html", "T04", "Elétrica Boratto ME", "administrador", T.PRESTADOR_CATEGORIAS,
+    tela("T04b-prestador-categorias.html", "T04", "Elétrica Santos", "administrador", T.PRESTADOR_CATEGORIAS,
          subtitulo="Categorias em que o prestador atua",
          obs=("Desmarcar uma categoria com ordem em andamento é recusado, informando quais ordens impedem.",
               "A habilitacao é o que faz o prestador aparecer na atribuicao daquela categoria (RN04)."))
 
-    tela("T04c-prestador-documentos.html", "T04", "Elétrica Boratto ME", "administrador", T.PRESTADOR_DOCUMENTOS,
+    tela("T04c-prestador-documentos.html", "T04", "Elétrica Santos", "administrador", T.PRESTADOR_DOCUMENTOS,
          subtitulo="Documentação do prestador",
          acoes='<a class="btn btn-primario" href="T04c-prestador-documentos.html">Enviar documento</a>',
          obs=("Documento renovado entra como versao atual e a anterior fica no historico, nunca é apagada.",
               "Vencimento de documento obrigatorio muda a situacao para pendente automaticamente (RN02)."))
 
-    tela("T04d-prestador-situacao.html", "T04", "Elétrica Boratto ME", "administrador", T.PRESTADOR_SITUACAO,
+    tela("T04d-prestador-situacao.html", "T04", "Elétrica Santos", "administrador", T.PRESTADOR_SITUACAO,
          subtitulo="Situação cadastral e histórico",
          obs=("O motivo exige no minimo 10 caracteres.",
               "A alteracao vai para o historico e para o log de auditoria (RF19).",
@@ -191,7 +191,7 @@ if __name__ == "__main__":
          acoes='<a class="btn btn-primario" href="T06-cliente-cadastro.html">Novo cliente</a>',
          obs=("Cliente inativo nao aparece na abertura de novas ordens, mas continua no historico.",))
 
-    tela("T06-cliente-cadastro.html", "T06", "Supermercado Ponto Certo", "administrador", T.CLIENTE_CADASTRO,
+    tela("T06-cliente-cadastro.html", "T06", "Supermercado Zanin", "administrador", T.CLIENTE_CADASTRO,
          subtitulo="Cadastro do cliente",
          obs=("CPF e CNPJ sao unicos entre os cadastros ativos (RN10).",))
 
@@ -242,7 +242,7 @@ if __name__ == "__main__":
               "Sem nenhuma ordem atribuida, a lista mostra a mensagem de que nao ha ordem no momento."))
 
     tela("T14-ordem-execucao.html", "T14", "Ordem OS-2026-0148", "prestador", T.ORDEM_EXECUCAO,
-         subtitulo="Instalação de tomadas para o Supermercado Ponto Certo",
+         subtitulo="Instalação de tomadas para o Supermercado Zanin",
          obs=("A conclusao exige o relato do que foi executado (fluxo de excecao E4.1).",
               "Ao concluir, o sistema compara a data com o prazo e marca a ordem como no prazo ou em atraso (RN12).",
               "Depois de concluida, a ordem fica bloqueada para edicao (RN06)."))
