@@ -26,6 +26,7 @@ entity "prestador" as prestador {
   id_usuario : integer <<FK>> <<UK>>
   *tipo_pessoa : char(1)
   *nome_razao_social : varchar(150)
+  nome_fantasia : varchar(120)
   *cpf_cnpj : varchar(14) <<UK>>
   *telefone : varchar(20)
   email : varchar(150)
@@ -47,6 +48,7 @@ entity "cliente" as cliente {
   id_usuario : integer <<FK>> <<UK>>
   *tipo_pessoa : char(1)
   *nome_razao_social : varchar(150)
+  nome_fantasia : varchar(120)
   *cpf_cnpj : varchar(14) <<UK>>
   *telefone : varchar(20)
   email : varchar(150)
@@ -143,6 +145,7 @@ entity "ordem_servico" as ordem {
   *id_servico : integer <<FK>>
   id_prestador : integer <<FK>>
   *descricao : text
+  local_atendimento : varchar(200)
   *prioridade : varchar(10)
   *prazo : date
   *status : varchar(12)

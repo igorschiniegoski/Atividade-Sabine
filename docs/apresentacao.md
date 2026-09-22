@@ -1,7 +1,7 @@
 # sgp - sistema de gestao de prestadores
 ## roteiro da apresentacao - 3ª entrega
 
-**versao 1.0 - 25/09/2026**
+**versao 1.1 - 25/09/2026**
 unicesumar - analise e desenvolvimento de sistemas
 imersao profissional - projeto de software - equipe 8
 
@@ -24,10 +24,12 @@ a apresentacao é da equipe, mas **a nota é individual**. os dois integrantes f
 
 ## 2. antes de comecar
 
-- abrir `prototipos/index.html` no navegador, ja na tela do mapa;
-- abrir o repositorio no github, na pagina inicial, com o readme visivel;
+o trabalho esta publicado em **https://sgp-equipe8.vercel.app**, com o prototipo, os documentos e os diagramas na mesma pagina. é por ali que a apresentacao comeca.
+
+- abrir o site em uma aba e o repositorio do github em outra, na pagina inicial, com o readme visivel;
+- deixar o prototipo aberto na tela do mapa, pronto para a demonstracao;
 - abrir o `modelo-de-dados.html` e o `mvp-e-prototipos.html` em abas separadas, que sao as versões com capa e imagens embutidas;
-- conferir que o computador da apresentacao nao depende de internet para o prototipo. ele funciona offline, mas o github nao;
+- levar a pasta do projeto no pendrive ou no proprio notebook, porque se a internet da sala falhar o prototipo abre offline com dois cliques, sem depender do site nem do github. essa é a razao de ele nao usar framework;
 - combinar quem opera o computador enquanto o outro fala.
 
 ---
@@ -43,7 +45,7 @@ a apresentacao é da equipe, mas **a nota é individual**. os dois integrantes f
 | 5 | 2 min | modelagem | luis | casos de uso por modulo, o diagrama de atividade do UC13 e o diagrama de classes. explicar que as regras de negocio viraram metodo na classe que tem a informacao, como `estaApto()` no prestador |
 | 6 | 2 min | banco de dados | luis | modelo conceitual, modelo logico com as 14 tabelas e o dicionario de dados. destacar `prestador_categoria`, que resolve o n:n e sustenta a RN04, e o log sem chave estrangeira |
 | 7 | 1,5 min | tecnologias e arquitetura | luis | next.js com postgresql e prisma na vercel, monolito em camadas. a frase que resume: nenhuma permissao é decidida na tela, a rota de api confere o perfil antes de qualquer operacao |
-| 8 | 1 min | repositorio e organizacao do trabalho | luis | mostrar o github: pastas docs, diagramas, prototipos e ferramentas, os commits identificando quem fez o que, e o quadro de 57 tarefas com responsavel e situacao |
+| 8 | 1 min | repositorio e organizacao do trabalho | luis | mostrar o github, com as pastas docs, diagramas, prototipos e ferramentas, os commits identificando quem fez o que, e o quadro de 57 tarefas com responsavel e situacao. mencionar que o mesmo conteudo esta publicado em sgp-equipe8.vercel.app, entao qualquer pessoa abre sem baixar nada |
 | 9 | 1,5 min | mvp | luis | o criterio: entra o que for necessario para o fluxo funcionar do inicio ao fim. 16 casos de uso de 24, 60 pontos de 85. o que ficou de fora e por que, com contrato e relatorio como exemplos |
 | 10 | 2 min | navegacao e prototipo | igor | mapa de navegacao, as 18 telas por perfil e a diferenca de tamanho entre os perfis, que é recorte de permissao e nao falta de tela |
 | 11 | 2 min | demonstracao do fluxo completo | igor opera, luis narra a regra | percorrer no prototipo: cliente abre a solicitacao (T17), administrador atribui vendo so os aptos e o motivo de cada inapto (T12), prestador executa e conclui com relato (T14), cliente avalia (T18) |
@@ -115,7 +117,7 @@ os criterios de avaliacao individual do manual sao dominio do conteudo, clareza,
 | prototipo compreensivel das telas principais | pronto, prototipo navegavel em html |
 | mvp separado do desejavel e do futuro | pronto, secao 3 do documento de mvp e prototipos |
 | pelo menos um fluxo completo definido | pronto, secao 4 do mesmo documento |
-| links e permissões de acesso testados | conferir no dia, com o repositorio aberto em uma janela anonima |
+| links e permissões de acesso testados | as 32 paginas publicadas responderam, e nenhum link interno dos documentos esta quebrado. falta so abrir o repositorio em uma janela anonima no dia, para confirmar que ele esta publico |
 | todos sabem a propria parte na apresentacao | secao 3 deste documento |
 | todos conseguem explicar as proprias contribuicões | secao 4 deste documento |
 | todos revisaram o projeto completo | fazer a ultima leitura na vespera, dia 24 |
@@ -127,3 +129,4 @@ os criterios de avaliacao individual do manual sao dominio do conteudo, clareza,
 | versao | data | alteracao |
 |---|---|---|
 | 1.0 | 22/09/2026 | primeira versao do roteiro, com a divisao das falas, as perguntas provaveis e o checklist do manual |
+| 1.1 | 22/09/2026 | o trabalho passou a ter endereco publicado, entao a abertura da apresentacao comeca por ele, com a copia local como plano B |
