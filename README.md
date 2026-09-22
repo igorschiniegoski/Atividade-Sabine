@@ -70,11 +70,11 @@ a escolha foi por familiaridade da equipe e por serem ferramentas com plano grat
 ## organizacao do repositorio
 
 ```
-docs/        documentos das entregas, incluindo o modelo de dados e o dicionario
-diagramas/   fontes .puml e imagens dos diagramas, inclusive os do banco
-ferramentas/ script que gera a versao imprimivel dos documentos
-prototipos/  mapa de navegacao e telas (3ª entrega)
-src/         codigo fonte (3ª entrega)
+docs/        documentos das entregas, do levantamento de requisitos ao roteiro da apresentacao
+diagramas/   fontes .puml e imagens dos diagramas, inclusive os do banco e o mapa de navegacao
+prototipos/  prototipo navegavel das 18 telas do mvp, em html
+ferramentas/ scripts que geram a versao imprimivel dos documentos e as telas do prototipo
+src/         codigo fonte (comeca na implementacao)
 ```
 
 as pastas vao sendo criadas conforme cada entrega.
@@ -86,6 +86,9 @@ as pastas vao sendo criadas conforme cada entrega.
 | [documento-visao-requisitos.md](docs/documento-visao-requisitos.md) | 1ª | contexto, escopo, 19 RF, 11 RNF e 12 regras de negocio |
 | [casos-de-uso.md](docs/casos-de-uso.md) | 2ª | atores, diagramas de caso de uso, especificacao dos 24 casos de uso, diagramas de atividade de UC13 e UC16, 23 historias de usuario, priorizacao moscow e matriz de rastreabilidade |
 | [modelo-de-dados.md](docs/modelo-de-dados.md) | 2ª | diagrama de classes do dominio, modelo conceitual, modelo logico e dicionario de dados das 14 tabelas |
+| [mvp-e-prototipos.md](docs/mvp-e-prototipos.md) | 3ª | revisao das entregas anteriores, definicao do mvp, fluxo completo, levantamento das telas, mapa de navegacao, prototipo e rastreabilidade |
+| [backlog.md](docs/backlog.md) | 3ª | quadro com as 57 tarefas do projeto, com requisito, prioridade, responsavel e situacao |
+| [apresentacao.md](docs/apresentacao.md) | 3ª | roteiro da apresentacao, divisao das falas, perguntas provaveis e checklist final |
 | [tecnologias-e-arquitetura.md](docs/tecnologias-e-arquitetura.md) | 2ª | stack definida com justificativa, arquitetura em camadas e como cada RNF sera atendido |
 
 ### diagramas
@@ -104,12 +107,27 @@ os diagramas sao escritos em plantuml e o arquivo `.puml` fica versionado junto 
 | classes - dominio do sgp | [diagramas/diagrama-de-classes.png](diagramas/diagrama-de-classes.png) |
 | banco - modelo conceitual | [diagramas/modelo-conceitual.png](diagramas/modelo-conceitual.png) |
 | banco - modelo logico | [diagramas/modelo-logico.png](diagramas/modelo-logico.png) |
+| arquitetura prevista | [diagramas/arquitetura.png](diagramas/arquitetura.png) |
+| mapa de navegacao | [diagramas/mapa-de-navegacao.png](diagramas/mapa-de-navegacao.png) |
 
 pra gerar as imagens de novo depois de mexer em um `.puml`:
 
 ```
 java -jar plantuml.jar -tpng diagramas/*.puml
 java -jar plantuml.jar -tsvg diagramas/*.puml
+```
+
+### prototipo
+
+as 18 telas do mvp estao em [prototipos/index.html](prototipos/index.html). é html estatico, sem framework e sem
+dependencia de internet: basta abrir o arquivo com dois cliques e navegar clicando, como no sistema de verdade.
+as telas mostram tambem os estados que nao aparecem no caminho feliz, como erro de validacao, arquivo recusado,
+lista vazia e o motivo de cada prestador inapto.
+
+depois de mexer nas telas, é so rodar:
+
+```
+python ferramentas/gerar-prototipo.py
 ```
 
 ### versao imprimivel dos documentos
@@ -127,8 +145,19 @@ python ferramentas/gerar-html.py
 |---|---|---|---|
 | 1 | 14/08/2026 | documento de visao e requisitos | pronto |
 | 2 | 08/09/2026 | casos de uso, diagramas de atividade, diagrama de classes e modelagem do banco | pronto |
-| 3 | 25/09/2026 | repositorio, backlog, mapa de navegacao, prototipos, mvp e apresentacao | a fazer |
+| 3 | 25/09/2026 | repositorio, backlog, mapa de navegacao, prototipos, mvp e apresentacao | pronto |
+
+## mvp
+
+a primeira versao funcional entrega o fluxo completo do sistema, do pedido do cliente ate a avaliacao do atendimento:
+autenticacao, cadastros de apoio, documentacao com controle de validade, situacao cadastral, abertura da ordem,
+atribuicao apenas a quem esta apto, execucao, conclusao e avaliacao. sao 16 dos 24 casos de uso e 18 telas.
+
+ficam para depois do mvp os contratos, o aceite da atribuicao pelo prestador, o historico consolidado, os relatorios
+e o log de acões criticas. o criterio de corte e a justificativa de cada item estao em
+[docs/mvp-e-prototipos.md](docs/mvp-e-prototipos.md).
 
 ## como rodar
 
-ainda não tem codigo. as instrucões de instalacao entram aqui quando a implementacao comecar, na 3ª entrega.
+ainda não tem codigo. as instrucões de instalacao entram aqui quando a implementacao comecar, pela release 1 do
+[quadro de tarefas](docs/backlog.md).

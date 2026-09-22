@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>sgp - roteiro da apresentacao - equipe 8</title>
+<style>
+  @page { size: A4; margin: 2.5cm 2.2cm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    font-size: 11.5pt;
+    line-height: 1.45;
+    color: #222;
+    max-width: 21cm;
+    margin: 0 auto;
+    padding: 2.5cm 2.2cm;
+    background: #fff;
+  }
+  h1, h2, h3 { color: #1f4e79; margin-bottom: .4em; }
+  h1 { font-size: 20pt; }
+  h2 { font-size: 14pt; margin-top: 1.6em; border-bottom: 1px solid #d0d7de; padding-bottom: .2em; }
+  h3 { font-size: 12pt; margin-top: 1.2em; }
+  p { margin: .5em 0; text-align: justify; }
+  ul { margin: .4em 0 .8em 0; padding-left: 1.4em; }
+  li { margin: .25em 0; }
+  table { border-collapse: collapse; width: 100%; margin: .8em 0 1.2em 0; font-size: 10.5pt; }
+  th { background: #1f4e79; color: #fff; text-align: left; padding: 6px 8px; font-weight: 600; }
+  td { border: 1px solid #c8d1da; padding: 6px 8px; vertical-align: top; }
+  tr:nth-child(even) td { background: #f6f8fa; }
+  .cod { white-space: nowrap; font-weight: 600; width: 62px; }
+  .capa { text-align: center; page-break-after: always; padding-top: 3cm; }
+  .capa .inst { font-size: 12pt; letter-spacing: .5px; color: #444; }
+  .capa .titulo { font-size: 24pt; color: #1f4e79; font-weight: bold; margin-top: 4cm; }
+  .capa .sub { font-size: 14pt; color: #444; margin-top: .4cm; }
+  .capa .equipe { margin-top: 3.5cm; font-size: 12pt; line-height: 1.9; }
+  .capa .rodape { margin-top: 3cm; font-size: 11pt; color: #555; }
+  .box { background: #eef3f8; border-left: 4px solid #1f4e79; padding: 10px 14px; margin: 1em 0; }
+  .sumario ol { padding-left: 1.4em; }
+  .sumario li { margin: .3em 0; }
+  @media print { body { padding: 0; } h2 { page-break-after: avoid; } table { page-break-inside: avoid; } }
+
+  img { max-width: 100%; height: auto; display: block; margin: 1em auto; }
+  figure { margin: 1.2em 0; text-align: center; page-break-inside: avoid; }
+  pre { background: #f6f8fa; border: 1px solid #d0d7de; padding: 10px 12px;
+        font-family: Consolas, "Courier New", monospace; font-size: 9.5pt;
+        line-height: 1.35; overflow-x: auto; page-break-inside: avoid; }
+  code { font-family: Consolas, "Courier New", monospace; font-size: 10pt;
+         background: #f0f3f6; padding: 1px 4px; border-radius: 3px; }
+  pre code { background: none; padding: 0; font-size: 9.5pt; }
+  h4 { color: #1f4e79; font-size: 11.5pt; margin-top: 1em; margin-bottom: .3em; }
+  hr { border: 0; border-top: 1px solid #d0d7de; margin: 1.6em 0; }
+  ol li, ul li { text-align: justify; }
+</style>
+</head>
+<body>
+
+<div class="capa">
+  <div class="inst">unicesumar<br>analise e desenvolvimento de sistemas<br>imersao profissional - projeto de software</div>
+  <div class="titulo">sgp - sistema de gestao de prestadores</div>
+  <div class="sub">roteiro da apresentacao<br>3&ordf; entrega - equipe 8</div>
+  <div class="equipe">
+    <strong>integrantes</strong><br>
+    luis gustavo boratto de oliveira<br>
+    igor schiniegoski pallisser
+  </div>
+  <div class="rodape">setembro de 2026</div>
+</div>
+
+<h2>1. o essencial</h2>
+<p>a apresentacao é da equipe, mas <strong>a nota é individual</strong>. os dois integrantes falam, e cada um precisa conseguir explicar a propria parte, responder pergunta sobre ela e relaciona-la com o resto do projeto. presenca sem fala nao garante nota.</p>
+<table>
+<thead>
+<tr>
+<th>item</th>
+<th>definicao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>25/09/2026</td>
+</tr>
+<tr>
+<td>equipe</td>
+<td>8</td>
+</tr>
+<tr>
+<td>quem fala</td>
+<td>luis gustavo boratto de oliveira e igor schiniegoski pallisser, os dois</td>
+</tr>
+<tr>
+<td>duracao estimada</td>
+<td>15 minutos, com 3 a 5 minutos de perguntas</td>
+</tr>
+<tr>
+<td>o que sera mostrado</td>
+<td>os documentos, os diagramas, o repositorio no github, o quadro de tarefas e o prototipo navegavel</td>
+</tr>
+<tr>
+<td>o que sera demonstrado ao vivo</td>
+<td>o fluxo completo no prototipo, do pedido do cliente ate a avaliacao</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. antes de comecar</h2>
+<ul>
+<li>abrir <code>prototipos/index.html</code> no navegador, ja na tela do mapa;</li>
+<li>abrir o repositorio no github, na pagina inicial, com o readme visivel;</li>
+<li>abrir o <code>modelo-de-dados.html</code> e o <code>mvp-e-prototipos.html</code> em abas separadas, que sao as versões com capa e imagens embutidas;</li>
+<li>conferir que o computador da apresentacao nao depende de internet para o prototipo. ele funciona offline, mas o github nao;</li>
+<li>combinar quem opera o computador enquanto o outro fala.</li>
+</ul>
+<hr />
+<h2>3. roteiro</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>tempo</th>
+<th>assunto</th>
+<th>quem fala</th>
+<th>o que dizer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1 min</td>
+<td>o projeto e o problema</td>
+<td>igor</td>
+<td>empresa de pequeno e medio porte que contrata terceirizado: cadastro em planilha, documento no drive, contrato na gaveta e servico distribuido no whatsapp. o resultado é documento que vence sem ninguem ver, servico esquecido ou cobrado duas vezes, e escolha de prestador por impressao pessoal</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1 min</td>
+<td>publico-alvo e solucao</td>
+<td>igor</td>
+<td>tres perfis: administrador, prestador e cliente. o sistema centraliza cadastro, documentacao e execucao, com controle de validade e historico de avaliacao</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1,5 min</td>
+<td>requisitos e regras</td>
+<td>igor</td>
+<td>19 requisitos funcionais, 11 nao funcionais e 12 regras de negocio. destacar RN02, que bloqueia prestador com documento vencido, e RN05, a sequencia dos status</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1 min</td>
+<td>evolucao desde a 1ª entrega</td>
+<td>igor</td>
+<td>o que foi revisado e o que foi acrescentado: diagramas de atividade, classes, modelo de dados e prototipo. mostrar o historico de alteracões dos documentos</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2 min</td>
+<td>modelagem</td>
+<td>luis</td>
+<td>casos de uso por modulo, o diagrama de atividade do UC13 e o diagrama de classes. explicar que as regras de negocio viraram metodo na classe que tem a informacao, como <code>estaApto()</code> no prestador</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2 min</td>
+<td>banco de dados</td>
+<td>luis</td>
+<td>modelo conceitual, modelo logico com as 14 tabelas e o dicionario de dados. destacar <code>prestador_categoria</code>, que resolve o n:n e sustenta a RN04, e o log sem chave estrangeira</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1,5 min</td>
+<td>tecnologias e arquitetura</td>
+<td>luis</td>
+<td>next.js com postgresql e prisma na vercel, monolito em camadas. a frase que resume: nenhuma permissao é decidida na tela, a rota de api confere o perfil antes de qualquer operacao</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1 min</td>
+<td>repositorio e organizacao do trabalho</td>
+<td>luis</td>
+<td>mostrar o github: pastas docs, diagramas, prototipos e ferramentas, os commits identificando quem fez o que, e o quadro de 57 tarefas com responsavel e situacao</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1,5 min</td>
+<td>mvp</td>
+<td>luis</td>
+<td>o criterio: entra o que for necessario para o fluxo funcionar do inicio ao fim. 16 casos de uso de 24, 60 pontos de 85. o que ficou de fora e por que, com contrato e relatorio como exemplos</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2 min</td>
+<td>navegacao e prototipo</td>
+<td>igor</td>
+<td>mapa de navegacao, as 18 telas por perfil e a diferenca de tamanho entre os perfis, que é recorte de permissao e nao falta de tela</td>
+</tr>
+<tr>
+<td>11</td>
+<td>2 min</td>
+<td>demonstracao do fluxo completo</td>
+<td>igor opera, luis narra a regra</td>
+<td>percorrer no prototipo: cliente abre a solicitacao (T17), administrador atribui vendo so os aptos e o motivo de cada inapto (T12), prestador executa e conclui com relato (T14), cliente avalia (T18)</td>
+</tr>
+<tr>
+<td>12</td>
+<td>1 min</td>
+<td>proximos passos</td>
+<td>luis</td>
+<td>releases 1 a 3 como o caminho ate o mvp, e a release 4 com contratos, log e relatorio. a implementacao comeca pelas telas ja prototipadas</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. o que cada um precisa saber explicar</h2>
+<p>os criterios de avaliacao individual do manual sao dominio do conteudo, clareza, compreensao do projeto como um todo, autoria, capacidade de responder e participacao.</p>
+<h3>igor schiniegoski pallisser</h3>
+<ul>
+<li>por que cada requisito existe e de qual dor ele nasceu;</li>
+<li>como um requisito virou caso de uso, historia e depois tela;</li>
+<li>por que o cliente nao enxerga a lista de prestadores;</li>
+<li>como o prototipo representa validacao, erro, estado vazio e feedback;</li>
+<li>o caminho de qualquer tela ate a inicial, no mapa de navegacao.</li>
+</ul>
+<h3>luis gustavo boratto de oliveira</h3>
+<ul>
+<li>por que o endereco virou coluna e o tipo de documento virou tabela;</li>
+<li>onde cada regra de negocio é verificada, e por que a verificacao de aptidao é uma funcao unica;</li>
+<li>por que a atribuicao revalida a aptidao no servidor mesmo tendo filtrado a lista antes;</li>
+<li>por que nenhuma tabela apaga registro;</li>
+<li>o criterio do mvp e o motivo de contrato e relatorio ficarem de fora.</li>
+</ul>
+<h3>os dois</h3>
+<ul>
+<li>o problema, o objetivo e os tres perfis;</li>
+<li>o fluxo completo do sistema, ponta a ponta;</li>
+<li>o que cada um fez e como isso se conecta com a parte do outro.</li>
+</ul>
+<hr />
+<h2>5. perguntas provaveis</h2>
+<table>
+<thead>
+<tr>
+<th>pergunta</th>
+<th>resposta curta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>por que nao usar um erp pronto?</td>
+<td>os que resolvem isso ou custam caro demais para o porte do cliente, ou tratam terceirizado como modulo pequeno e complicado de configurar. o recorte focado entrega valor rapido e cabe no prazo</td>
+</tr>
+<tr>
+<td>o que acontece se o documento vencer no meio de um servico?</td>
+<td>o prestador passa a pendente e nao recebe nova ordem, mas continua podendo concluir o que ja estava em execucao. é a mesma logica da RN03 para contrato</td>
+</tr>
+<tr>
+<td>por que a ordem concluida nao pode ser editada?</td>
+<td>porque ela vira historico e alimenta a avaliacao e o relatorio. correcao se faz por cancelamento com justificativa e abertura de nova ordem, o que deixa rastro</td>
+</tr>
+<tr>
+<td>como o sistema impede que um prestador veja a ordem de outro?</td>
+<td>o recorte é aplicado na rota de api pelo usuario da sessao. esconder o botao na tela é so conforto visual, quem recusa a requisicao é o servidor</td>
+</tr>
+<tr>
+<td>por que escolheram essa stack?</td>
+<td>familiaridade da equipe, plano gratuito e um projeto so entregando tela e api, o que reduz configuracao e deixa um deploy unico</td>
+</tr>
+<tr>
+<td>quanto do sistema ja esta pronto?</td>
+<td>a documentacao, a modelagem completa e o prototipo navegavel das 18 telas do mvp. a implementacao comeca pela release 1, ja planejada no quadro de tarefas</td>
+</tr>
+<tr>
+<td>por que 18 telas e nao mais?</td>
+<td>sao as telas que o mvp exige. as funcionalidades que ficaram fora do mvp nao ganharam tela, justamente para nao prometer o que nao sera construido</td>
+</tr>
+<tr>
+<td>o prototipo é o sistema funcionando?</td>
+<td>nao. é navegavel e mostra os estados reais de cada tela, mas nao grava dado. o codigo comeca na release 1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>6. checklist final do manual</h2>
+<table>
+<thead>
+<tr>
+<th>item exigido</th>
+<th>situacao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>todos os integrantes identificados no documento e no repositorio</td>
+<td>pronto, no readme e em cada documento</td>
+</tr>
+<tr>
+<td>documentacao com as correcões das entregas anteriores</td>
+<td>pronto, secao 2 do documento de mvp e prototipos</td>
+</tr>
+<tr>
+<td>historico de alteracões atualizado</td>
+<td>pronto, no rodape de cada documento</td>
+</tr>
+<tr>
+<td>nomenclatura coerente entre requisito, regra, diagrama, banco e tela</td>
+<td>pronto, conferido na revisao</td>
+</tr>
+<tr>
+<td>diagramas e prototipos legiveis</td>
+<td>pronto, com png e svg versionados</td>
+</tr>
+<tr>
+<td>github existente atualizado, sem repositorio novo</td>
+<td>pronto, é o mesmo repositorio desde a 1ª entrega</td>
+</tr>
+<tr>
+<td>readme explicando o projeto</td>
+<td>pronto</td>
+</tr>
+<tr>
+<td>arquivos organizados e acessiveis</td>
+<td>pronto: docs, diagramas, prototipos e ferramentas</td>
+</tr>
+<tr>
+<td>commits permitindo identificar a evolucao e a contribuicao</td>
+<td>pronto</td>
+</tr>
+<tr>
+<td>backlog com tarefas, prioridades, responsaveis e estados</td>
+<td>pronto, em backlog.md</td>
+</tr>
+<tr>
+<td>tecnologias definidas e justificadas</td>
+<td>pronto, em tecnologias-e-arquitetura.md</td>
+</tr>
+<tr>
+<td>diagrama simples de arquitetura</td>
+<td>pronto, em diagramas/arquitetura.png</td>
+</tr>
+<tr>
+<td>mapa de navegacao</td>
+<td>pronto, em diagramas/mapa-de-navegacao.png</td>
+</tr>
+<tr>
+<td>esboco de todas as telas do mvp</td>
+<td>pronto, as 18 telas estao no prototipo</td>
+</tr>
+<tr>
+<td>prototipo compreensivel das telas principais</td>
+<td>pronto, prototipo navegavel em html</td>
+</tr>
+<tr>
+<td>mvp separado do desejavel e do futuro</td>
+<td>pronto, secao 3 do documento de mvp e prototipos</td>
+</tr>
+<tr>
+<td>pelo menos um fluxo completo definido</td>
+<td>pronto, secao 4 do mesmo documento</td>
+</tr>
+<tr>
+<td>links e permissões de acesso testados</td>
+<td>conferir no dia, com o repositorio aberto em uma janela anonima</td>
+</tr>
+<tr>
+<td>todos sabem a propria parte na apresentacao</td>
+<td>secao 3 deste documento</td>
+</tr>
+<tr>
+<td>todos conseguem explicar as proprias contribuicões</td>
+<td>secao 4 deste documento</td>
+</tr>
+<tr>
+<td>todos revisaram o projeto completo</td>
+<td>fazer a ultima leitura na vespera, dia 24</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>historico de alteracões</h2>
+<table>
+<thead>
+<tr>
+<th>versao</th>
+<th>data</th>
+<th>alteracao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>22/09/2026</td>
+<td>primeira versao do roteiro, com a divisao das falas, as perguntas provaveis e o checklist do manual</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

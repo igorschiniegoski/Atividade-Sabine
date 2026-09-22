@@ -211,7 +211,7 @@ tbody td { padding: 11px 14px; border-bottom: 1px solid var(--borda); vertical-a
 tbody tr:last-child td { border-bottom: 0; }
 tbody tr:hover { background: #fafbfd; }
 td.numerico, th.numerico { text-align: right; }
-td .secundario { display: block; color: var(--texto-fraco); font-size: 12.5px; }
+.secundario { display: block; color: var(--texto-fraco); font-size: 12.5px; }
 td.acoes { text-align: right; white-space: nowrap; }
 
 /* ------------------------------------------------------------ chips */

@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>sgp - backlog e quadro de tarefas - equipe 8</title>
+<style>
+  @page { size: A4; margin: 2.5cm 2.2cm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    font-size: 11.5pt;
+    line-height: 1.45;
+    color: #222;
+    max-width: 21cm;
+    margin: 0 auto;
+    padding: 2.5cm 2.2cm;
+    background: #fff;
+  }
+  h1, h2, h3 { color: #1f4e79; margin-bottom: .4em; }
+  h1 { font-size: 20pt; }
+  h2 { font-size: 14pt; margin-top: 1.6em; border-bottom: 1px solid #d0d7de; padding-bottom: .2em; }
+  h3 { font-size: 12pt; margin-top: 1.2em; }
+  p { margin: .5em 0; text-align: justify; }
+  ul { margin: .4em 0 .8em 0; padding-left: 1.4em; }
+  li { margin: .25em 0; }
+  table { border-collapse: collapse; width: 100%; margin: .8em 0 1.2em 0; font-size: 10.5pt; }
+  th { background: #1f4e79; color: #fff; text-align: left; padding: 6px 8px; font-weight: 600; }
+  td { border: 1px solid #c8d1da; padding: 6px 8px; vertical-align: top; }
+  tr:nth-child(even) td { background: #f6f8fa; }
+  .cod { white-space: nowrap; font-weight: 600; width: 62px; }
+  .capa { text-align: center; page-break-after: always; padding-top: 3cm; }
+  .capa .inst { font-size: 12pt; letter-spacing: .5px; color: #444; }
+  .capa .titulo { font-size: 24pt; color: #1f4e79; font-weight: bold; margin-top: 4cm; }
+  .capa .sub { font-size: 14pt; color: #444; margin-top: .4cm; }
+  .capa .equipe { margin-top: 3.5cm; font-size: 12pt; line-height: 1.9; }
+  .capa .rodape { margin-top: 3cm; font-size: 11pt; color: #555; }
+  .box { background: #eef3f8; border-left: 4px solid #1f4e79; padding: 10px 14px; margin: 1em 0; }
+  .sumario ol { padding-left: 1.4em; }
+  .sumario li { margin: .3em 0; }
+  @media print { body { padding: 0; } h2 { page-break-after: avoid; } table { page-break-inside: avoid; } }
+
+  img { max-width: 100%; height: auto; display: block; margin: 1em auto; }
+  figure { margin: 1.2em 0; text-align: center; page-break-inside: avoid; }
+  pre { background: #f6f8fa; border: 1px solid #d0d7de; padding: 10px 12px;
+        font-family: Consolas, "Courier New", monospace; font-size: 9.5pt;
+        line-height: 1.35; overflow-x: auto; page-break-inside: avoid; }
+  code { font-family: Consolas, "Courier New", monospace; font-size: 10pt;
+         background: #f0f3f6; padding: 1px 4px; border-radius: 3px; }
+  pre code { background: none; padding: 0; font-size: 9.5pt; }
+  h4 { color: #1f4e79; font-size: 11.5pt; margin-top: 1em; margin-bottom: .3em; }
+  hr { border: 0; border-top: 1px solid #d0d7de; margin: 1.6em 0; }
+  ol li, ul li { text-align: justify; }
+</style>
+</head>
+<body>
+
+<div class="capa">
+  <div class="inst">unicesumar<br>analise e desenvolvimento de sistemas<br>imersao profissional - projeto de software</div>
+  <div class="titulo">sgp - sistema de gestao de prestadores</div>
+  <div class="sub">backlog e quadro de tarefas<br>3&ordf; entrega - equipe 8</div>
+  <div class="equipe">
+    <strong>integrantes</strong><br>
+    luis gustavo boratto de oliveira<br>
+    igor schiniegoski pallisser
+  </div>
+  <div class="rodape">setembro de 2026</div>
+</div>
+
+<h2>1. como o quadro funciona</h2>
+<p>este é o documento vivo do projeto: a cada trabalho concluido a linha correspondente muda de situacao. os demais documentos descrevem o sistema, este descreve o andamento da equipe.</p>
+<table>
+<thead>
+<tr>
+<th>campo</th>
+<th>o que registra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>identificador da tarefa, no formato TA00</td>
+</tr>
+<tr>
+<td>tarefa</td>
+<td>o que precisa ser feito, em uma frase</td>
+</tr>
+<tr>
+<td>requisito</td>
+<td>o RF, a historia ou o item de entrega que originou a tarefa</td>
+</tr>
+<tr>
+<td>prioridade</td>
+<td>alta, media ou baixa, herdada da priorizacao moscow da 2ª entrega</td>
+</tr>
+<tr>
+<td>responsavel</td>
+<td>quem conduz. o outro integrante revisa</td>
+</tr>
+<tr>
+<td>situacao</td>
+<td>a fazer, em andamento ou concluida</td>
+</tr>
+</tbody>
+</table>
+<p>as tarefas de prioridade <strong>alta</strong> sao as que compõem o mvp. media sao os complementos da release 4, e baixa é o que ficou no backlog.</p>
+<h3>1.1 quem faz o que</h3>
+<p>a divisao nao significa que cada integrante conhece apenas a propria parte. as tarefas sao conduzidas por um e revisadas pelo outro, e os dois precisam saber explicar o projeto inteiro.</p>
+<table>
+<thead>
+<tr>
+<th>integrante</th>
+<th>frente principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>luis gustavo boratto de oliveira</td>
+<td>modelagem de dados, backend, regras de negocio e o fluxo da ordem de servico</td>
+</tr>
+<tr>
+<td>igor schiniegoski pallisser</td>
+<td>requisitos, casos de uso, interface, prototipo e a documentacao das entregas</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. o que ja foi concluido</h2>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>tarefa</th>
+<th>requisito</th>
+<th>prioridade</th>
+<th>responsavel</th>
+<th>situacao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TA01</td>
+<td>levantar o problema, o escopo e os 19 requisitos funcionais</td>
+<td>1ª entrega</td>
+<td>alta</td>
+<td>igor</td>
+<td>concluida</td>
+</tr>
+<tr>
+<td>TA02</td>
+<td>definir os 11 requisitos nao funcionais e as 12 regras de negocio</td>
+<td>1ª entrega</td>
+<td>alta</td>
+<td>luis</td>
+<td>concluida</td>
+</tr>
+<tr>
+<td>TA03</td>
+<td>modelar os 24 casos de uso e os cinco diagramas de caso de uso</td>
+<td>2ª entrega</td>
+<td>alta</td>
+<td>igor</td>
+<td>concluida</td>
+</tr>
+<tr>
+<td>TA04</td>
+<td>escrever as 23 historias de usuario com criterios de aceite</td>
+<td>2ª entrega</td>
+<td>alta</td>
+<td>igor</td>
+<td>concluida</td>
+</tr>
+<tr>
+<td>TA05</td>
+<td>priorizar o escopo com a escala moscow</td>
+<td>2ª entrega</td>
+<td>alta</td>
+<td>luis</td>
+<td>concluida</td>
+</tr>
+<tr>
+<td>TA06</td>
+<td>definir a stack e a arquitetura em camadas</td>
+<td>2ª entrega</td>
+<td>alta</td>
+<td>luis</td>
+<td>concluida</td>
+</tr>
+<tr>
+<td>TA07</td>
+<td>desenhar os diagramas de atividade de UC13 e UC16</td>
+<td>2ª entrega</td>
+<td>alta</td>
+<td>luis</td>
+<td>concluida</td>
+</tr>
+<tr>
+<td>TA08</td>
+<td>montar o diagrama de classes do dominio</td>
+<td>2ª entrega</td>
+<td>alta</td>
+<td>luis</td>
+<td>concluida</td>
+</tr>
+<tr>
+<td>TA09</td>
+<td>modelar o banco: conceitual, logico e dicionario de dados</td>
+<td>2ª entrega</td>
+<td>alta</td>
+<td>luis</td>
+<td>concluida</td>
+</tr>
+<tr>
+<td>TA10</td>
+<td>desenhar o diagrama de arquitetura</td>
+<td>2ª entrega</td>
+<td>alta</td>
+<td>luis</td>
+<td>concluida</td>
+</tr>
+<tr>
+<td>TA11</td>
+<td>definir o mvp e o fluxo completo do sistema</td>
+<td>3ª entrega</td>
+<td>alta</td>
+<td>luis</td>
+<td>concluida</td>
+</tr>
+<tr>
+<td>TA12</td>
+<td>levantar as telas do mvp e montar o mapa de navegacao</td>
+<td>3ª entrega</td>
+<td>alta</td>
+<td>igor</td>
+<td>concluida</td>
+</tr>
+<tr>
+<td>TA13</td>
+<td>construir o prototipo navegavel das 18 telas</td>
+<td>3ª entrega</td>
+<td>alta</td>
+<td>igor</td>
+<td>concluida</td>
+</tr>
+<tr>
+<td>TA14</td>
+<td>organizar o repositorio, o readme e o gitignore</td>
+<td>3ª entrega</td>
+<td>media</td>
+<td>luis</td>
+<td>concluida</td>
+</tr>
+<tr>
+<td>TA15</td>
+<td>preparar o roteiro da apresentacao</td>
+<td>3ª entrega</td>
+<td>alta</td>
+<td>igor</td>
+<td>concluida</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. release 1 - base do sistema</h2>
+<p>autenticacao e cadastros de apoio. sem esta release nao ha o que atribuir.</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>tarefa</th>
+<th>requisito</th>
+<th>prioridade</th>
+<th>responsavel</th>
+<th>situacao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TA16</td>
+<td>criar o projeto next.js, configurar o prisma e publicar o primeiro deploy na vercel</td>
+<td>RNF08, RNF11</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA17</td>
+<td>escrever as migracões das 14 tabelas do modelo logico</td>
+<td>modelo de dados</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA18</td>
+<td>implementar o login com hash bcrypt e sessao de 30 minutos</td>
+<td>RF01, HU01, HU02</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA19</td>
+<td>implementar a autorizacao por perfil nas rotas de api</td>
+<td>RNF02</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA20</td>
+<td>montar o layout base: cabecalho, menu por perfil e componentes de tabela e formulario</td>
+<td>RNF04</td>
+<td>alta</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA21</td>
+<td>construir a tela de login (T01)</td>
+<td>RF01</td>
+<td>alta</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA22</td>
+<td>construir o cadastro e a listagem de prestadores (T03 e T04)</td>
+<td>RF02, HU03</td>
+<td>alta</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA23</td>
+<td>implementar a validacao de cpf e cnpj com digito verificador e unicidade</td>
+<td>RN10</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA24</td>
+<td>construir o cadastro e a listagem de clientes (T05 e T06)</td>
+<td>RF03, HU04</td>
+<td>alta</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA25</td>
+<td>construir as categorias de servico (T07)</td>
+<td>RF04, HU05</td>
+<td>alta</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA26</td>
+<td>construir o catalogo de servicos (T08 e T09)</td>
+<td>RF05, HU06</td>
+<td>alta</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA27</td>
+<td>implementar a habilitacao do prestador por categoria (T04)</td>
+<td>RF06, HU07, RN04</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+</tbody>
+</table>
+<h2>4. release 2 - documentacao e situacao cadastral</h2>
+<p>o que diferencia o sistema da planilha.</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>tarefa</th>
+<th>requisito</th>
+<th>prioridade</th>
+<th>responsavel</th>
+<th>situacao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TA28</td>
+<td>configurar o storage de arquivos e o upload com limite de 10 mb</td>
+<td>RNF09</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA29</td>
+<td>construir o envio de documentos pelo prestador (T15)</td>
+<td>RF07, HU08</td>
+<td>alta</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA30</td>
+<td>implementar o versionamento do documento, mantendo a versao anterior no historico</td>
+<td>HU08</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA31</td>
+<td>construir o painel de vencimentos (T10)</td>
+<td>RF08, HU09</td>
+<td>alta</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA32</td>
+<td>implementar a rotina que muda a situacao para pendente quando um documento obrigatorio vence</td>
+<td>RN02</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA33</td>
+<td>construir a alteracao de situacao cadastral com motivo e historico (T04)</td>
+<td>RF09, HU11</td>
+<td>alta</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA34</td>
+<td>implementar a verificacao de aptidao do prestador, concentrando RN01 a RN04</td>
+<td>RF12, UC22</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA35</td>
+<td>impedir a inativacao de prestador com ordem em andamento</td>
+<td>RN11</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+</tbody>
+</table>
+<h2>5. release 3 - operacao, fim do mvp</h2>
+<p>o fluxo completo da ordem de servico.</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>tarefa</th>
+<th>requisito</th>
+<th>prioridade</th>
+<th>responsavel</th>
+<th>situacao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TA36</td>
+<td>construir a abertura da solicitacao pelo cliente (T17)</td>
+<td>RF11, HU12</td>
+<td>alta</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA37</td>
+<td>implementar a numeracao da ordem e o calculo do prazo pelo prazo padrao do servico</td>
+<td>RF11</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA38</td>
+<td>construir a listagem de ordens com filtro (T11 e T16)</td>
+<td>RF13, RF16</td>
+<td>alta</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA39</td>
+<td>construir a tela da ordem na visao do administrador (T12)</td>
+<td>RF13</td>
+<td>alta</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA40</td>
+<td>implementar a atribuicao em transacao, revalidando a aptidao no servidor</td>
+<td>RF12, HU13</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA41</td>
+<td>construir a selecao de prestador apto, com o motivo de cada inapto (T12)</td>
+<td>RF12, HU13</td>
+<td>alta</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA42</td>
+<td>implementar a maquina de estado da ordem, recusando transicao fora da sequencia</td>
+<td>RN05, RN06</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA43</td>
+<td>construir a execucao e a conclusao da ordem pelo prestador (T13 e T14)</td>
+<td>RF13, RF14, HU15, HU16</td>
+<td>alta</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA44</td>
+<td>implementar o calculo de entrega no prazo ou em atraso na conclusao</td>
+<td>RN12</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA45</td>
+<td>construir o cancelamento com motivo minimo de 10 caracteres (T12)</td>
+<td>RF13, HU17, RN07</td>
+<td>alta</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA46</td>
+<td>construir a avaliacao do atendimento pelo cliente (T18)</td>
+<td>RF15, HU18</td>
+<td>alta</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA47</td>
+<td>implementar a regra de avaliacao unica pelo cliente titular e o calculo da nota media</td>
+<td>RN08, RN09</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA48</td>
+<td>escrever os testes das regras de negocio criticas e do fluxo completo</td>
+<td>RNF02, RNF11</td>
+<td>alta</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+</tbody>
+</table>
+<h2>6. release 4 - complementos</h2>
+<p>entram depois que todo o mvp estiver concluido e testado.</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>tarefa</th>
+<th>requisito</th>
+<th>prioridade</th>
+<th>responsavel</th>
+<th>situacao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TA49</td>
+<td>implementar o log de acões criticas</td>
+<td>RF19, HU22</td>
+<td>media</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA50</td>
+<td>construir o cadastro de contratos com vigencia e anexo</td>
+<td>RF10, HU10</td>
+<td>media</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA51</td>
+<td>ativar a RN03 na verificacao de aptidao, agora que o contrato existe</td>
+<td>RN03</td>
+<td>media</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA52</td>
+<td>construir o aceite ou recusa da atribuicao pelo prestador</td>
+<td>RF13, HU14</td>
+<td>media</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA53</td>
+<td>construir o historico consolidado por prestador e por cliente</td>
+<td>RF16, HU19</td>
+<td>media</td>
+<td>igor</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA54</td>
+<td>construir o relatorio de desempenho do prestador</td>
+<td>RF17, HU20</td>
+<td>media</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+</tbody>
+</table>
+<h2>7. backlog</h2>
+<p>reconhecido como pertinente, sem data definida.</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>tarefa</th>
+<th>requisito</th>
+<th>prioridade</th>
+<th>responsavel</th>
+<th>situacao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TA55</td>
+<td>construir o relatorio de servicos por periodo</td>
+<td>RF18, HU21</td>
+<td>baixa</td>
+<td>a definir</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA56</td>
+<td>implementar a exportacao de relatorio em pdf e csv</td>
+<td>HU23</td>
+<td>baixa</td>
+<td>a definir</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA57</td>
+<td>implementar a anonimizacao de dados pessoais mediante solicitacao</td>
+<td>RNF10</td>
+<td>baixa</td>
+<td>luis</td>
+<td>a fazer</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>8. resumo</h2>
+<table>
+<thead>
+<tr>
+<th>situacao</th>
+<th>tarefas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>concluidas</td>
+<td>15</td>
+</tr>
+<tr>
+<td>a fazer, prioridade alta (mvp)</td>
+<td>33</td>
+</tr>
+<tr>
+<td>a fazer, prioridade media (release 4)</td>
+<td>6</td>
+</tr>
+<tr>
+<td>a fazer, prioridade baixa (backlog)</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>total</strong></td>
+<td><strong>57</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>responsavel</th>
+<th>tarefas atribuidas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>luis gustavo boratto de oliveira</td>
+<td>27</td>
+</tr>
+<tr>
+<td>igor schiniegoski pallisser</td>
+<td>26</td>
+</tr>
+<tr>
+<td>a definir</td>
+<td>2</td>
+</tr>
+<tr>
+<td>ambos, em revisao cruzada</td>
+<td>todas</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>historico de alteracões</h2>
+<table>
+<thead>
+<tr>
+<th>versao</th>
+<th>data</th>
+<th>alteracao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>22/09/2026</td>
+<td>primeira versao do quadro de tarefas, com as 15 tarefas ja concluidas e as 42 planejadas</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

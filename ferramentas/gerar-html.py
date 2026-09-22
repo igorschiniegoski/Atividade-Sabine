@@ -84,6 +84,21 @@ DOCUMENTOS = [
      "diagrama de classes, modelo de dados e dicionario de dados",
      "2&ordf; entrega",
      "setembro de 2026"),
+    ("mvp-e-prototipos.md",
+     "sgp - mvp, navegacao e prototipo - equipe 8",
+     "definicao do mvp, mapa de navegacao e prototipo de telas",
+     "3&ordf; entrega",
+     "setembro de 2026"),
+    ("backlog.md",
+     "sgp - backlog e quadro de tarefas - equipe 8",
+     "backlog e quadro de tarefas",
+     "3&ordf; entrega",
+     "setembro de 2026"),
+    ("apresentacao.md",
+     "sgp - roteiro da apresentacao - equipe 8",
+     "roteiro da apresentacao",
+     "3&ordf; entrega",
+     "setembro de 2026"),
 ]
 
 
