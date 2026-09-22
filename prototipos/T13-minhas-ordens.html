@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T13 · Minhas ordens · SGP</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="app">
+<header class="topo">
+  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <div class="usuario">
+    <div class="usuario-dados">
+      <strong>Elétrica Boratto ME</strong>
+      <span>Prestador</span>
+    </div>
+    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+  </div>
+</header>
+<div class="corpo">
+  <nav class="menu">
+    <a class="menu-item ativo" href="T13-minhas-ordens.html">Minhas ordens</a>
+    <a class="menu-item" href="T15-meus-documentos.html">Meus documentos</a>
+    <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
+  </nav>
+  <main class="conteudo">
+    <div class="cabecalho-tela">
+      <div>
+        <span class="codigo-tela">T13</span>
+        <h1>Minhas ordens</h1>
+        <p class="subtitulo">Somente as ordens atribuídas a você</p>
+      </div>
+      
+    </div>
+    <div class="indicadores">
+  <a class="indicador" href="T14-ordem-execucao.html">
+    <div class="rotulo">Atribuídas a mim</div>
+    <div class="numero">1</div>
+    <div class="detalhe">aguardando início</div>
+  </a>
+  <a class="indicador atencao" href="T14-ordem-execucao.html">
+    <div class="rotulo">Em execução</div>
+    <div class="numero">1</div>
+    <div class="detalhe">prazo em 2 dias</div>
+  </a>
+  <a class="indicador ok" href="T13-minhas-ordens.html">
+    <div class="rotulo">Concluídas no mês</div>
+    <div class="numero">9</div>
+    <div class="detalhe">todas dentro do prazo</div>
+  </a>
+</div>
+
+<div class="cartao">
+  <h2>Ordens atribuídas a mim</h2>
+  <table>
+    <thead>
+      <tr><th>Número</th><th>Cliente</th><th>Serviço</th><th>Prazo</th><th>Situação</th><th class="acoes">&nbsp;</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-rotulo="Número">OS-2026-0148</td>
+        <td data-rotulo="Cliente">Supermercado Ponto Certo</td>
+        <td data-rotulo="Serviço">Instalação de tomadas</td>
+        <td data-rotulo="Prazo">24/09/2026</td>
+        <td data-rotulo="Situação"><span class="chip chip-execucao">Em execução</span></td>
+        <td class="acoes"><a class="btn btn-primario btn-pequeno" href="T14-ordem-execucao.html">Abrir</a></td>
+      </tr>
+      <tr>
+        <td data-rotulo="Número">OS-2026-0150</td>
+        <td data-rotulo="Cliente">Escola Recanto</td>
+        <td data-rotulo="Serviço">Troca de disjuntor</td>
+        <td data-rotulo="Prazo">26/09/2026</td>
+        <td data-rotulo="Situação"><span class="chip chip-atribuida">Atribuída</span></td>
+        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T14-ordem-execucao.html">Abrir</a></td>
+      </tr>
+      <tr>
+        <td data-rotulo="Número">OS-2026-0144</td>
+        <td data-rotulo="Cliente">Supermercado Ponto Certo</td>
+        <td data-rotulo="Serviço">Troca de disjuntor</td>
+        <td data-rotulo="Prazo">15/09/2026</td>
+        <td data-rotulo="Situação"><span class="chip chip-concluida">Concluída</span></td>
+        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T14-ordem-execucao.html">Abrir</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="cartao">
+  <h2>Ordens de outros prestadores</h2>
+  <div class="vazio">
+    <strong>Esta lista não existe para o seu perfil</strong>
+    O prestador enxerga apenas as ordens atribuídas a ele. O recorte é feito no servidor, não escondendo a informação
+    na tela (RNF02).
+  </div>
+</div>
+    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>O recorte por prestador é feito no servidor. Uma requisicao montada por fora é recusada (RNF02).</li><li>Sem nenhuma ordem atribuida, a lista mostra a mensagem de que nao ha ordem no momento.</li></ul></section>
+  </main>
+</div>
+
+</body>
+</html>

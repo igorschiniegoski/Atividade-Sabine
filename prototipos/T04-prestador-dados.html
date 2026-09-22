@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T04 · Elétrica Boratto ME · SGP</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="app">
+<header class="topo">
+  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <div class="usuario">
+    <div class="usuario-dados">
+      <strong>Marina Prado</strong>
+      <span>Administradora</span>
+    </div>
+    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+  </div>
+</header>
+<div class="corpo">
+  <nav class="menu">
+    <a class="menu-item" href="T02-painel-administrador.html">Painel</a>
+    <a class="menu-item" href="T11-ordens.html">Ordens de serviço</a>
+    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
+    <a class="menu-item" href="T10-vencimentos.html">Vencimentos</a>
+    <a class="menu-item" href="T05-clientes.html">Clientes</a>
+    <a class="menu-item" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item" href="T07-categorias.html">Categorias</a>
+    <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
+  </nav>
+  <main class="conteudo">
+    <div class="cabecalho-tela">
+      <div>
+        <span class="codigo-tela">T04</span>
+        <h1>Elétrica Boratto ME</h1>
+        <p class="subtitulo">Cadastro do prestador</p>
+      </div>
+      
+    </div>
+    <div class="abas"><a class="aba ativa" href="T04-prestador-dados.html">Dados cadastrais</a><a class="aba" href="T04b-prestador-categorias.html">Categorias</a><a class="aba" href="T04c-prestador-documentos.html">Documentos</a><a class="aba" href="T04d-prestador-situacao.html">Situação cadastral</a></div>
+<div class="cartao">
+  <h2>Identificação</h2>
+  <div class="cartao-corpo">
+    <div class="linha">
+      <div class="campo estreito">
+        <label>Tipo <span class="obrigatorio">*</span></label>
+        <select><option>Pessoa jurídica</option><option>Pessoa física</option></select>
+      </div>
+      <div class="campo">
+        <label>Razão social <span class="obrigatorio">*</span></label>
+        <input type="text" value="Elétrica Boratto ME">
+      </div>
+      <div class="campo com-erro">
+        <label>CNPJ <span class="obrigatorio">*</span></label>
+        <input type="text" value="12.345.678/0001-00">
+        <span class="erro">CNPJ inválido: o dígito verificador não confere.</span>
+      </div>
+    </div>
+    <div class="linha">
+      <div class="campo">
+        <label>Telefone <span class="obrigatorio">*</span></label>
+        <input type="text" value="(44) 99812-4410">
+      </div>
+      <div class="campo">
+        <label>E-mail</label>
+        <input type="email" value="contato@eletricaboratto.com.br">
+        <span class="ajuda">Usado também para liberar o acesso do prestador ao sistema.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cartao">
+  <h2>Endereço</h2>
+  <div class="cartao-corpo">
+    <div class="linha">
+      <div class="campo estreito">
+        <label>CEP <span class="obrigatorio">*</span></label>
+        <input type="text" value="87020-025">
+      </div>
+      <div class="campo">
+        <label>Logradouro <span class="obrigatorio">*</span></label>
+        <input type="text" value="Avenida Brasil">
+      </div>
+      <div class="campo estreito">
+        <label>Número <span class="obrigatorio">*</span></label>
+        <input type="text" value="1420">
+      </div>
+      <div class="campo estreito">
+        <label>Complemento</label>
+        <input type="text" value="Sala 3">
+      </div>
+    </div>
+    <div class="linha">
+      <div class="campo">
+        <label>Bairro <span class="obrigatorio">*</span></label>
+        <input type="text" value="Centro">
+      </div>
+      <div class="campo">
+        <label>Cidade <span class="obrigatorio">*</span></label>
+        <input type="text" value="Maringá">
+      </div>
+      <div class="campo estreito">
+        <label>UF <span class="obrigatorio">*</span></label>
+        <select><option>PR</option><option>SP</option><option>SC</option></select>
+      </div>
+    </div>
+  </div>
+  <div class="rodape-form">
+    <a class="btn btn-neutro" href="T03-prestadores.html">Cancelar</a>
+    <a class="btn btn-primario" href="T03-prestadores.html">Salvar</a>
+  </div>
+</div>
+    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>O CNPJ é validado pelo digito verificador e nao pode se repetir entre cadastros ativos (RN10).</li><li>Enquanto houver erro de validacao o formulario nao é enviado e o campo fica destacado.</li><li>Toda gravacao devolve mensagem de confirmacao ou de erro (RNF05).</li></ul></section>
+  </main>
+</div>
+
+</body>
+</html>

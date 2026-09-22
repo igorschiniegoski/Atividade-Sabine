@@ -1,0 +1,70 @@
+@startuml arquitetura
+' sgp - diagrama de arquitetura previsto - equipe 8
+!include _estilo.puml
+skinparam ranksep 40
+skinparam nodesep 30
+skinparam componentStyle rectangle
+skinparam component {
+  BorderColor #1f4e79
+  BackgroundColor #eef3f8
+  FontColor #1f2328
+}
+skinparam database {
+  BorderColor #1f4e79
+  BackgroundColor #eef3f8
+  FontColor #1f2328
+}
+skinparam cloud {
+  BorderColor #90a4b8
+  BackgroundColor #ffffff
+  FontColor #1f4e79
+}
+
+title arquitetura prevista - sgp\n<size:11>monolito em camadas publicado como aplicacao unica
+
+actor "administrador" as ADM
+actor "prestador" as PRE
+actor "cliente" as CLI
+
+rectangle "navegador\nchrome, edge ou firefox" as NAV #f4f7fb
+
+ADM --> NAV
+PRE --> NAV
+CLI --> NAV
+
+rectangle "next.js 15 hospedado na vercel" as APP {
+  component "camada de apresentacao\ntelas em react 19, componentes shadcn/ui,\nmascaras e mensagens de retorno" as C1
+  component "camada de aplicacao\nrotas de api, sessao do auth.js,\nautorizacao por perfil e validacao com zod" as C2
+  component "camada de dominio\nRN01 a RN12, verificacao de aptidao (UC22)\ne maquina de estado da ordem (RN05)" as C3
+  component "camada de acesso a dados\nprisma orm, transacões e migracões" as C4
+
+  C1 --> C2 : chamada http\ninterna
+  C2 --> C3 : delega a decisao\nde negocio
+  C3 --> C4 : pede e grava\nos dados
+}
+
+database "postgresql 16\n14 tabelas do\nmodelo logico" as DB
+cloud "storage de objetos\ndocumentos e contratos\nem pdf, jpg e png" as ST
+
+NAV --> C1 : https
+C4 --> DB : sql
+C2 --> ST : upload e url assinada
+
+note right of C2
+  RNF02 - a permissao é decidida aqui,
+  nunca na tela. esconder o botao é
+  apenas conforto visual
+end note
+
+note bottom of ST
+  RNF09 - o banco guarda somente a url
+  e os metadados do arquivo
+end note
+
+legend bottom
+  <b>por que monolito</b>
+  um unico dominio, um time de dois integrantes e uma base de dados so.
+  dividir em microsservicos acrescentaria deploy e rede sem resolver nenhum problema do projeto.
+endlegend
+
+@enduml

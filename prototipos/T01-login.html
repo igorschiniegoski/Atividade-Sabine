@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T01 · Entrar no sistema · SGP</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="centro">
+<div class="caixa-login">
+  <div class="marca-login">
+    <strong>SGP</strong>
+    <span>Sistema de Gestão de Prestadores</span>
+  </div>
+
+  <div class="cartao">
+    <div class="cartao-corpo">
+      <div class="campo largo">
+        <label>E-mail <span class="obrigatorio">*</span></label>
+        <input type="email" value="marina.prado@empresa.com.br">
+      </div>
+      <div class="campo largo com-erro">
+        <label>Senha <span class="obrigatorio">*</span></label>
+        <input type="password" value="············">
+        <span class="erro">E-mail ou senha inválidos.</span>
+        <span class="ajuda">A mensagem não diz qual dos dois está errado, de propósito (HU01).</span>
+      </div>
+      <a class="btn btn-primario" style="width:100%;text-align:center" href="T02-painel-administrador.html">Entrar</a>
+    </div>
+  </div>
+
+  <div class="cartao">
+    <h2>Entrar como (apenas no protótipo)</h2>
+    <div class="cartao-corpo">
+      <p class="subtitulo" style="margin-top:0">O sistema identifica o perfil pela conta. Aqui os três caminhos ficam
+      abertos para a demonstração.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a class="btn btn-neutro" href="T02-painel-administrador.html">Administrador</a>
+        <a class="btn btn-neutro" href="T13-minhas-ordens.html">Prestador</a>
+        <a class="btn btn-neutro" href="T16-minhas-solicitacoes.html">Cliente</a>
+      </div>
+      <p style="margin-bottom:0"><a href="index.html">Ver o mapa do protótipo</a></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T17 · Nova solicitação · SGP</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="app">
+<header class="topo">
+  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <div class="usuario">
+    <div class="usuario-dados">
+      <strong>Supermercado Ponto Certo</strong>
+      <span>Cliente</span>
+    </div>
+    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+  </div>
+</header>
+<div class="corpo">
+  <nav class="menu">
+    <a class="menu-item" href="T16-minhas-solicitacoes.html">Minhas solicitações</a>
+    <a class="menu-item ativo" href="T17-nova-solicitacao.html">Nova solicitação</a>
+    <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
+  </nav>
+  <main class="conteudo">
+    <div class="cabecalho-tela">
+      <div>
+        <span class="codigo-tela">T17</span>
+        <h1>Nova solicitação</h1>
+        <p class="subtitulo">Descreva o serviço que você precisa</p>
+      </div>
+      
+    </div>
+    <div class="cartao">
+  <h2>O que você precisa</h2>
+  <div class="cartao-corpo">
+    <div class="linha">
+      <div class="campo">
+        <label>Categoria <span class="obrigatorio">*</span></label>
+        <select><option>Elétrica</option><option>Hidráulica</option><option>Limpeza</option><option>Refrigeração</option></select>
+      </div>
+      <div class="campo">
+        <label>Serviço <span class="obrigatorio">*</span></label>
+        <select><option>Instalação de tomadas</option><option>Troca de disjuntor</option></select>
+        <span class="ajuda">Valor de referência: R$ 180,00. Prazo padrão: 3 dias.</span>
+      </div>
+      <div class="campo estreito">
+        <label>Prioridade</label>
+        <select><option>Normal</option><option>Baixa</option><option>Alta</option><option>Urgente</option></select>
+      </div>
+    </div>
+
+    <div class="campo largo com-erro">
+      <label>Descrição do problema <span class="obrigatorio">*</span></label>
+      <textarea>tomada queimada</textarea>
+      <span class="erro">Descreva com mais detalhe: são necessários pelo menos 20 caracteres.</span>
+      <span class="ajuda">Quanto mais claro o pedido, menor a chance de o prestador chegar sem o material certo.</span>
+    </div>
+
+    <div class="linha">
+      <div class="campo">
+        <label>Prazo desejado</label>
+        <input type="text" value="25/09/2026">
+        <span class="ajuda">Se ficar em branco, o sistema aplica o prazo padrão do serviço e mostra a data calculada.</span>
+      </div>
+      <div class="campo">
+        <label>Local do atendimento</label>
+        <input type="text" value="Rua Néo Alves Martins, 2810 - Zona 3">
+      </div>
+    </div>
+  </div>
+  <div class="rodape-form">
+    <a class="btn btn-neutro" href="T16-minhas-solicitacoes.html">Cancelar</a>
+    <a class="btn btn-primario" href="T16-minhas-solicitacoes.html">Enviar solicitação</a>
+  </div>
+</div>
+    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>A descricao exige no minimo 20 caracteres.</li><li>Prazo anterior a hoje é recusado. Sem prazo informado, o sistema aplica o prazo padrao do servico.</li><li>A ordem nasce com status aberta e recebe um numero visivel ao cliente.</li></ul></section>
+  </main>
+</div>
+
+</body>
+</html>

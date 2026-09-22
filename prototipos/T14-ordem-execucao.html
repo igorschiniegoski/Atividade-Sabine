@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T14 · Ordem OS-2026-0148 · SGP</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="app">
+<header class="topo">
+  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <div class="usuario">
+    <div class="usuario-dados">
+      <strong>Elétrica Boratto ME</strong>
+      <span>Prestador</span>
+    </div>
+    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+  </div>
+</header>
+<div class="corpo">
+  <nav class="menu">
+    <a class="menu-item" href="T13-minhas-ordens.html">Minhas ordens</a>
+    <a class="menu-item" href="T15-meus-documentos.html">Meus documentos</a>
+    <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
+  </nav>
+  <main class="conteudo">
+    <div class="cabecalho-tela">
+      <div>
+        <span class="codigo-tela">T14</span>
+        <h1>Ordem OS-2026-0148</h1>
+        <p class="subtitulo">Instalação de tomadas · Supermercado Ponto Certo</p>
+      </div>
+      
+    </div>
+    <div class="cartao">
+  <div class="cartao-corpo">
+    <div class="trilha">
+      <span class="passo feito">Aberta</span><span class="seta">&rsaquo;</span>
+      <span class="passo feito">Atribuída</span><span class="seta">&rsaquo;</span>
+      <span class="passo atual">Em execução</span><span class="seta">&rsaquo;</span>
+      <span class="passo">Concluída</span>
+    </div>
+  </div>
+</div>
+
+<div class="colunas">
+  <div class="cartao">
+    <h2>O que foi pedido</h2>
+    <div class="cartao-corpo">
+      <div class="linha">
+        <div class="campo"><label>Cliente</label><p style="margin:0">Supermercado Ponto Certo<span class="secundario">Rua Néo Alves Martins, 2810 - Zona 3</span></p></div>
+        <div class="campo"><label>Prazo</label><p style="margin:0">24/09/2026<span class="secundario">faltam 2 dias</span></p></div>
+      </div>
+      <div class="campo largo">
+        <label>Descrição</label>
+        <p style="margin:0">Instalar quatro tomadas novas no estoque, duas em cada parede lateral, com tomada de 20A
+        para a seladora. O material já está comprado e fica na sala do gerente.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cartao" style="flex:0 1 400px">
+    <h2>Registrar andamento</h2>
+    <div class="cartao-corpo">
+      <div class="campo largo">
+        <label>Observação</label>
+        <textarea placeholder="O que foi feito até agora"></textarea>
+        <span class="ajuda">O cliente e o administrador enxergam esse registro.</span>
+      </div>
+      <a class="btn btn-neutro" href="T14-ordem-execucao.html">Salvar andamento</a>
+    </div>
+  </div>
+</div>
+
+<div class="cartao">
+  <h2>Concluir o serviço</h2>
+  <div class="cartao-corpo">
+    <div class="campo largo com-erro">
+      <label>Relato do que foi executado <span class="obrigatorio">*</span></label>
+      <textarea placeholder="Descreva o que foi executado"></textarea>
+      <span class="erro">Descreva o que foi executado antes de concluir a ordem.</span>
+      <span class="ajuda">Depois de concluída, a ordem não pode mais ser alterada (RN06). A correção exige
+      cancelamento com justificativa e abertura de uma nova ordem.</span>
+    </div>
+  </div>
+  <div class="rodape-form">
+    <a class="btn btn-neutro" href="T13-minhas-ordens.html">Voltar</a>
+    <a class="btn btn-primario" href="T13-minhas-ordens.html">Concluir ordem</a>
+  </div>
+</div>
+
+<div class="cartao">
+  <h2>Histórico</h2>
+  <div class="cartao-corpo">
+    <ul class="tempo">
+      <li><strong>Execução iniciada</strong><span class="quando">22/09/2026 às 10:02, por Elétrica Boratto ME</span></li>
+      <li><strong>Ordem atribuída</strong><span class="quando">21/09/2026 às 16:30, por Marina Prado</span></li>
+      <li><strong>Ordem aberta</strong><span class="quando">21/09/2026 às 15:58, por Supermercado Ponto Certo</span></li>
+    </ul>
+  </div>
+</div>
+    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>A conclusao exige o relato do que foi executado (fluxo de excecao E4.1).</li><li>Ao concluir, o sistema compara a data com o prazo e marca a ordem como no prazo ou em atraso (RN12).</li><li>Depois de concluida, a ordem fica bloqueada para edicao (RN06).</li></ul></section>
+  </main>
+</div>
+
+</body>
+</html>

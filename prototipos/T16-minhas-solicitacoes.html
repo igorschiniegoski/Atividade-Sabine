@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T16 · Minhas solicitações · SGP</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="app">
+<header class="topo">
+  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <div class="usuario">
+    <div class="usuario-dados">
+      <strong>Supermercado Ponto Certo</strong>
+      <span>Cliente</span>
+    </div>
+    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+  </div>
+</header>
+<div class="corpo">
+  <nav class="menu">
+    <a class="menu-item ativo" href="T16-minhas-solicitacoes.html">Minhas solicitações</a>
+    <a class="menu-item" href="T17-nova-solicitacao.html">Nova solicitação</a>
+    <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
+  </nav>
+  <main class="conteudo">
+    <div class="cabecalho-tela">
+      <div>
+        <span class="codigo-tela">T16</span>
+        <h1>Minhas solicitações</h1>
+        <p class="subtitulo">Acompanhe o que você pediu</p>
+      </div>
+      <div class="acoes-tela"><a class="btn btn-primario" href="T17-nova-solicitacao.html">Nova solicitação</a></div>
+    </div>
+    <div class="cartao">
+  <h2>Minhas solicitações</h2>
+  <table>
+    <thead>
+      <tr><th>Número</th><th>Serviço</th><th>Aberta em</th><th>Prazo</th><th>Situação</th><th class="acoes">&nbsp;</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-rotulo="Número">OS-2026-0148</td>
+        <td data-rotulo="Serviço">Instalação de tomadas</td>
+        <td data-rotulo="Aberta em">21/09/2026</td>
+        <td data-rotulo="Prazo">24/09/2026</td>
+        <td data-rotulo="Situação"><span class="chip chip-execucao">Em execução</span></td>
+        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T18-ordem-cliente.html">Acompanhar</a></td>
+      </tr>
+      <tr>
+        <td data-rotulo="Número">OS-2026-0144</td>
+        <td data-rotulo="Serviço">Troca de disjuntor</td>
+        <td data-rotulo="Aberta em">12/09/2026</td>
+        <td data-rotulo="Prazo">15/09/2026</td>
+        <td data-rotulo="Situação"><span class="chip chip-concluida">Concluída</span></td>
+        <td class="acoes"><a class="btn btn-primario btn-pequeno" href="T18-ordem-cliente.html">Avaliar</a></td>
+      </tr>
+      <tr>
+        <td data-rotulo="Número">OS-2026-0139</td>
+        <td data-rotulo="Serviço">Limpeza pós-obra</td>
+        <td data-rotulo="Aberta em">28/08/2026</td>
+        <td data-rotulo="Prazo">01/09/2026</td>
+        <td data-rotulo="Situação"><span class="chip chip-concluida">Concluída</span></td>
+        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T18-ordem-cliente.html">Ver avaliação</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>O cliente ve apenas as proprias ordens e nao tem acesso a lista de prestadores (RNF02).</li><li>A acao avaliar so aparece depois que a ordem é concluida (RN08).</li></ul></section>
+  </main>
+</div>
+
+</body>
+</html>
