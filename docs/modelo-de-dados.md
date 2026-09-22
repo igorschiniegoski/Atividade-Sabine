@@ -31,7 +31,7 @@ o que existe no dominio do problema esta no diagrama de classes da secao 3. como
 
 | documento | entrega | o que ele define | como este documento se apoia nele |
 |---|---|---|---|
-| documento de visao e requisitos | 1ª | 19 RF, 11 RNF e 12 RN | cada tabela nasce de um requisito, e cada RN aparece como restricao no banco ou como metodo de classe |
+| documento de visao e requisitos | 1ª | 19 RF, 12 RNF e 12 RN | cada tabela nasce de um requisito, e cada RN aparece como restricao no banco ou como metodo de classe |
 | casos de uso e historias | 2ª | 24 casos de uso e 23 historias | os dados manipulados em cada fluxo viraram atributo de classe e coluna de tabela |
 | tecnologias e arquitetura | 2ª | stack e camadas | o modelo logico foi escrito para postgresql com prisma, conforme decidido la |
 

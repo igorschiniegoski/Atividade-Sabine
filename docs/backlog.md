@@ -38,7 +38,7 @@ a divisao nao significa que cada integrante conhece apenas a propria parte. as t
 | id | tarefa | requisito | prioridade | responsavel | situacao |
 |---|---|---|---|---|---|
 | TA01 | levantar o problema, o escopo e os 19 requisitos funcionais | 1ª entrega | alta | igor | concluida |
-| TA02 | definir os 11 requisitos nao funcionais e as 12 regras de negocio | 1ª entrega | alta | luis | concluida |
+| TA02 | definir os requisitos nao funcionais e as 12 regras de negocio | 1ª entrega | alta | luis | concluida |
 | TA03 | modelar os 24 casos de uso e os cinco diagramas de caso de uso | 2ª entrega | alta | igor | concluida |
 | TA04 | escrever as 23 historias de usuario com criterios de aceite | 2ª entrega | alta | igor | concluida |
 | TA05 | priorizar o escopo com a escala moscow | 2ª entrega | alta | luis | concluida |
@@ -63,7 +63,7 @@ autenticacao e cadastros de apoio. sem esta release nao ha o que atribuir.
 |---|---|---|---|---|---|
 | TA16 | criar o projeto next.js, configurar o prisma e publicar o primeiro deploy na vercel | RNF08, RNF11 | alta | luis | a fazer |
 | TA17 | escrever as migracões das 14 tabelas do modelo logico | modelo de dados | alta | luis | a fazer |
-| TA18 | implementar o login com hash bcrypt e sessao de 30 minutos | RF01, HU01, HU02 | alta | luis | a fazer |
+| TA18 | implementar o login com hash bcrypt, sessao de 30 minutos e bloqueio apos cinco tentativas | RF01, HU01, HU02, RNF12 | alta | luis | a fazer |
 | TA19 | implementar a autorizacao por perfil nas rotas de api | RNF02 | alta | luis | a fazer |
 | TA20 | montar o layout base: cabecalho, menu por perfil e componentes de tabela e formulario | RNF04 | alta | igor | a fazer |
 | TA21 | construir a tela de login (T01) | RF01 | alta | igor | a fazer |

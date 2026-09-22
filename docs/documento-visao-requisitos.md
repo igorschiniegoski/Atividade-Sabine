@@ -1,7 +1,7 @@
 # sgp - sistema de gestao de prestadores
 ## documento de visao e requisitos
 
-**versao 1.1 - 22/09/2026 - 1ª entrega, revisada**
+**versao 1.2 - 22/09/2026 - 1ª entrega, revisada**
 unicesumar - analise e desenvolvimento de sistemas
 imersao profissional - projeto de software - equipe 8
 
@@ -15,7 +15,7 @@ imersao profissional - projeto de software - equipe 8
 | tema da equipe | plataforma para controle de prestadores de servicos |
 | equipe | equipe 8 |
 | integrantes | luis gustavo boratto de oliveira, igor schiniegoski pallisser |
-| versao do documento | 1.1 - primeira entrega, revisada na 3ª |
+| versao do documento | 1.2 - primeira entrega, revisada na 3ª |
 
 o sgp é um sistema web para empresas que trabalham com prestadores de servico terceirizados. ele reune em um lugar só o cadastro dos prestadores, dos clientes e das categorias de servico, guarda os documentos e contratos de cada prestador com a data de validade, e controla as ordens de servico desde a abertura ate a conclusao, passando pela atribuicao a um prestador. no fim de cada atendimento o cliente avalia o servico, e essas notas alimentam o historico e os relatórios de desempenho que ajudam o gestor a decidir quem chamar da próxima vez.
 
@@ -160,6 +160,7 @@ o público-alvo são empresas de pequeno e médio porte que contratam servico te
 | RNF09 | armazenamento | o upload de documentos deve aceitar os formatos pdf, jpg e png, com limite de 10 mb por arquivo |
 | RNF10 | privacidade | os dados pessoais devem ficar visíveis apenas aos perfis autorizados, atendendo a lgpd, e a conta deve poder ser excluída ou anonimizada mediante solicitacao |
 | RNF11 | manutenibilidade | o código deve ser versionado no github, com padrao de nomes definido, readme e commits identificáveis por integrante |
+| RNF12 | seguranca | apos cinco tentativas de acesso malsucedidas seguidas para o mesmo email, o sistema deve recusar novas tentativas daquele email por 15 minutos |
 
 ---
 
@@ -209,3 +210,4 @@ o público-alvo são empresas de pequeno e médio porte que contratam servico te
 |---|---|---|
 | 1.0 | 14/08/2026 | primeira versao do documento, entregue na 1ª entrega |
 | 1.1 | 22/09/2026 | atualizada a composicao da equipe, que passou a ter dois integrantes. nenhum requisito, regra ou secao de conteudo foi alterado |
+| 1.2 | 22/09/2026 | acrescentado o RNF12. o comportamento ja estava especificado no fluxo de excecao do UC01, na 2ª entrega, mas nao existia requisito que o sustentasse. os demais requisitos mantiveram a numeracao |

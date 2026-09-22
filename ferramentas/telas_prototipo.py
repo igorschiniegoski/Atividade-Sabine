@@ -712,6 +712,28 @@ SERVICO_CADASTRO = """<div class="cartao">
 # ---------------------------------------------------------------- T10
 
 VENCIMENTOS = """<div class="cartao">
+  <div class="cartao-corpo">
+    <div class="linha">
+      <div class="campo estreito">
+        <label>Categoria</label>
+        <select><option>Todas</option><option>Elétrica</option><option>Hidráulica</option><option>Limpeza</option><option>Refrigeração</option></select>
+      </div>
+      <div class="campo estreito">
+        <label>Situação do prestador</label>
+        <select><option>Todas</option><option>Ativo</option><option>Pendente</option><option>Bloqueado</option></select>
+      </div>
+      <div class="campo estreito">
+        <label>Ordenar por</label>
+        <select><option>Data de validade</option><option>Prestador</option></select>
+      </div>
+      <div class="campo estreito" style="display:flex;align-items:flex-end">
+        <a class="btn" href="T10-vencimentos.html">Filtrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cartao">
   <h2>Vencidos (3)</h2>
   <table>
     <thead>
@@ -946,18 +968,20 @@ ATRIBUIR = """<div class="modal-fundo">
       </div>
 
       <table>
-        <thead><tr><th>Prestador</th><th class="numerico">Nota</th><th class="numerico">Ordens abertas</th><th class="acoes">&nbsp;</th></tr></thead>
+        <thead><tr><th>Prestador</th><th class="numerico">Nota média</th><th class="numerico">Em andamento</th><th>Último atendimento</th><th class="acoes">&nbsp;</th></tr></thead>
         <tbody>
           <tr>
-            <td data-rotulo="Prestador">HIDRAULICA TRES LAGOAS LTDA<span class="secundario">31 ordens concluídas, última em 08/09</span></td>
-            <td class="numerico" data-rotulo="Nota">4,6</td>
-            <td class="numerico" data-rotulo="Ordens">2</td>
+            <td data-rotulo="Prestador">HIDRAULICA TRES LAGOAS LTDA<span class="secundario">Hidráulica Três Lagoas</span></td>
+            <td class="numerico" data-rotulo="Nota média">4,6</td>
+            <td class="numerico" data-rotulo="Em andamento">2</td>
+            <td data-rotulo="Último atendimento">08/09/2026</td>
             <td class="acoes"><a class="btn btn-primario btn-pequeno" href="T12-ordem-administrador.html">Atribuir</a></td>
           </tr>
           <tr>
-            <td data-rotulo="Prestador">J R INSTALACOES HIDRAULICAS ME<span class="secundario">cadastrado em 02/09, 2 ordens concluídas</span></td>
-            <td class="numerico" data-rotulo="Nota">Sem histórico suficiente</td>
-            <td class="numerico" data-rotulo="Ordens">0</td>
+            <td data-rotulo="Prestador">J R INSTALACOES HIDRAULICAS ME<span class="secundario">cadastrado em 02/09/2026</span></td>
+            <td class="numerico" data-rotulo="Nota média">Sem histórico suficiente</td>
+            <td class="numerico" data-rotulo="Em andamento">0</td>
+            <td data-rotulo="Último atendimento">19/09/2026</td>
             <td class="acoes"><a class="btn btn-primario btn-pequeno" href="T12-ordem-administrador.html">Atribuir</a></td>
           </tr>
         </tbody>

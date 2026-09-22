@@ -1,7 +1,7 @@
 # sgp - sistema de gestao de prestadores
 ## definicao do mvp, mapa de navegacao e prototipo de telas
 
-**versao 1.0 - 22/09/2026 - 3ª entrega**
+**versao 1.1 - 22/09/2026 - 3ª entrega**
 unicesumar - analise e desenvolvimento de sistemas
 imersao profissional - projeto de software - equipe 8
 
@@ -36,7 +36,7 @@ o manual da 3ª entrega pede que a documentacao ja produzida seja revisada antes
 | perfis de usuario | mantidos. os tres perfis aparecem nos casos de uso, nas historias e agora tambem nas telas |
 | escopo | reduzido de forma explicita pela priorizacao moscow, e agora tambem pela definicao do mvp da secao 3 |
 | requisitos funcionais | os 19 continuam validos e numerados. nenhum foi renumerado, para nao quebrar a rastreabilidade |
-| requisitos nao funcionais | os 11 continuam validos. o RNF04 (responsividade) passou a ser verificavel no prototipo |
+| requisitos nao funcionais | os 11 continuam validos e entrou o RNF12, que documenta o bloqueio apos tentativas de acesso malsucedidas, comportamento que o UC01 ja previa sem requisito de origem. o RNF04 (responsividade) passou a ser verificavel no prototipo |
 | regras de negocio | as 12 continuam validas e cada uma aparece em pelo menos uma tela do prototipo |
 | casos de uso | os 24 continuam validos. a 2ª entrega ganhou os diagramas de atividade de UC13 e UC16 |
 | modelo de dados | concluido no complemento da 2ª entrega, com as 14 tabelas e o dicionario |
@@ -62,7 +62,7 @@ nenhum requisito foi renumerado e nenhum documento anterior foi reescrito: as co
 
 mvp nao quer dizer a parte facil do sistema, nem tudo que der tempo de fazer. o criterio que a equipe adotou foi outro: entra no mvp o que for necessario para executar o fluxo completo do inicio ao fim, sem depender de contorno manual. o teste é simples, basta tirar a funcionalidade e ver se o caminho do cliente pedir ate avaliar continua de pé. se nao continuar, ela é indispensavel.
 
-é o mesmo criterio da priorizacao moscow da 2ª entrega, e por isso o mvp acabou correspondendo exatamente aos 16 casos de uso classificados como must have.
+é o mesmo criterio da priorizacao moscow da 2ª entrega, e por isso o mvp acabou correspondendo exatamente aos 17 casos de uso classificados como must have.
 
 ### 3.2 o que entra e o que fica de fora
 
@@ -95,9 +95,9 @@ mvp nao quer dizer a parte facil do sistema, nem tudo que der tempo de fazer. o 
 
 | medida | valor |
 |---|---|
-| casos de uso no mvp | 16 dos 24 |
-| historias de usuario no mvp | 16 das 23 |
-| pontos de esforco no mvp | 60 dos 85 |
+| casos de uso no mvp | 17 dos 24 |
+| historias de usuario no mvp | 16 das 23, ja que o UC22 é verificado dentro da historia da atribuicao |
+| pontos de esforco no mvp | 59 dos 85 |
 | telas no mvp | 18 |
 | tabelas usadas pelo mvp | 12 das 14 (ficam de fora `contrato` e `log_acao`) |
 | requisitos funcionais atendidos | 15 dos 19 |
@@ -375,3 +375,4 @@ o quadro de tarefas com responsavel e situacao esta em [backlog.md](backlog.md),
 | versao | data | alteracao |
 |---|---|---|
 | 1.0 | 22/09/2026 | primeira versao, com a definicao do mvp, o fluxo completo, o levantamento de telas, o mapa de navegacao, o prototipo e a rastreabilidade ampliada |
+| 1.1 | 22/09/2026 | acrescentados ao modelo os campos que as telas ja mostravam, e corrigida a contagem do mvp, que herdava o erro da secao 6.2 do documento de casos de uso: sao 17 casos de uso e 59 pontos |
