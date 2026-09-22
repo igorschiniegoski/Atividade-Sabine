@@ -1,7 +1,7 @@
 # sgp - sistema de gestao de prestadores
 ## documento de casos de uso, historias de usuario e priorizacao
 
-**versao 1.1 - 22/09/2026 - 2ª entrega**
+**versao 1.2 - 22/09/2026 - 2ª entrega**
 unicesumar - analise e desenvolvimento de sistemas
 imersao profissional - projeto de software - equipe 8
 
@@ -181,10 +181,10 @@ nas tabelas deste documento a prioridade aparece sempre no formato `sigla - nive
 
 | prioridade | quantidade | casos de uso |
 |---|---|---|
-| M - must have | 16 | UC01, UC02, UC03, UC04, UC05, UC06, UC07, UC08, UC09, UC11, UC12, UC13, UC15, UC16, UC18, UC22 |
+| M - must have | 17 | UC01, UC02, UC03, UC04, UC05, UC06, UC07, UC08, UC09, UC11, UC12, UC13, UC15, UC16, UC17, UC18, UC22 |
 | S - should have | 5 | UC10, UC14, UC19, UC20, UC23 |
 | C - could have | 2 | UC21, UC24 |
-| **total** | **23** | |
+| **total** | **24** | |
 
 **justificativa dos casos que ficaram fora do mvp:**
 
@@ -219,7 +219,7 @@ os itens abaixo foram avaliados, considerados pertinentes ao dominio e conscient
 |---|---|---|---|
 | release 1 - base | 3ª entrega, semana 1 | UC01, UC02, UC03, UC04, UC05, UC06, UC07 | autenticacao funcionando e cadastros de apoio completos |
 | release 2 - documentacao | 3ª entrega, semana 2 | UC08, UC09, UC11, UC22 | controle de validade e situacao cadastral, com a regra de aptidao ja aplicavel |
-| release 3 - operacao | 3ª entrega, semana 3 | UC12, UC13, UC15, UC16, UC18 | fluxo completo da ordem de servico, do pedido a avaliacao. **fim do mvp** |
+| release 3 - operacao | 3ª entrega, semana 3 | UC12, UC13, UC15, UC16, UC17, UC18 | fluxo completo da ordem de servico, do pedido a avaliacao. **fim do mvp** |
 | release 4 - complementos | se houver folga no cronograma | UC10, UC14, UC19, UC20, UC23 | contratos, aceite do prestador, historico consolidado, relatorio e log |
 | backlog | - | UC21, UC24 | relatorio por periodo e exportacao |
 
@@ -253,7 +253,7 @@ os fluxos alternativos e de excecao sao numerados a partir do passo do fluxo pri
 | objetivo | permitir que o usuario acesse o sistema com as permissões do seu perfil |
 | ator principal | usuario (administrador, prestador ou cliente) |
 | prioridade | M - must have |
-| requisitos | RF01, RNF01, RNF02 |
+| requisitos | RF01, RNF01, RNF02, RNF12 |
 | frequencia | varias vezes ao dia, por todos os perfis |
 
 **pre-condicões:** o usuario possui conta cadastrada e ativa no sistema.
@@ -278,9 +278,9 @@ os fluxos alternativos e de excecao sao numerados a partir do passo do fluxo pri
 
 - **E4.1 - credenciais invalidas:** o sistema informa "email ou senha invalidos", sem revelar qual dos dois esta errado, e retorna ao passo 2.
 - **E4.2 - conta inativa:** o sistema informa que a conta esta inativa e orienta o contato com o administrador. o caso de uso termina sem criar sessao.
-- **E4.3 - tentativas sucessivas:** apos 5 tentativas invalidas seguidas o sistema bloqueia novas tentativas daquele email por 15 minutos.
+- **E4.3 - tentativas sucessivas:** apos 5 tentativas invalidas seguidas o sistema bloqueia novas tentativas daquele email por 15 minutos (RNF12).
 
-**regras aplicadas:** RNF01 (senha em hash), RNF02 (permissao validada no servidor).
+**regras aplicadas:** RNF01 (senha em hash), RNF02 (permissao validada no servidor), RNF12 (bloqueio apos tentativas sucessivas).
 
 ---
 
@@ -947,7 +947,7 @@ o campo "pontos" usa a sequencia de fibonacci (1, 2, 3, 5, 8) e representa esfor
 | 5 - consultas, relatorios e auditoria | HU19 a HU23 | 18 | S - should have |
 | **total** | **23 historias** | **85 pontos** | |
 
-do total de 85 pontos, 60 estao no nivel **M - must have** e formam o mvp descrito na secao 6.4.
+do total de 85 pontos, 59 estao no nivel **M - must have** e formam o mvp descrito na secao 6.4. sao 16 historias para 17 casos de uso, porque o UC22 nao tem historia propria: ele é verificado dentro da HU13, que é a atribuicao.
 
 ---
 
@@ -1033,3 +1033,4 @@ a matriz garante que nenhum requisito funcional levantado na 1ª entrega ficou s
 |---|---|---|
 | 1.0 | 21/08/2026 | primeira versao do documento de casos de uso, historias de usuario e priorizacao, elaborada para a 2ª entrega |
 | 1.1 | 22/09/2026 | acrescentada a secao 7.18 com os diagramas de atividade de UC13 e UC16, e atualizada a secao 10 com a conclusao dos itens pendentes da 2ª entrega |
+| 1.2 | 22/09/2026 | corrigida a secao 6.2, que omitia o UC17 entre os must have e por isso somava 23 casos de uso em vez de 24. o UC17 tambem entrou no plano de construcao da release 3, e a soma de pontos do nivel M passou de 60 para 59 |

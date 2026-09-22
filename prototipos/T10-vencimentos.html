@@ -43,6 +43,28 @@
          A situacao do prestador pode ser alterada direto daqui, sem abrir o cadastro (UC09 estende UC11). -->
 
     <div class="cartao">
+  <div class="cartao-corpo">
+    <div class="linha">
+      <div class="campo estreito">
+        <label>Categoria</label>
+        <select><option>Todas</option><option>Elétrica</option><option>Hidráulica</option><option>Limpeza</option><option>Refrigeração</option></select>
+      </div>
+      <div class="campo estreito">
+        <label>Situação do prestador</label>
+        <select><option>Todas</option><option>Ativo</option><option>Pendente</option><option>Bloqueado</option></select>
+      </div>
+      <div class="campo estreito">
+        <label>Ordenar por</label>
+        <select><option>Data de validade</option><option>Prestador</option></select>
+      </div>
+      <div class="campo estreito" style="display:flex;align-items:flex-end">
+        <a class="btn" href="T10-vencimentos.html">Filtrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cartao">
   <h2>Vencidos (3)</h2>
   <table>
     <thead>

@@ -438,7 +438,7 @@ td.acoes { text-align: right; white-space: nowrap; width: 1%; }
 }
 
 .modal {
-  max-width: 660px;
+  max-width: 740px;
   margin: 0 auto;
   background: var(--branco);
   border: 1px solid #9aa5b1;

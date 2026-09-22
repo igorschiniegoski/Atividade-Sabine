@@ -530,8 +530,8 @@
 <tbody>
 <tr>
 <td>M - must have</td>
-<td>16</td>
-<td>UC01, UC02, UC03, UC04, UC05, UC06, UC07, UC08, UC09, UC11, UC12, UC13, UC15, UC16, UC18, UC22</td>
+<td>17</td>
+<td>UC01, UC02, UC03, UC04, UC05, UC06, UC07, UC08, UC09, UC11, UC12, UC13, UC15, UC16, UC17, UC18, UC22</td>
 </tr>
 <tr>
 <td>S - should have</td>
@@ -545,7 +545,7 @@
 </tr>
 <tr>
 <td><strong>total</strong></td>
-<td><strong>23</strong></td>
+<td><strong>24</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -676,7 +676,7 @@
 <tr>
 <td>release 3 - operacao</td>
 <td>3ª entrega, semana 3</td>
-<td>UC12, UC13, UC15, UC16, UC18</td>
+<td>UC12, UC13, UC15, UC16, UC17, UC18</td>
 <td>fluxo completo da ordem de servico, do pedido a avaliacao. <strong>fim do mvp</strong></td>
 </tr>
 <tr>
@@ -764,7 +764,7 @@
 </tr>
 <tr>
 <td>requisitos</td>
-<td>RF01, RNF01, RNF02</td>
+<td>RF01, RNF01, RNF02, RNF12</td>
 </tr>
 <tr>
 <td>frequencia</td>
@@ -792,9 +792,9 @@
 <ul>
 <li><strong>E4.1 - credenciais invalidas:</strong> o sistema informa "email ou senha invalidos", sem revelar qual dos dois esta errado, e retorna ao passo 2.</li>
 <li><strong>E4.2 - conta inativa:</strong> o sistema informa que a conta esta inativa e orienta o contato com o administrador. o caso de uso termina sem criar sessao.</li>
-<li><strong>E4.3 - tentativas sucessivas:</strong> apos 5 tentativas invalidas seguidas o sistema bloqueia novas tentativas daquele email por 15 minutos.</li>
+<li><strong>E4.3 - tentativas sucessivas:</strong> apos 5 tentativas invalidas seguidas o sistema bloqueia novas tentativas daquele email por 15 minutos (RNF12).</li>
 </ul>
-<p><strong>regras aplicadas:</strong> RNF01 (senha em hash), RNF02 (permissao validada no servidor).</p>
+<p><strong>regras aplicadas:</strong> RNF01 (senha em hash), RNF02 (permissao validada no servidor), RNF12 (bloqueio apos tentativas sucessivas).</p>
 <hr />
 <h3>7.3 UC02 - encerrar sessao</h3>
 <table>
@@ -1941,7 +1941,7 @@
 </tr>
 </tbody>
 </table>
-<p>do total de 85 pontos, 60 estao no nivel <strong>M - must have</strong> e formam o mvp descrito na secao 6.4.</p>
+<p>do total de 85 pontos, 59 estao no nivel <strong>M - must have</strong> e formam o mvp descrito na secao 6.4. sao 16 historias para 17 casos de uso, porque o UC22 nao tem historia propria: ele é verificado dentro da HU13, que é a atribuicao.</p>
 <hr />
 <h2>9. matriz de rastreabilidade</h2>
 <p>a matriz garante que nenhum requisito funcional levantado na 1ª entrega ficou sem caso de uso correspondente, e que nenhum caso de uso foi criado sem origem em um requisito.</p>
@@ -2251,6 +2251,11 @@
 <td>1.1</td>
 <td>22/09/2026</td>
 <td>acrescentada a secao 7.18 com os diagramas de atividade de UC13 e UC16, e atualizada a secao 10 com a conclusao dos itens pendentes da 2ª entrega</td>
+</tr>
+<tr>
+<td>1.2</td>
+<td>22/09/2026</td>
+<td>corrigida a secao 6.2, que omitia o UC17 entre os must have e por isso somava 23 casos de uso em vez de 24. o UC17 tambem entrou no plano de construcao da release 3, e a soma de pontos do nivel M passou de 60 para 59</td>
 </tr>
 </tbody>
 </table>

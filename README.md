@@ -34,7 +34,7 @@ centralizar em um sistema só o cadastro, a documentacao e a execucao dos servic
 
 sao 3 perfis de acesso: administrador, prestador e cliente. cada um enxerga só o que é da responsabilidade dele.
 
-a lista completa (19 requisitos funcionais, 11 nao funcionais e 12 regras de negocio) esta em [docs/documento-visao-requisitos.md](docs/documento-visao-requisitos.md), e o desdobramento disso em casos de uso, historias de usuario e prioridades esta em [docs/casos-de-uso.md](docs/casos-de-uso.md).
+a lista completa (19 requisitos funcionais, 12 nao funcionais e 12 regras de negocio) esta em [docs/documento-visao-requisitos.md](docs/documento-visao-requisitos.md), e o desdobramento disso em casos de uso, historias de usuario e prioridades esta em [docs/casos-de-uso.md](docs/casos-de-uso.md).
 
 ## priorizacao
 
@@ -42,7 +42,7 @@ o escopo foi priorizado na **escala moscow**, que tem quatro niveis: **M**ust ha
 
 | nivel | quantos | o que entrou |
 |---|---|---|
-| **M** - must have | 16 casos de uso | autenticacao, cadastros, documentacao, situacao cadastral e o fluxo completo da ordem de servico ate a avaliacao. é o mvp |
+| **M** - must have | 17 casos de uso | autenticacao, cadastros, documentacao, situacao cadastral e o fluxo completo da ordem de servico ate a avaliacao. é o mvp |
 | **S** - should have | 5 casos de uso | contratos, aceite da atribuicao pelo prestador, historico consolidado, relatorio de desempenho e log |
 | **C** - could have | 2 casos de uso | relatorio de servicos por periodo e exportacao em pdf ou csv |
 | **W** - wont have | 8 itens | pagamento online, nota fiscal, assinatura digital, app nativo, whatsapp, aviso automatico por email, geolocalizacao e integracao com erp |
@@ -89,7 +89,7 @@ as pastas vao sendo criadas conforme cada entrega.
 
 | documento | entrega | conteudo |
 |---|---|---|
-| [documento-visao-requisitos.md](docs/documento-visao-requisitos.md) | 1ª | contexto, escopo, 19 RF, 11 RNF e 12 regras de negocio |
+| [documento-visao-requisitos.md](docs/documento-visao-requisitos.md) | 1ª | contexto, escopo, 19 RF, 12 RNF e 12 regras de negocio |
 | [casos-de-uso.md](docs/casos-de-uso.md) | 2ª | atores, diagramas de caso de uso, especificacao dos 24 casos de uso, diagramas de atividade de UC13 e UC16, 23 historias de usuario, priorizacao moscow e matriz de rastreabilidade |
 | [modelo-de-dados.md](docs/modelo-de-dados.md) | 2ª | diagrama de classes do dominio, modelo conceitual, modelo logico e dicionario de dados das 14 tabelas |
 | [mvp-e-prototipos.md](docs/mvp-e-prototipos.md) | 3ª | revisao das entregas anteriores, definicao do mvp, fluxo completo, levantamento das telas, mapa de navegacao, prototipo e rastreabilidade |
@@ -157,7 +157,7 @@ python ferramentas/gerar-html.py
 
 a primeira versao funcional entrega o fluxo completo do sistema, do pedido do cliente ate a avaliacao do atendimento:
 autenticacao, cadastros de apoio, documentacao com controle de validade, situacao cadastral, abertura da ordem,
-atribuicao apenas a quem esta apto, execucao, conclusao e avaliacao. sao 16 dos 24 casos de uso e 18 telas.
+atribuicao apenas a quem esta apto, execucao, conclusao e avaliacao. sao 17 dos 24 casos de uso e 18 telas.
 
 ficam para depois do mvp os contratos, o aceite da atribuicao pelo prestador, o historico consolidado, os relatorios
 e o log de acões criticas. o criterio de corte e a justificativa de cada item estao em
