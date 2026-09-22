@@ -1,7 +1,7 @@
 # sgp - sistema de gestao de prestadores
 ## documento de visao e requisitos
 
-**versao 1.0 - 14/08/2026 - 1ª entrega**
+**versao 1.1 - 22/09/2026 - 1ª entrega, revisada**
 unicesumar - analise e desenvolvimento de sistemas
 imersao profissional - projeto de software - equipe 8
 
@@ -14,8 +14,8 @@ imersao profissional - projeto de software - equipe 8
 | nome provisorio do sistema | sgp - sistema de gestao de prestadores |
 | tema da equipe | plataforma para controle de prestadores de servicos |
 | equipe | equipe 8 |
-| integrantes | luis gustavo boratto de oliveira, igor schiniegoski pallisser, lucas mendes |
-| versao do documento | 1.0 - primeira entrega |
+| integrantes | luis gustavo boratto de oliveira, igor schiniegoski pallisser |
+| versao do documento | 1.1 - primeira entrega, revisada na 3ª |
 
 o sgp é um sistema web para empresas que trabalham com prestadores de servico terceirizados. ele reune em um lugar só o cadastro dos prestadores, dos clientes e das categorias de servico, guarda os documentos e contratos de cada prestador com a data de validade, e controla as ordens de servico desde a abertura ate a conclusao, passando pela atribuicao a um prestador. no fim de cada atendimento o cliente avalia o servico, e essas notas alimentam o historico e os relatórios de desempenho que ajudam o gestor a decidir quem chamar da próxima vez.
 
@@ -111,7 +111,7 @@ o público-alvo são empresas de pequeno e médio porte que contratam servico te
 | tipo | restricao |
 |---|---|
 | prazo | o desenvolvimento acontece dentro do calendário da disciplina, com as entregas em 14/08, 08/09 e 25/09 de 2026. o escopo do mvp foi reduzido pra caber nesse período |
-| equipe | três integrantes, conciliando o projeto com as demais disciplinas do curso |
+| equipe | dois integrantes, conciliando o projeto com as demais disciplinas do curso |
 | tecnologia | serão usadas tecnologias que a equipe já domina ou consegue aprender no prazo, priorizando ferramenta gratuita ou com plano free |
 | hospedagem | o sistema será publicado em servico de nuvem com plano gratuito, o que limita processamento, espaco de armazenamento e volume de dados de teste |
 | acesso | o uso exige internet, o sistema não funciona offline |
@@ -208,3 +208,4 @@ o público-alvo são empresas de pequeno e médio porte que contratam servico te
 | versao | data | alteracao |
 |---|---|---|
 | 1.0 | 14/08/2026 | primeira versao do documento, entregue na 1ª entrega |
+| 1.1 | 22/09/2026 | atualizada a composicao da equipe, que passou a ter dois integrantes. nenhum requisito, regra ou secao de conteudo foi alterado |

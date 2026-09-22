@@ -41,10 +41,12 @@ MENUS = {
     "": [],
 }
 
+# cada perfil mostra quem esta logado e em nome de quem, que é como o usuario
+# se reconhece: o prestador é uma pessoa dentro de uma empresa, nao a empresa
 USUARIO = {
     "administrador": ("Luis Gustavo Boratto", "Administrador"),
-    "prestador": ("Elétrica Santos", "Prestador"),
-    "cliente": ("Supermercado Zanin", "Cliente"),
+    "prestador": ("Anderson Santos", "Elétrica Santos"),
+    "cliente": ("Igor Schiniegoski", "Supermercado Zanin"),
     "": ("", ""),
 }
 
