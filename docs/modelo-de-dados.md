@@ -1,7 +1,7 @@
 # sgp - sistema de gestao de prestadores
 ## diagrama de classes, modelo de dados e dicionario de dados
 
-**versao 1.0 - 22/09/2026 - complemento da 2ª entrega**
+**versao 1.1 - 22/09/2026 - complemento da 2ª entrega**
 unicesumar - analise e desenvolvimento de sistemas
 imersao profissional - projeto de software - equipe 8
 
@@ -224,7 +224,8 @@ cadastro do terceirizado. a situacao cadastral desta tabela é o que libera ou b
 | id_prestador | serial | sim | identificador interno | chave primaria |
 | id_usuario | integer | nao | conta de acesso do prestador | fk para usuario, unico. fica nulo enquanto o administrador ainda nao liberou o acesso |
 | tipo_pessoa | char(1) | sim | F para fisica, J para juridica | check em F ou J |
-| nome_razao_social | varchar(150) | sim | nome ou razao social | - |
+| nome_razao_social | varchar(150) | sim | nome ou razao social, como consta no cadastro da receita | - |
+| nome_fantasia | varchar(120) | nao | como o prestador é conhecido no dia a dia. aparece abaixo da razao social nas listagens | - |
 | cpf_cnpj | varchar(14) | sim | so os digitos, sem ponto nem traco | unico, validado pelo digito verificador (RN10) |
 | telefone | varchar(20) | sim | contato principal | - |
 | email | varchar(150) | nao | contato secundario | - |
@@ -247,6 +248,7 @@ cadastro do terceirizado. a situacao cadastral desta tabela é o que libera ou b
 | id_usuario | integer | nao | conta de acesso do cliente | fk para usuario, unico |
 | tipo_pessoa | char(1) | sim | F ou J | check em F ou J |
 | nome_razao_social | varchar(150) | sim | nome ou razao social | - |
+| nome_fantasia | varchar(120) | nao | nome pelo qual o cliente é conhecido | - |
 | cpf_cnpj | varchar(14) | sim | so os digitos | unico (RN10) |
 | telefone | varchar(20) | sim | contato principal | - |
 | email | varchar(150) | nao | contato secundario | - |
@@ -355,6 +357,7 @@ tabela central do sistema. guarda o estado atual da ordem, enquanto o caminho pe
 | id_servico | integer | sim | servico do catalogo | fk para servico |
 | id_prestador | integer | nao | prestador responsavel, preenchido na atribuicao | fk para prestador |
 | descricao | text | sim | o que o cliente precisa | minimo de 20 caracteres |
+| local_atendimento | varchar(200) | nao | onde o servico sera executado, quando for diferente do endereco do cadastro do cliente. fica em branco quando é no endereco principal | - |
 | prioridade | varchar(10) | sim | baixa, normal, alta ou urgente | check, padrao normal |
 | prazo | date | sim | prazo combinado, calculado pelo servico quando nao informado | nao pode ser anterior a abertura |
 | status | varchar(12) | sim | aberta, atribuida, em execucao, concluida ou cancelada | check, padrao aberta (RN05) |
@@ -499,3 +502,4 @@ os demais dados de teste serao ficticios, conforme a restricao de LGPD definida 
 | versao | data | alteracao |
 |---|---|---|
 | 1.0 | 22/09/2026 | primeira versao, com o diagrama de classes, o modelo conceitual, o modelo logico e o dicionario de dados que estavam pendentes da 2ª entrega |
+| 1.1 | 22/09/2026 | acrescentados `nome_fantasia` em prestador e cliente e `local_atendimento` na ordem de servico. os tres apareciam nas telas do prototipo e nao existiam no modelo, o que quebrava a rastreabilidade entre tela e banco |

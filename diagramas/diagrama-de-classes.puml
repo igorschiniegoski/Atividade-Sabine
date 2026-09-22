@@ -33,6 +33,7 @@ package "cadastros" {
     -id: Long
     -tipoPessoa: TipoPessoa
     -nomeRazaoSocial: String
+    -nomeFantasia: String
     -cpfCnpj: String {unico}
     -telefone: String
     -email: String
@@ -49,6 +50,7 @@ package "cadastros" {
     -id: Long
     -tipoPessoa: TipoPessoa
     -nomeRazaoSocial: String
+    -nomeFantasia: String
     -cpfCnpj: String {unico}
     -telefone: String
     -email: String
@@ -139,6 +141,7 @@ package "operacao" {
     -id: Long
     -numero: String {unico}
     -descricao: String
+    -localAtendimento: String
     -prioridade: Prioridade
     -prazo: Date
     -status: StatusOrdem
