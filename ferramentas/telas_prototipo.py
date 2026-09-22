@@ -19,7 +19,7 @@ LOGIN = """<div class="caixa-login">
     <div class="cartao-corpo">
       <div class="campo largo">
         <label>E-mail</label>
-        <input type="email" value="rosangela.dias@predialmga.com.br">
+        <input type="email" value="luis.boratto@predialmga.com.br">
       </div>
       <div class="campo largo com-erro" style="margin-bottom:8px">
         <label>Senha</label>
@@ -412,12 +412,12 @@ PRESTADOR_SITUACAO = abas_prestador("T04d-prestador-situacao.html") + """
         </li>
         <li>
           <strong>Pendente para ativo</strong>
-          <span class="quando">14/03/2026 às 09:12, por Rosangela Dias</span>
+          <span class="quando">14/03/2026 às 09:12, por Luis Gustavo Boratto</span>
           Documentação regularizada após envio da nova certidão.
         </li>
         <li>
           <strong>Cadastro criado como pendente</strong>
-          <span class="quando">03/02/2026 às 14:40, por Rosangela Dias</span>
+          <span class="quando">03/02/2026 às 14:40, por Luis Gustavo Boratto</span>
           Aguardando envio da documentação obrigatória.
         </li>
       </ul>
@@ -1121,7 +1121,7 @@ ORDEM_EXECUCAO = """<div class="cartao">
   <div class="cartao-corpo">
     <ul class="tempo">
       <li><strong>Execução iniciada</strong><span class="quando">22/09/2026 às 10:02, por Elétrica Santos</span></li>
-      <li><strong>Ordem atribuída</strong><span class="quando">21/09/2026 às 16:30, por Rosangela Dias</span></li>
+      <li><strong>Ordem atribuída</strong><span class="quando">21/09/2026 às 16:30, por Luis Gustavo Boratto</span></li>
       <li><strong>Ordem aberta</strong><span class="quando">21/09/2026 às 15:58, por Supermercado Zanin</span></li>
     </ul>
   </div>
