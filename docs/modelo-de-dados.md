@@ -25,11 +25,7 @@ imersao profissional - projeto de software - equipe 8
 
 a 1ª entrega definiu o que o sistema precisa fazer e a 2ª entrega descreveu como o usuario interage com ele. faltava a parte estrutural: quais objetos o sistema manipula, como eles se relacionam e como essa informacao fica guardada. é isso que este documento resolve.
 
-ele responde a tres perguntas que as entregas anteriores deixaram em aberto:
-
-- **o que existe no dominio do problema?** o diagrama de classes da secao 3.
-- **como essas informacões se relacionam?** o modelo conceitual da secao 4.
-- **como isso vira tabela no banco?** o modelo logico da secao 5 e o dicionario de dados da secao 6.
+o que existe no dominio do problema esta no diagrama de classes da secao 3. como essas informacões se relacionam esta no modelo conceitual da secao 4. e como isso vira tabela no banco esta no modelo logico da secao 5, detalhado campo a campo no dicionario da secao 6.
 
 ### 1.2 relacao com os demais documentos
 
@@ -45,11 +41,11 @@ ele responde a tres perguntas que as entregas anteriores deixaram em aberto:
 
 o caminho seguido foi o mesmo das disciplinas de modelagem: primeiro o dominio, depois o conceitual, depois o logico.
 
-1. **levantamento dos substantivos.** foram lidos os 19 requisitos funcionais e os fluxos dos casos de uso, separando tudo que o sistema precisa guardar: prestador, cliente, categoria, servico, documento, contrato, ordem, avaliacao, log.
-2. **separacao entre o que é entidade e o que é atributo.** endereco, por exemplo, aparece no cadastro mas nao tem vida propria, entao ficou como conjunto de colunas dentro de prestador e de cliente. tipo de documento, ao contrario, precisa ser cadastrado e alterado pelo administrador, entao virou entidade.
-3. **identificacao dos relacionamentos e das cardinalidades**, a partir das regras de negocio. a RN04, por exemplo, exige que o prestador esteja habilitado na categoria, o que gera um relacionamento n:n entre prestador e categoria.
-4. **mapeamento para o modelo logico**, resolvendo o n:n em tabela propria, escolhendo tipos e definindo chaves, restricões e indices.
-5. **conferencia de rastreabilidade**, verificando se cada RF e cada RN tem onde se apoiar no banco (secao 8).
+1. levantamento dos substantivos. foram lidos os 19 requisitos funcionais e os fluxos dos casos de uso, separando tudo que o sistema precisa guardar: prestador, cliente, categoria, servico, documento, contrato, ordem, avaliacao, log.
+2. separacao entre o que é entidade e o que é atributo. endereco, por exemplo, aparece no cadastro mas nao tem vida propria, entao ficou como conjunto de colunas dentro de prestador e de cliente. tipo de documento, ao contrario, precisa ser cadastrado e alterado pelo administrador, entao virou entidade.
+3. identificacao dos relacionamentos e das cardinalidades, a partir das regras de negocio. a RN04 exige que o prestador esteja habilitado na categoria, e é dai que sai o relacionamento n:n entre prestador e categoria.
+4. mapeamento para o modelo logico, resolvendo o n:n em tabela propria, escolhendo tipos e definindo chaves, restricões e indices.
+5. conferencia de rastreabilidade, verificando se cada RF e cada RN tem onde se apoiar no banco (secao 8).
 
 ---
 

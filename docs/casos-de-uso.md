@@ -783,12 +783,11 @@ a escolha dos dois nao foi aleatoria: UC13 é o caso de uso com maior numero de 
 
 *fonte: elaborado pela equipe. arquivo fonte em [diagramas/atividade-uc13-atribuir-ordem.puml](../diagramas/atividade-uc13-atribuir-ordem.puml)*
 
-o que o diagrama deixa explicito e o texto nao deixava:
+o desenho deixa claro o que o texto nao deixava. a verificacao de aptidao (UC22) aparece agrupada, e da para ver que os quatro descartes acontecem em sequencia, cada um vindo de uma regra diferente.
 
-- a verificacao de aptidao (UC22) aparece agrupada, mostrando que os quatro descartes acontecem em sequencia e que cada um vem de uma regra diferente;
-- existem dois pontos de saida sem atribuicao: quando nenhum prestador esta apto, e quando o prestador escolhido deixa de estar apto entre a montagem da lista e a confirmacao;
-- a segunda verificacao, feita no servidor depois da escolha, é o que atende ao RNF02. sem ela, bastaria manter a tela aberta por tempo suficiente para atribuir uma ordem a um prestador que acabou de ter documento vencido;
-- o registro no log (UC23) acontece depois da gravacao, e nao antes, para nao registrar uma atribuicao que ainda pode falhar.
+tambem ficam visiveis os dois pontos em que o fluxo termina sem atribuicao: quando nenhum prestador esta apto, e quando o prestador escolhido deixa de estar apto entre a montagem da lista e a confirmacao. essa segunda verificacao, feita no servidor depois da escolha, é o que atende ao RNF02. sem ela bastaria deixar a tela aberta tempo suficiente para atribuir uma ordem a alguem que acabou de ter documento vencido.
+
+por ultimo, o registro no log (UC23) vem depois da gravacao, e nao antes, para nao registrar uma atribuicao que ainda pode falhar.
 
 #### UC16 - concluir ordem de servico
 
@@ -796,12 +795,11 @@ o que o diagrama deixa explicito e o texto nao deixava:
 
 *fonte: elaborado pela equipe. arquivo fonte em [diagramas/atividade-uc16-concluir-ordem.puml](../diagramas/atividade-uc16-concluir-ordem.puml)*
 
-pontos que o diagrama evidencia:
+aqui a conferencia de status e de titularidade acontece antes de a acao concluir aparecer na tela, e nao depois do clique. assim o sistema nao oferece uma acao que ele mesmo vai recusar. o relato do atendimento é obrigatorio, e enquanto ele nao for preenchido o fluxo volta para o prestador (E4.1).
 
-- a conferencia de status e de titularidade acontece antes de a acao concluir ser oferecida, e nao depois do clique, o que evita expor uma acao que seria recusada;
-- o relato do atendimento é obrigatorio, e o fluxo volta para o prestador enquanto ele nao for preenchido (E4.1);
-- a decisao entre entregue no prazo e entregue em atraso é resolvida na conclusao e gravada na ordem, em vez de ser calculada toda vez que o relatorio for aberto. isso mantem o indicador estavel mesmo que o prazo seja alterado depois;
-- a raia do cliente aparece no fim do fluxo porque a conclusao é o evento que libera o UC18, ligando um caso de uso ao outro.
+a decisao entre entregue no prazo e entregue em atraso é resolvida na conclusao e gravada na ordem, em vez de ser recalculada toda vez que alguem abre o relatorio. dessa maneira o indicador continua o mesmo ainda que o prazo seja alterado depois.
+
+a raia do cliente aparece no fim porque a conclusao é o evento que libera o UC18, entao um caso de uso emenda no outro.
 
 ---
 
