@@ -70,9 +70,9 @@ a escolha foi por familiaridade da equipe e por serem ferramentas com plano grat
 ## organizacao do repositorio
 
 ```
-docs/        documentos das entregas
-diagramas/   fontes .puml e imagens dos diagramas
-banco-de-dados/  modelo conceitual, logico e dicionario (2ª entrega)
+docs/        documentos das entregas, incluindo o modelo de dados e o dicionario
+diagramas/   fontes .puml e imagens dos diagramas, inclusive os do banco
+ferramentas/ script que gera a versao imprimivel dos documentos
 prototipos/  mapa de navegacao e telas (3ª entrega)
 src/         codigo fonte (3ª entrega)
 ```
@@ -84,7 +84,8 @@ as pastas vao sendo criadas conforme cada entrega.
 | documento | entrega | conteudo |
 |---|---|---|
 | [documento-visao-requisitos.md](docs/documento-visao-requisitos.md) | 1ª | contexto, escopo, 19 RF, 11 RNF e 12 regras de negocio |
-| [casos-de-uso.md](docs/casos-de-uso.md) | 2ª | atores, diagramas de caso de uso, especificacao dos 24 casos de uso, 23 historias de usuario, priorizacao moscow e matriz de rastreabilidade |
+| [casos-de-uso.md](docs/casos-de-uso.md) | 2ª | atores, diagramas de caso de uso, especificacao dos 24 casos de uso, diagramas de atividade de UC13 e UC16, 23 historias de usuario, priorizacao moscow e matriz de rastreabilidade |
+| [modelo-de-dados.md](docs/modelo-de-dados.md) | 2ª | diagrama de classes do dominio, modelo conceitual, modelo logico e dicionario de dados das 14 tabelas |
 | [tecnologias-e-arquitetura.md](docs/tecnologias-e-arquitetura.md) | 2ª | stack definida com justificativa, arquitetura em camadas e como cada RNF sera atendido |
 
 ### diagramas
@@ -98,6 +99,11 @@ os diagramas sao escritos em plantuml e o arquivo `.puml` fica versionado junto 
 | casos de uso - documentacao e contratos | [diagramas/caso-de-uso-documentacao.png](diagramas/caso-de-uso-documentacao.png) |
 | casos de uso - ordens de servico | [diagramas/caso-de-uso-ordens.png](diagramas/caso-de-uso-ordens.png) |
 | casos de uso - consultas e relatorios | [diagramas/caso-de-uso-consultas.png](diagramas/caso-de-uso-consultas.png) |
+| atividade - UC13 atribuir ordem | [diagramas/atividade-uc13-atribuir-ordem.png](diagramas/atividade-uc13-atribuir-ordem.png) |
+| atividade - UC16 concluir ordem | [diagramas/atividade-uc16-concluir-ordem.png](diagramas/atividade-uc16-concluir-ordem.png) |
+| classes - dominio do sgp | [diagramas/diagrama-de-classes.png](diagramas/diagrama-de-classes.png) |
+| banco - modelo conceitual | [diagramas/modelo-conceitual.png](diagramas/modelo-conceitual.png) |
+| banco - modelo logico | [diagramas/modelo-logico.png](diagramas/modelo-logico.png) |
 
 pra gerar as imagens de novo depois de mexer em um `.puml`:
 
@@ -120,8 +126,8 @@ python ferramentas/gerar-html.py
 | entrega | data | conteudo | status |
 |---|---|---|---|
 | 1 | 14/08/2026 | documento de visao e requisitos | pronto |
-| 2 | 08/09/2026 | casos de uso, diagrama de classes e modelagem do banco | em andamento (casos de uso e stack prontos, falta modelagem do banco e diagramas de atividade) |
-| 3 | 25/09/2026 | repositorio, prototipos e definicao do mvp | a fazer |
+| 2 | 08/09/2026 | casos de uso, diagramas de atividade, diagrama de classes e modelagem do banco | pronto |
+| 3 | 25/09/2026 | repositorio, backlog, mapa de navegacao, prototipos, mvp e apresentacao | a fazer |
 
 ## como rodar
 

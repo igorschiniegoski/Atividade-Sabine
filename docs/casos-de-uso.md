@@ -1,7 +1,7 @@
 # sgp - sistema de gestao de prestadores
 ## documento de casos de uso, historias de usuario e priorizacao
 
-**versao 1.0 - 21/08/2026 - 2ª entrega**
+**versao 1.1 - 22/09/2026 - 2ª entrega**
 unicesumar - analise e desenvolvimento de sistemas
 imersao profissional - projeto de software - equipe 8
 
@@ -17,7 +17,7 @@ imersao profissional - projeto de software - equipe 8
 | equipe | equipe 8 |
 | integrantes | luis gustavo boratto de oliveira, igor schiniegoski pallisser |
 | documento de origem | [documento-visao-requisitos.md](documento-visao-requisitos.md) - versao 1.0 |
-| notacao | uml 2.5 - diagrama de casos de uso |
+| notacao | uml 2.5 - diagramas de casos de uso e de atividade |
 | ferramenta | plantuml (fonte `.puml` versionado junto com a imagem gerada) |
 
 ### 1.1 objetivo deste documento
@@ -37,7 +37,8 @@ documento de visao e requisitos (1a entrega)
         +--> RN01..RN12  ---------> regras citadas em cada caso de uso
         +--> RNF01..RNF11 --------> criterios de aceite das historias (secao 8)
                                             |
-                                            +--> diagramas de atividade e modelo de dados (2a entrega)
+                                            +--> diagramas de atividade (secao 7.18 deste documento)
+                                            +--> classes e modelo de dados (modelo-de-dados.md)
                                             +--> prototipo de telas (3a entrega)
 ```
 
@@ -770,6 +771,40 @@ os cinco casos de uso de cadastro compartilham o mesmo comportamento: incluir, c
 
 ---
 
+### 7.18 diagramas de atividade dos fluxos criticos
+
+a especificacao textual da secao 7 descreve o passo a passo de cada caso de uso, mas nao mostra bem onde o fluxo se divide nem de quem é a responsabilidade em cada etapa. para os dois casos de uso mais criticos do sistema foram elaborados diagramas de atividade com raias, em que cada raia representa quem executa a acao.
+
+a escolha dos dois nao foi aleatoria: UC13 é o caso de uso com maior numero de regras de negocio envolvidas (RN01 a RN05) e é onde um erro deixa a empresa exposta, e UC16 é o ponto em que a ordem se fecha, o indicador de prazo é calculado e a avaliacao é liberada, tres efeitos em uma unica acao.
+
+#### UC13 - atribuir ordem de servico a um prestador
+
+![diagrama de atividade - UC13](../diagramas/atividade-uc13-atribuir-ordem.png)
+
+*fonte: elaborado pela equipe. arquivo fonte em [diagramas/atividade-uc13-atribuir-ordem.puml](../diagramas/atividade-uc13-atribuir-ordem.puml)*
+
+o que o diagrama deixa explicito e o texto nao deixava:
+
+- a verificacao de aptidao (UC22) aparece agrupada, mostrando que os quatro descartes acontecem em sequencia e que cada um vem de uma regra diferente;
+- existem dois pontos de saida sem atribuicao: quando nenhum prestador esta apto, e quando o prestador escolhido deixa de estar apto entre a montagem da lista e a confirmacao;
+- a segunda verificacao, feita no servidor depois da escolha, é o que atende ao RNF02. sem ela, bastaria manter a tela aberta por tempo suficiente para atribuir uma ordem a um prestador que acabou de ter documento vencido;
+- o registro no log (UC23) acontece depois da gravacao, e nao antes, para nao registrar uma atribuicao que ainda pode falhar.
+
+#### UC16 - concluir ordem de servico
+
+![diagrama de atividade - UC16](../diagramas/atividade-uc16-concluir-ordem.png)
+
+*fonte: elaborado pela equipe. arquivo fonte em [diagramas/atividade-uc16-concluir-ordem.puml](../diagramas/atividade-uc16-concluir-ordem.puml)*
+
+pontos que o diagrama evidencia:
+
+- a conferencia de status e de titularidade acontece antes de a acao concluir ser oferecida, e nao depois do clique, o que evita expor uma acao que seria recusada;
+- o relato do atendimento é obrigatorio, e o fluxo volta para o prestador enquanto ele nao for preenchido (E4.1);
+- a decisao entre entregue no prazo e entregue em atraso é resolvida na conclusao e gravada na ordem, em vez de ser calculada toda vez que o relatorio for aberto. isso mantem o indicador estavel mesmo que o prazo seja alterado depois;
+- a raia do cliente aparece no fim do fluxo porque a conclusao é o evento que libera o UC18, ligando um caso de uso ao outro.
+
+---
+
 ## 8. historias de usuario
 
 os casos de uso da secao 7 descrevem o comportamento do sistema. as historias abaixo descrevem a mesma funcionalidade do ponto de vista de quem vai usar, e sao a unidade que a equipe leva para o quadro de tarefas. cada historia segue o formato **eu, como [perfil], quero [acao], para [beneficio]** e traz criterios de aceite escritos em dado / quando / entao, que servem como roteiro de teste.
@@ -972,10 +1007,13 @@ a matriz garante que nenhum requisito funcional levantado na 1ª entrega ficou s
 |---|---|---|
 | diagrama de casos de uso e especificacão | 2ª entrega | concluido neste documento |
 | historias de usuario e priorizacao moscow | 2ª entrega | concluido neste documento |
-| diagramas de atividade dos fluxos UC13 e UC16 | 2ª entrega | pendente |
-| modelo conceitual, logico e dicionario de dados | 2ª entrega | pendente |
-| diagrama de arquitetura | 2ª entrega | pendente |
+| diagramas de atividade dos fluxos UC13 e UC16 | 2ª entrega | concluido na secao 7.18 |
+| diagrama de classes do dominio | 2ª entrega | concluido em [modelo-de-dados.md](modelo-de-dados.md) |
+| modelo conceitual, logico e dicionario de dados | 2ª entrega | concluido em [modelo-de-dados.md](modelo-de-dados.md) |
+| diagrama de arquitetura | 2ª entrega | descrito em [tecnologias-e-arquitetura.md](tecnologias-e-arquitetura.md), falta a versao em diagrama |
 | mapa de navegacao e prototipo de telas | 3ª entrega | pendente |
+| backlog com responsavel e situacao | 3ª entrega | pendente |
+| definicao formal do mvp e do fluxo completo | 3ª entrega | pendente |
 
 ---
 
@@ -995,3 +1033,4 @@ a matriz garante que nenhum requisito funcional levantado na 1ª entrega ficou s
 | versao | data | alteracao |
 |---|---|---|
 | 1.0 | 21/08/2026 | primeira versao do documento de casos de uso, historias de usuario e priorizacao, elaborada para a 2ª entrega |
+| 1.1 | 22/09/2026 | acrescentada a secao 7.18 com os diagramas de atividade de UC13 e UC16, e atualizada a secao 10 com a conclusao dos itens pendentes da 2ª entrega |

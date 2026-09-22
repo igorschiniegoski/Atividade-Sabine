@@ -25,3 +25,44 @@ skinparam rectangle {
   FontSize 14
   FontStyle bold
 }
+
+' --- diagramas de atividade (2a entrega) ---
+skinparam activity {
+  BorderColor #1f4e79
+  BackgroundColor #eef3f8
+  FontColor #1f2328
+  DiamondBorderColor #1f4e79
+  DiamondBackgroundColor #ffffff
+  DiamondFontColor #1f2328
+  DiamondFontSize 12
+  StartColor #1f4e79
+  EndColor #1f4e79
+  BarColor #1f4e79
+}
+skinparam partition {
+  BorderColor #90a4b8
+  FontColor #1f4e79
+  FontStyle bold
+}
+skinparam note {
+  BackgroundColor #fdf6e3
+  BorderColor #c9b458
+  FontColor #1f2328
+  FontSize 11
+}
+
+' --- diagrama de classes e modelo de dados (2a entrega) ---
+skinparam class {
+  BorderColor #1f4e79
+  BackgroundColor #eef3f8
+  HeaderBackgroundColor #cfe0f0
+  FontColor #1f2328
+  AttributeFontColor #1f2328
+  AttributeFontSize 11
+  StereotypeFontColor #1f4e79
+}
+skinparam entity {
+  BorderColor #1f4e79
+  BackgroundColor #eef3f8
+  FontColor #1f2328
+}
