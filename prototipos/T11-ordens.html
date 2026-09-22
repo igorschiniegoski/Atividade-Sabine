@@ -3,40 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T11 · Ordens de serviço · SGP</title>
+<title>Ordens de serviço - SGP</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="app">
 <header class="topo">
-  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <a class="marca" href="index.html">SGP<span>gestão de prestadores</span></a>
   <div class="usuario">
     <div class="usuario-dados">
       <strong>Marina Prado</strong>
       <span>Administradora</span>
     </div>
-    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+    <a class="sair" href="T01-login.html">Sair</a>
   </div>
 </header>
 <div class="corpo">
   <nav class="menu">
-    <a class="menu-item" href="T02-painel-administrador.html">Painel</a>
+    <div class="menu-grupo">Operação</div>
+    <a class="menu-item" href="T02-painel-administrador.html">Painel do dia</a>
     <a class="menu-item ativo" href="T11-ordens.html">Ordens de serviço</a>
-    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item" href="T10-vencimentos.html">Vencimentos</a>
+    <div class="menu-grupo">Cadastro</div>
+    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item" href="T05-clientes.html">Clientes</a>
-    <a class="menu-item" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item" href="T08-servicos.html">Serviços</a>
     <a class="menu-item" href="T07-categorias.html">Categorias</a>
     <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
   </nav>
   <main class="conteudo">
     <div class="cabecalho-tela">
       <div>
-        <span class="codigo-tela">T11</span>
         <h1>Ordens de serviço</h1>
         <p class="subtitulo">Todas as ordens da empresa</p>
       </div>
       
     </div>
+    <!-- estados previstos nesta tela:
+         O administrador é o unico perfil que ve as ordens de todos os clientes e prestadores.
+         Ordem cancelada continua na lista, com o motivo registrado, e nunca é excluida. -->
+
     <div class="cartao">
   <div class="cartao-corpo">
     <div class="linha">
@@ -114,7 +119,6 @@
     </tbody>
   </table>
 </div>
-    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>O administrador é o unico perfil que ve as ordens de todos os clientes e prestadores.</li><li>Ordem cancelada continua na lista, com o motivo registrado, e nunca é excluida.</li></ul></section>
   </main>
 </div>
 

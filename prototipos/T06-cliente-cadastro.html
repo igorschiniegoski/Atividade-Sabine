@@ -3,40 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T06 · Supermercado Ponto Certo · SGP</title>
+<title>Supermercado Ponto Certo - SGP</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="app">
 <header class="topo">
-  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <a class="marca" href="index.html">SGP<span>gestão de prestadores</span></a>
   <div class="usuario">
     <div class="usuario-dados">
       <strong>Marina Prado</strong>
       <span>Administradora</span>
     </div>
-    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+    <a class="sair" href="T01-login.html">Sair</a>
   </div>
 </header>
 <div class="corpo">
   <nav class="menu">
-    <a class="menu-item" href="T02-painel-administrador.html">Painel</a>
+    <div class="menu-grupo">Operação</div>
+    <a class="menu-item" href="T02-painel-administrador.html">Painel do dia</a>
     <a class="menu-item" href="T11-ordens.html">Ordens de serviço</a>
-    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item" href="T10-vencimentos.html">Vencimentos</a>
+    <div class="menu-grupo">Cadastro</div>
+    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item" href="T05-clientes.html">Clientes</a>
-    <a class="menu-item" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item" href="T08-servicos.html">Serviços</a>
     <a class="menu-item" href="T07-categorias.html">Categorias</a>
     <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
   </nav>
   <main class="conteudo">
     <div class="cabecalho-tela">
       <div>
-        <span class="codigo-tela">T06</span>
         <h1>Supermercado Ponto Certo</h1>
         <p class="subtitulo">Cadastro do cliente</p>
       </div>
       
     </div>
+    <!-- estados previstos nesta tela:
+         CPF e CNPJ sao unicos entre os cadastros ativos (RN10). -->
+
     <div class="cartao">
   <h2>Identificação</h2>
   <div class="cartao-corpo">
@@ -47,7 +51,7 @@
       </div>
       <div class="campo">
         <label>Razão social <span class="obrigatorio">*</span></label>
-        <input type="text" value="Supermercado Ponto Certo">
+        <input type="text" value="PONTO CERTO COMERCIO DE ALIMENTOS LTDA">
       </div>
       <div class="campo">
         <label>CNPJ <span class="obrigatorio">*</span></label>
@@ -95,7 +99,6 @@
     <a class="btn btn-primario" href="T05-clientes.html">Salvar</a>
   </div>
 </div>
-    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>CPF e CNPJ sao unicos entre os cadastros ativos (RN10).</li></ul></section>
   </main>
 </div>
 

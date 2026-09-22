@@ -20,12 +20,14 @@ SAIDA = os.path.join(RAIZ, "prototipos")
 
 MENUS = {
     "administrador": [
-        ("T02-painel-administrador.html", "Painel"),
+        ("--", "Operação"),
+        ("T02-painel-administrador.html", "Painel do dia"),
         ("T11-ordens.html", "Ordens de serviço"),
-        ("T03-prestadores.html", "Prestadores"),
         ("T10-vencimentos.html", "Vencimentos"),
+        ("--", "Cadastro"),
+        ("T03-prestadores.html", "Prestadores"),
         ("T05-clientes.html", "Clientes"),
-        ("T08-servicos.html", "Catálogo de serviços"),
+        ("T08-servicos.html", "Serviços"),
         ("T07-categorias.html", "Categorias"),
     ],
     "prestador": [
@@ -51,7 +53,7 @@ PAGINA = """<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{codigo} · {titulo} · SGP</title>
+<title>{titulo} - SGP</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="{classe_body}">
@@ -61,13 +63,13 @@ PAGINA = """<!DOCTYPE html>
 """
 
 CASCA = """<header class="topo">
-  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <a class="marca" href="index.html">SGP<span>gestão de prestadores</span></a>
   <div class="usuario">
     <div class="usuario-dados">
       <strong>{usuario}</strong>
       <span>{papel}</span>
     </div>
-    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+    <a class="sair" href="T01-login.html">Sair</a>
   </div>
 </header>
 <div class="corpo">
@@ -78,14 +80,13 @@ CASCA = """<header class="topo">
   <main class="conteudo">
     <div class="cabecalho-tela">
       <div>
-        <span class="codigo-tela">{codigo}</span>
         <h1>{titulo}</h1>
         {subtitulo}
       </div>
       {acoes}
     </div>
+{notas}
     {conteudo}
-    {notas}
   </main>
 </div>
 """
@@ -94,18 +95,23 @@ CASCA = """<header class="topo">
 def menu(perfil, ativo):
     itens = []
     for arquivo, rotulo in MENUS[perfil]:
+        if arquivo == "--":
+            itens.append('<div class="menu-grupo">%s</div>' % rotulo)
+            continue
         classe = "menu-item ativo" if arquivo == ativo else "menu-item"
         itens.append('<a class="%s" href="%s">%s</a>' % (classe, arquivo, rotulo))
     return "\n    ".join(itens)
 
 
 def notas(itens):
+    """os estados previstos viram comentario no fonte, nao texto na tela.
+
+    tela de sistema nao explica a si mesma. o texto que interessa ao leitor do
+    trabalho esta em docs/mvp-e-prototipos.md, secao 7.4.
+    """
     if not itens:
         return ""
-    linhas = "".join("<li>%s</li>" % i for i in itens)
-    return ('<section class="notas">'
-            '<h2>Estados e validações previstos nesta tela</h2>'
-            '<ul>%s</ul></section>' % linhas)
+    return "    <!-- estados previstos nesta tela:\n         %s -->\n" % "\n         ".join(itens)
 
 
 def tela(arquivo, codigo, titulo, perfil, conteudo, subtitulo="", acoes="", obs=()):
@@ -126,9 +132,9 @@ def tela(arquivo, codigo, titulo, perfil, conteudo, subtitulo="", acoes="", obs=
     print("  gerado:", arquivo)
 
 
-def solta(arquivo, codigo, titulo, corpo):
+def solta(arquivo, codigo, titulo, corpo, classe="centro"):
     """telas sem menu lateral, como o login e o mapa do prototipo."""
-    html = PAGINA.format(codigo=codigo, titulo=titulo, classe_body="centro", corpo=corpo)
+    html = PAGINA.format(codigo=codigo, titulo=titulo, classe_body=classe, corpo=corpo)
     open(os.path.join(SAIDA, arquivo), "w", encoding="utf-8").write(html)
     print("  gerado:", arquivo)
 
@@ -141,7 +147,7 @@ if __name__ == "__main__":
 
     print("gerando o prototipo em prototipos/")
 
-    solta("index.html", "mapa", "Mapa do protótipo", T.MAPA)
+    solta("index.html", "mapa", "Mapa do protótipo", T.MAPA, classe="mapa-fundo")
     solta("T01-login.html", "T01", "Entrar no sistema", T.LOGIN)
 
     # ---------------------------------------------------------- administrador
@@ -219,7 +225,7 @@ if __name__ == "__main__":
               "Trocar o prestador reabre a verificacao de aptidao (UC22)."))
 
     tela("T12b-atribuir-ordem.html", "T12", "Atribuir prestador", "administrador", T.ATRIBUIR,
-         subtitulo="Ordem OS-2026-0147 · Desentupimento de pia",
+         subtitulo="Ordem OS-2026-0147, desentupimento de pia",
          obs=("A aptidao é verificada de novo no servidor no momento da confirmacao (RNF02).",
               "Se o prestador ficar inapto entre a abertura da tela e a confirmacao, a atribuicao é recusada e a lista recarregada.",
               "Sem nenhum prestador apto, a tela informa e oferece o caminho para habilitar ou regularizar alguem."))
@@ -236,7 +242,7 @@ if __name__ == "__main__":
               "Sem nenhuma ordem atribuida, a lista mostra a mensagem de que nao ha ordem no momento."))
 
     tela("T14-ordem-execucao.html", "T14", "Ordem OS-2026-0148", "prestador", T.ORDEM_EXECUCAO,
-         subtitulo="Instalação de tomadas · Supermercado Ponto Certo",
+         subtitulo="Instalação de tomadas para o Supermercado Ponto Certo",
          obs=("A conclusao exige o relato do que foi executado (fluxo de excecao E4.1).",
               "Ao concluir, o sistema compara a data com o prazo e marca a ordem como no prazo ou em atraso (RN12).",
               "Depois de concluida, a ordem fica bloqueada para edicao (RN06)."))
@@ -261,7 +267,7 @@ if __name__ == "__main__":
               "A ordem nasce com status aberta e recebe um numero visivel ao cliente."))
 
     tela("T18-ordem-cliente.html", "T18", "Ordem OS-2026-0144", "cliente", T.ORDEM_CLIENTE,
-         subtitulo="Troca de disjuntor · concluída em 15/09/2026",
+         subtitulo="Troca de disjuntor, concluída em 15/09/2026",
          obs=("A avaliacao so pode ser lancada uma vez, e apenas pelo cliente titular da ordem (RN08).",
               "Depois de enviada, ela aparece em modo somente leitura.",
               "A nota entra no calculo da media do prestador dos ultimos 12 meses (RN09)."))

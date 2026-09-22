@@ -3,40 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T08 · Catálogo de serviços · SGP</title>
+<title>Catálogo de serviços - SGP</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="app">
 <header class="topo">
-  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <a class="marca" href="index.html">SGP<span>gestão de prestadores</span></a>
   <div class="usuario">
     <div class="usuario-dados">
       <strong>Marina Prado</strong>
       <span>Administradora</span>
     </div>
-    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+    <a class="sair" href="T01-login.html">Sair</a>
   </div>
 </header>
 <div class="corpo">
   <nav class="menu">
-    <a class="menu-item" href="T02-painel-administrador.html">Painel</a>
+    <div class="menu-grupo">Operação</div>
+    <a class="menu-item" href="T02-painel-administrador.html">Painel do dia</a>
     <a class="menu-item" href="T11-ordens.html">Ordens de serviço</a>
-    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item" href="T10-vencimentos.html">Vencimentos</a>
+    <div class="menu-grupo">Cadastro</div>
+    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item" href="T05-clientes.html">Clientes</a>
-    <a class="menu-item ativo" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item ativo" href="T08-servicos.html">Serviços</a>
     <a class="menu-item" href="T07-categorias.html">Categorias</a>
     <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
   </nav>
   <main class="conteudo">
     <div class="cabecalho-tela">
       <div>
-        <span class="codigo-tela">T08</span>
         <h1>Catálogo de serviços</h1>
         <p class="subtitulo">O que pode ser solicitado</p>
       </div>
       <div class="acoes-tela"><a class="btn btn-primario" href="T09-servico-cadastro.html">Novo serviço</a></div>
     </div>
+    <!-- estados previstos nesta tela:
+         O prazo padrao do servico é usado quando o cliente nao informa prazo na solicitacao. -->
+
     <div class="cartao">
   <div class="cartao-corpo">
     <div class="linha">
@@ -65,7 +69,7 @@
       <tr>
         <td data-rotulo="Serviço">Instalação de tomadas</td>
         <td data-rotulo="Categoria">Elétrica</td>
-        <td class="numerico" data-rotulo="Valor">R$ 180,00</td>
+        <td class="numerico" data-rotulo="Valor">R$ 187,50</td>
         <td class="numerico" data-rotulo="Prazo">3 dias</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
@@ -73,7 +77,7 @@
       <tr>
         <td data-rotulo="Serviço">Troca de disjuntor</td>
         <td data-rotulo="Categoria">Elétrica</td>
-        <td class="numerico" data-rotulo="Valor">R$ 120,00</td>
+        <td class="numerico" data-rotulo="Valor">R$ 122,00</td>
         <td class="numerico" data-rotulo="Prazo">2 dias</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
@@ -81,7 +85,7 @@
       <tr>
         <td data-rotulo="Serviço">Desentupimento de pia</td>
         <td data-rotulo="Categoria">Hidráulica</td>
-        <td class="numerico" data-rotulo="Valor">R$ 220,00</td>
+        <td class="numerico" data-rotulo="Valor">R$ 215,00</td>
         <td class="numerico" data-rotulo="Prazo">1 dia</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
@@ -89,7 +93,7 @@
       <tr>
         <td data-rotulo="Serviço">Limpeza pós-obra</td>
         <td data-rotulo="Categoria">Limpeza</td>
-        <td class="numerico" data-rotulo="Valor">R$ 950,00</td>
+        <td class="numerico" data-rotulo="Valor">R$ 940,00</td>
         <td class="numerico" data-rotulo="Prazo">2 dias</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
@@ -105,7 +109,6 @@
     </tbody>
   </table>
 </div>
-    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>O prazo padrao do servico é usado quando o cliente nao informa prazo na solicitacao.</li></ul></section>
   </main>
 </div>
 

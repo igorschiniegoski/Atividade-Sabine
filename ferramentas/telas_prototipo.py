@@ -12,38 +12,31 @@ a data de referencia usada nos exemplos é 22/09/2026.
 LOGIN = """<div class="caixa-login">
   <div class="marca-login">
     <strong>SGP</strong>
-    <span>Sistema de Gestão de Prestadores</span>
+    <span>Gestão de prestadores de serviço</span>
   </div>
 
   <div class="cartao">
     <div class="cartao-corpo">
       <div class="campo largo">
-        <label>E-mail <span class="obrigatorio">*</span></label>
-        <input type="email" value="marina.prado@empresa.com.br">
+        <label>E-mail</label>
+        <input type="email" value="marina.prado@pontocerto.com.br">
       </div>
-      <div class="campo largo com-erro">
-        <label>Senha <span class="obrigatorio">*</span></label>
+      <div class="campo largo com-erro" style="margin-bottom:8px">
+        <label>Senha</label>
         <input type="password" value="············">
         <span class="erro">E-mail ou senha inválidos.</span>
-        <span class="ajuda">A mensagem não diz qual dos dois está errado, de propósito (HU01).</span>
       </div>
       <a class="btn btn-primario" style="width:100%;text-align:center" href="T02-painel-administrador.html">Entrar</a>
     </div>
   </div>
 
-  <div class="cartao">
-    <h2>Entrar como (apenas no protótipo)</h2>
-    <div class="cartao-corpo">
-      <p class="subtitulo" style="margin-top:0">O sistema identifica o perfil pela conta. Aqui os três caminhos ficam
-      abertos para a demonstração.</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <a class="btn btn-neutro" href="T02-painel-administrador.html">Administrador</a>
-        <a class="btn btn-neutro" href="T13-minhas-ordens.html">Prestador</a>
-        <a class="btn btn-neutro" href="T16-minhas-solicitacoes.html">Cliente</a>
-      </div>
-      <p style="margin-bottom:0"><a href="index.html">Ver o mapa do protótipo</a></p>
-    </div>
-  </div>
+  <p class="rodape-login">
+    No protótipo os três perfis ficam abertos:
+    <a href="T02-painel-administrador.html">administrador</a>,
+    <a href="T13-minhas-ordens.html">prestador</a> ou
+    <a href="T16-minhas-solicitacoes.html">cliente</a>.
+    <br><a href="index.html">Ver o mapa das telas</a>
+  </p>
 </div>"""
 
 # ---------------------------------------------------------------- T02
@@ -163,7 +156,7 @@ PRESTADORES = """<div class="cartao">
     </thead>
     <tbody>
       <tr>
-        <td data-rotulo="Prestador">Elétrica Boratto ME<span class="secundario">(44) 99812-4410</span></td>
+        <td data-rotulo="Prestador">BORATTO INSTALACOES ELETRICAS LTDA<span class="secundario">Elétrica Boratto, (44) 99812-4410</span></td>
         <td data-rotulo="CNPJ">12.345.678/0001-90</td>
         <td data-rotulo="Categorias">Elétrica</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
@@ -171,7 +164,7 @@ PRESTADORES = """<div class="cartao">
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Prestador">João Pedro Alves<span class="secundario">(44) 99745-2201</span></td>
+        <td data-rotulo="Prestador">JOAO PEDRO ALVES<span class="secundario">autônomo, (44) 99745-2201</span></td>
         <td data-rotulo="CPF">123.456.789-09</td>
         <td data-rotulo="Categorias">Hidráulica</td>
         <td data-rotulo="Situação"><span class="chip chip-pendente">Pendente</span></td>
@@ -179,7 +172,7 @@ PRESTADORES = """<div class="cartao">
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Prestador">Limpeza Brilho Forte Ltda<span class="secundario">(44) 3025-7788</span></td>
+        <td data-rotulo="Prestador">BRILHO FORTE SERVICOS DE LIMPEZA LTDA<span class="secundario">Brilho Forte, (44) 3025-7788</span></td>
         <td data-rotulo="CNPJ">98.765.432/0001-10</td>
         <td data-rotulo="Categorias">Limpeza</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
@@ -187,7 +180,7 @@ PRESTADORES = """<div class="cartao">
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Prestador">Refrigeração Sul ME<span class="secundario">(44) 99120-3377</span></td>
+        <td data-rotulo="Prestador">REFRIGERACAO SUL COM E SERVICOS LTDA<span class="secundario">Refrigeração Sul, (44) 99120-3377</span></td>
         <td data-rotulo="CNPJ">21.876.543/0001-55</td>
         <td data-rotulo="Categorias">Refrigeração</td>
         <td data-rotulo="Situação"><span class="chip chip-bloqueado">Bloqueado</span></td>
@@ -195,7 +188,7 @@ PRESTADORES = """<div class="cartao">
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Prestador">Marcos Antunes<span class="secundario">(44) 99666-1180</span></td>
+        <td data-rotulo="Prestador">MARCOS ANTUNES DA SILVA<span class="secundario">autônomo, 44 99666-1180</span></td>
         <td data-rotulo="CPF">987.654.321-00</td>
         <td data-rotulo="Categorias">Manutenção predial, Elétrica</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
@@ -232,7 +225,7 @@ PRESTADOR_DADOS = abas_prestador("T04-prestador-dados.html") + """
       </div>
       <div class="campo">
         <label>Razão social <span class="obrigatorio">*</span></label>
-        <input type="text" value="Elétrica Boratto ME">
+        <input type="text" value="BORATTO INSTALACOES ELETRICAS LTDA">
       </div>
       <div class="campo com-erro">
         <label>CNPJ <span class="obrigatorio">*</span></label>
@@ -460,7 +453,7 @@ CLIENTES = """<div class="cartao">
     </thead>
     <tbody>
       <tr>
-        <td data-rotulo="Cliente">Supermercado Ponto Certo<span class="secundario">compras@pontocerto.com.br</span></td>
+        <td data-rotulo="Cliente">PONTO CERTO COMERCIO DE ALIMENTOS LTDA<span class="secundario">Supermercado Ponto Certo, compras@pontocerto.com.br</span></td>
         <td data-rotulo="CNPJ">33.221.098/0001-44</td>
         <td data-rotulo="Cidade">Maringá / PR</td>
         <td data-rotulo="Ordens abertas">2</td>
@@ -468,7 +461,7 @@ CLIENTES = """<div class="cartao">
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T06-cliente-cadastro.html">Abrir</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Cliente">Padaria Trigo de Ouro<span class="secundario">contato@trigodeouro.com.br</span></td>
+        <td data-rotulo="Cliente">TRIGO DE OURO PANIFICADORA LTDA<span class="secundario">Padaria Trigo de Ouro, contato@trigodeouro.com.br</span></td>
         <td data-rotulo="CNPJ">45.789.012/0001-33</td>
         <td data-rotulo="Cidade">Maringá / PR</td>
         <td data-rotulo="Ordens abertas">1</td>
@@ -507,7 +500,7 @@ CLIENTE_CADASTRO = """<div class="cartao">
       </div>
       <div class="campo">
         <label>Razão social <span class="obrigatorio">*</span></label>
-        <input type="text" value="Supermercado Ponto Certo">
+        <input type="text" value="PONTO CERTO COMERCIO DE ALIMENTOS LTDA">
       </div>
       <div class="campo">
         <label>CNPJ <span class="obrigatorio">*</span></label>
@@ -626,7 +619,7 @@ SERVICOS = """<div class="cartao">
       <tr>
         <td data-rotulo="Serviço">Instalação de tomadas</td>
         <td data-rotulo="Categoria">Elétrica</td>
-        <td class="numerico" data-rotulo="Valor">R$ 180,00</td>
+        <td class="numerico" data-rotulo="Valor">R$ 187,50</td>
         <td class="numerico" data-rotulo="Prazo">3 dias</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
@@ -634,7 +627,7 @@ SERVICOS = """<div class="cartao">
       <tr>
         <td data-rotulo="Serviço">Troca de disjuntor</td>
         <td data-rotulo="Categoria">Elétrica</td>
-        <td class="numerico" data-rotulo="Valor">R$ 120,00</td>
+        <td class="numerico" data-rotulo="Valor">R$ 122,00</td>
         <td class="numerico" data-rotulo="Prazo">2 dias</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
@@ -642,7 +635,7 @@ SERVICOS = """<div class="cartao">
       <tr>
         <td data-rotulo="Serviço">Desentupimento de pia</td>
         <td data-rotulo="Categoria">Hidráulica</td>
-        <td class="numerico" data-rotulo="Valor">R$ 220,00</td>
+        <td class="numerico" data-rotulo="Valor">R$ 215,00</td>
         <td class="numerico" data-rotulo="Prazo">1 dia</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
@@ -650,7 +643,7 @@ SERVICOS = """<div class="cartao">
       <tr>
         <td data-rotulo="Serviço">Limpeza pós-obra</td>
         <td data-rotulo="Categoria">Limpeza</td>
-        <td class="numerico" data-rotulo="Valor">R$ 950,00</td>
+        <td class="numerico" data-rotulo="Valor">R$ 940,00</td>
         <td class="numerico" data-rotulo="Prazo">2 dias</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
@@ -689,7 +682,7 @@ SERVICO_CADASTRO = """<div class="cartao">
     <div class="linha">
       <div class="campo estreito">
         <label>Valor de referência</label>
-        <input type="text" value="R$ 180,00">
+        <input type="text" value="187,50">
         <span class="ajuda">Serve de base para o orçamento, não é o valor cobrado.</span>
       </div>
       <div class="campo estreito">
@@ -888,8 +881,8 @@ ORDEM_ADM = """<div class="cartao">
       </div>
       <div class="campo largo">
         <label>Descrição do cliente</label>
-        <p style="margin:0">A pia da área de produção está entupida desde ontem à tarde. A água não desce e já
-        transbordou uma vez. Precisamos resolver antes da abertura de quinta, porque sem a pia a cozinha não pode operar.</p>
+        <p style="margin:0">a pia da cozinha entupiu ontem de tarde e a agua nao desce mais. ja transbordou uma vez
+        e molhou o estoque de farinha. precisa resolver antes de quinta se nao a padaria nao abre</p>
       </div>
       <div class="campo largo">
         <label>Prestador responsável</label>
@@ -940,13 +933,13 @@ ATRIBUIR = """<div class="modal-fundo">
         <thead><tr><th>Prestador</th><th class="numerico">Nota</th><th class="numerico">Ordens abertas</th><th class="acoes">&nbsp;</th></tr></thead>
         <tbody>
           <tr>
-            <td data-rotulo="Prestador">Encanações Maringá Ltda<span class="secundario">Habilitado em Hidráulica</span></td>
+            <td data-rotulo="Prestador">ENCANACOES MARINGA LTDA<span class="secundario">31 ordens concluídas, última em 08/09</span></td>
             <td class="numerico" data-rotulo="Nota">4,6</td>
             <td class="numerico" data-rotulo="Ordens">2</td>
             <td class="acoes"><a class="btn btn-primario btn-pequeno" href="T12-ordem-administrador.html">Atribuir</a></td>
           </tr>
           <tr>
-            <td data-rotulo="Prestador">Hidro Service ME<span class="secundario">Habilitado em Hidráulica</span></td>
+            <td data-rotulo="Prestador">HIDRO SERVICE INSTALACOES ME<span class="secundario">cadastrado em 02/09, 2 ordens concluídas</span></td>
             <td class="numerico" data-rotulo="Nota">Sem histórico suficiente</td>
             <td class="numerico" data-rotulo="Ordens">0</td>
             <td class="acoes"><a class="btn btn-primario btn-pequeno" href="T12-ordem-administrador.html">Atribuir</a></td>
@@ -1095,8 +1088,8 @@ ORDEM_EXECUCAO = """<div class="cartao">
       </div>
       <div class="campo largo">
         <label>Descrição</label>
-        <p style="margin:0">Instalar quatro tomadas novas no estoque, duas em cada parede lateral, com tomada de 20A
-        para a seladora. O material já está comprado e fica na sala do gerente.</p>
+        <p style="margin:0">instalar 4 tomadas no estoque, 2 em cada parede. uma delas tem que ser de 20A por causa
+        da seladora nova. o material ja comprei, esta na sala do gerente</p>
       </div>
     </div>
   </div>
@@ -1106,7 +1099,7 @@ ORDEM_EXECUCAO = """<div class="cartao">
     <div class="cartao-corpo">
       <div class="campo largo">
         <label>Observação</label>
-        <textarea placeholder="O que foi feito até agora"></textarea>
+        <textarea placeholder="O que foi feito até agora">passei o cabo das duas primeiras tomadas. amanha volto pra fechar a parede</textarea>
         <span class="ajuda">O cliente e o administrador enxergam esse registro.</span>
       </div>
       <a class="btn btn-neutro" href="T14-ordem-execucao.html">Salvar andamento</a>
@@ -1245,7 +1238,7 @@ NOVA_SOLICITACAO = """<div class="cartao">
       <div class="campo">
         <label>Serviço <span class="obrigatorio">*</span></label>
         <select><option>Instalação de tomadas</option><option>Troca de disjuntor</option></select>
-        <span class="ajuda">Valor de referência: R$ 180,00. Prazo padrão: 3 dias.</span>
+        <span class="ajuda">Valor de referência R$ 187,50, prazo padrão de 3 dias.</span>
       </div>
       <div class="campo estreito">
         <label>Prioridade</label>
@@ -1301,7 +1294,7 @@ ORDEM_CLIENTE = """<div class="aviso ok">
         <li>
           <strong>Serviço concluído</strong>
           <span class="quando">15/09/2026 às 16:20</span>
-          Disjuntor de 40A substituído no quadro geral e testado com carga. Quadro identificado com etiqueta nova.
+          troquei o disjuntor geral por um de 40A, testei com a camara ligada e identifiquei o quadro com etiqueta nova
         </li>
         <li><strong>Execução iniciada</strong><span class="quando">15/09/2026 às 09:10</span></li>
         <li><strong>Atribuída a Elétrica Boratto ME</strong><span class="quando">12/09/2026 às 14:05</span></li>
@@ -1326,7 +1319,7 @@ ORDEM_CLIENTE = """<div class="aviso ok">
       </div>
       <div class="campo largo">
         <label>Comentário</label>
-        <textarea placeholder="Conte como foi o atendimento (opcional)">Chegou no horário combinado e deixou o quadro organizado.</textarea>
+        <textarea placeholder="Conte como foi o atendimento (opcional)">chegou no horario e deixou tudo limpo. so demorou um pouco pra achar o quadro</textarea>
       </div>
     </div>
     <div class="rodape-form">
@@ -1339,53 +1332,53 @@ ORDEM_CLIENTE = """<div class="aviso ok">
 
 MAPA = """<div class="mapa">
   <h1>Protótipo do SGP</h1>
-  <p class="subtitulo">Sistema de gestão de prestadores, equipe 8. Todas as telas do MVP, navegáveis. Os dados são
-  fictícios e a data de referência é 22/09/2026.</p>
+  <p class="intro">Sistema de gestão de prestadores, equipe 8. São as 18 telas do MVP, navegáveis entre si.
+  Os dados são fictícios e a data de referência é 22/09/2026.</p>
 
   <div class="grupo">
     <h2>Acesso</h2>
     <div class="telas">
-      <a href="T01-login.html"><strong>T01 · Login</strong><span>UC01 · entrada por e-mail e senha, com o erro de credencial</span></a>
+      <a href="T01-login.html"><strong>Login</strong><span>T01, entrada por e-mail e senha</span></a>
     </div>
   </div>
 
   <div class="grupo">
     <h2>Administrador</h2>
     <div class="telas">
-      <a href="T02-painel-administrador.html"><strong>T02 · Painel</strong><span>visão do dia: vencimentos e ordens que precisam de ação</span></a>
-      <a href="T03-prestadores.html"><strong>T03 · Prestadores</strong><span>UC03 · lista com filtro por situação e categoria</span></a>
-      <a href="T04-prestador-dados.html"><strong>T04 · Cadastro do prestador</strong><span>UC03 · dados, com CNPJ inválido barrado</span></a>
-      <a href="T04b-prestador-categorias.html"><strong>T04 · Categorias do prestador</strong><span>UC07 · habilitação por categoria</span></a>
-      <a href="T04c-prestador-documentos.html"><strong>T04 · Documentos do prestador</strong><span>UC08 · validade e versões anteriores</span></a>
-      <a href="T04d-prestador-situacao.html"><strong>T04 · Situação cadastral</strong><span>UC11 · alteração com motivo e histórico</span></a>
-      <a href="T05-clientes.html"><strong>T05 · Clientes</strong><span>UC04 · lista de clientes</span></a>
-      <a href="T06-cliente-cadastro.html"><strong>T06 · Cadastro do cliente</strong><span>UC04 · dados e endereço</span></a>
-      <a href="T07-categorias.html"><strong>T07 · Categorias de serviço</strong><span>UC05 · lista e inclusão</span></a>
-      <a href="T08-servicos.html"><strong>T08 · Catálogo de serviços</strong><span>UC06 · valor de referência e prazo padrão</span></a>
-      <a href="T09-servico-cadastro.html"><strong>T09 · Cadastro do serviço</strong><span>UC06 · dados do serviço</span></a>
-      <a href="T10-vencimentos.html"><strong>T10 · Painel de vencimentos</strong><span>UC09 · vencidos e a vencer em 30 dias</span></a>
-      <a href="T11-ordens.html"><strong>T11 · Ordens de serviço</strong><span>UC13 · lista com filtro por situação</span></a>
-      <a href="T12-ordem-administrador.html"><strong>T12 · Ordem, visão do administrador</strong><span>UC13 e UC17 · dados, trilha e histórico</span></a>
-      <a href="T12b-atribuir-ordem.html"><strong>T12 · Atribuir prestador</strong><span>UC22 · aptos e o motivo de cada inapto</span></a>
-      <a href="T12c-cancelar-ordem.html"><strong>T12 · Cancelar ordem</strong><span>UC17 · motivo obrigatório com mínimo de 10 caracteres</span></a>
+      <a href="T02-painel-administrador.html"><strong>Painel do dia</strong><span>T02, vencimentos e ordens que precisam de ação</span></a>
+      <a href="T11-ordens.html"><strong>Ordens de serviço</strong><span>T11, lista com filtro por situação</span></a>
+      <a href="T12-ordem-administrador.html"><strong>Ordem aberta</strong><span>T12, dados, situação e histórico</span></a>
+      <a href="T12b-atribuir-ordem.html"><strong>Atribuir prestador</strong><span>T12, aptos e o motivo de cada inapto</span></a>
+      <a href="T12c-cancelar-ordem.html"><strong>Cancelar ordem</strong><span>T12, motivo obrigatório</span></a>
+      <a href="T10-vencimentos.html"><strong>Vencimentos</strong><span>T10, vencidos e a vencer em 30 dias</span></a>
+      <a href="T03-prestadores.html"><strong>Prestadores</strong><span>T03, lista com filtro por situação e categoria</span></a>
+      <a href="T04-prestador-dados.html"><strong>Ficha do prestador</strong><span>T04, dados cadastrais</span></a>
+      <a href="T04b-prestador-categorias.html"><strong>Categorias do prestador</strong><span>T04, habilitação por categoria</span></a>
+      <a href="T04c-prestador-documentos.html"><strong>Documentos do prestador</strong><span>T04, validade e versões anteriores</span></a>
+      <a href="T04d-prestador-situacao.html"><strong>Situação cadastral</strong><span>T04, alteração com motivo e histórico</span></a>
+      <a href="T05-clientes.html"><strong>Clientes</strong><span>T05, lista de clientes</span></a>
+      <a href="T06-cliente-cadastro.html"><strong>Ficha do cliente</strong><span>T06, dados e endereço</span></a>
+      <a href="T08-servicos.html"><strong>Serviços</strong><span>T08, catálogo com valor e prazo padrão</span></a>
+      <a href="T09-servico-cadastro.html"><strong>Ficha do serviço</strong><span>T09, dados do serviço</span></a>
+      <a href="T07-categorias.html"><strong>Categorias</strong><span>T07, lista e inclusão</span></a>
     </div>
   </div>
 
   <div class="grupo">
     <h2>Prestador</h2>
     <div class="telas">
-      <a href="T13-minhas-ordens.html"><strong>T13 · Minhas ordens</strong><span>UC14 · apenas as ordens do prestador logado</span></a>
-      <a href="T14-ordem-execucao.html"><strong>T14 · Execução da ordem</strong><span>UC15 e UC16 · andamento e conclusão com relato</span></a>
-      <a href="T15-meus-documentos.html"><strong>T15 · Meus documentos</strong><span>UC08 · envio com validação de formato</span></a>
+      <a href="T13-minhas-ordens.html"><strong>Minhas ordens</strong><span>T13, apenas as ordens do prestador logado</span></a>
+      <a href="T14-ordem-execucao.html"><strong>Execução da ordem</strong><span>T14, andamento e conclusão com relato</span></a>
+      <a href="T15-meus-documentos.html"><strong>Meus documentos</strong><span>T15, envio com validação de formato</span></a>
     </div>
   </div>
 
   <div class="grupo">
     <h2>Cliente</h2>
     <div class="telas">
-      <a href="T16-minhas-solicitacoes.html"><strong>T16 · Minhas solicitações</strong><span>UC12 · acompanhamento das próprias ordens</span></a>
-      <a href="T17-nova-solicitacao.html"><strong>T17 · Nova solicitação</strong><span>UC12 · abertura com validação da descrição</span></a>
-      <a href="T18-ordem-cliente.html"><strong>T18 · Acompanhamento e avaliação</strong><span>UC18 · nota de 1 a 5 e comentário</span></a>
+      <a href="T16-minhas-solicitacoes.html"><strong>Minhas solicitações</strong><span>T16, acompanhamento das próprias ordens</span></a>
+      <a href="T17-nova-solicitacao.html"><strong>Nova solicitação</strong><span>T17, abertura do pedido</span></a>
+      <a href="T18-ordem-cliente.html"><strong>Acompanhar e avaliar</strong><span>T18, nota de 1 a 5 e comentário</span></a>
     </div>
   </div>
 </div>"""

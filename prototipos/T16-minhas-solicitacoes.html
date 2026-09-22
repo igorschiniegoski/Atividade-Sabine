@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T16 · Minhas solicitações · SGP</title>
+<title>Minhas solicitações - SGP</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="app">
 <header class="topo">
-  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <a class="marca" href="index.html">SGP<span>gestão de prestadores</span></a>
   <div class="usuario">
     <div class="usuario-dados">
       <strong>Supermercado Ponto Certo</strong>
       <span>Cliente</span>
     </div>
-    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+    <a class="sair" href="T01-login.html">Sair</a>
   </div>
 </header>
 <div class="corpo">
@@ -26,12 +26,15 @@
   <main class="conteudo">
     <div class="cabecalho-tela">
       <div>
-        <span class="codigo-tela">T16</span>
         <h1>Minhas solicitações</h1>
         <p class="subtitulo">Acompanhe o que você pediu</p>
       </div>
       <div class="acoes-tela"><a class="btn btn-primario" href="T17-nova-solicitacao.html">Nova solicitação</a></div>
     </div>
+    <!-- estados previstos nesta tela:
+         O cliente ve apenas as proprias ordens e nao tem acesso a lista de prestadores (RNF02).
+         A acao avaliar so aparece depois que a ordem é concluida (RN08). -->
+
     <div class="cartao">
   <h2>Minhas solicitações</h2>
   <table>
@@ -66,7 +69,6 @@
     </tbody>
   </table>
 </div>
-    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>O cliente ve apenas as proprias ordens e nao tem acesso a lista de prestadores (RNF02).</li><li>A acao avaliar so aparece depois que a ordem é concluida (RN08).</li></ul></section>
   </main>
 </div>
 

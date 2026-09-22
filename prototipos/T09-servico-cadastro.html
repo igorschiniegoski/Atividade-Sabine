@@ -3,40 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T09 · Instalação de tomadas · SGP</title>
+<title>Instalação de tomadas - SGP</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="app">
 <header class="topo">
-  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <a class="marca" href="index.html">SGP<span>gestão de prestadores</span></a>
   <div class="usuario">
     <div class="usuario-dados">
       <strong>Marina Prado</strong>
       <span>Administradora</span>
     </div>
-    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+    <a class="sair" href="T01-login.html">Sair</a>
   </div>
 </header>
 <div class="corpo">
   <nav class="menu">
-    <a class="menu-item" href="T02-painel-administrador.html">Painel</a>
+    <div class="menu-grupo">Operação</div>
+    <a class="menu-item" href="T02-painel-administrador.html">Painel do dia</a>
     <a class="menu-item" href="T11-ordens.html">Ordens de serviço</a>
-    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item" href="T10-vencimentos.html">Vencimentos</a>
+    <div class="menu-grupo">Cadastro</div>
+    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item" href="T05-clientes.html">Clientes</a>
-    <a class="menu-item" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item" href="T08-servicos.html">Serviços</a>
     <a class="menu-item" href="T07-categorias.html">Categorias</a>
     <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
   </nav>
   <main class="conteudo">
     <div class="cabecalho-tela">
       <div>
-        <span class="codigo-tela">T09</span>
         <h1>Instalação de tomadas</h1>
         <p class="subtitulo">Cadastro do serviço</p>
       </div>
       
     </div>
+    <!-- estados previstos nesta tela:
+         O valor de referencia aceita apenas numero positivo. -->
+
     <div class="cartao">
   <h2>Dados do serviço</h2>
   <div class="cartao-corpo">
@@ -57,7 +61,7 @@
     <div class="linha">
       <div class="campo estreito">
         <label>Valor de referência</label>
-        <input type="text" value="R$ 180,00">
+        <input type="text" value="187,50">
         <span class="ajuda">Serve de base para o orçamento, não é o valor cobrado.</span>
       </div>
       <div class="campo estreito">
@@ -76,7 +80,6 @@
     <a class="btn btn-primario" href="T08-servicos.html">Salvar</a>
   </div>
 </div>
-    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>O valor de referencia aceita apenas numero positivo.</li></ul></section>
   </main>
 </div>
 

@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T15 · Meus documentos · SGP</title>
+<title>Meus documentos - SGP</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="app">
 <header class="topo">
-  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <a class="marca" href="index.html">SGP<span>gestão de prestadores</span></a>
   <div class="usuario">
     <div class="usuario-dados">
       <strong>Elétrica Boratto ME</strong>
       <span>Prestador</span>
     </div>
-    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+    <a class="sair" href="T01-login.html">Sair</a>
   </div>
 </header>
 <div class="corpo">
@@ -26,12 +26,16 @@
   <main class="conteudo">
     <div class="cabecalho-tela">
       <div>
-        <span class="codigo-tela">T15</span>
         <h1>Meus documentos</h1>
         <p class="subtitulo">Mantenha a documentação em dia para continuar recebendo ordens</p>
       </div>
       
     </div>
+    <!-- estados previstos nesta tela:
+         Sao aceitos apenas PDF, JPG e PNG, com ate 10 MB por arquivo (RNF09).
+         Data de emissao posterior a validade é recusada, com os dois campos destacados.
+         O envio da versao renovada mantem a anterior no historico. -->
+
     <div class="aviso atencao">
   <div>
     <strong>Um documento obrigatório está para vencer.</strong>
@@ -82,7 +86,6 @@
     </div>
   </div>
 </div>
-    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>Sao aceitos apenas PDF, JPG e PNG, com ate 10 MB por arquivo (RNF09).</li><li>Data de emissao posterior a validade é recusada, com os dois campos destacados.</li><li>O envio da versao renovada mantem a anterior no historico.</li></ul></section>
   </main>
 </div>
 

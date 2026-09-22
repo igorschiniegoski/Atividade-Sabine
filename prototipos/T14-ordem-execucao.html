@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T14 · Ordem OS-2026-0148 · SGP</title>
+<title>Ordem OS-2026-0148 - SGP</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="app">
 <header class="topo">
-  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <a class="marca" href="index.html">SGP<span>gestão de prestadores</span></a>
   <div class="usuario">
     <div class="usuario-dados">
       <strong>Elétrica Boratto ME</strong>
       <span>Prestador</span>
     </div>
-    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+    <a class="sair" href="T01-login.html">Sair</a>
   </div>
 </header>
 <div class="corpo">
@@ -26,12 +26,16 @@
   <main class="conteudo">
     <div class="cabecalho-tela">
       <div>
-        <span class="codigo-tela">T14</span>
         <h1>Ordem OS-2026-0148</h1>
-        <p class="subtitulo">Instalação de tomadas · Supermercado Ponto Certo</p>
+        <p class="subtitulo">Instalação de tomadas para o Supermercado Ponto Certo</p>
       </div>
       
     </div>
+    <!-- estados previstos nesta tela:
+         A conclusao exige o relato do que foi executado (fluxo de excecao E4.1).
+         Ao concluir, o sistema compara a data com o prazo e marca a ordem como no prazo ou em atraso (RN12).
+         Depois de concluida, a ordem fica bloqueada para edicao (RN06). -->
+
     <div class="cartao">
   <div class="cartao-corpo">
     <div class="trilha">
@@ -53,8 +57,8 @@
       </div>
       <div class="campo largo">
         <label>Descrição</label>
-        <p style="margin:0">Instalar quatro tomadas novas no estoque, duas em cada parede lateral, com tomada de 20A
-        para a seladora. O material já está comprado e fica na sala do gerente.</p>
+        <p style="margin:0">instalar 4 tomadas no estoque, 2 em cada parede. uma delas tem que ser de 20A por causa
+        da seladora nova. o material ja comprei, esta na sala do gerente</p>
       </div>
     </div>
   </div>
@@ -64,7 +68,7 @@
     <div class="cartao-corpo">
       <div class="campo largo">
         <label>Observação</label>
-        <textarea placeholder="O que foi feito até agora"></textarea>
+        <textarea placeholder="O que foi feito até agora">passei o cabo das duas primeiras tomadas. amanha volto pra fechar a parede</textarea>
         <span class="ajuda">O cliente e o administrador enxergam esse registro.</span>
       </div>
       <a class="btn btn-neutro" href="T14-ordem-execucao.html">Salvar andamento</a>
@@ -99,7 +103,6 @@
     </ul>
   </div>
 </div>
-    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>A conclusao exige o relato do que foi executado (fluxo de excecao E4.1).</li><li>Ao concluir, o sistema compara a data com o prazo e marca a ordem como no prazo ou em atraso (RN12).</li><li>Depois de concluida, a ordem fica bloqueada para edicao (RN06).</li></ul></section>
   </main>
 </div>
 

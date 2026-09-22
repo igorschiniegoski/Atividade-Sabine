@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T18 · Ordem OS-2026-0144 · SGP</title>
+<title>Ordem OS-2026-0144 - SGP</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="app">
 <header class="topo">
-  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <a class="marca" href="index.html">SGP<span>gestão de prestadores</span></a>
   <div class="usuario">
     <div class="usuario-dados">
       <strong>Supermercado Ponto Certo</strong>
       <span>Cliente</span>
     </div>
-    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+    <a class="sair" href="T01-login.html">Sair</a>
   </div>
 </header>
 <div class="corpo">
@@ -26,12 +26,16 @@
   <main class="conteudo">
     <div class="cabecalho-tela">
       <div>
-        <span class="codigo-tela">T18</span>
         <h1>Ordem OS-2026-0144</h1>
-        <p class="subtitulo">Troca de disjuntor · concluída em 15/09/2026</p>
+        <p class="subtitulo">Troca de disjuntor, concluída em 15/09/2026</p>
       </div>
       
     </div>
+    <!-- estados previstos nesta tela:
+         A avaliacao so pode ser lancada uma vez, e apenas pelo cliente titular da ordem (RN08).
+         Depois de enviada, ela aparece em modo somente leitura.
+         A nota entra no calculo da media do prestador dos ultimos 12 meses (RN09). -->
+
     <div class="aviso ok">
   <div>
     <strong>Serviço concluído em 15/09/2026, dentro do prazo.</strong>
@@ -53,7 +57,7 @@
         <li>
           <strong>Serviço concluído</strong>
           <span class="quando">15/09/2026 às 16:20</span>
-          Disjuntor de 40A substituído no quadro geral e testado com carga. Quadro identificado com etiqueta nova.
+          troquei o disjuntor geral por um de 40A, testei com a camara ligada e identifiquei o quadro com etiqueta nova
         </li>
         <li><strong>Execução iniciada</strong><span class="quando">15/09/2026 às 09:10</span></li>
         <li><strong>Atribuída a Elétrica Boratto ME</strong><span class="quando">12/09/2026 às 14:05</span></li>
@@ -78,7 +82,7 @@
       </div>
       <div class="campo largo">
         <label>Comentário</label>
-        <textarea placeholder="Conte como foi o atendimento (opcional)">Chegou no horário combinado e deixou o quadro organizado.</textarea>
+        <textarea placeholder="Conte como foi o atendimento (opcional)">chegou no horario e deixou tudo limpo. so demorou um pouco pra achar o quadro</textarea>
       </div>
     </div>
     <div class="rodape-form">
@@ -86,7 +90,6 @@
     </div>
   </div>
 </div>
-    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>A avaliacao so pode ser lancada uma vez, e apenas pelo cliente titular da ordem (RN08).</li><li>Depois de enviada, ela aparece em modo somente leitura.</li><li>A nota entra no calculo da media do prestador dos ultimos 12 meses (RN09).</li></ul></section>
   </main>
 </div>
 

@@ -3,40 +3,46 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T04 · Elétrica Boratto ME · SGP</title>
+<title>Elétrica Boratto ME - SGP</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="app">
 <header class="topo">
-  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <a class="marca" href="index.html">SGP<span>gestão de prestadores</span></a>
   <div class="usuario">
     <div class="usuario-dados">
       <strong>Marina Prado</strong>
       <span>Administradora</span>
     </div>
-    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+    <a class="sair" href="T01-login.html">Sair</a>
   </div>
 </header>
 <div class="corpo">
   <nav class="menu">
-    <a class="menu-item" href="T02-painel-administrador.html">Painel</a>
+    <div class="menu-grupo">Operação</div>
+    <a class="menu-item" href="T02-painel-administrador.html">Painel do dia</a>
     <a class="menu-item" href="T11-ordens.html">Ordens de serviço</a>
-    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item" href="T10-vencimentos.html">Vencimentos</a>
+    <div class="menu-grupo">Cadastro</div>
+    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item" href="T05-clientes.html">Clientes</a>
-    <a class="menu-item" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item" href="T08-servicos.html">Serviços</a>
     <a class="menu-item" href="T07-categorias.html">Categorias</a>
     <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
   </nav>
   <main class="conteudo">
     <div class="cabecalho-tela">
       <div>
-        <span class="codigo-tela">T04</span>
         <h1>Elétrica Boratto ME</h1>
         <p class="subtitulo">Cadastro do prestador</p>
       </div>
       
     </div>
+    <!-- estados previstos nesta tela:
+         O CNPJ é validado pelo digito verificador e nao pode se repetir entre cadastros ativos (RN10).
+         Enquanto houver erro de validacao o formulario nao é enviado e o campo fica destacado.
+         Toda gravacao devolve mensagem de confirmacao ou de erro (RNF05). -->
+
     <div class="abas"><a class="aba ativa" href="T04-prestador-dados.html">Dados cadastrais</a><a class="aba" href="T04b-prestador-categorias.html">Categorias</a><a class="aba" href="T04c-prestador-documentos.html">Documentos</a><a class="aba" href="T04d-prestador-situacao.html">Situação cadastral</a></div>
 <div class="cartao">
   <h2>Identificação</h2>
@@ -48,7 +54,7 @@
       </div>
       <div class="campo">
         <label>Razão social <span class="obrigatorio">*</span></label>
-        <input type="text" value="Elétrica Boratto ME">
+        <input type="text" value="BORATTO INSTALACOES ELETRICAS LTDA">
       </div>
       <div class="campo com-erro">
         <label>CNPJ <span class="obrigatorio">*</span></label>
@@ -111,7 +117,6 @@
     <a class="btn btn-primario" href="T03-prestadores.html">Salvar</a>
   </div>
 </div>
-    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>O CNPJ é validado pelo digito verificador e nao pode se repetir entre cadastros ativos (RN10).</li><li>Enquanto houver erro de validacao o formulario nao é enviado e o campo fica destacado.</li><li>Toda gravacao devolve mensagem de confirmacao ou de erro (RNF05).</li></ul></section>
   </main>
 </div>
 
