@@ -3,24 +3,31 @@
 
    a referencia visual é a via de papel da ordem de servico e a ficha cadastral
    que o sistema vem substituir: densidade alta, canto quase reto, etiqueta de
-   situacao no lugar da cor solta, e numero alinhado como em formulario. */
+   situacao no lugar da cor solta, e numero alinhado como em formulario.
+
+   a cor vem do mundo da manutencao predial: chumbo de ferramenta e laranja
+   queimado de sinalizacao. o laranja marca o que é clicavel e nada mais. a
+   situacao do registro usa a escala vermelho, ocre, verde e cinza, entao a
+   cor da marca nunca disputa atencao com a cor que informa. */
 
 :root {
-  --tinta: #16202b;
-  --tinta2: #5a6675;
-  --papel: #eef0f2;
+  --tinta: #22262a;
+  --tinta2: #646b72;
+  --papel: #f0efec;
   --branco: #ffffff;
-  --regua: #ccd2d8;
-  --regua-clara: #e3e7eb;
-  --caneta: #17365d;
-  --caneta-escura: #0f2440;
-  --caneta-clara: #e8edf4;
+  --regua: #d4d2cd;
+  --regua-clara: #e6e4df;
+  --caneta: #a8480c;
+  --caneta-escura: #2b2f33;
+  --caneta-clara: #f7eadf;
   --carimbo: #a4231f;
   --carimbo-fundo: #fbeceb;
   --ocre: #8a5a00;
   --ocre-fundo: #fdf4e0;
   --verde: #1c5c37;
   --verde-fundo: #e8f1ea;
+  --ardosia: #3c4347;
+  --ardosia-fundo: #eceeef;
   --linha: 30px;
 }
 
@@ -67,17 +74,17 @@ table, .numero-os, .valor, td.numerico, .indicador .numero {
   cursor: pointer;
 }
 
-.marca span { font-size: 12px; font-weight: 400; letter-spacing: 0; color: #9db0c9; }
+.marca span { font-size: 12px; font-weight: 400; letter-spacing: 0; color: #a8adb1; }
 
 .usuario { display: flex; align-items: center; gap: 12px; font-size: 12.5px; }
 .usuario-dados { text-align: right; line-height: 1.2; }
 .usuario-dados strong { display: block; font-weight: 600; }
-.usuario-dados span { color: #9db0c9; }
+.usuario-dados span { color: #a8adb1; }
 
 .usuario .sair {
-  color: #cfdbea;
+  color: #d6d9db;
   text-decoration: none;
-  border-left: 1px solid #33547f;
+  border-left: 1px solid #4a4f53;
   padding-left: 12px;
   cursor: pointer;
 }
@@ -246,7 +253,7 @@ td.acoes { text-align: right; white-space: nowrap; width: 1%; }
 .chip-pendente, .chip-vence { border-color: #e6d4a8; border-left-color: var(--ocre); color: var(--ocre); background: var(--ocre-fundo); }
 .chip-bloqueado, .chip-vencido, .chip-atraso, .chip-cancelada { border-color: #e6bab8; border-left-color: var(--carimbo); color: var(--carimbo); background: var(--carimbo-fundo); }
 .chip-inativo, .chip-neutro { border-color: var(--regua); border-left-color: var(--tinta2); color: var(--tinta2); background: #f4f5f6; }
-.chip-aberta, .chip-atribuida, .chip-execucao { border-color: #bfd0e4; border-left-color: var(--caneta); color: var(--caneta); background: var(--caneta-clara); }
+.chip-aberta, .chip-atribuida, .chip-execucao { border-color: #cdd2d4; border-left-color: var(--ardosia); color: var(--ardosia); background: var(--ardosia-fundo); }
 
 /* ---------------------------------------------------------------- botões */
 
@@ -299,7 +306,7 @@ td.acoes { text-align: right; white-space: nowrap; width: 1%; }
 }
 
 .campo input:focus, .campo select:focus, .campo textarea:focus {
-  outline: 2px solid rgba(23, 54, 93, .3);
+  outline: 2px solid rgba(168, 72, 12, .35);
   outline-offset: -1px;
   border-color: var(--caneta);
 }
@@ -387,7 +394,7 @@ td.acoes { text-align: right; white-space: nowrap; width: 1%; }
 
 .passo:first-child { border-left: 0; }
 .passo.feito { background: var(--verde-fundo); color: var(--verde); }
-.passo.atual { background: var(--caneta); color: #fff; font-weight: 600; }
+.passo.atual { background: var(--ardosia); color: #fff; font-weight: 600; }
 .passo.cancelado { background: var(--carimbo-fundo); color: var(--carimbo); }
 
 /* ----------------------------------------------------------- linha do tempo */
@@ -432,7 +439,7 @@ td.acoes { text-align: right; white-space: nowrap; width: 1%; }
   background: var(--branco);
   border: 1px solid #9aa5b1;
   border-radius: 3px;
-  box-shadow: 0 6px 18px rgba(16, 24, 40, .18);
+  box-shadow: 0 6px 18px rgba(34, 38, 42, .2);
 }
 
 .modal > h2 {
@@ -483,10 +490,10 @@ body.centro {
 .caixa-login { width: 100%; max-width: 360px; }
 .caixa-login .marca-login { margin-bottom: 14px; color: #fff; }
 .caixa-login .marca-login strong { display: block; font-size: 26px; letter-spacing: .5px; }
-.caixa-login .marca-login span { color: #9db0c9; font-size: 13px; }
+.caixa-login .marca-login span { color: #a8adb1; font-size: 13px; }
 .caixa-login .cartao { margin-bottom: 10px; }
-.caixa-login .rodape-login { color: #9db0c9; font-size: 12.5px; }
-.caixa-login .rodape-login a { color: #cfdbea; }
+.caixa-login .rodape-login { color: #a8adb1; font-size: 12.5px; }
+.caixa-login .rodape-login a { color: #f0d9c4; }
 
 /* -------------------------------------------------------------------- mapa */
 

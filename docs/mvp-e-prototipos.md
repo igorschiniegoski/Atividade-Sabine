@@ -205,7 +205,7 @@ a referencia visual nao foi painel de aplicativo, e sim a via de papel da ordem 
 | canto quase reto e nenhuma sombra | o desenho segue formulario impresso, nao cartao flutuante |
 | situacao em etiqueta retangular, com a cor na borda esquerda | lembra a etiqueta de pasta de arquivo e se distingue do botao, que é a outra caixa clicavel da tela |
 | numero alinhado pela direita, com digito de mesma largura | valor, prazo e quantidade ficam legiveis em coluna, como em planilha |
-| cor forte so onde ha decisao a tomar | vencido em vermelho, a vencer em ocre, concluido em verde. o resto é cinza e azul de tinta |
+| a cor da marca so marca o que é clicavel | o chumbo de ferramenta e o laranja queimado de sinalizacao vem do mundo da manutencao predial. situacao usa outra escala, vermelho para vencido, ocre para a vencer, verde para concluido e cinza para o andamento da ordem, entao a marca nunca disputa atencao com o aviso |
 | nenhum icone decorativo | o que informa é o texto e a situacao. icone sem funcao atrapalha a leitura em tabela densa |
 | razao social em caixa alta, com o nome de tratamento embaixo | é assim que o dado chega do cadastro da receita, e é assim que o gestor reconhece o prestador |
 | descricao escrita como o cliente escreve | o texto do pedido no prototipo foi escrito sem pontuacao caprichada de proposito. quem abre a ordem é o dono da padaria com pressa, nao um redator |
