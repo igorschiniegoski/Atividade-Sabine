@@ -42,7 +42,7 @@ MENUS = {
 }
 
 USUARIO = {
-    "administrador": ("Rosangela Dias", "Administradora"),
+    "administrador": ("Luis Gustavo Boratto", "Administrador"),
     "prestador": ("Elétrica Santos", "Prestador"),
     "cliente": ("Supermercado Zanin", "Cliente"),
     "": ("", ""),
