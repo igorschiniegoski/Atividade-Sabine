@@ -1,0 +1,219 @@
+@startuml modelo-logico
+' sgp - modelo logico do banco de dados (relacional) - equipe 8
+!include _estilo.puml
+skinparam ranksep 55
+skinparam nodesep 30
+skinparam linetype ortho
+hide circle
+
+title modelo logico - sgp (postgresql)\n<size:11>notacao pe-de-galinha. marcador preenchido = campo obrigatorio (not null)</size>
+
+entity "usuario" as usuario {
+  *id_usuario : serial <<PK>>
+  --
+  *nome : varchar(120)
+  *email : varchar(150) <<UK>>
+  *senha_hash : varchar(60)
+  *perfil : varchar(15)
+  *ativo : boolean
+  ultimo_acesso_em : timestamp
+  *criado_em : timestamp
+}
+
+entity "prestador" as prestador {
+  *id_prestador : serial <<PK>>
+  --
+  id_usuario : integer <<FK>> <<UK>>
+  *tipo_pessoa : char(1)
+  *nome_razao_social : varchar(150)
+  *cpf_cnpj : varchar(14) <<UK>>
+  *telefone : varchar(20)
+  email : varchar(150)
+  *logradouro : varchar(150)
+  *numero : varchar(10)
+  complemento : varchar(60)
+  *bairro : varchar(60)
+  *cidade : varchar(60)
+  *uf : char(2)
+  *cep : char(8)
+  *situacao : varchar(12)
+  *criado_em : timestamp
+  atualizado_em : timestamp
+}
+
+entity "cliente" as cliente {
+  *id_cliente : serial <<PK>>
+  --
+  id_usuario : integer <<FK>> <<UK>>
+  *tipo_pessoa : char(1)
+  *nome_razao_social : varchar(150)
+  *cpf_cnpj : varchar(14) <<UK>>
+  *telefone : varchar(20)
+  email : varchar(150)
+  *logradouro : varchar(150)
+  *numero : varchar(10)
+  complemento : varchar(60)
+  *bairro : varchar(60)
+  *cidade : varchar(60)
+  *uf : char(2)
+  *cep : char(8)
+  *ativo : boolean
+  *criado_em : timestamp
+}
+
+entity "categoria_servico" as categoria {
+  *id_categoria : serial <<PK>>
+  --
+  *nome : varchar(60) <<UK>>
+  descricao : varchar(255)
+  *ativa : boolean
+}
+
+entity "servico" as servico {
+  *id_servico : serial <<PK>>
+  --
+  *id_categoria : integer <<FK>>
+  *nome : varchar(120)
+  descricao : text
+  valor_referencia : numeric(10,2)
+  *prazo_padrao_dias : smallint
+  *ativo : boolean
+}
+
+entity "prestador_categoria" as prestcat {
+  *id_prestador : integer <<PK>> <<FK>>
+  *id_categoria : integer <<PK>> <<FK>>
+  --
+  *habilitado_em : date
+  *ativa : boolean
+}
+
+entity "tipo_documento" as tipodoc {
+  *id_tipo_documento : serial <<PK>>
+  --
+  *nome : varchar(60) <<UK>>
+  *obrigatorio : boolean
+  *exige_validade : boolean
+  *ativo : boolean
+}
+
+entity "documento" as documento {
+  *id_documento : serial <<PK>>
+  --
+  *id_prestador : integer <<FK>>
+  *id_tipo_documento : integer <<FK>>
+  *nome_arquivo : varchar(255)
+  *arquivo_url : varchar(500)
+  *tamanho_bytes : integer
+  *data_emissao : date
+  data_validade : date
+  *versao_atual : boolean
+  *enviado_por : integer <<FK>>
+  *enviado_em : timestamp
+}
+
+entity "contrato" as contrato {
+  *id_contrato : serial <<PK>>
+  --
+  *id_prestador : integer <<FK>>
+  *numero : varchar(30)
+  *data_inicio : date
+  *data_fim : date
+  valor : numeric(12,2)
+  *arquivo_url : varchar(500)
+  *criado_em : timestamp
+}
+
+entity "historico_situacao" as hsit {
+  *id_historico : serial <<PK>>
+  --
+  *id_prestador : integer <<FK>>
+  situacao_anterior : varchar(12)
+  *situacao_nova : varchar(12)
+  *motivo : varchar(255)
+  id_usuario : integer <<FK>>
+  *alterado_em : timestamp
+}
+
+entity "ordem_servico" as ordem {
+  *id_ordem : serial <<PK>>
+  --
+  *numero : varchar(20) <<UK>>
+  *id_cliente : integer <<FK>>
+  *id_servico : integer <<FK>>
+  id_prestador : integer <<FK>>
+  *descricao : text
+  *prioridade : varchar(10)
+  *prazo : date
+  *status : varchar(12)
+  *aberta_por : integer <<FK>>
+  *data_abertura : timestamp
+  data_atribuicao : timestamp
+  data_inicio_execucao : timestamp
+  data_conclusao : timestamp
+  relato_conclusao : text
+  motivo_cancelamento : varchar(255)
+  entregue_no_prazo : boolean
+}
+
+entity "andamento_ordem" as andamento {
+  *id_andamento : serial <<PK>>
+  --
+  *id_ordem : integer <<FK>>
+  status_anterior : varchar(12)
+  *status_novo : varchar(12)
+  observacao : text
+  *id_usuario : integer <<FK>>
+  *registrado_em : timestamp
+}
+
+entity "avaliacao" as avaliacao {
+  *id_avaliacao : serial <<PK>>
+  --
+  *id_ordem : integer <<FK>> <<UK>>
+  *nota : smallint
+  comentario : varchar(500)
+  *avaliado_em : timestamp
+}
+
+entity "log_acao" as log {
+  *id_log : serial <<PK>>
+  --
+  *id_usuario : integer <<FK>>
+  *acao : varchar(40)
+  *entidade : varchar(40)
+  *entidade_id : integer
+  detalhe : text
+  *registrado_em : timestamp
+}
+
+usuario ||--o| prestador
+usuario ||--o| cliente
+prestador ||--o{ prestcat
+categoria ||--o{ prestcat
+categoria ||--o{ servico
+prestador ||--o{ documento
+tipodoc ||--o{ documento
+prestador ||--o{ contrato
+prestador ||--o{ hsit
+cliente ||--o{ ordem
+servico ||--o{ ordem
+prestador |o--o{ ordem
+ordem ||--|{ andamento
+ordem ||--o| avaliacao
+
+usuario ||..o{ documento
+usuario ||..o{ hsit
+usuario ||..o{ ordem
+usuario ||..o{ andamento
+usuario ||..o{ log
+
+legend bottom
+  <b>como ler o diagrama</b>
+  linha continua: relacionamento do negocio
+  linha tracejada: autoria, ou seja, quem enviou, abriu ou alterou o registro
+  na ponta da linha, o pe-de-galinha indica "muitos", o traco indica "um"
+  e o circulo indica que o lado é opcional, podendo nao existir nenhum
+endlegend
+
+@enduml

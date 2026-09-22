@@ -67,19 +67,24 @@ PAGINA = """<!DOCTYPE html>
 </html>
 """
 
-# documentos gerados: arquivo .md, titulo da aba, subtitulo da capa, entrega
+# documentos gerados: arquivo .md, titulo da aba, subtitulo da capa, entrega, data da capa
 DOCUMENTOS = [
     ("casos-de-uso.md",
      "sgp - casos de uso e historias de usuario - equipe 8",
      "casos de uso, historias de usuario e priorizacao",
-     "2&ordf; entrega"),
+     "2&ordf; entrega",
+     "agosto de 2026"),
     ("tecnologias-e-arquitetura.md",
      "sgp - tecnologias e arquitetura - equipe 8",
      "especificacao de tecnologias e arquitetura",
-     "2&ordf; entrega"),
+     "2&ordf; entrega",
+     "agosto de 2026"),
+    ("modelo-de-dados.md",
+     "sgp - classes, modelo de dados e dicionario - equipe 8",
+     "diagrama de classes, modelo de dados e dicionario de dados",
+     "2&ordf; entrega",
+     "setembro de 2026"),
 ]
-
-DATA = "agosto de 2026"
 
 
 def embutir_imagens(md, base):
@@ -97,7 +102,7 @@ def embutir_imagens(md, base):
     return re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", troca, md)
 
 
-def gerar(arquivo_md, titulo, subtitulo, entrega):
+def gerar(arquivo_md, titulo, subtitulo, entrega, data):
     caminho_md = os.path.join(DOCS, arquivo_md)
     origem = open(caminho_md, encoding="utf-8").read()
 
@@ -111,7 +116,7 @@ def gerar(arquivo_md, titulo, subtitulo, entrega):
     html = PAGINA.format(
         titulo=titulo,
         css=CSS,
-        capa=CAPA.format(subtitulo=subtitulo, entrega=entrega, data=DATA),
+        capa=CAPA.format(subtitulo=subtitulo, entrega=entrega, data=data),
         corpo=corpo,
     )
 

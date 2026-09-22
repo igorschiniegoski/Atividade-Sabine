@@ -1,0 +1,81 @@
+@startuml atividade-uc13-atribuir-ordem
+' sgp - diagrama de atividade do UC13 (atribuir ordem a um prestador) - equipe 8
+!include _estilo.puml
+skinparam ranksep 20
+skinparam nodesep 20
+
+title UC13 - atribuir ordem de servico a um prestador
+
+|#f4f7fb|administrador|
+start
+:abrir a ordem de servico
+com status "aberta";
+:acionar atribuir prestador;
+
+|#ffffff|sistema|
+partition "UC22 - verificar aptidao do prestador" {
+  :ler a categoria do
+  servico da ordem;
+  :selecionar os prestadores
+  habilitados na categoria;
+  note right: RN04
+  :descartar quem nao esta
+  com situacao "ativo";
+  note right: RN01
+  :descartar quem tem documento
+  obrigatorio vencido;
+  note right: RN02
+  :descartar quem esta sem
+  contrato vigente;
+  note right
+    RN03 - verificada a partir da
+    implementacao do UC10
+  end note
+}
+
+if (sobrou algum prestador apto?) then (nao)
+  :informar que nao ha prestador apto
+  e oferecer o caminho para habilitar
+  ou regularizar um cadastro;
+  |administrador|
+  :encerrar sem atribuir;
+  stop
+else (sim)
+  |#ffffff|sistema|
+  :exibir a lista de prestadores aptos;
+endif
+
+repeat
+  |administrador|
+  :escolher o prestador
+  e confirmar;
+  |#ffffff|sistema|
+  :revalidar a aptidao do prestador
+  escolhido no servidor;
+  note right
+    RNF02 - a regra é conferida de novo
+    no servidor, e nao apenas ao montar
+    a lista exibida na tela
+  end note
+backward :recusar a atribuicao, informar o motivo
+do impedimento e recarregar a lista;
+repeat while (o prestador continua apto?) is (nao) not (sim)
+
+|#ffffff|sistema|
+:alterar o status da ordem
+de "aberta" para "atribuida";
+note right: RN05 - sequencia dos status
+:gravar prestador, data, hora
+e usuario responsavel;
+:registrar o log da
+atribuicao (UC23);
+note right: RF19
+:exibir a ordem ao prestador
+na lista dele;
+
+|administrador|
+:visualizar a ordem ja
+atribuida na listagem;
+stop
+
+@enduml

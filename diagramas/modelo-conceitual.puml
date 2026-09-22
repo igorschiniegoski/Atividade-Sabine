@@ -1,0 +1,102 @@
+@startuml modelo-conceitual
+' sgp - modelo conceitual do banco de dados (entidade-relacionamento) - equipe 8
+!include _estilo.puml
+skinparam ranksep 35
+skinparam nodesep 25
+skinparam rectangle {
+  BackgroundColor #eef3f8
+  BorderColor #1f4e79
+  FontColor #1f2328
+  FontSize 13
+  FontStyle bold
+}
+skinparam hexagon {
+  BackgroundColor #ffffff
+  BorderColor #44546a
+  FontColor #44546a
+  FontSize 12
+  FontStyle plain
+}
+
+title modelo conceitual - sgp\n<size:11>notacao entidade-relacionamento. a cardinalidade (minimo, maximo) fica do lado da entidade a que se refere</size>
+
+rectangle "USUARIO" as USU
+rectangle "PRESTADOR" as PRE
+rectangle "CLIENTE" as CLI
+rectangle "CATEGORIA\nDE SERVICO" as CAT
+rectangle "SERVICO" as SER
+rectangle "TIPO DE\nDOCUMENTO" as TDOC
+rectangle "DOCUMENTO" as DOC
+rectangle "CONTRATO" as CON
+rectangle "HISTORICO DE\nSITUACAO" as HSIT
+rectangle "ORDEM DE\nSERVICO" as OS
+rectangle "ANDAMENTO\nDA ORDEM" as AND
+rectangle "AVALIACAO" as AVA
+rectangle "LOG DE ACAO" as LOG
+
+hexagon "acessa como" as R1
+hexagon "acessa como" as R2
+hexagon "habilitado em" as R3
+hexagon "classifica" as R4
+hexagon "envia" as R5
+hexagon "e do tipo" as R6
+hexagon "firma" as R7
+hexagon "registra" as R8
+hexagon "solicita" as R9
+hexagon "refere-se a" as R10
+hexagon "executa" as R11
+hexagon "movimenta" as R12
+hexagon "recebe" as R13
+hexagon "gera" as R14
+
+USU "(0,1)" -- R1
+R1 -- "(1,1)" PRE
+
+USU "(0,1)" -- R2
+R2 -- "(1,1)" CLI
+
+PRE "(0,n)" -- R3
+R3 -- "(0,n)" CAT
+
+CAT "(0,n)" -- R4
+R4 -- "(1,1)" SER
+
+PRE "(0,n)" -- R5
+R5 -- "(1,1)" DOC
+
+TDOC "(0,n)" -- R6
+R6 -- "(1,1)" DOC
+
+PRE "(0,n)" -- R7
+R7 -- "(1,1)" CON
+
+PRE "(0,n)" -- R8
+R8 -- "(1,1)" HSIT
+
+CLI "(0,n)" -- R9
+R9 -- "(1,1)" OS
+
+SER "(0,n)" -- R10
+R10 -- "(1,1)" OS
+
+PRE "(0,n)" -- R11
+R11 -- "(0,1)" OS
+
+OS "(1,n)" -- R12
+R12 -- "(1,1)" AND
+
+OS "(0,1)" -- R13
+R13 -- "(1,1)" AVA
+
+USU "(0,n)" -- R14
+R14 -- "(1,1)" LOG
+
+legend bottom
+  <b>observacões do modelo</b>
+  | habilitado em | relacionamento n:n. no modelo logico vira a tabela prestador_categoria, que garante a RN04 |
+  | executa | a ordem nasce sem prestador e so recebe um na atribuicao (UC13), por isso a participacao é (0,1) |
+  | recebe | RN08 - uma unica avaliacao por ordem, e somente depois da conclusao |
+  | gera | o log guarda o usuario e o identificador da entidade afetada, sem chave estrangeira, para nunca ser apagado junto com ela |
+endlegend
+
+@enduml

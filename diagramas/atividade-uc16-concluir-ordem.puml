@@ -1,0 +1,75 @@
+@startuml atividade-uc16-concluir-ordem
+' sgp - diagrama de atividade do UC16 (concluir ordem de servico) - equipe 8
+!include _estilo.puml
+skinparam ranksep 20
+skinparam nodesep 20
+
+title UC16 - concluir ordem de servico
+
+|#f4f7fb|prestador de servico|
+start
+:abrir a ordem na
+propria listagem;
+
+|#ffffff|sistema|
+if (a ordem esta "em execucao" e\npertence ao prestador logado?) then (nao)
+  :informar o status atual e nao
+  oferecer a acao concluir;
+  note right
+    RN05 - nao é permitido pular etapa.
+    RN06 - ordem concluida é imutavel.
+    RNF02 - o vinculo é conferido
+    no servidor
+  end note
+  stop
+else (sim)
+  :exibir a acao concluir;
+endif
+
+|prestador de servico|
+:acionar concluir;
+
+|#ffffff|sistema|
+:solicitar o relato do
+que foi executado;
+
+repeat
+  |prestador de servico|
+  :descrever o atendimento
+  e confirmar;
+  |#ffffff|sistema|
+  :conferir o relato;
+backward :recusar a conclusao e pedir a
+descricao do que foi feito (E4.1);
+repeat while (o relato foi preenchido?) is (nao) not (sim)
+
+|#ffffff|sistema|
+:gravar a data e a hora
+da conclusao;
+:alterar o status para "concluida";
+note right: RN05
+
+if (a data de conclusao passou\ndo prazo combinado?) then (sim)
+  :marcar a ordem como
+  entregue em atraso;
+else (nao)
+  :marcar a ordem como
+  entregue no prazo;
+endif
+note right
+  RN12 - o indicador alimenta o relatorio
+  de desempenho do prestador (UC20)
+end note
+
+:bloquear a ordem para edicao;
+note right: RN06
+:liberar a avaliacao
+para o cliente (UC18);
+note right: RN08
+
+|#f4f7fb|cliente|
+:receber a ordem concluida
+disponivel para avaliacao;
+stop
+
+@enduml

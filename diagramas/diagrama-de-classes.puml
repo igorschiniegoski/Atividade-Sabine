@@ -1,0 +1,259 @@
+@startuml diagrama-de-classes
+' sgp - diagrama de classes do dominio - equipe 8
+!include _estilo.puml
+skinparam ranksep 45
+skinparam nodesep 25
+skinparam linetype ortho
+hide circle
+
+title diagrama de classes - dominio do sgp
+
+package "acesso" {
+  class Usuario {
+    -id: Long
+    -nome: String
+    -email: String {unico}
+    -senhaHash: String
+    -perfil: Perfil
+    -ativo: Boolean
+    -ultimoAcessoEm: DateTime
+    +autenticar(senha): Boolean
+    +encerrarSessao(): void
+    +podeAcessar(recurso): Boolean
+  }
+  enum Perfil {
+    ADMINISTRADOR
+    PRESTADOR
+    CLIENTE
+  }
+}
+
+package "cadastros" {
+  class Prestador {
+    -id: Long
+    -tipoPessoa: TipoPessoa
+    -nomeRazaoSocial: String
+    -cpfCnpj: String {unico}
+    -telefone: String
+    -email: String
+    -situacao: SituacaoCadastral
+    -criadoEm: DateTime
+    +estaApto(categoria): Boolean
+    +alterarSituacao(nova, motivo, usuario): void
+    +temDocumentoObrigatorioVencido(): Boolean
+    +contratoVigente(): Contrato
+    +notaMedia(): Decimal
+    +podeSerInativado(): Boolean
+  }
+  class Cliente {
+    -id: Long
+    -tipoPessoa: TipoPessoa
+    -nomeRazaoSocial: String
+    -cpfCnpj: String {unico}
+    -telefone: String
+    -email: String
+    -ativo: Boolean
+    +abrirOrdem(servico, descricao, prazo): OrdemServico
+  }
+  class Endereco <<value object>> {
+    -logradouro: String
+    -numero: String
+    -complemento: String
+    -bairro: String
+    -cidade: String
+    -uf: String
+    -cep: String
+  }
+  class CategoriaServico {
+    -id: Long
+    -nome: String {unico}
+    -descricao: String
+    -ativa: Boolean
+  }
+  class Servico {
+    -id: Long
+    -nome: String
+    -descricao: String
+    -valorReferencia: Decimal
+    -prazoPadraoDias: Integer
+    -ativo: Boolean
+    +prazoCalculado(dataAbertura): Date
+  }
+  class Habilitacao <<classe associativa>> {
+    -habilitadoEm: Date
+    -ativa: Boolean
+  }
+  enum TipoPessoa {
+    FISICA
+    JURIDICA
+  }
+  enum SituacaoCadastral {
+    ATIVO
+    PENDENTE
+    BLOQUEADO
+    INATIVO
+  }
+}
+
+package "documentacao" {
+  class TipoDocumento {
+    -id: Long
+    -nome: String
+    -obrigatorio: Boolean
+    -exigeValidade: Boolean
+  }
+  class Documento {
+    -id: Long
+    -nomeArquivo: String
+    -arquivoUrl: String
+    -tamanhoBytes: Integer
+    -dataEmissao: Date
+    -dataValidade: Date
+    -versaoAtual: Boolean
+    -enviadoEm: DateTime
+    +estaVencido(): Boolean
+    +diasParaVencer(): Integer
+    +formatoAceito(): Boolean
+  }
+  class Contrato {
+    -id: Long
+    -numero: String
+    -dataInicio: Date
+    -dataFim: Date
+    -valor: Decimal
+    -arquivoUrl: String
+    +estaVigente(): Boolean
+  }
+  class HistoricoSituacao {
+    -id: Long
+    -situacaoAnterior: SituacaoCadastral
+    -situacaoNova: SituacaoCadastral
+    -motivo: String
+    -alteradoPor: Usuario
+    -alteradoEm: DateTime
+  }
+}
+
+package "operacao" {
+  class OrdemServico {
+    -id: Long
+    -numero: String {unico}
+    -descricao: String
+    -prioridade: Prioridade
+    -prazo: Date
+    -status: StatusOrdem
+    -dataAbertura: DateTime
+    -dataAtribuicao: DateTime
+    -dataInicioExecucao: DateTime
+    -dataConclusao: DateTime
+    -relatoConclusao: String
+    -motivoCancelamento: String
+    +atribuir(prestador, usuario): void
+    +iniciarExecucao(): void
+    +registrarAndamento(observacao, usuario): void
+    +concluir(relato): void
+    +cancelar(motivo, usuario): void
+    +estaEmAtraso(): Boolean
+    +podeSerAvaliada(): Boolean
+  }
+  class AndamentoOrdem {
+    -id: Long
+    -statusAnterior: StatusOrdem
+    -statusNovo: StatusOrdem
+    -observacao: String
+    -autor: Usuario
+    -registradoEm: DateTime
+  }
+  class Avaliacao {
+    -id: Long
+    -nota: Integer
+    -comentario: String
+    -avaliadoEm: DateTime
+    +valida(): Boolean
+  }
+  enum StatusOrdem {
+    ABERTA
+    ATRIBUIDA
+    EM_EXECUCAO
+    CONCLUIDA
+    CANCELADA
+  }
+  enum Prioridade {
+    BAIXA
+    NORMAL
+    ALTA
+    URGENTE
+  }
+}
+
+package "auditoria" {
+  class LogAcao {
+    -id: Long
+    -acao: String
+    -usuario: Usuario
+    -entidade: String
+    -entidadeId: Long
+    -detalhe: String
+    -registradoEm: DateTime
+  }
+}
+
+Usuario "1" -- "0..1" Prestador : acessa como >
+Usuario "1" -- "0..1" Cliente : acessa como >
+Usuario -[hidden]- Perfil
+
+Prestador "1" *-- "1" Endereco
+Cliente "1" *-- "1" Endereco
+
+Prestador "1" -- "0..*" Habilitacao
+CategoriaServico "1" -- "0..*" Habilitacao
+Servico "0..*" --> "1" CategoriaServico : classificado em >
+
+Prestador "1" *-- "0..*" Documento : mantem >
+TipoDocumento "1" -- "0..*" Documento
+Prestador "1" *-- "0..*" Contrato
+Prestador "1" *-- "0..*" HistoricoSituacao : registra >
+
+Cliente "1" -- "0..*" OrdemServico : solicita >
+Servico "1" -- "0..*" OrdemServico : referencia >
+Prestador "0..1" -- "0..*" OrdemServico : executa >
+OrdemServico "1" *-- "0..*" AndamentoOrdem : historico >
+OrdemServico "1" -- "0..1" Avaliacao : recebe >
+Cliente "1" -- "0..*" Avaliacao : lanca >
+
+note as NOS
+  RN05 - a sequencia aberta, atribuida,
+  em execucao e concluida é controlada
+  dentro da propria classe
+  RN06 - depois de concluida a ordem
+  recusa qualquer alteracao
+end note
+
+note as NAV
+  RN08 - uma avaliacao por ordem, lancada
+  apenas pelo cliente titular
+  RN09 - a nota media do prestador usa as
+  avaliacões dos ultimos 12 meses
+end note
+
+note as NPRE
+  RN01, RN02, RN03 e RN04 sao verificadas
+  em estaApto(), o metodo chamado pelo UC22
+  RN10 - cpfCnpj unico entre cadastros ativos
+  RN11 - podeSerInativado() recusa quem tem
+  ordem atribuida ou em execucao
+end note
+
+NPRE .. Prestador
+NOS .. OrdemServico
+NAV .. Avaliacao
+
+note as NLOG
+  o log é somente leitura e guarda o usuario,
+  a entidade afetada e o id dela, sem chave
+  estrangeira, para nunca ser alterado nem
+  apagado junto com o registro de origem (RF19)
+end note
+NLOG .. LogAcao
+
+@enduml
