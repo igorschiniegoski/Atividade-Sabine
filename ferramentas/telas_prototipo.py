@@ -45,7 +45,7 @@ PAINEL_ADM = """<div class="indicadores">
   <a class="indicador alerta" href="T10-vencimentos.html">
     <div class="rotulo">Documentos vencidos</div>
     <div class="numero">3</div>
-    <div class="detalhe">2 prestadores bloqueados</div>
+    <div class="detalhe">2 pendentes e 1 bloqueado</div>
   </a>
   <a class="indicador atencao" href="T10-vencimentos.html">
     <div class="rotulo">Vencem em 30 dias</div>
@@ -54,7 +54,7 @@ PAINEL_ADM = """<div class="indicadores">
   </a>
   <a class="indicador" href="T11-ordens.html">
     <div class="rotulo">Ordens aguardando atribuição</div>
-    <div class="numero">4</div>
+    <div class="numero">2</div>
     <div class="detalhe">1 com prazo para amanhã</div>
   </a>
   <a class="indicador ok" href="T11-ordens.html">
@@ -85,7 +85,7 @@ PAINEL_ADM = """<div class="indicadores">
         <td data-rotulo="Serviço">Troca de disjuntor<span class="secundario">Elétrica</span></td>
         <td data-rotulo="Prazo">26/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-aberta">Aberta</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Número">OS-2026-0148</td>
@@ -93,7 +93,7 @@ PAINEL_ADM = """<div class="indicadores">
         <td data-rotulo="Serviço">Instalação de tomadas<span class="secundario">Elétrica</span></td>
         <td data-rotulo="Prazo">24/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-execucao">Em execução</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
       </tr>
     </tbody>
   </table>
@@ -111,14 +111,14 @@ PAINEL_ADM = """<div class="indicadores">
         <td data-rotulo="Documento">Certidão negativa de débitos</td>
         <td data-rotulo="Validade">12/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-vencido">Vencido há 10 dias</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04c-prestador-documentos.html">Ver cadastro</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04c-prestador-documentos.html">Ver cadastro</a></td>
       </tr>
       <tr>
         <td data-rotulo="Prestador">Polar Refrigeração</td>
         <td data-rotulo="Documento">Apólice de seguro</td>
         <td data-rotulo="Validade">28/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-vence">Vence em 6 dias</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04c-prestador-documentos.html">Ver cadastro</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04c-prestador-documentos.html">Ver cadastro</a></td>
       </tr>
     </tbody>
   </table>
@@ -142,7 +142,7 @@ PRESTADORES = """<div class="cartao">
         <select><option>Todas</option><option>Elétrica</option><option>Hidráulica</option><option>Limpeza</option><option>Refrigeração</option></select>
       </div>
       <div class="campo estreito" style="display:flex;align-items:flex-end">
-        <a class="btn btn-neutro" href="T03-prestadores.html">Filtrar</a>
+        <a class="btn" href="T03-prestadores.html">Filtrar</a>
       </div>
     </div>
   </div>
@@ -161,7 +161,7 @@ PRESTADORES = """<div class="cartao">
         <td data-rotulo="Categorias">Elétrica</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
         <td class="numerico" data-rotulo="Nota">4,8</td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Prestador">JOSE CARLOS DE OLIVEIRA<span class="secundario">autônomo, (44) 99745-2201</span></td>
@@ -169,7 +169,7 @@ PRESTADORES = """<div class="cartao">
         <td data-rotulo="Categorias">Hidráulica</td>
         <td data-rotulo="Situação"><span class="chip chip-pendente">Pendente</span></td>
         <td class="numerico" data-rotulo="Nota">4,2</td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Prestador">LIMPADORA SAO JUDAS LTDA<span class="secundario">São Judas, (44) 3025-7788</span></td>
@@ -177,7 +177,7 @@ PRESTADORES = """<div class="cartao">
         <td data-rotulo="Categorias">Limpeza</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
         <td class="numerico" data-rotulo="Nota">4,5</td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Prestador">POLAR REFRIGERACAO E CLIMATIZACAO LTDA<span class="secundario">Polar, (44) 99120-3377</span></td>
@@ -185,15 +185,15 @@ PRESTADORES = """<div class="cartao">
         <td data-rotulo="Categorias">Refrigeração</td>
         <td data-rotulo="Situação"><span class="chip chip-bloqueado">Bloqueado</span></td>
         <td class="numerico" data-rotulo="Nota">Sem histórico</td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Prestador">VALDIR APARECIDO DA SILVA<span class="secundario">autônomo, 44 99666-1180</span></td>
         <td data-rotulo="CPF">883.041.529-15</td>
         <td data-rotulo="Categorias">Manutenção predial, Elétrica</td>
-        <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
+        <td data-rotulo="Situação"><span class="chip chip-pendente">Pendente</span></td>
         <td class="numerico" data-rotulo="Nota">3,9</td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
       </tr>
     </tbody>
   </table>
@@ -284,7 +284,7 @@ PRESTADOR_DADOS = abas_prestador("T04-prestador-dados.html") + """
     </div>
   </div>
   <div class="rodape-form">
-    <a class="btn btn-neutro" href="T03-prestadores.html">Cancelar</a>
+    <a class="btn" href="T03-prestadores.html">Cancelar</a>
     <a class="btn btn-primario" href="T03-prestadores.html">Salvar</a>
   </div>
 </div>"""
@@ -310,7 +310,7 @@ PRESTADOR_CATEGORIAS = abas_prestador("T04b-prestador-categorias.html") + """
     </div>
   </div>
   <div class="rodape-form">
-    <a class="btn btn-neutro" href="T03-prestadores.html">Cancelar</a>
+    <a class="btn" href="T03-prestadores.html">Cancelar</a>
     <a class="btn btn-primario" href="T04b-prestador-categorias.html">Salvar habilitações</a>
   </div>
 </div>
@@ -346,7 +346,7 @@ PRESTADOR_DOCUMENTOS = abas_prestador("T04c-prestador-documentos.html") + """
         <td data-rotulo="Emissão">12/03/2026</td>
         <td data-rotulo="Validade">12/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-vencido">Vencido há 10 dias</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04c-prestador-documentos.html">Baixar</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04c-prestador-documentos.html">Baixar</a></td>
       </tr>
       <tr>
         <td data-rotulo="Tipo">CNPJ<span class="secundario">Obrigatório</span></td>
@@ -354,7 +354,7 @@ PRESTADOR_DOCUMENTOS = abas_prestador("T04c-prestador-documentos.html") + """
         <td data-rotulo="Emissão">10/01/2026</td>
         <td data-rotulo="Validade">Não expira</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Em dia</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04c-prestador-documentos.html">Baixar</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04c-prestador-documentos.html">Baixar</a></td>
       </tr>
       <tr>
         <td data-rotulo="Tipo">Apólice de seguro</td>
@@ -362,7 +362,7 @@ PRESTADOR_DOCUMENTOS = abas_prestador("T04c-prestador-documentos.html") + """
         <td data-rotulo="Emissão">02/02/2026</td>
         <td data-rotulo="Validade">02/02/2027</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Em dia</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04c-prestador-documentos.html">Baixar</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04c-prestador-documentos.html">Baixar</a></td>
       </tr>
       <tr>
         <td data-rotulo="Tipo">Certidão negativa de débitos<span class="secundario">Versão anterior</span></td>
@@ -370,7 +370,7 @@ PRESTADOR_DOCUMENTOS = abas_prestador("T04c-prestador-documentos.html") + """
         <td data-rotulo="Emissão">15/09/2025</td>
         <td data-rotulo="Validade">15/03/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-neutro">Substituído</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04c-prestador-documentos.html">Baixar</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04c-prestador-documentos.html">Baixar</a></td>
       </tr>
     </tbody>
   </table>
@@ -396,7 +396,7 @@ PRESTADOR_SITUACAO = abas_prestador("T04d-prestador-situacao.html") + """
       </div>
     </div>
     <div class="rodape-form">
-      <a class="btn btn-neutro" href="T03-prestadores.html">Cancelar</a>
+      <a class="btn" href="T03-prestadores.html">Cancelar</a>
       <a class="btn btn-primario" href="T04d-prestador-situacao.html">Gravar alteração</a>
     </div>
   </div>
@@ -439,7 +439,7 @@ CLIENTES = """<div class="cartao">
         <select><option>Ativos</option><option>Inativos</option><option>Todos</option></select>
       </div>
       <div class="campo estreito" style="display:flex;align-items:flex-end">
-        <a class="btn btn-neutro" href="T05-clientes.html">Filtrar</a>
+        <a class="btn" href="T05-clientes.html">Filtrar</a>
       </div>
     </div>
   </div>
@@ -458,7 +458,7 @@ CLIENTES = """<div class="cartao">
         <td data-rotulo="Cidade">Maringá / PR</td>
         <td data-rotulo="Ordens abertas">2</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T06-cliente-cadastro.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T06-cliente-cadastro.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Cliente">PANIFICADORA DOM BOSCO LTDA<span class="secundario">Padaria Dom Bosco, padariadombosco@gmail.com</span></td>
@@ -466,7 +466,7 @@ CLIENTES = """<div class="cartao">
         <td data-rotulo="Cidade">Maringá / PR</td>
         <td data-rotulo="Ordens abertas">1</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T06-cliente-cadastro.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T06-cliente-cadastro.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Cliente">Colégio São Vicente<span class="secundario">secretaria@saovicente.com.br</span></td>
@@ -474,7 +474,7 @@ CLIENTES = """<div class="cartao">
         <td data-rotulo="Cidade">Sarandi / PR</td>
         <td data-rotulo="Ordens abertas">1</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T06-cliente-cadastro.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T06-cliente-cadastro.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Cliente">Auto Posto Maringá<span class="secundario">adm@autopostomga.com.br</span></td>
@@ -482,7 +482,7 @@ CLIENTES = """<div class="cartao">
         <td data-rotulo="Cidade">Maringá / PR</td>
         <td data-rotulo="Ordens abertas">0</td>
         <td data-rotulo="Situação"><span class="chip chip-inativo">Inativo</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T06-cliente-cadastro.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T06-cliente-cadastro.html">Abrir</a></td>
       </tr>
     </tbody>
   </table>
@@ -544,7 +544,7 @@ CLIENTE_CADASTRO = """<div class="cartao">
     </div>
   </div>
   <div class="rodape-form">
-    <a class="btn btn-neutro" href="T05-clientes.html">Cancelar</a>
+    <a class="btn" href="T05-clientes.html">Cancelar</a>
     <a class="btn btn-primario" href="T05-clientes.html">Salvar</a>
   </div>
 </div>"""
@@ -603,14 +603,14 @@ SERVICOS = """<div class="cartao">
         <select><option>Todas</option><option>Elétrica</option><option>Hidráulica</option><option>Limpeza</option></select>
       </div>
       <div class="campo estreito" style="display:flex;align-items:flex-end">
-        <a class="btn btn-neutro" href="T08-servicos.html">Filtrar</a>
+        <a class="btn" href="T08-servicos.html">Filtrar</a>
       </div>
     </div>
   </div>
 </div>
 
 <div class="cartao">
-  <h2>20 serviços no catálogo</h2>
+  <h2>Catálogo de serviços</h2>
   <table>
     <thead>
       <tr><th>Serviço</th><th>Categoria</th><th class="numerico">Valor de referência</th><th class="numerico">Prazo padrão</th><th>Situação</th><th class="acoes">&nbsp;</th></tr>
@@ -622,7 +622,7 @@ SERVICOS = """<div class="cartao">
         <td class="numerico" data-rotulo="Valor">R$ 187,50</td>
         <td class="numerico" data-rotulo="Prazo">3 dias</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Serviço">Troca de disjuntor</td>
@@ -630,7 +630,7 @@ SERVICOS = """<div class="cartao">
         <td class="numerico" data-rotulo="Valor">R$ 122,00</td>
         <td class="numerico" data-rotulo="Prazo">2 dias</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Serviço">Desentupimento de pia</td>
@@ -638,7 +638,7 @@ SERVICOS = """<div class="cartao">
         <td class="numerico" data-rotulo="Valor">R$ 215,00</td>
         <td class="numerico" data-rotulo="Prazo">1 dia</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Serviço">Limpeza pós-obra</td>
@@ -646,7 +646,7 @@ SERVICOS = """<div class="cartao">
         <td class="numerico" data-rotulo="Valor">R$ 940,00</td>
         <td class="numerico" data-rotulo="Prazo">2 dias</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Serviço">Manutenção de ar-condicionado</td>
@@ -654,10 +654,17 @@ SERVICOS = """<div class="cartao">
         <td class="numerico" data-rotulo="Valor">R$ 300,00</td>
         <td class="numerico" data-rotulo="Prazo">4 dias</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T09-servico-cadastro.html">Abrir</a></td>
       </tr>
     </tbody>
   </table>
+  <div class="rodape-form" style="justify-content:space-between">
+    <span class="subtitulo" style="margin:0">Mostrando 1 a 5 de 20 serviços</span>
+    <span>
+      <a class="btn btn-pequeno" href="T08-servicos.html" aria-disabled="true">Anterior</a>
+      <a class="btn btn-pequeno" href="T08-servicos.html">Próxima</a>
+    </span>
+  </div>
 </div>"""
 
 # ---------------------------------------------------------------- T09
@@ -697,7 +704,7 @@ SERVICO_CADASTRO = """<div class="cartao">
     </div>
   </div>
   <div class="rodape-form">
-    <a class="btn btn-neutro" href="T08-servicos.html">Cancelar</a>
+    <a class="btn" href="T08-servicos.html">Cancelar</a>
     <a class="btn btn-primario" href="T08-servicos.html">Salvar</a>
   </div>
 </div>"""
@@ -717,7 +724,7 @@ VENCIMENTOS = """<div class="cartao">
         <td data-rotulo="Validade">12/09/2026</td>
         <td data-rotulo="Atraso">10 dias</td>
         <td data-rotulo="Situação"><span class="chip chip-pendente">Pendente</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04d-prestador-situacao.html">Alterar situação</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04d-prestador-situacao.html">Alterar situação</a></td>
       </tr>
       <tr>
         <td data-rotulo="Prestador">Polar Refrigeração</td>
@@ -725,7 +732,7 @@ VENCIMENTOS = """<div class="cartao">
         <td data-rotulo="Validade">30/08/2026</td>
         <td data-rotulo="Atraso">23 dias</td>
         <td data-rotulo="Situação"><span class="chip chip-bloqueado">Bloqueado</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04d-prestador-situacao.html">Alterar situação</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04d-prestador-situacao.html">Alterar situação</a></td>
       </tr>
       <tr>
         <td data-rotulo="Prestador">Valdir Aparecido</td>
@@ -733,7 +740,7 @@ VENCIMENTOS = """<div class="cartao">
         <td data-rotulo="Validade">18/09/2026</td>
         <td data-rotulo="Atraso">4 dias</td>
         <td data-rotulo="Situação"><span class="chip chip-pendente">Pendente</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04d-prestador-situacao.html">Alterar situação</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04d-prestador-situacao.html">Alterar situação</a></td>
       </tr>
     </tbody>
   </table>
@@ -751,21 +758,35 @@ VENCIMENTOS = """<div class="cartao">
         <td data-rotulo="Documento">Apólice de seguro</td>
         <td data-rotulo="Validade">28/09/2026</td>
         <td data-rotulo="Faltam"><span class="chip chip-vence">6 dias</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04c-prestador-documentos.html">Ver documentos</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04c-prestador-documentos.html">Ver documentos</a></td>
       </tr>
       <tr>
         <td data-rotulo="Prestador">Limpadora São Judas</td>
         <td data-rotulo="Documento">Certidão negativa de débitos</td>
         <td data-rotulo="Validade">04/10/2026</td>
         <td data-rotulo="Faltam"><span class="chip chip-vence">12 dias</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04c-prestador-documentos.html">Ver documentos</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04c-prestador-documentos.html">Ver documentos</a></td>
       </tr>
       <tr>
         <td data-rotulo="Prestador">Elétrica Santos</td>
         <td data-rotulo="Documento">Certificado de curso NR-10</td>
         <td data-rotulo="Validade">11/10/2026</td>
         <td data-rotulo="Faltam"><span class="chip chip-vence">19 dias</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04c-prestador-documentos.html">Ver documentos</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04c-prestador-documentos.html">Ver documentos</a></td>
+      </tr>
+      <tr>
+        <td data-rotulo="Prestador">Hidráulica Três Lagoas</td>
+        <td data-rotulo="Documento">Apólice de seguro</td>
+        <td data-rotulo="Validade">14/10/2026</td>
+        <td data-rotulo="Faltam"><span class="chip chip-vence">22 dias</span></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04c-prestador-documentos.html">Ver documentos</a></td>
+      </tr>
+      <tr>
+        <td data-rotulo="Prestador">José Carlos de Oliveira</td>
+        <td data-rotulo="Documento">Comprovante de endereço</td>
+        <td data-rotulo="Validade">20/10/2026</td>
+        <td data-rotulo="Faltam"><span class="chip chip-vence">28 dias</span></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T04c-prestador-documentos.html">Ver documentos</a></td>
       </tr>
     </tbody>
   </table>
@@ -789,7 +810,7 @@ ORDENS = """<div class="cartao">
         <select><option>Últimos 30 dias</option><option>Este mês</option><option>Personalizado</option></select>
       </div>
       <div class="campo estreito" style="display:flex;align-items:flex-end">
-        <a class="btn btn-neutro" href="T11-ordens.html">Filtrar</a>
+        <a class="btn" href="T11-ordens.html">Filtrar</a>
       </div>
     </div>
   </div>
@@ -809,7 +830,7 @@ ORDENS = """<div class="cartao">
         <td data-rotulo="Prestador"><span class="secundario">Não atribuída</span></td>
         <td data-rotulo="Prazo">26/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-aberta">Aberta</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Número">OS-2026-0148</td>
@@ -818,7 +839,7 @@ ORDENS = """<div class="cartao">
         <td data-rotulo="Prestador">Elétrica Santos</td>
         <td data-rotulo="Prazo">24/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-execucao">Em execução</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Número">OS-2026-0147</td>
@@ -836,7 +857,7 @@ ORDENS = """<div class="cartao">
         <td data-rotulo="Prestador">Limpadora São Judas</td>
         <td data-rotulo="Prazo">16/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-concluida">Concluída</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Número">OS-2026-0145</td>
@@ -845,7 +866,7 @@ ORDENS = """<div class="cartao">
         <td data-rotulo="Prestador"><span class="secundario">Não atribuída</span></td>
         <td data-rotulo="Prazo">12/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-cancelada">Cancelada</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
       </tr>
     </tbody>
   </table>
@@ -964,7 +985,7 @@ ATRIBUIR = """<div class="modal-fundo">
       </table>
     </div>
     <div class="rodape-form">
-      <a class="btn btn-neutro" href="T11-ordens.html">Fechar</a>
+      <a class="btn" href="T11-ordens.html">Fechar</a>
     </div>
   </div>
 </div>"""
@@ -990,7 +1011,7 @@ CANCELAR = """<div class="modal-fundo">
       </div>
     </div>
     <div class="rodape-form">
-      <a class="btn btn-neutro" href="T12-ordem-administrador.html">Voltar</a>
+      <a class="btn" href="T12-ordem-administrador.html">Voltar</a>
       <a class="btn btn-perigo" href="T12c-cancelar-ordem.html" aria-disabled="true">Confirmar cancelamento</a>
     </div>
   </div>
@@ -1037,7 +1058,7 @@ MINHAS_ORDENS = """<div class="indicadores">
         <td data-rotulo="Serviço">Troca de disjuntor</td>
         <td data-rotulo="Prazo">26/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-atribuida">Atribuída</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T14-ordem-execucao.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T14-ordem-execucao.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Número">OS-2026-0144</td>
@@ -1045,7 +1066,7 @@ MINHAS_ORDENS = """<div class="indicadores">
         <td data-rotulo="Serviço">Troca de disjuntor</td>
         <td data-rotulo="Prazo">15/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-concluida">Concluída</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T14-ordem-execucao.html">Abrir</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T14-ordem-execucao.html">Abrir</a></td>
       </tr>
     </tbody>
   </table>
@@ -1094,7 +1115,7 @@ ORDEM_EXECUCAO = """<div class="cartao">
         <textarea placeholder="O que foi feito até agora">passei o cabo das duas primeiras tomadas. amanha volto pra fechar a parede</textarea>
         <span class="ajuda">O cliente e o administrador enxergam esse registro.</span>
       </div>
-      <a class="btn btn-neutro" href="T14-ordem-execucao.html">Salvar andamento</a>
+      <a class="btn" href="T14-ordem-execucao.html">Salvar andamento</a>
     </div>
   </div>
 </div>
@@ -1111,7 +1132,7 @@ ORDEM_EXECUCAO = """<div class="cartao">
     </div>
   </div>
   <div class="rodape-form">
-    <a class="btn btn-neutro" href="T13-minhas-ordens.html">Voltar</a>
+    <a class="btn" href="T13-minhas-ordens.html">Voltar</a>
     <a class="btn btn-primario" href="T13-minhas-ordens.html">Concluir ordem</a>
   </div>
 </div>
@@ -1195,7 +1216,7 @@ MINHAS_SOLICITACOES = """<div class="cartao">
         <td data-rotulo="Aberta em">21/09/2026</td>
         <td data-rotulo="Prazo">24/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-execucao">Em execução</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T18-ordem-cliente.html">Acompanhar</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T18-ordem-cliente.html">Acompanhar</a></td>
       </tr>
       <tr>
         <td data-rotulo="Número">OS-2026-0144</td>
@@ -1211,7 +1232,7 @@ MINHAS_SOLICITACOES = """<div class="cartao">
         <td data-rotulo="Aberta em">28/08/2026</td>
         <td data-rotulo="Prazo">01/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-concluida">Concluída</span></td>
-        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T18-ordem-cliente.html">Ver avaliação</a></td>
+        <td class="acoes"><a class="btn btn-pequeno" href="T18-ordem-cliente.html">Ver avaliação</a></td>
       </tr>
     </tbody>
   </table>
@@ -1258,7 +1279,7 @@ NOVA_SOLICITACAO = """<div class="cartao">
     </div>
   </div>
   <div class="rodape-form">
-    <a class="btn btn-neutro" href="T16-minhas-solicitacoes.html">Cancelar</a>
+    <a class="btn" href="T16-minhas-solicitacoes.html">Cancelar</a>
     <a class="btn btn-primario" href="T16-minhas-solicitacoes.html">Enviar solicitação</a>
   </div>
 </div>"""

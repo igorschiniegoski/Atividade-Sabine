@@ -17,7 +17,7 @@ imersao profissional - projeto de software - equipe 8
 | equipe | equipe 8 |
 | integrantes | luis gustavo boratto de oliveira, igor schiniegoski pallisser |
 | documentos de origem | [documento-visao-requisitos.md](documento-visao-requisitos.md), [casos-de-uso.md](casos-de-uso.md) e [modelo-de-dados.md](modelo-de-dados.md) |
-| prototipo | 24 telas em html, na pasta [prototipos/](../prototipos/index.html) |
+| prototipo | as 18 telas do mvp, em 24 paginas html, na pasta [prototipos/](../prototipos/index.html) |
 
 ### 1.1 o que esta entrega acrescenta
 
@@ -189,7 +189,9 @@ no desenho, a linha continua é o caminho percorrido durante uma tarefa e a trac
 
 ### 7.1 como abrir
 
-o prototipo esta na pasta `prototipos/`. basta abrir o arquivo [prototipos/index.html](../prototipos/index.html) com dois cliques: ele lista as 24 paginas e leva a qualquer uma delas.
+o prototipo esta na pasta `prototipos/`. basta abrir o arquivo [prototipos/index.html](../prototipos/index.html) com dois cliques: ele lista todas as paginas e leva a qualquer uma delas.
+
+as 18 telas do mvp ocupam 24 paginas porque cada aba do cadastro do prestador e cada janela da ordem de servico é um arquivo proprio, ja que o prototipo nao usa javascript.
 
 nao é preciso instalar nada, nao ha dependencia de internet e nao existe passo de build. essa decisao foi tomada por causa da apresentacao: a demonstracao precisa funcionar mesmo sem rede na sala.
 
