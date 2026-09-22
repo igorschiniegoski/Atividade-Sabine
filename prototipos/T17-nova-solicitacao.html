@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T17 · Nova solicitação · SGP</title>
+<title>Nova solicitação - SGP</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="app">
 <header class="topo">
-  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <a class="marca" href="index.html">SGP<span>gestão de prestadores</span></a>
   <div class="usuario">
     <div class="usuario-dados">
       <strong>Supermercado Ponto Certo</strong>
       <span>Cliente</span>
     </div>
-    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+    <a class="sair" href="T01-login.html">Sair</a>
   </div>
 </header>
 <div class="corpo">
@@ -26,12 +26,16 @@
   <main class="conteudo">
     <div class="cabecalho-tela">
       <div>
-        <span class="codigo-tela">T17</span>
         <h1>Nova solicitação</h1>
         <p class="subtitulo">Descreva o serviço que você precisa</p>
       </div>
       
     </div>
+    <!-- estados previstos nesta tela:
+         A descricao exige no minimo 20 caracteres.
+         Prazo anterior a hoje é recusado. Sem prazo informado, o sistema aplica o prazo padrao do servico.
+         A ordem nasce com status aberta e recebe um numero visivel ao cliente. -->
+
     <div class="cartao">
   <h2>O que você precisa</h2>
   <div class="cartao-corpo">
@@ -43,7 +47,7 @@
       <div class="campo">
         <label>Serviço <span class="obrigatorio">*</span></label>
         <select><option>Instalação de tomadas</option><option>Troca de disjuntor</option></select>
-        <span class="ajuda">Valor de referência: R$ 180,00. Prazo padrão: 3 dias.</span>
+        <span class="ajuda">Valor de referência R$ 187,50, prazo padrão de 3 dias.</span>
       </div>
       <div class="campo estreito">
         <label>Prioridade</label>
@@ -75,7 +79,6 @@
     <a class="btn btn-primario" href="T16-minhas-solicitacoes.html">Enviar solicitação</a>
   </div>
 </div>
-    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>A descricao exige no minimo 20 caracteres.</li><li>Prazo anterior a hoje é recusado. Sem prazo informado, o sistema aplica o prazo padrao do servico.</li><li>A ordem nasce com status aberta e recebe um numero visivel ao cliente.</li></ul></section>
   </main>
 </div>
 

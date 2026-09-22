@@ -3,40 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T02 · Painel do administrador · SGP</title>
+<title>Painel do administrador - SGP</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="app">
 <header class="topo">
-  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <a class="marca" href="index.html">SGP<span>gestão de prestadores</span></a>
   <div class="usuario">
     <div class="usuario-dados">
       <strong>Marina Prado</strong>
       <span>Administradora</span>
     </div>
-    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+    <a class="sair" href="T01-login.html">Sair</a>
   </div>
 </header>
 <div class="corpo">
   <nav class="menu">
-    <a class="menu-item ativo" href="T02-painel-administrador.html">Painel</a>
+    <div class="menu-grupo">Operação</div>
+    <a class="menu-item ativo" href="T02-painel-administrador.html">Painel do dia</a>
     <a class="menu-item" href="T11-ordens.html">Ordens de serviço</a>
-    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item" href="T10-vencimentos.html">Vencimentos</a>
+    <div class="menu-grupo">Cadastro</div>
+    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item" href="T05-clientes.html">Clientes</a>
-    <a class="menu-item" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item" href="T08-servicos.html">Serviços</a>
     <a class="menu-item" href="T07-categorias.html">Categorias</a>
     <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
   </nav>
   <main class="conteudo">
     <div class="cabecalho-tela">
       <div>
-        <span class="codigo-tela">T02</span>
         <h1>Painel do administrador</h1>
         <p class="subtitulo">Segunda-feira, 22 de setembro de 2026</p>
       </div>
       
     </div>
+    <!-- estados previstos nesta tela:
+         Cada indicador leva para a listagem correspondente ja filtrada.
+         Quando nao houver pendencia, o cartao mostra a mensagem de tudo em dia no lugar da tabela vazia. -->
+
     <div class="indicadores">
   <a class="indicador alerta" href="T10-vencimentos.html">
     <div class="rotulo">Documentos vencidos</div>
@@ -119,7 +124,6 @@
     </tbody>
   </table>
 </div>
-    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>Cada indicador leva para a listagem correspondente ja filtrada.</li><li>Quando nao houver pendencia, o cartao mostra a mensagem de tudo em dia no lugar da tabela vazia.</li></ul></section>
   </main>
 </div>
 

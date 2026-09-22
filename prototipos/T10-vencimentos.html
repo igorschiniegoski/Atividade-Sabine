@@ -3,40 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T10 · Painel de vencimentos · SGP</title>
+<title>Painel de vencimentos - SGP</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="app">
 <header class="topo">
-  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <a class="marca" href="index.html">SGP<span>gestão de prestadores</span></a>
   <div class="usuario">
     <div class="usuario-dados">
       <strong>Marina Prado</strong>
       <span>Administradora</span>
     </div>
-    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+    <a class="sair" href="T01-login.html">Sair</a>
   </div>
 </header>
 <div class="corpo">
   <nav class="menu">
-    <a class="menu-item" href="T02-painel-administrador.html">Painel</a>
+    <div class="menu-grupo">Operação</div>
+    <a class="menu-item" href="T02-painel-administrador.html">Painel do dia</a>
     <a class="menu-item" href="T11-ordens.html">Ordens de serviço</a>
-    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item ativo" href="T10-vencimentos.html">Vencimentos</a>
+    <div class="menu-grupo">Cadastro</div>
+    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item" href="T05-clientes.html">Clientes</a>
-    <a class="menu-item" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item" href="T08-servicos.html">Serviços</a>
     <a class="menu-item" href="T07-categorias.html">Categorias</a>
     <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
   </nav>
   <main class="conteudo">
     <div class="cabecalho-tela">
       <div>
-        <span class="codigo-tela">T10</span>
         <h1>Painel de vencimentos</h1>
         <p class="subtitulo">Documentos vencidos e os que vencem nos próximos 30 dias</p>
       </div>
       
     </div>
+    <!-- estados previstos nesta tela:
+         Sem nenhum vencimento no periodo, a tela mostra a mensagem informando isso, e nao uma tabela vazia.
+         A situacao do prestador pode ser alterada direto daqui, sem abrir o cadastro (UC09 estende UC11). -->
+
     <div class="cartao">
   <h2>Vencidos (3)</h2>
   <table>
@@ -103,7 +108,6 @@
     </tbody>
   </table>
 </div>
-    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>Sem nenhum vencimento no periodo, a tela mostra a mensagem informando isso, e nao uma tabela vazia.</li><li>A situacao do prestador pode ser alterada direto daqui, sem abrir o cadastro (UC09 estende UC11).</li></ul></section>
   </main>
 </div>
 

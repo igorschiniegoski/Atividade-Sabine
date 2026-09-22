@@ -195,15 +195,22 @@ nao é preciso instalar nada, nao ha dependencia de internet e nao existe passo 
 
 ### 7.2 decisões de interface
 
+a referencia visual nao foi painel de aplicativo, e sim a via de papel da ordem de servico e a ficha cadastral que o sistema vem substituir. quem usa isso passa o dia na tela, entre uma ligacao e outra, e precisa de informacao na tela, nao de espaco em branco bonito.
+
 | decisao | por que |
 |---|---|
 | html e css escritos a mao, sem framework | o prototipo abre offline, e o mesmo html serve de referencia direta na hora de montar os componentes em react |
-| navegacao real entre as telas, com links | o professor e a equipe conseguem percorrer o fluxo completo clicando, em vez de olhar imagens soltas |
-| paleta sobria, em azul, cinza e branco | é sistema de trabalho, usado o dia inteiro. cor forte foi reservada para o que exige atencao: vencido em vermelho, a vencer em ambar |
-| nenhum icone decorativo | o que informa é o texto e o estado. icone sem funcao so atrapalha a leitura em tabela densa |
-| dados ficticios e coerentes entre as telas | o mesmo prestador, a mesma ordem e as mesmas datas aparecem em todas as telas, entao o fluxo faz sentido ao ser demonstrado |
-| rotulo com o codigo da tela no topo | liga a tela ao mapa de navegacao e a este documento durante a apresentacao |
-| bloco de estados no rodape de cada tela | registra o que a tela faz nas situacões que a captura nao mostra, como erro de validacao e lista vazia |
+| navegacao real entre as telas, com links | o professor e a equipe percorrem o fluxo clicando, em vez de olhar imagens soltas |
+| densidade alta, linha de tabela baixa e pouco espaco vago | o administrador compara varias ordens de uma vez. tela espacada obriga a rolar, e rolar atrapalha quem esta ao telefone |
+| canto quase reto e nenhuma sombra | o desenho segue formulario impresso, nao cartao flutuante |
+| situacao em etiqueta retangular, com a cor na borda esquerda | lembra a etiqueta de pasta de arquivo e se distingue do botao, que é a outra caixa clicavel da tela |
+| numero alinhado pela direita, com digito de mesma largura | valor, prazo e quantidade ficam legiveis em coluna, como em planilha |
+| cor forte so onde ha decisao a tomar | vencido em vermelho, a vencer em ocre, concluido em verde. o resto é cinza e azul de tinta |
+| nenhum icone decorativo | o que informa é o texto e a situacao. icone sem funcao atrapalha a leitura em tabela densa |
+| razao social em caixa alta, com o nome de tratamento embaixo | é assim que o dado chega do cadastro da receita, e é assim que o gestor reconhece o prestador |
+| descricao escrita como o cliente escreve | o texto do pedido no prototipo foi escrito sem pontuacao caprichada de proposito. quem abre a ordem é o dono da padaria com pressa, nao um redator |
+| dados ficticios coerentes entre as telas | o mesmo prestador, a mesma ordem e as mesmas datas aparecem em todas, entao o fluxo faz sentido ao ser demonstrado |
+| a tela nao explica a si mesma | as observacões sobre cada tela ficam neste documento e como comentario no codigo, nao como texto na interface |
 
 ### 7.3 as telas
 

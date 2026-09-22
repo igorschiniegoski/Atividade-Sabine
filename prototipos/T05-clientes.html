@@ -3,40 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T05 · Clientes · SGP</title>
+<title>Clientes - SGP</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="app">
 <header class="topo">
-  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <a class="marca" href="index.html">SGP<span>gestão de prestadores</span></a>
   <div class="usuario">
     <div class="usuario-dados">
       <strong>Marina Prado</strong>
       <span>Administradora</span>
     </div>
-    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+    <a class="sair" href="T01-login.html">Sair</a>
   </div>
 </header>
 <div class="corpo">
   <nav class="menu">
-    <a class="menu-item" href="T02-painel-administrador.html">Painel</a>
+    <div class="menu-grupo">Operação</div>
+    <a class="menu-item" href="T02-painel-administrador.html">Painel do dia</a>
     <a class="menu-item" href="T11-ordens.html">Ordens de serviço</a>
-    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item" href="T10-vencimentos.html">Vencimentos</a>
+    <div class="menu-grupo">Cadastro</div>
+    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item ativo" href="T05-clientes.html">Clientes</a>
-    <a class="menu-item" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item" href="T08-servicos.html">Serviços</a>
     <a class="menu-item" href="T07-categorias.html">Categorias</a>
     <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
   </nav>
   <main class="conteudo">
     <div class="cabecalho-tela">
       <div>
-        <span class="codigo-tela">T05</span>
         <h1>Clientes</h1>
         <p class="subtitulo">Quem pode solicitar serviço</p>
       </div>
       <div class="acoes-tela"><a class="btn btn-primario" href="T06-cliente-cadastro.html">Novo cliente</a></div>
     </div>
+    <!-- estados previstos nesta tela:
+         Cliente inativo nao aparece na abertura de novas ordens, mas continua no historico. -->
+
     <div class="cartao">
   <div class="cartao-corpo">
     <div class="linha">
@@ -63,7 +67,7 @@
     </thead>
     <tbody>
       <tr>
-        <td data-rotulo="Cliente">Supermercado Ponto Certo<span class="secundario">compras@pontocerto.com.br</span></td>
+        <td data-rotulo="Cliente">PONTO CERTO COMERCIO DE ALIMENTOS LTDA<span class="secundario">Supermercado Ponto Certo, compras@pontocerto.com.br</span></td>
         <td data-rotulo="CNPJ">33.221.098/0001-44</td>
         <td data-rotulo="Cidade">Maringá / PR</td>
         <td data-rotulo="Ordens abertas">2</td>
@@ -71,7 +75,7 @@
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T06-cliente-cadastro.html">Abrir</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Cliente">Padaria Trigo de Ouro<span class="secundario">contato@trigodeouro.com.br</span></td>
+        <td data-rotulo="Cliente">TRIGO DE OURO PANIFICADORA LTDA<span class="secundario">Padaria Trigo de Ouro, contato@trigodeouro.com.br</span></td>
         <td data-rotulo="CNPJ">45.789.012/0001-33</td>
         <td data-rotulo="Cidade">Maringá / PR</td>
         <td data-rotulo="Ordens abertas">1</td>
@@ -97,7 +101,6 @@
     </tbody>
   </table>
 </div>
-    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>Cliente inativo nao aparece na abertura de novas ordens, mas continua no historico.</li></ul></section>
   </main>
 </div>
 

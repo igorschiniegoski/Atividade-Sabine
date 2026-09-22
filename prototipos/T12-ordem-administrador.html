@@ -3,40 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T12 · Ordem OS-2026-0147 · SGP</title>
+<title>Ordem OS-2026-0147 - SGP</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="app">
 <header class="topo">
-  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <a class="marca" href="index.html">SGP<span>gestão de prestadores</span></a>
   <div class="usuario">
     <div class="usuario-dados">
       <strong>Marina Prado</strong>
       <span>Administradora</span>
     </div>
-    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+    <a class="sair" href="T01-login.html">Sair</a>
   </div>
 </header>
 <div class="corpo">
   <nav class="menu">
-    <a class="menu-item" href="T02-painel-administrador.html">Painel</a>
+    <div class="menu-grupo">Operação</div>
+    <a class="menu-item" href="T02-painel-administrador.html">Painel do dia</a>
     <a class="menu-item" href="T11-ordens.html">Ordens de serviço</a>
-    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item" href="T10-vencimentos.html">Vencimentos</a>
+    <div class="menu-grupo">Cadastro</div>
+    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
     <a class="menu-item" href="T05-clientes.html">Clientes</a>
-    <a class="menu-item" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item" href="T08-servicos.html">Serviços</a>
     <a class="menu-item" href="T07-categorias.html">Categorias</a>
     <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
   </nav>
   <main class="conteudo">
     <div class="cabecalho-tela">
       <div>
-        <span class="codigo-tela">T12</span>
         <h1>Ordem OS-2026-0147</h1>
         <p class="subtitulo">Visão do administrador</p>
       </div>
       
     </div>
+    <!-- estados previstos nesta tela:
+         As acões disponiveis mudam conforme o status: ordem concluida nao pode ser cancelada nem editada (RN06).
+         Trocar o prestador reabre a verificacao de aptidao (UC22). -->
+
     <div class="cartao">
   <div class="cartao-corpo">
     <div class="trilha">
@@ -65,8 +70,8 @@
       </div>
       <div class="campo largo">
         <label>Descrição do cliente</label>
-        <p style="margin:0">A pia da área de produção está entupida desde ontem à tarde. A água não desce e já
-        transbordou uma vez. Precisamos resolver antes da abertura de quinta, porque sem a pia a cozinha não pode operar.</p>
+        <p style="margin:0">a pia da cozinha entupiu ontem de tarde e a agua nao desce mais. ja transbordou uma vez
+        e molhou o estoque de farinha. precisa resolver antes de quinta se nao a padaria nao abre</p>
       </div>
       <div class="campo largo">
         <label>Prestador responsável</label>
@@ -97,7 +102,6 @@
     </div>
   </div>
 </div>
-    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>As acões disponiveis mudam conforme o status: ordem concluida nao pode ser cancelada nem editada (RN06).</li><li>Trocar o prestador reabre a verificacao de aptidao (UC22).</li></ul></section>
   </main>
 </div>
 

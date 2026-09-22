@@ -3,40 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SGP · Sistema de Gestão de Prestadores · Equipe 8</title>
+<title>SGP, sistema de gestão de prestadores - equipe 8</title>
 <link rel="stylesheet" href="prototipos/estilo.css">
 <style>
-  body.capa { background: var(--fundo); padding: 0 0 60px; display: block; }
-  .faixa { background: var(--azul); color: #fff; padding: 40px 24px 34px; }
-  .faixa .dentro { max-width: 940px; margin: 0 auto; }
-  .faixa h1 { margin: 0 0 6px; font-size: 30px; letter-spacing: .5px; }
-  .faixa p { margin: 0; opacity: .9; }
-  .faixa .curso { font-size: 13px; opacity: .8; margin-bottom: 14px; }
-  .miolo { max-width: 940px; margin: -18px auto 0; padding: 0 24px; }
-  .bloco { margin-top: 26px; }
-  .bloco h2 { font-size: 16px; color: var(--azul); margin: 0 0 10px; }
-  .itens { display: flex; flex-wrap: wrap; gap: 10px; }
+  body.capa { display: block; background: var(--papel); padding: 0 0 50px; }
+  .faixa { background: var(--caneta-escura); color: #fff; padding: 30px 20px 26px; border-bottom: 3px solid var(--caneta); }
+  .faixa .dentro { max-width: 900px; margin: 0 auto; }
+  .faixa .curso { font-size: 12.5px; color: #9db0c9; margin-bottom: 10px; }
+  .faixa h1 { margin: 0 0 4px; font-size: 26px; letter-spacing: .2px; }
+  .faixa p { margin: 0; color: #cfdbea; font-size: 13px; }
+  .miolo { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .bloco { margin-top: 22px; }
+  .bloco h2 { font-size: 13px; margin: 0 0 8px; padding-bottom: 4px; border-bottom: 1px solid var(--regua); }
+  .itens { display: flex; flex-wrap: wrap; gap: 8px; }
   .itens a {
-    flex: 1 1 280px; padding: 14px 16px; background: var(--superficie);
-    border: 1px solid var(--borda); border-radius: 9px; box-shadow: var(--sombra);
+    flex: 1 1 270px; padding: 10px 12px; background: var(--branco);
+    border: 1px solid var(--regua); border-radius: 3px;
     text-decoration: none; color: inherit; cursor: pointer;
   }
-  .itens a:hover { border-color: var(--azul); }
-  .itens strong { display: block; color: var(--azul); margin-bottom: 2px; }
-  .itens span { color: var(--texto-fraco); font-size: 12.5px; }
-  .destaque { display: block; padding: 20px; border-left: 4px solid var(--azul); }
-  .destaque strong { font-size: 17px; }
-  .equipe { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--borda); color: var(--texto-fraco); font-size: 13px; }
-  @media (max-width: 860px) { .faixa { padding: 28px 16px 26px; } .miolo { padding: 0 16px; } }
+  .itens a:hover { border-color: var(--caneta); background: var(--caneta-clara); }
+  .itens strong { display: block; color: var(--caneta); font-size: 13px; }
+  .itens span { color: var(--tinta2); font-size: 12px; }
+  .principal { flex: 1 1 100%; padding: 14px; border-left: 3px solid var(--caneta); }
+  .principal strong { font-size: 15px; }
+  .rodape { margin-top: 26px; padding-top: 12px; border-top: 1px solid var(--regua); color: var(--tinta2); font-size: 12.5px; }
+  @media (max-width: 860px) { .faixa { padding: 22px 14px 20px; } .miolo { padding: 0 14px; } }
 </style>
 </head>
 <body class="capa">
 
 <div class="faixa">
   <div class="dentro">
-    <div class="curso">unicesumar · análise e desenvolvimento de sistemas · imersão profissional: projeto de software</div>
-    <h1>SGP · Sistema de Gestão de Prestadores</h1>
-    <p>Equipe 8 · 1º bimestre de 2026 · 3ª entrega</p>
+    <div class="curso">unicesumar, análise e desenvolvimento de sistemas, imersão profissional em projeto de software</div>
+    <h1>SGP, sistema de gestão de prestadores</h1>
+    <p>Equipe 8, 1º bimestre de 2026. Materiais da terceira entrega.</p>
   </div>
 </div>
 
@@ -45,10 +45,10 @@
   <div class="bloco">
     <h2>Protótipo</h2>
     <div class="itens">
-      <a class="destaque" href="prototipos/index.html">
+      <a class="principal" href="prototipos/index.html">
         <strong>Abrir o protótipo navegável</strong>
-        <span>As 18 telas do MVP, com os três perfis: administrador, prestador e cliente. Dá para percorrer o fluxo
-        completo, do pedido do cliente até a avaliação do atendimento.</span>
+        <span>As 18 telas do MVP, nos três perfis. Dá para percorrer o fluxo inteiro, do pedido do cliente até a
+        avaliação do atendimento.</span>
       </a>
     </div>
   </div>
@@ -58,31 +58,31 @@
     <div class="itens">
       <a href="docs/mvp-e-prototipos.html">
         <strong>MVP, navegação e protótipo</strong>
-        <span>3ª entrega · definição do MVP, fluxo completo, telas e rastreabilidade</span>
+        <span>3ª entrega, com o fluxo completo e a rastreabilidade</span>
       </a>
       <a href="docs/backlog.html">
         <strong>Backlog e quadro de tarefas</strong>
-        <span>3ª entrega · 57 tarefas com responsável e situação</span>
+        <span>3ª entrega, 57 tarefas com responsável e situação</span>
       </a>
       <a href="docs/apresentacao.html">
         <strong>Roteiro da apresentação</strong>
-        <span>3ª entrega · divisão das falas e checklist final</span>
+        <span>3ª entrega, divisão das falas e checklist</span>
       </a>
       <a href="docs/documento-visao-requisitos.html">
         <strong>Visão e requisitos</strong>
-        <span>1ª entrega · 19 RF, 11 RNF e 12 regras de negócio</span>
+        <span>1ª entrega, 19 RF, 11 RNF e 12 regras de negócio</span>
       </a>
       <a href="docs/casos-de-uso.html">
         <strong>Casos de uso e histórias</strong>
-        <span>2ª entrega · 24 casos de uso, diagramas de atividade e priorização MoSCoW</span>
+        <span>2ª entrega, 24 casos de uso e priorização MoSCoW</span>
       </a>
       <a href="docs/modelo-de-dados.html">
         <strong>Classes e modelo de dados</strong>
-        <span>2ª entrega · diagrama de classes, modelo conceitual, lógico e dicionário</span>
+        <span>2ª entrega, modelo conceitual, lógico e dicionário</span>
       </a>
       <a href="docs/tecnologias-e-arquitetura.html">
         <strong>Tecnologias e arquitetura</strong>
-        <span>2ª entrega · stack escolhida e arquitetura em camadas</span>
+        <span>2ª entrega, stack escolhida e camadas</span>
       </a>
     </div>
   </div>
@@ -99,9 +99,9 @@
     </div>
   </div>
 
-  <div class="equipe">
-    Luis Gustavo Boratto de Oliveira e Igor Schiniegoski Pallisser ·
-    código-fonte em <a href="https://github.com/igorschiniegoski/Atividade-Sabine">github.com/igorschiniegoski/Atividade-Sabine</a>
+  <div class="rodape">
+    Luis Gustavo Boratto de Oliveira e Igor Schiniegoski Pallisser.
+    Código em <a href="https://github.com/igorschiniegoski/Atividade-Sabine">github.com/igorschiniegoski/Atividade-Sabine</a>
   </div>
 
 </div>

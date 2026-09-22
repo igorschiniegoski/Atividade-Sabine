@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T13 · Minhas ordens · SGP</title>
+<title>Minhas ordens - SGP</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="app">
 <header class="topo">
-  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <a class="marca" href="index.html">SGP<span>gestão de prestadores</span></a>
   <div class="usuario">
     <div class="usuario-dados">
       <strong>Elétrica Boratto ME</strong>
       <span>Prestador</span>
     </div>
-    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+    <a class="sair" href="T01-login.html">Sair</a>
   </div>
 </header>
 <div class="corpo">
@@ -26,12 +26,15 @@
   <main class="conteudo">
     <div class="cabecalho-tela">
       <div>
-        <span class="codigo-tela">T13</span>
         <h1>Minhas ordens</h1>
         <p class="subtitulo">Somente as ordens atribuídas a você</p>
       </div>
       
     </div>
+    <!-- estados previstos nesta tela:
+         O recorte por prestador é feito no servidor. Uma requisicao montada por fora é recusada (RNF02).
+         Sem nenhuma ordem atribuida, a lista mostra a mensagem de que nao ha ordem no momento. -->
+
     <div class="indicadores">
   <a class="indicador" href="T14-ordem-execucao.html">
     <div class="rotulo">Atribuídas a mim</div>
@@ -93,7 +96,6 @@
     na tela (RNF02).
   </div>
 </div>
-    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>O recorte por prestador é feito no servidor. Uma requisicao montada por fora é recusada (RNF02).</li><li>Sem nenhuma ordem atribuida, a lista mostra a mensagem de que nao ha ordem no momento.</li></ul></section>
   </main>
 </div>
 
