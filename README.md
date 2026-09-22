@@ -67,9 +67,15 @@ a definicao de cada nivel, o criterio de decisao e a justificativa item a item e
 
 a escolha foi por familiaridade da equipe e por serem ferramentas com plano gratuito, que é o que cabe no prazo e no orcamento do trabalho. o detalhamento de cada decisao, as alternativas descartadas e a arquitetura em camadas estao em [docs/tecnologias-e-arquitetura.md](docs/tecnologias-e-arquitetura.md). continua em aberto apenas o provedor do postgresql gerenciado e do storage.
 
+## o projeto no ar
+
+a versao publicada, com o prototipo navegavel e os documentos, fica em **[sgp-equipe8.vercel.app](https://sgp-equipe8.vercel.app)**.
+a pagina inicial é o arquivo `index.html` da raiz, e o conteudo é o mesmo do repositorio, sem build.
+
 ## organizacao do repositorio
 
 ```
+index.html   pagina inicial do site publicado, com os links para tudo
 docs/        documentos das entregas, do levantamento de requisitos ao roteiro da apresentacao
 diagramas/   fontes .puml e imagens dos diagramas, inclusive os do banco e o mapa de navegacao
 prototipos/  prototipo navegavel das 18 telas do mvp, em html
