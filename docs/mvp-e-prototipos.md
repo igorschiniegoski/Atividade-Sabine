@@ -21,11 +21,7 @@ imersao profissional - projeto de software - equipe 8
 
 ### 1.1 o que esta entrega acrescenta
 
-as duas primeiras entregas responderam **o que** o sistema precisa fazer e **como** o usuario interage com ele. esta entrega responde tres perguntas que ficaram em aberto:
-
-- **o que sera construido primeiro?** a definicao do mvp, na secao 3;
-- **como o usuario anda pelo sistema?** o mapa de navegacao, na secao 6;
-- **qual a cara de cada tela?** o prototipo, na secao 7.
+as duas primeiras entregas responderam o que o sistema precisa fazer e como o usuario interage com ele. faltava decidir por onde comecar, e é isso que este documento resolve. a secao 3 define o mvp, ou seja, o que sera construido primeiro. a secao 6 mostra como o usuario anda pelo sistema. a secao 7 mostra a cara de cada tela.
 
 ---
 
@@ -64,9 +60,9 @@ nenhum requisito foi renumerado e nenhum documento anterior foi reescrito: as co
 
 ### 3.1 o criterio usado
 
-o mvp nao é "a parte facil do sistema" nem "tudo que der tempo". o criterio adotado foi: **entra no mvp o que for necessario para executar o fluxo completo do inicio ao fim, sem contorno manual**. em outras palavras, se a funcionalidade for retirada e o caminho do cliente pedir ate avaliar deixar de funcionar, ela é indispensavel.
+mvp nao quer dizer a parte facil do sistema, nem tudo que der tempo de fazer. o criterio que a equipe adotou foi outro: entra no mvp o que for necessario para executar o fluxo completo do inicio ao fim, sem depender de contorno manual. o teste é simples, basta tirar a funcionalidade e ver se o caminho do cliente pedir ate avaliar continua de pé. se nao continuar, ela é indispensavel.
 
-esse criterio é o mesmo da priorizacao moscow feita na 2ª entrega, e por isso o mvp corresponde aos 16 casos de uso classificados como **M - must have**.
+é o mesmo criterio da priorizacao moscow da 2ª entrega, e por isso o mvp acabou correspondendo exatamente aos 16 casos de uso classificados como must have.
 
 ### 3.2 o que entra e o que fica de fora
 
@@ -131,7 +127,7 @@ o manual pede pelo menos um fluxo que possa ser explicado do inicio ao fim. o es
 
 ### 4.2 por que este fluxo
 
-ele atravessa os tres perfis, usa 12 das 14 tabelas do modelo, aciona 8 das 12 regras de negocio e termina com o dado que o sistema existe para produzir: o historico de quem atendeu bem. qualquer pessoa da equipe consegue demonstra-lo no prototipo em menos de tres minutos.
+porque ele atravessa os tres perfis, usa 12 das 14 tabelas e aciona 8 das 12 regras de negocio. no fim dele existe o dado que o sistema foi feito para produzir, que é o historico de quem atendeu bem. os outros fluxos do sistema, como manter o catalogo ou conferir vencimento, existem para sustentar esse.
 
 ---
 
@@ -183,12 +179,9 @@ a diferenca de tamanho entre os perfis nao é falta de tela: é o recorte de per
 
 *fonte: elaborado pela equipe. arquivo fonte em [diagramas/mapa-de-navegacao.puml](../diagramas/mapa-de-navegacao.puml)*
 
-a leitura do mapa:
+o login é a unica porta de entrada, e o perfil da conta decide qual tela sera aberta depois dele. as tres areas nao se cruzam: nao existe caminho do prestador para uma tela do administrador, nem do cliente para a lista de prestadores.
 
-- o login é a unica porta de entrada, e o perfil da conta decide qual tela inicial sera aberta;
-- as tres areas nao se cruzam. nao existe caminho do prestador para uma tela do administrador, nem do cliente para a lista de prestadores;
-- a linha continua é o caminho percorrido durante uma tarefa, e a tracejada é o acesso direto pelo menu lateral, disponivel em qualquer tela do perfil;
-- o retorno ao inicio representa o encerramento da sessao (UC02), que pode ocorrer por acao do usuario ou pelos 30 minutos de inatividade do RNF03.
+no desenho, a linha continua é o caminho percorrido durante uma tarefa e a tracejada é o acesso direto pelo menu lateral, que fica disponivel em qualquer tela do perfil. o retorno ao inicio representa o encerramento da sessao (UC02), que acontece quando o usuario sai ou quando passam os 30 minutos de inatividade do RNF03.
 
 ---
 
