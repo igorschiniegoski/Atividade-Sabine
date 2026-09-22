@@ -1010,10 +1010,11 @@ a matriz garante que nenhum requisito funcional levantado na 1ª entrega ficou s
 | diagramas de atividade dos fluxos UC13 e UC16 | 2ª entrega | concluido na secao 7.18 |
 | diagrama de classes do dominio | 2ª entrega | concluido em [modelo-de-dados.md](modelo-de-dados.md) |
 | modelo conceitual, logico e dicionario de dados | 2ª entrega | concluido em [modelo-de-dados.md](modelo-de-dados.md) |
-| diagrama de arquitetura | 2ª entrega | descrito em [tecnologias-e-arquitetura.md](tecnologias-e-arquitetura.md), falta a versao em diagrama |
-| mapa de navegacao e prototipo de telas | 3ª entrega | pendente |
-| backlog com responsavel e situacao | 3ª entrega | pendente |
-| definicao formal do mvp e do fluxo completo | 3ª entrega | pendente |
+| diagrama de arquitetura | 2ª entrega | concluido em [diagramas/arquitetura.png](../diagramas/arquitetura.png) |
+| mapa de navegacao e prototipo de telas | 3ª entrega | concluido em [mvp-e-prototipos.md](mvp-e-prototipos.md) |
+| backlog com responsavel e situacao | 3ª entrega | concluido em [backlog.md](backlog.md) |
+| definicao formal do mvp e do fluxo completo | 3ª entrega | concluido em [mvp-e-prototipos.md](mvp-e-prototipos.md) |
+| roteiro da apresentacao | 3ª entrega | concluido em [apresentacao.md](apresentacao.md) |
 
 ---
 
