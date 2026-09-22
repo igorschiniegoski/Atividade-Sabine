@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T06 · Supermercado Ponto Certo · SGP</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="app">
+<header class="topo">
+  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <div class="usuario">
+    <div class="usuario-dados">
+      <strong>Marina Prado</strong>
+      <span>Administradora</span>
+    </div>
+    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+  </div>
+</header>
+<div class="corpo">
+  <nav class="menu">
+    <a class="menu-item" href="T02-painel-administrador.html">Painel</a>
+    <a class="menu-item" href="T11-ordens.html">Ordens de serviço</a>
+    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
+    <a class="menu-item" href="T10-vencimentos.html">Vencimentos</a>
+    <a class="menu-item" href="T05-clientes.html">Clientes</a>
+    <a class="menu-item" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item" href="T07-categorias.html">Categorias</a>
+    <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
+  </nav>
+  <main class="conteudo">
+    <div class="cabecalho-tela">
+      <div>
+        <span class="codigo-tela">T06</span>
+        <h1>Supermercado Ponto Certo</h1>
+        <p class="subtitulo">Cadastro do cliente</p>
+      </div>
+      
+    </div>
+    <div class="cartao">
+  <h2>Identificação</h2>
+  <div class="cartao-corpo">
+    <div class="linha">
+      <div class="campo estreito">
+        <label>Tipo <span class="obrigatorio">*</span></label>
+        <select><option>Pessoa jurídica</option><option>Pessoa física</option></select>
+      </div>
+      <div class="campo">
+        <label>Razão social <span class="obrigatorio">*</span></label>
+        <input type="text" value="Supermercado Ponto Certo">
+      </div>
+      <div class="campo">
+        <label>CNPJ <span class="obrigatorio">*</span></label>
+        <input type="text" value="33.221.098/0001-44">
+        <span class="ajuda">Não pode existir outro cadastro ativo com o mesmo número (RN10).</span>
+      </div>
+    </div>
+    <div class="linha">
+      <div class="campo">
+        <label>Telefone <span class="obrigatorio">*</span></label>
+        <input type="text" value="(44) 3028-1100">
+      </div>
+      <div class="campo">
+        <label>E-mail</label>
+        <input type="email" value="compras@pontocerto.com.br">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cartao">
+  <h2>Endereço</h2>
+  <div class="cartao-corpo">
+    <div class="linha">
+      <div class="campo estreito">
+        <label>CEP <span class="obrigatorio">*</span></label>
+        <input type="text" value="87013-210">
+      </div>
+      <div class="campo">
+        <label>Logradouro <span class="obrigatorio">*</span></label>
+        <input type="text" value="Rua Néo Alves Martins">
+      </div>
+      <div class="campo estreito">
+        <label>Número <span class="obrigatorio">*</span></label>
+        <input type="text" value="2810">
+      </div>
+      <div class="campo">
+        <label>Bairro <span class="obrigatorio">*</span></label>
+        <input type="text" value="Zona 3">
+      </div>
+    </div>
+  </div>
+  <div class="rodape-form">
+    <a class="btn btn-neutro" href="T05-clientes.html">Cancelar</a>
+    <a class="btn btn-primario" href="T05-clientes.html">Salvar</a>
+  </div>
+</div>
+    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>CPF e CNPJ sao unicos entre os cadastros ativos (RN10).</li></ul></section>
+  </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T12 · Atribuir prestador · SGP</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="app">
+<header class="topo">
+  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <div class="usuario">
+    <div class="usuario-dados">
+      <strong>Marina Prado</strong>
+      <span>Administradora</span>
+    </div>
+    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+  </div>
+</header>
+<div class="corpo">
+  <nav class="menu">
+    <a class="menu-item" href="T02-painel-administrador.html">Painel</a>
+    <a class="menu-item" href="T11-ordens.html">Ordens de serviço</a>
+    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
+    <a class="menu-item" href="T10-vencimentos.html">Vencimentos</a>
+    <a class="menu-item" href="T05-clientes.html">Clientes</a>
+    <a class="menu-item" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item" href="T07-categorias.html">Categorias</a>
+    <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
+  </nav>
+  <main class="conteudo">
+    <div class="cabecalho-tela">
+      <div>
+        <span class="codigo-tela">T12</span>
+        <h1>Atribuir prestador</h1>
+        <p class="subtitulo">Ordem OS-2026-0147 · Desentupimento de pia</p>
+      </div>
+      
+    </div>
+    <div class="modal-fundo">
+  <span class="rotulo-simulacao">Janela sobre a tela da ordem OS-2026-0147</span>
+  <div class="modal">
+    <h2>Atribuir a ordem a um prestador</h2>
+    <div class="modal-corpo">
+      <div class="aviso">
+        <div>
+          <strong>Aparecem apenas os prestadores aptos para esta ordem.</strong>
+          Aptidão é estar ativo, estar habilitado na categoria Hidráulica e não ter documento obrigatório vencido
+          (RN01, RN02 e RN04).
+        </div>
+      </div>
+
+      <table>
+        <thead><tr><th>Prestador</th><th class="numerico">Nota</th><th class="numerico">Ordens abertas</th><th class="acoes">&nbsp;</th></tr></thead>
+        <tbody>
+          <tr>
+            <td data-rotulo="Prestador">Encanações Maringá Ltda<span class="secundario">Habilitado em Hidráulica</span></td>
+            <td class="numerico" data-rotulo="Nota">4,6</td>
+            <td class="numerico" data-rotulo="Ordens">2</td>
+            <td class="acoes"><a class="btn btn-primario btn-pequeno" href="T12-ordem-administrador.html">Atribuir</a></td>
+          </tr>
+          <tr>
+            <td data-rotulo="Prestador">Hidro Service ME<span class="secundario">Habilitado em Hidráulica</span></td>
+            <td class="numerico" data-rotulo="Nota">Sem histórico suficiente</td>
+            <td class="numerico" data-rotulo="Ordens">0</td>
+            <td class="acoes"><a class="btn btn-primario btn-pequeno" href="T12-ordem-administrador.html">Atribuir</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="font-size:14px;margin:22px 0 6px">Não disponíveis para esta ordem</h3>
+      <p class="subtitulo" style="margin-top:0">A lista abaixo evita a dúvida de por que um prestador conhecido não
+      aparece. Nenhum deles pode ser selecionado.</p>
+      <table>
+        <thead><tr><th>Prestador</th><th>Motivo do impedimento</th></tr></thead>
+        <tbody>
+          <tr>
+            <td data-rotulo="Prestador">João Pedro Alves</td>
+            <td data-rotulo="Motivo"><span class="chip chip-vencido">Documento vencido</span> Certidão negativa de débitos venceu em 12/09/2026</td>
+          </tr>
+          <tr>
+            <td data-rotulo="Prestador">Refrigeração Sul ME</td>
+            <td data-rotulo="Motivo"><span class="chip chip-bloqueado">Bloqueado</span> Situação cadastral não permite atribuição</td>
+          </tr>
+          <tr>
+            <td data-rotulo="Prestador">Elétrica Boratto ME</td>
+            <td data-rotulo="Motivo"><span class="chip chip-neutro">Categoria</span> Não está habilitado em Hidráulica</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rodape-form">
+      <a class="btn btn-neutro" href="T11-ordens.html">Fechar</a>
+    </div>
+  </div>
+</div>
+    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>A aptidao é verificada de novo no servidor no momento da confirmacao (RNF02).</li><li>Se o prestador ficar inapto entre a abertura da tela e a confirmacao, a atribuicao é recusada e a lista recarregada.</li><li>Sem nenhum prestador apto, a tela informa e oferece o caminho para habilitar ou regularizar alguem.</li></ul></section>
+  </main>
+</div>
+
+</body>
+</html>

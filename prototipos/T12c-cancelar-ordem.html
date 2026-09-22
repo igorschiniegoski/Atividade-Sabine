@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T12 · Cancelar ordem · SGP</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="app">
+<header class="topo">
+  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <div class="usuario">
+    <div class="usuario-dados">
+      <strong>Marina Prado</strong>
+      <span>Administradora</span>
+    </div>
+    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+  </div>
+</header>
+<div class="corpo">
+  <nav class="menu">
+    <a class="menu-item" href="T02-painel-administrador.html">Painel</a>
+    <a class="menu-item" href="T11-ordens.html">Ordens de serviço</a>
+    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
+    <a class="menu-item" href="T10-vencimentos.html">Vencimentos</a>
+    <a class="menu-item" href="T05-clientes.html">Clientes</a>
+    <a class="menu-item" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item" href="T07-categorias.html">Categorias</a>
+    <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
+  </nav>
+  <main class="conteudo">
+    <div class="cabecalho-tela">
+      <div>
+        <span class="codigo-tela">T12</span>
+        <h1>Cancelar ordem</h1>
+        <p class="subtitulo">Ordem OS-2026-0147</p>
+      </div>
+      
+    </div>
+    <div class="modal-fundo">
+  <span class="rotulo-simulacao">Janela sobre a tela da ordem OS-2026-0147</span>
+  <div class="modal">
+    <h2>Cancelar a ordem OS-2026-0147</h2>
+    <div class="modal-corpo">
+      <div class="aviso atencao">
+        <div>
+          <strong>O cancelamento não apaga a ordem.</strong>
+          Ela continua no histórico com o motivo registrado, e o evento vai para o log de auditoria (RF19).
+        </div>
+      </div>
+      <div class="campo largo com-erro">
+        <label>Motivo do cancelamento <span class="obrigatorio">*</span></label>
+        <textarea>duplicada</textarea>
+        <span class="erro">O motivo precisa ter no mínimo 10 caracteres. Faltam 1.</span>
+        <span class="ajuda">Regra RN07. Ordens já concluídas não podem ser canceladas (RN06).</span>
+      </div>
+    </div>
+    <div class="rodape-form">
+      <a class="btn btn-neutro" href="T12-ordem-administrador.html">Voltar</a>
+      <a class="btn btn-perigo" href="T12c-cancelar-ordem.html" aria-disabled="true">Confirmar cancelamento</a>
+    </div>
+  </div>
+</div>
+    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>O botao de confirmar so libera quando o motivo atinge 10 caracteres (RN07).</li><li>O cancelamento é registrado no log com usuario, data e hora (RF19).</li></ul></section>
+  </main>
+</div>
+
+</body>
+</html>

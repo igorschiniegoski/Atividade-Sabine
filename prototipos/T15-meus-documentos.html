@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T15 · Meus documentos · SGP</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="app">
+<header class="topo">
+  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <div class="usuario">
+    <div class="usuario-dados">
+      <strong>Elétrica Boratto ME</strong>
+      <span>Prestador</span>
+    </div>
+    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+  </div>
+</header>
+<div class="corpo">
+  <nav class="menu">
+    <a class="menu-item" href="T13-minhas-ordens.html">Minhas ordens</a>
+    <a class="menu-item ativo" href="T15-meus-documentos.html">Meus documentos</a>
+    <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
+  </nav>
+  <main class="conteudo">
+    <div class="cabecalho-tela">
+      <div>
+        <span class="codigo-tela">T15</span>
+        <h1>Meus documentos</h1>
+        <p class="subtitulo">Mantenha a documentação em dia para continuar recebendo ordens</p>
+      </div>
+      
+    </div>
+    <div class="aviso atencao">
+  <div>
+    <strong>Um documento obrigatório está para vencer.</strong>
+    O certificado de curso NR-10 vence em 11/10/2026. Documento vencido tira o prestador da lista de atribuição até a
+    regularização (RN02).
+  </div>
+</div>
+
+<div class="colunas">
+  <div class="cartao">
+    <h2>Documentos enviados</h2>
+    <table>
+      <thead><tr><th>Tipo</th><th>Validade</th><th>Situação</th></tr></thead>
+      <tbody>
+        <tr><td data-rotulo="Tipo">CNPJ</td><td data-rotulo="Validade">Não expira</td><td data-rotulo="Situação"><span class="chip chip-ativo">Em dia</span></td></tr>
+        <tr><td data-rotulo="Tipo">Certidão negativa de débitos</td><td data-rotulo="Validade">20/12/2026</td><td data-rotulo="Situação"><span class="chip chip-ativo">Em dia</span></td></tr>
+        <tr><td data-rotulo="Tipo">Apólice de seguro</td><td data-rotulo="Validade">02/02/2027</td><td data-rotulo="Situação"><span class="chip chip-ativo">Em dia</span></td></tr>
+        <tr><td data-rotulo="Tipo">Certificado de curso NR-10</td><td data-rotulo="Validade">11/10/2026</td><td data-rotulo="Situação"><span class="chip chip-vence">Vence em 19 dias</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cartao" style="flex:0 1 380px">
+    <h2>Enviar documento</h2>
+    <div class="cartao-corpo">
+      <div class="campo largo">
+        <label>Tipo <span class="obrigatorio">*</span></label>
+        <select><option>Certificado de curso NR-10</option><option>Certidão negativa de débitos</option><option>Apólice de seguro</option><option>CNPJ</option></select>
+      </div>
+      <div class="linha">
+        <div class="campo">
+          <label>Data de emissão <span class="obrigatorio">*</span></label>
+          <input type="text" value="12/10/2026">
+        </div>
+        <div class="campo">
+          <label>Validade <span class="obrigatorio">*</span></label>
+          <input type="text" value="11/10/2027">
+        </div>
+      </div>
+      <div class="campo largo com-erro">
+        <label>Arquivo <span class="obrigatorio">*</span></label>
+        <input type="text" value="certificado-nr10.docx">
+        <span class="erro">Formato não aceito. Envie o arquivo em PDF, JPG ou PNG, com até 10 MB.</span>
+      </div>
+    </div>
+    <div class="rodape-form">
+      <a class="btn btn-primario" href="T15-meus-documentos.html">Enviar</a>
+    </div>
+  </div>
+</div>
+    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>Sao aceitos apenas PDF, JPG e PNG, com ate 10 MB por arquivo (RNF09).</li><li>Data de emissao posterior a validade é recusada, com os dois campos destacados.</li><li>O envio da versao renovada mantem a anterior no historico.</li></ul></section>
+  </main>
+</div>
+
+</body>
+</html>

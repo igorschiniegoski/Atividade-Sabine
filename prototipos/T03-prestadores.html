@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T03 · Prestadores · SGP</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="app">
+<header class="topo">
+  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <div class="usuario">
+    <div class="usuario-dados">
+      <strong>Marina Prado</strong>
+      <span>Administradora</span>
+    </div>
+    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+  </div>
+</header>
+<div class="corpo">
+  <nav class="menu">
+    <a class="menu-item" href="T02-painel-administrador.html">Painel</a>
+    <a class="menu-item" href="T11-ordens.html">Ordens de serviço</a>
+    <a class="menu-item ativo" href="T03-prestadores.html">Prestadores</a>
+    <a class="menu-item" href="T10-vencimentos.html">Vencimentos</a>
+    <a class="menu-item" href="T05-clientes.html">Clientes</a>
+    <a class="menu-item" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item" href="T07-categorias.html">Categorias</a>
+    <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
+  </nav>
+  <main class="conteudo">
+    <div class="cabecalho-tela">
+      <div>
+        <span class="codigo-tela">T03</span>
+        <h1>Prestadores</h1>
+        <p class="subtitulo">Cadastro da rede de terceirizados</p>
+      </div>
+      <div class="acoes-tela"><a class="btn btn-primario" href="T04-prestador-dados.html">Novo prestador</a></div>
+    </div>
+    <div class="cartao">
+  <div class="cartao-corpo">
+    <div class="linha">
+      <div class="campo">
+        <label>Buscar</label>
+        <input type="text" placeholder="Nome, razão social, CPF ou CNPJ">
+      </div>
+      <div class="campo estreito">
+        <label>Situação</label>
+        <select><option>Todas</option><option>Ativo</option><option>Pendente</option><option>Bloqueado</option><option>Inativo</option></select>
+      </div>
+      <div class="campo estreito">
+        <label>Categoria</label>
+        <select><option>Todas</option><option>Elétrica</option><option>Hidráulica</option><option>Limpeza</option><option>Refrigeração</option></select>
+      </div>
+      <div class="campo estreito" style="display:flex;align-items:flex-end">
+        <a class="btn btn-neutro" href="T03-prestadores.html">Filtrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cartao">
+  <h2>5 prestadores encontrados</h2>
+  <table>
+    <thead>
+      <tr><th>Prestador</th><th>CPF / CNPJ</th><th>Categorias</th><th>Situação</th><th class="numerico">Nota</th><th class="acoes">&nbsp;</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-rotulo="Prestador">Elétrica Boratto ME<span class="secundario">(44) 99812-4410</span></td>
+        <td data-rotulo="CNPJ">12.345.678/0001-90</td>
+        <td data-rotulo="Categorias">Elétrica</td>
+        <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
+        <td class="numerico" data-rotulo="Nota">4,8</td>
+        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
+      </tr>
+      <tr>
+        <td data-rotulo="Prestador">João Pedro Alves<span class="secundario">(44) 99745-2201</span></td>
+        <td data-rotulo="CPF">123.456.789-09</td>
+        <td data-rotulo="Categorias">Hidráulica</td>
+        <td data-rotulo="Situação"><span class="chip chip-pendente">Pendente</span></td>
+        <td class="numerico" data-rotulo="Nota">4,2</td>
+        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
+      </tr>
+      <tr>
+        <td data-rotulo="Prestador">Limpeza Brilho Forte Ltda<span class="secundario">(44) 3025-7788</span></td>
+        <td data-rotulo="CNPJ">98.765.432/0001-10</td>
+        <td data-rotulo="Categorias">Limpeza</td>
+        <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
+        <td class="numerico" data-rotulo="Nota">4,5</td>
+        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
+      </tr>
+      <tr>
+        <td data-rotulo="Prestador">Refrigeração Sul ME<span class="secundario">(44) 99120-3377</span></td>
+        <td data-rotulo="CNPJ">21.876.543/0001-55</td>
+        <td data-rotulo="Categorias">Refrigeração</td>
+        <td data-rotulo="Situação"><span class="chip chip-bloqueado">Bloqueado</span></td>
+        <td class="numerico" data-rotulo="Nota">Sem histórico</td>
+        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
+      </tr>
+      <tr>
+        <td data-rotulo="Prestador">Marcos Antunes<span class="secundario">(44) 99666-1180</span></td>
+        <td data-rotulo="CPF">987.654.321-00</td>
+        <td data-rotulo="Categorias">Manutenção predial, Elétrica</td>
+        <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
+        <td class="numerico" data-rotulo="Nota">3,9</td>
+        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>A listagem é paginada e responde em ate 3 segundos com 5 mil registros (RNF06).</li><li>Busca sem resultado mostra a mensagem de nenhum registro encontrado, nao uma tabela vazia.</li><li>Prestador com ordem atribuida ou em execucao nao pode ser inativado (RN11).</li></ul></section>
+  </main>
+</div>
+
+</body>
+</html>

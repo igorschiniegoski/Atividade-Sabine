@@ -1,0 +1,33 @@
+# python (gerador dos documentos e do prototipo)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# node e next.js (a partir da implementacao, na 3a entrega)
+node_modules/
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+
+# variaveis de ambiente, nunca versionar
+.env
+.env.*
+!.env.example
+
+# banco local e arquivos de upload de teste
+*.sqlite
+*.sqlite3
+uploads/
+
+# ferramentas baixadas, nao fazem parte do trabalho
+plantuml*.jar
+
+# sistema operacional e editor
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/

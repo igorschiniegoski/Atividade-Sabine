@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T11 · Ordens de serviço · SGP</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="app">
+<header class="topo">
+  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <div class="usuario">
+    <div class="usuario-dados">
+      <strong>Marina Prado</strong>
+      <span>Administradora</span>
+    </div>
+    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+  </div>
+</header>
+<div class="corpo">
+  <nav class="menu">
+    <a class="menu-item" href="T02-painel-administrador.html">Painel</a>
+    <a class="menu-item ativo" href="T11-ordens.html">Ordens de serviço</a>
+    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
+    <a class="menu-item" href="T10-vencimentos.html">Vencimentos</a>
+    <a class="menu-item" href="T05-clientes.html">Clientes</a>
+    <a class="menu-item" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item" href="T07-categorias.html">Categorias</a>
+    <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
+  </nav>
+  <main class="conteudo">
+    <div class="cabecalho-tela">
+      <div>
+        <span class="codigo-tela">T11</span>
+        <h1>Ordens de serviço</h1>
+        <p class="subtitulo">Todas as ordens da empresa</p>
+      </div>
+      
+    </div>
+    <div class="cartao">
+  <div class="cartao-corpo">
+    <div class="linha">
+      <div class="campo">
+        <label>Buscar</label>
+        <input type="text" placeholder="Número da ordem, cliente ou serviço">
+      </div>
+      <div class="campo estreito">
+        <label>Situação</label>
+        <select><option>Todas</option><option>Aberta</option><option>Atribuída</option><option>Em execução</option><option>Concluída</option><option>Cancelada</option></select>
+      </div>
+      <div class="campo estreito">
+        <label>Período</label>
+        <select><option>Últimos 30 dias</option><option>Este mês</option><option>Personalizado</option></select>
+      </div>
+      <div class="campo estreito" style="display:flex;align-items:flex-end">
+        <a class="btn btn-neutro" href="T11-ordens.html">Filtrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cartao">
+  <h2>5 ordens no período</h2>
+  <table>
+    <thead>
+      <tr><th>Número</th><th>Cliente</th><th>Serviço</th><th>Prestador</th><th>Prazo</th><th>Situação</th><th class="acoes">&nbsp;</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-rotulo="Número">OS-2026-0149</td>
+        <td data-rotulo="Cliente">Escola Recanto</td>
+        <td data-rotulo="Serviço">Troca de disjuntor</td>
+        <td data-rotulo="Prestador"><span class="secundario">Não atribuída</span></td>
+        <td data-rotulo="Prazo">26/09/2026</td>
+        <td data-rotulo="Situação"><span class="chip chip-aberta">Aberta</span></td>
+        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
+      </tr>
+      <tr>
+        <td data-rotulo="Número">OS-2026-0148</td>
+        <td data-rotulo="Cliente">Supermercado Ponto Certo</td>
+        <td data-rotulo="Serviço">Instalação de tomadas</td>
+        <td data-rotulo="Prestador">Elétrica Boratto ME</td>
+        <td data-rotulo="Prazo">24/09/2026</td>
+        <td data-rotulo="Situação"><span class="chip chip-execucao">Em execução</span></td>
+        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
+      </tr>
+      <tr>
+        <td data-rotulo="Número">OS-2026-0147</td>
+        <td data-rotulo="Cliente">Padaria Trigo de Ouro</td>
+        <td data-rotulo="Serviço">Desentupimento de pia</td>
+        <td data-rotulo="Prestador"><span class="secundario">Não atribuída</span></td>
+        <td data-rotulo="Prazo">23/09/2026</td>
+        <td data-rotulo="Situação"><span class="chip chip-aberta">Aberta</span></td>
+        <td class="acoes"><a class="btn btn-primario btn-pequeno" href="T12-ordem-administrador.html">Atribuir</a></td>
+      </tr>
+      <tr>
+        <td data-rotulo="Número">OS-2026-0146</td>
+        <td data-rotulo="Cliente">Escola Recanto</td>
+        <td data-rotulo="Serviço">Limpeza pós-obra</td>
+        <td data-rotulo="Prestador">Limpeza Brilho Forte Ltda</td>
+        <td data-rotulo="Prazo">16/09/2026</td>
+        <td data-rotulo="Situação"><span class="chip chip-concluida">Concluída</span></td>
+        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
+      </tr>
+      <tr>
+        <td data-rotulo="Número">OS-2026-0145</td>
+        <td data-rotulo="Cliente">Academia Corpo Ativo</td>
+        <td data-rotulo="Serviço">Manutenção de ar-condicionado</td>
+        <td data-rotulo="Prestador"><span class="secundario">Não atribuída</span></td>
+        <td data-rotulo="Prazo">12/09/2026</td>
+        <td data-rotulo="Situação"><span class="chip chip-cancelada">Cancelada</span></td>
+        <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>O administrador é o unico perfil que ve as ordens de todos os clientes e prestadores.</li><li>Ordem cancelada continua na lista, com o motivo registrado, e nunca é excluida.</li></ul></section>
+  </main>
+</div>
+
+</body>
+</html>

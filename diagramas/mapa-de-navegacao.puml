@@ -1,0 +1,89 @@
+@startuml mapa-de-navegacao
+' sgp - mapa de navegacao das telas do mvp - equipe 8
+!include _estilo.puml
+skinparam ranksep 30
+skinparam nodesep 20
+skinparam state {
+  BorderColor #1f4e79
+  BackgroundColor #eef3f8
+  FontColor #1f2328
+  StartColor #1f4e79
+  EndColor #1f4e79
+}
+skinparam StateFontSize 12
+
+title mapa de navegacao - sgp\n<size:11>as telas do mvp e os caminhos entre elas. o menu lateral leva de qualquer tela do perfil a qualquer outra</size>
+
+[*] --> T01
+
+state "T01 login" as T01
+
+state "perfil administrador" as ADM {
+  state "T02 painel do\nadministrador" as T02
+  state "T03 prestadores" as T03
+  state "T04 cadastro do prestador\n(dados, categorias,\ndocumentos, situacao)" as T04
+  state "T05 clientes" as T05
+  state "T06 cadastro\ndo cliente" as T06
+  state "T07 categorias\nde servico" as T07
+  state "T08 catalogo\nde servicos" as T08
+  state "T09 cadastro\ndo servico" as T09
+  state "T10 painel de\nvencimentos" as T10
+  state "T11 ordens\nde servico" as T11
+  state "T12 ordem - visao do\nadministrador" as T12
+
+  T02 --> T10 : documentos a vencer
+  T02 --> T11 : ordens abertas
+  T02 --> T03
+  T03 --> T04 : novo ou editar
+  T04 --> T03 : salvar ou cancelar
+  T05 --> T06 : novo ou editar
+  T06 --> T05 : salvar ou cancelar
+  T08 --> T09 : novo ou editar
+  T09 --> T08 : salvar ou cancelar
+  T10 --> T04 : regularizar\nou bloquear
+  T11 --> T12 : abrir ordem
+  T12 --> T11 : atribuir, cancelar\nou voltar
+}
+
+state "perfil prestador" as PRE {
+  state "T13 minhas ordens" as T13
+  state "T14 ordem - execucao" as T14
+  state "T15 meus documentos" as T15
+
+  T13 --> T14 : abrir ordem
+  T14 --> T13 : iniciar, registrar\nandamento ou concluir
+  T15 --> T13
+}
+
+state "perfil cliente" as CLI {
+  state "T16 minhas\nsolicitacões" as T16
+  state "T17 nova\nsolicitacao" as T17
+  state "T18 ordem - acompanhamento\ne avaliacao" as T18
+
+  T16 --> T17 : solicitar servico
+  T17 --> T16 : enviar ou cancelar
+  T16 --> T18 : abrir ordem
+  T18 --> T16 : avaliar ou voltar
+}
+
+T01 --> T02 : perfil administrador
+T01 --> T13 : perfil prestador
+T01 --> T16 : perfil cliente
+
+T02 -[#90a4b8,dashed]-> T05 : menu
+T02 -[#90a4b8,dashed]-> T07 : menu
+T02 -[#90a4b8,dashed]-> T08 : menu
+T13 -[#90a4b8,dashed]-> T15 : menu
+
+ADM --> [*] : sair
+PRE --> [*] : sair
+CLI --> [*] : sair
+
+legend bottom
+  <b>como ler</b>
+  linha continua: caminho seguido durante uma tarefa
+  linha tracejada: acesso direto pelo menu lateral, disponivel em qualquer tela do perfil
+  o retorno ao inicio representa o encerramento da sessao (UC02), que leva de volta ao login
+endlegend
+
+@enduml

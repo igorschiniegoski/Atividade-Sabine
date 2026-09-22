@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T04 · Elétrica Boratto ME · SGP</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="app">
+<header class="topo">
+  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <div class="usuario">
+    <div class="usuario-dados">
+      <strong>Marina Prado</strong>
+      <span>Administradora</span>
+    </div>
+    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+  </div>
+</header>
+<div class="corpo">
+  <nav class="menu">
+    <a class="menu-item" href="T02-painel-administrador.html">Painel</a>
+    <a class="menu-item" href="T11-ordens.html">Ordens de serviço</a>
+    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
+    <a class="menu-item" href="T10-vencimentos.html">Vencimentos</a>
+    <a class="menu-item" href="T05-clientes.html">Clientes</a>
+    <a class="menu-item" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item" href="T07-categorias.html">Categorias</a>
+    <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
+  </nav>
+  <main class="conteudo">
+    <div class="cabecalho-tela">
+      <div>
+        <span class="codigo-tela">T04</span>
+        <h1>Elétrica Boratto ME</h1>
+        <p class="subtitulo">Situação cadastral e histórico</p>
+      </div>
+      
+    </div>
+    <div class="abas"><a class="aba" href="T04-prestador-dados.html">Dados cadastrais</a><a class="aba" href="T04b-prestador-categorias.html">Categorias</a><a class="aba" href="T04c-prestador-documentos.html">Documentos</a><a class="aba ativa" href="T04d-prestador-situacao.html">Situação cadastral</a></div>
+<div class="colunas">
+  <div class="cartao">
+    <h2>Alterar situação cadastral</h2>
+    <div class="cartao-corpo">
+      <div class="campo largo">
+        <label>Situação atual</label>
+        <p style="margin:0"><span class="chip chip-pendente">Pendente</span></p>
+      </div>
+      <div class="campo largo">
+        <label>Nova situação <span class="obrigatorio">*</span></label>
+        <select><option>Ativo</option><option>Pendente</option><option>Bloqueado</option><option>Inativo</option></select>
+      </div>
+      <div class="campo largo">
+        <label>Motivo <span class="obrigatorio">*</span></label>
+        <textarea placeholder="Descreva o motivo da alteração"></textarea>
+        <span class="ajuda">Mínimo de 10 caracteres. O motivo fica registrado no histórico e no log (RF19).</span>
+      </div>
+    </div>
+    <div class="rodape-form">
+      <a class="btn btn-neutro" href="T03-prestadores.html">Cancelar</a>
+      <a class="btn btn-primario" href="T04d-prestador-situacao.html">Gravar alteração</a>
+    </div>
+  </div>
+
+  <div class="cartao">
+    <h2>Histórico de situação</h2>
+    <div class="cartao-corpo">
+      <ul class="tempo">
+        <li>
+          <strong>Ativo para pendente</strong>
+          <span class="quando">13/09/2026 às 00:05, pelo sistema</span>
+          Documento obrigatório vencido: certidão negativa de débitos (RN02).
+        </li>
+        <li>
+          <strong>Pendente para ativo</strong>
+          <span class="quando">14/03/2026 às 09:12, por Marina Prado</span>
+          Documentação regularizada após envio da nova certidão.
+        </li>
+        <li>
+          <strong>Cadastro criado como pendente</strong>
+          <span class="quando">03/02/2026 às 14:40, por Marina Prado</span>
+          Aguardando envio da documentação obrigatória.
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>O motivo exige no minimo 10 caracteres.</li><li>A alteracao vai para o historico e para o log de auditoria (RF19).</li><li>Quando a mudanca é automatica pela RN02, o responsavel registrado é o proprio sistema.</li></ul></section>
+  </main>
+</div>
+
+</body>
+</html>

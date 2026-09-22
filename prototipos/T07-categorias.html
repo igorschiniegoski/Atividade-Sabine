@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T07 · Categorias de serviço · SGP</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="app">
+<header class="topo">
+  <a class="marca" href="index.html">SGP<span>sistema de gestão de prestadores</span></a>
+  <div class="usuario">
+    <div class="usuario-dados">
+      <strong>Marina Prado</strong>
+      <span>Administradora</span>
+    </div>
+    <a class="btn btn-neutro btn-pequeno" href="T01-login.html">Sair</a>
+  </div>
+</header>
+<div class="corpo">
+  <nav class="menu">
+    <a class="menu-item" href="T02-painel-administrador.html">Painel</a>
+    <a class="menu-item" href="T11-ordens.html">Ordens de serviço</a>
+    <a class="menu-item" href="T03-prestadores.html">Prestadores</a>
+    <a class="menu-item" href="T10-vencimentos.html">Vencimentos</a>
+    <a class="menu-item" href="T05-clientes.html">Clientes</a>
+    <a class="menu-item" href="T08-servicos.html">Catálogo de serviços</a>
+    <a class="menu-item ativo" href="T07-categorias.html">Categorias</a>
+    <a class="menu-item menu-mapa" href="index.html">Mapa do protótipo</a>
+  </nav>
+  <main class="conteudo">
+    <div class="cabecalho-tela">
+      <div>
+        <span class="codigo-tela">T07</span>
+        <h1>Categorias de serviço</h1>
+        <p class="subtitulo">Classificação usada por serviços e prestadores</p>
+      </div>
+      
+    </div>
+    <div class="colunas">
+  <div class="cartao">
+    <h2>Categorias cadastradas</h2>
+    <table>
+      <thead><tr><th>Categoria</th><th>Serviços</th><th>Prestadores</th><th>Situação</th></tr></thead>
+      <tbody>
+        <tr><td data-rotulo="Categoria">Elétrica</td><td data-rotulo="Serviços">6</td><td data-rotulo="Prestadores">2</td><td data-rotulo="Situação"><span class="chip chip-ativo">Ativa</span></td></tr>
+        <tr><td data-rotulo="Categoria">Hidráulica</td><td data-rotulo="Serviços">4</td><td data-rotulo="Prestadores">1</td><td data-rotulo="Situação"><span class="chip chip-ativo">Ativa</span></td></tr>
+        <tr><td data-rotulo="Categoria">Limpeza</td><td data-rotulo="Serviços">3</td><td data-rotulo="Prestadores">1</td><td data-rotulo="Situação"><span class="chip chip-ativo">Ativa</span></td></tr>
+        <tr><td data-rotulo="Categoria">Manutenção predial</td><td data-rotulo="Serviços">5</td><td data-rotulo="Prestadores">1</td><td data-rotulo="Situação"><span class="chip chip-ativo">Ativa</span></td></tr>
+        <tr><td data-rotulo="Categoria">Refrigeração</td><td data-rotulo="Serviços">2</td><td data-rotulo="Prestadores">1</td><td data-rotulo="Situação"><span class="chip chip-ativo">Ativa</span></td></tr>
+        <tr><td data-rotulo="Categoria">Informática</td><td data-rotulo="Serviços">0</td><td data-rotulo="Prestadores">0</td><td data-rotulo="Situação"><span class="chip chip-inativo">Inativa</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cartao" style="flex:0 1 340px">
+    <h2>Nova categoria</h2>
+    <div class="cartao-corpo">
+      <div class="campo largo">
+        <label>Nome <span class="obrigatorio">*</span></label>
+        <input type="text" placeholder="Ex.: Jardinagem">
+        <span class="ajuda">O nome não pode se repetir.</span>
+      </div>
+      <div class="campo largo">
+        <label>Descrição</label>
+        <textarea placeholder="O que essa categoria abrange"></textarea>
+      </div>
+      <div class="campo largo">
+        <label class="marcador"><input type="checkbox" checked> Categoria ativa</label>
+      </div>
+    </div>
+    <div class="rodape-form">
+      <a class="btn btn-primario" href="T07-categorias.html">Adicionar</a>
+    </div>
+  </div>
+</div>
+    <section class="notas"><h2>Estados e validações previstos nesta tela</h2><ul><li>Categoria inativa some das listas de selecao, mas continua valendo para os registros antigos.</li><li>O nome da categoria nao pode se repetir.</li></ul></section>
+  </main>
+</div>
+
+</body>
+</html>
