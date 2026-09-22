@@ -19,7 +19,7 @@ LOGIN = """<div class="caixa-login">
     <div class="cartao-corpo">
       <div class="campo largo">
         <label>E-mail</label>
-        <input type="email" value="marina.prado@pontocerto.com.br">
+        <input type="email" value="rosangela.dias@predialmga.com.br">
       </div>
       <div class="campo largo com-erro" style="margin-bottom:8px">
         <label>Senha</label>
@@ -73,7 +73,7 @@ PAINEL_ADM = """<div class="indicadores">
     <tbody>
       <tr>
         <td data-rotulo="Número">OS-2026-0147</td>
-        <td data-rotulo="Cliente">Padaria Trigo de Ouro</td>
+        <td data-rotulo="Cliente">Padaria Dom Bosco</td>
         <td data-rotulo="Serviço">Desentupimento de pia<span class="secundario">Hidráulica</span></td>
         <td data-rotulo="Prazo">23/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-aberta">Aberta</span></td>
@@ -81,7 +81,7 @@ PAINEL_ADM = """<div class="indicadores">
       </tr>
       <tr>
         <td data-rotulo="Número">OS-2026-0149</td>
-        <td data-rotulo="Cliente">Escola Recanto</td>
+        <td data-rotulo="Cliente">Colégio São Vicente</td>
         <td data-rotulo="Serviço">Troca de disjuntor<span class="secundario">Elétrica</span></td>
         <td data-rotulo="Prazo">26/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-aberta">Aberta</span></td>
@@ -89,7 +89,7 @@ PAINEL_ADM = """<div class="indicadores">
       </tr>
       <tr>
         <td data-rotulo="Número">OS-2026-0148</td>
-        <td data-rotulo="Cliente">Supermercado Ponto Certo</td>
+        <td data-rotulo="Cliente">Supermercado Zanin</td>
         <td data-rotulo="Serviço">Instalação de tomadas<span class="secundario">Elétrica</span></td>
         <td data-rotulo="Prazo">24/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-execucao">Em execução</span></td>
@@ -107,14 +107,14 @@ PAINEL_ADM = """<div class="indicadores">
     </thead>
     <tbody>
       <tr>
-        <td data-rotulo="Prestador">João Pedro Alves</td>
+        <td data-rotulo="Prestador">José Carlos de Oliveira</td>
         <td data-rotulo="Documento">Certidão negativa de débitos</td>
         <td data-rotulo="Validade">12/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-vencido">Vencido há 10 dias</span></td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04c-prestador-documentos.html">Ver cadastro</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Prestador">Refrigeração Sul ME</td>
+        <td data-rotulo="Prestador">Polar Refrigeração</td>
         <td data-rotulo="Documento">Apólice de seguro</td>
         <td data-rotulo="Validade">28/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-vence">Vence em 6 dias</span></td>
@@ -156,40 +156,40 @@ PRESTADORES = """<div class="cartao">
     </thead>
     <tbody>
       <tr>
-        <td data-rotulo="Prestador">BORATTO INSTALACOES ELETRICAS LTDA<span class="secundario">Elétrica Boratto, (44) 99812-4410</span></td>
-        <td data-rotulo="CNPJ">12.345.678/0001-90</td>
+        <td data-rotulo="Prestador">ELETRICA SANTOS E CIA LTDA<span class="secundario">Elétrica Santos, (44) 99812-4410</span></td>
+        <td data-rotulo="CNPJ">07.412.865/0001-34</td>
         <td data-rotulo="Categorias">Elétrica</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
         <td class="numerico" data-rotulo="Nota">4,8</td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Prestador">JOAO PEDRO ALVES<span class="secundario">autônomo, (44) 99745-2201</span></td>
-        <td data-rotulo="CPF">123.456.789-09</td>
+        <td data-rotulo="Prestador">JOSE CARLOS DE OLIVEIRA<span class="secundario">autônomo, (44) 99745-2201</span></td>
+        <td data-rotulo="CPF">041.288.376-52</td>
         <td data-rotulo="Categorias">Hidráulica</td>
         <td data-rotulo="Situação"><span class="chip chip-pendente">Pendente</span></td>
         <td class="numerico" data-rotulo="Nota">4,2</td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Prestador">BRILHO FORTE SERVICOS DE LIMPEZA LTDA<span class="secundario">Brilho Forte, (44) 3025-7788</span></td>
-        <td data-rotulo="CNPJ">98.765.432/0001-10</td>
+        <td data-rotulo="Prestador">LIMPADORA SAO JUDAS LTDA<span class="secundario">São Judas, (44) 3025-7788</span></td>
+        <td data-rotulo="CNPJ">19.603.774/0001-08</td>
         <td data-rotulo="Categorias">Limpeza</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
         <td class="numerico" data-rotulo="Nota">4,5</td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Prestador">REFRIGERACAO SUL COM E SERVICOS LTDA<span class="secundario">Refrigeração Sul, (44) 99120-3377</span></td>
-        <td data-rotulo="CNPJ">21.876.543/0001-55</td>
+        <td data-rotulo="Prestador">POLAR REFRIGERACAO E CLIMATIZACAO LTDA<span class="secundario">Polar, (44) 99120-3377</span></td>
+        <td data-rotulo="CNPJ">26.155.908/0001-71</td>
         <td data-rotulo="Categorias">Refrigeração</td>
         <td data-rotulo="Situação"><span class="chip chip-bloqueado">Bloqueado</span></td>
         <td class="numerico" data-rotulo="Nota">Sem histórico</td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04-prestador-dados.html">Abrir</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Prestador">MARCOS ANTUNES DA SILVA<span class="secundario">autônomo, 44 99666-1180</span></td>
-        <td data-rotulo="CPF">987.654.321-00</td>
+        <td data-rotulo="Prestador">VALDIR APARECIDO DA SILVA<span class="secundario">autônomo, 44 99666-1180</span></td>
+        <td data-rotulo="CPF">883.041.529-15</td>
         <td data-rotulo="Categorias">Manutenção predial, Elétrica</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
         <td class="numerico" data-rotulo="Nota">3,9</td>
@@ -225,11 +225,11 @@ PRESTADOR_DADOS = abas_prestador("T04-prestador-dados.html") + """
       </div>
       <div class="campo">
         <label>Razão social <span class="obrigatorio">*</span></label>
-        <input type="text" value="BORATTO INSTALACOES ELETRICAS LTDA">
+        <input type="text" value="ELETRICA SANTOS E CIA LTDA">
       </div>
       <div class="campo com-erro">
         <label>CNPJ <span class="obrigatorio">*</span></label>
-        <input type="text" value="12.345.678/0001-00">
+        <input type="text" value="07.412.865/0001-00">
         <span class="erro">CNPJ inválido: o dígito verificador não confere.</span>
       </div>
     </div>
@@ -240,7 +240,7 @@ PRESTADOR_DADOS = abas_prestador("T04-prestador-dados.html") + """
       </div>
       <div class="campo">
         <label>E-mail</label>
-        <input type="email" value="contato@eletricaboratto.com.br">
+        <input type="email" value="eletricasantos@hotmail.com">
         <span class="ajuda">Usado também para liberar o acesso do prestador ao sistema.</span>
       </div>
     </div>
@@ -412,12 +412,12 @@ PRESTADOR_SITUACAO = abas_prestador("T04d-prestador-situacao.html") + """
         </li>
         <li>
           <strong>Pendente para ativo</strong>
-          <span class="quando">14/03/2026 às 09:12, por Marina Prado</span>
+          <span class="quando">14/03/2026 às 09:12, por Rosangela Dias</span>
           Documentação regularizada após envio da nova certidão.
         </li>
         <li>
           <strong>Cadastro criado como pendente</strong>
-          <span class="quando">03/02/2026 às 14:40, por Marina Prado</span>
+          <span class="quando">03/02/2026 às 14:40, por Rosangela Dias</span>
           Aguardando envio da documentação obrigatória.
         </li>
       </ul>
@@ -453,32 +453,32 @@ CLIENTES = """<div class="cartao">
     </thead>
     <tbody>
       <tr>
-        <td data-rotulo="Cliente">PONTO CERTO COMERCIO DE ALIMENTOS LTDA<span class="secundario">Supermercado Ponto Certo, compras@pontocerto.com.br</span></td>
-        <td data-rotulo="CNPJ">33.221.098/0001-44</td>
+        <td data-rotulo="Cliente">ZANIN COMERCIO DE ALIMENTOS LTDA<span class="secundario">Supermercado Zanin, compras@superzanin.com.br</span></td>
+        <td data-rotulo="CNPJ">05.937.612/0001-29</td>
         <td data-rotulo="Cidade">Maringá / PR</td>
         <td data-rotulo="Ordens abertas">2</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T06-cliente-cadastro.html">Abrir</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Cliente">TRIGO DE OURO PANIFICADORA LTDA<span class="secundario">Padaria Trigo de Ouro, contato@trigodeouro.com.br</span></td>
-        <td data-rotulo="CNPJ">45.789.012/0001-33</td>
+        <td data-rotulo="Cliente">PANIFICADORA DOM BOSCO LTDA<span class="secundario">Padaria Dom Bosco, padariadombosco@gmail.com</span></td>
+        <td data-rotulo="CNPJ">22.804.157/0001-60</td>
         <td data-rotulo="Cidade">Maringá / PR</td>
         <td data-rotulo="Ordens abertas">1</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T06-cliente-cadastro.html">Abrir</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Cliente">Escola Recanto<span class="secundario">secretaria@recanto.edu.br</span></td>
-        <td data-rotulo="CNPJ">77.654.321/0001-08</td>
+        <td data-rotulo="Cliente">Colégio São Vicente<span class="secundario">secretaria@saovicente.com.br</span></td>
+        <td data-rotulo="CNPJ">31.470.286/0001-95</td>
         <td data-rotulo="Cidade">Sarandi / PR</td>
         <td data-rotulo="Ordens abertas">1</td>
         <td data-rotulo="Situação"><span class="chip chip-ativo">Ativo</span></td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T06-cliente-cadastro.html">Abrir</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Cliente">Academia Corpo Ativo<span class="secundario">financeiro@corpoativo.com.br</span></td>
-        <td data-rotulo="CNPJ">59.113.447/0001-71</td>
+        <td data-rotulo="Cliente">Auto Posto Maringá<span class="secundario">adm@autopostomga.com.br</span></td>
+        <td data-rotulo="CNPJ">14.628.093/0001-47</td>
         <td data-rotulo="Cidade">Maringá / PR</td>
         <td data-rotulo="Ordens abertas">0</td>
         <td data-rotulo="Situação"><span class="chip chip-inativo">Inativo</span></td>
@@ -500,11 +500,11 @@ CLIENTE_CADASTRO = """<div class="cartao">
       </div>
       <div class="campo">
         <label>Razão social <span class="obrigatorio">*</span></label>
-        <input type="text" value="PONTO CERTO COMERCIO DE ALIMENTOS LTDA">
+        <input type="text" value="ZANIN COMERCIO DE ALIMENTOS LTDA">
       </div>
       <div class="campo">
         <label>CNPJ <span class="obrigatorio">*</span></label>
-        <input type="text" value="33.221.098/0001-44">
+        <input type="text" value="05.937.612/0001-29">
         <span class="ajuda">Não pode existir outro cadastro ativo com o mesmo número (RN10).</span>
       </div>
     </div>
@@ -515,7 +515,7 @@ CLIENTE_CADASTRO = """<div class="cartao">
       </div>
       <div class="campo">
         <label>E-mail</label>
-        <input type="email" value="compras@pontocerto.com.br">
+        <input type="email" value="compras@superzanin.com.br">
       </div>
     </div>
   </div>
@@ -712,7 +712,7 @@ VENCIMENTOS = """<div class="cartao">
     </thead>
     <tbody>
       <tr>
-        <td data-rotulo="Prestador">João Pedro Alves</td>
+        <td data-rotulo="Prestador">José Carlos de Oliveira</td>
         <td data-rotulo="Documento">Certidão negativa de débitos</td>
         <td data-rotulo="Validade">12/09/2026</td>
         <td data-rotulo="Atraso">10 dias</td>
@@ -720,7 +720,7 @@ VENCIMENTOS = """<div class="cartao">
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04d-prestador-situacao.html">Alterar situação</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Prestador">Refrigeração Sul ME</td>
+        <td data-rotulo="Prestador">Polar Refrigeração</td>
         <td data-rotulo="Documento">Certidão negativa de débitos</td>
         <td data-rotulo="Validade">30/08/2026</td>
         <td data-rotulo="Atraso">23 dias</td>
@@ -728,7 +728,7 @@ VENCIMENTOS = """<div class="cartao">
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04d-prestador-situacao.html">Alterar situação</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Prestador">Marcos Antunes</td>
+        <td data-rotulo="Prestador">Valdir Aparecido</td>
         <td data-rotulo="Documento">Certificado de curso NR-10</td>
         <td data-rotulo="Validade">18/09/2026</td>
         <td data-rotulo="Atraso">4 dias</td>
@@ -747,21 +747,21 @@ VENCIMENTOS = """<div class="cartao">
     </thead>
     <tbody>
       <tr>
-        <td data-rotulo="Prestador">Refrigeração Sul ME</td>
+        <td data-rotulo="Prestador">Polar Refrigeração</td>
         <td data-rotulo="Documento">Apólice de seguro</td>
         <td data-rotulo="Validade">28/09/2026</td>
         <td data-rotulo="Faltam"><span class="chip chip-vence">6 dias</span></td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04c-prestador-documentos.html">Ver documentos</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Prestador">Limpeza Brilho Forte Ltda</td>
+        <td data-rotulo="Prestador">Limpadora São Judas</td>
         <td data-rotulo="Documento">Certidão negativa de débitos</td>
         <td data-rotulo="Validade">04/10/2026</td>
         <td data-rotulo="Faltam"><span class="chip chip-vence">12 dias</span></td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T04c-prestador-documentos.html">Ver documentos</a></td>
       </tr>
       <tr>
-        <td data-rotulo="Prestador">Elétrica Boratto ME</td>
+        <td data-rotulo="Prestador">Elétrica Santos</td>
         <td data-rotulo="Documento">Certificado de curso NR-10</td>
         <td data-rotulo="Validade">11/10/2026</td>
         <td data-rotulo="Faltam"><span class="chip chip-vence">19 dias</span></td>
@@ -804,7 +804,7 @@ ORDENS = """<div class="cartao">
     <tbody>
       <tr>
         <td data-rotulo="Número">OS-2026-0149</td>
-        <td data-rotulo="Cliente">Escola Recanto</td>
+        <td data-rotulo="Cliente">Colégio São Vicente</td>
         <td data-rotulo="Serviço">Troca de disjuntor</td>
         <td data-rotulo="Prestador"><span class="secundario">Não atribuída</span></td>
         <td data-rotulo="Prazo">26/09/2026</td>
@@ -813,16 +813,16 @@ ORDENS = """<div class="cartao">
       </tr>
       <tr>
         <td data-rotulo="Número">OS-2026-0148</td>
-        <td data-rotulo="Cliente">Supermercado Ponto Certo</td>
+        <td data-rotulo="Cliente">Supermercado Zanin</td>
         <td data-rotulo="Serviço">Instalação de tomadas</td>
-        <td data-rotulo="Prestador">Elétrica Boratto ME</td>
+        <td data-rotulo="Prestador">Elétrica Santos</td>
         <td data-rotulo="Prazo">24/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-execucao">Em execução</span></td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Número">OS-2026-0147</td>
-        <td data-rotulo="Cliente">Padaria Trigo de Ouro</td>
+        <td data-rotulo="Cliente">Padaria Dom Bosco</td>
         <td data-rotulo="Serviço">Desentupimento de pia</td>
         <td data-rotulo="Prestador"><span class="secundario">Não atribuída</span></td>
         <td data-rotulo="Prazo">23/09/2026</td>
@@ -831,16 +831,16 @@ ORDENS = """<div class="cartao">
       </tr>
       <tr>
         <td data-rotulo="Número">OS-2026-0146</td>
-        <td data-rotulo="Cliente">Escola Recanto</td>
+        <td data-rotulo="Cliente">Colégio São Vicente</td>
         <td data-rotulo="Serviço">Limpeza pós-obra</td>
-        <td data-rotulo="Prestador">Limpeza Brilho Forte Ltda</td>
+        <td data-rotulo="Prestador">Limpadora São Judas</td>
         <td data-rotulo="Prazo">16/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-concluida">Concluída</span></td>
         <td class="acoes"><a class="btn btn-neutro btn-pequeno" href="T12-ordem-administrador.html">Abrir</a></td>
       </tr>
       <tr>
         <td data-rotulo="Número">OS-2026-0145</td>
-        <td data-rotulo="Cliente">Academia Corpo Ativo</td>
+        <td data-rotulo="Cliente">Auto Posto Maringá</td>
         <td data-rotulo="Serviço">Manutenção de ar-condicionado</td>
         <td data-rotulo="Prestador"><span class="secundario">Não atribuída</span></td>
         <td data-rotulo="Prazo">12/09/2026</td>
@@ -856,9 +856,9 @@ ORDENS = """<div class="cartao">
 ORDEM_ADM = """<div class="cartao">
   <div class="cartao-corpo">
     <div class="trilha">
-      <span class="passo feito">Aberta</span><span class="seta">&rsaquo;</span>
-      <span class="passo atual">Atribuída</span><span class="seta">&rsaquo;</span>
-      <span class="passo">Em execução</span><span class="seta">&rsaquo;</span>
+      <span class="passo atual">Aberta</span>
+      <span class="passo">Atribuída</span>
+      <span class="passo">Em execução</span>
       <span class="passo">Concluída</span>
     </div>
     <p class="subtitulo" style="margin-bottom:0">A ordem só anda nessa sequência. Não é possível pular etapa nem voltar
@@ -871,7 +871,7 @@ ORDEM_ADM = """<div class="cartao">
     <h2>Dados da ordem</h2>
     <div class="cartao-corpo">
       <div class="linha">
-        <div class="campo"><label>Cliente</label><p style="margin:0">Padaria Trigo de Ouro</p></div>
+        <div class="campo"><label>Cliente</label><p style="margin:0">Padaria Dom Bosco</p></div>
         <div class="campo"><label>Serviço</label><p style="margin:0">Desentupimento de pia<span class="secundario">Categoria: Hidráulica</span></p></div>
       </div>
       <div class="linha">
@@ -886,12 +886,12 @@ ORDEM_ADM = """<div class="cartao">
       </div>
       <div class="campo largo">
         <label>Prestador responsável</label>
-        <p style="margin:0">Elétrica Boratto ME<span class="secundario">Atribuída em 22/09/2026 às 09:15 por Marina Prado</span></p>
+        <p style="margin:0">Ainda não atribuída<span class="secundario">Aberta há 1 dia, prazo em 23/09/2026</span></p>
       </div>
     </div>
     <div class="rodape-form">
       <a class="btn btn-perigo" href="T12c-cancelar-ordem.html">Cancelar ordem</a>
-      <a class="btn btn-primario" href="T12b-atribuir-ordem.html">Trocar prestador</a>
+      <a class="btn btn-primario" href="T12b-atribuir-ordem.html">Atribuir prestador</a>
     </div>
   </div>
 
@@ -900,13 +900,8 @@ ORDEM_ADM = """<div class="cartao">
     <div class="cartao-corpo">
       <ul class="tempo">
         <li>
-          <strong>Atribuída a Elétrica Boratto ME</strong>
-          <span class="quando">22/09/2026 às 09:15, por Marina Prado</span>
-          Prestador apto: ativo, habilitado na categoria e com documentação em dia.
-        </li>
-        <li>
           <strong>Ordem aberta</strong>
-          <span class="quando">21/09/2026 às 08:47, por Padaria Trigo de Ouro</span>
+          <span class="quando">21/09/2026 às 08:47, por Padaria Dom Bosco</span>
           Prazo desejado informado pelo cliente.
         </li>
       </ul>
@@ -933,13 +928,13 @@ ATRIBUIR = """<div class="modal-fundo">
         <thead><tr><th>Prestador</th><th class="numerico">Nota</th><th class="numerico">Ordens abertas</th><th class="acoes">&nbsp;</th></tr></thead>
         <tbody>
           <tr>
-            <td data-rotulo="Prestador">ENCANACOES MARINGA LTDA<span class="secundario">31 ordens concluídas, última em 08/09</span></td>
+            <td data-rotulo="Prestador">HIDRAULICA TRES LAGOAS LTDA<span class="secundario">31 ordens concluídas, última em 08/09</span></td>
             <td class="numerico" data-rotulo="Nota">4,6</td>
             <td class="numerico" data-rotulo="Ordens">2</td>
             <td class="acoes"><a class="btn btn-primario btn-pequeno" href="T12-ordem-administrador.html">Atribuir</a></td>
           </tr>
           <tr>
-            <td data-rotulo="Prestador">HIDRO SERVICE INSTALACOES ME<span class="secundario">cadastrado em 02/09, 2 ordens concluídas</span></td>
+            <td data-rotulo="Prestador">J R INSTALACOES HIDRAULICAS ME<span class="secundario">cadastrado em 02/09, 2 ordens concluídas</span></td>
             <td class="numerico" data-rotulo="Nota">Sem histórico suficiente</td>
             <td class="numerico" data-rotulo="Ordens">0</td>
             <td class="acoes"><a class="btn btn-primario btn-pequeno" href="T12-ordem-administrador.html">Atribuir</a></td>
@@ -954,15 +949,15 @@ ATRIBUIR = """<div class="modal-fundo">
         <thead><tr><th>Prestador</th><th>Motivo do impedimento</th></tr></thead>
         <tbody>
           <tr>
-            <td data-rotulo="Prestador">João Pedro Alves</td>
+            <td data-rotulo="Prestador">José Carlos de Oliveira</td>
             <td data-rotulo="Motivo"><span class="chip chip-vencido">Documento vencido</span> Certidão negativa de débitos venceu em 12/09/2026</td>
           </tr>
           <tr>
-            <td data-rotulo="Prestador">Refrigeração Sul ME</td>
+            <td data-rotulo="Prestador">Polar Refrigeração</td>
             <td data-rotulo="Motivo"><span class="chip chip-bloqueado">Bloqueado</span> Situação cadastral não permite atribuição</td>
           </tr>
           <tr>
-            <td data-rotulo="Prestador">Elétrica Boratto ME</td>
+            <td data-rotulo="Prestador">Elétrica Santos</td>
             <td data-rotulo="Motivo"><span class="chip chip-neutro">Categoria</span> Não está habilitado em Hidráulica</td>
           </tr>
         </tbody>
@@ -1030,7 +1025,7 @@ MINHAS_ORDENS = """<div class="indicadores">
     <tbody>
       <tr>
         <td data-rotulo="Número">OS-2026-0148</td>
-        <td data-rotulo="Cliente">Supermercado Ponto Certo</td>
+        <td data-rotulo="Cliente">Supermercado Zanin</td>
         <td data-rotulo="Serviço">Instalação de tomadas</td>
         <td data-rotulo="Prazo">24/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-execucao">Em execução</span></td>
@@ -1038,7 +1033,7 @@ MINHAS_ORDENS = """<div class="indicadores">
       </tr>
       <tr>
         <td data-rotulo="Número">OS-2026-0150</td>
-        <td data-rotulo="Cliente">Escola Recanto</td>
+        <td data-rotulo="Cliente">Colégio São Vicente</td>
         <td data-rotulo="Serviço">Troca de disjuntor</td>
         <td data-rotulo="Prazo">26/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-atribuida">Atribuída</span></td>
@@ -1046,7 +1041,7 @@ MINHAS_ORDENS = """<div class="indicadores">
       </tr>
       <tr>
         <td data-rotulo="Número">OS-2026-0144</td>
-        <td data-rotulo="Cliente">Supermercado Ponto Certo</td>
+        <td data-rotulo="Cliente">Supermercado Zanin</td>
         <td data-rotulo="Serviço">Troca de disjuntor</td>
         <td data-rotulo="Prazo">15/09/2026</td>
         <td data-rotulo="Situação"><span class="chip chip-concluida">Concluída</span></td>
@@ -1070,10 +1065,7 @@ MINHAS_ORDENS = """<div class="indicadores">
 ORDEM_EXECUCAO = """<div class="cartao">
   <div class="cartao-corpo">
     <div class="trilha">
-      <span class="passo feito">Aberta</span><span class="seta">&rsaquo;</span>
-      <span class="passo feito">Atribuída</span><span class="seta">&rsaquo;</span>
-      <span class="passo atual">Em execução</span><span class="seta">&rsaquo;</span>
-      <span class="passo">Concluída</span>
+      <span class="passo feito">Aberta</span><span class="passo feito">Atribuída</span><span class="passo atual">Em execução</span><span class="passo">Concluída</span>
     </div>
   </div>
 </div>
@@ -1083,7 +1075,7 @@ ORDEM_EXECUCAO = """<div class="cartao">
     <h2>O que foi pedido</h2>
     <div class="cartao-corpo">
       <div class="linha">
-        <div class="campo"><label>Cliente</label><p style="margin:0">Supermercado Ponto Certo<span class="secundario">Rua Néo Alves Martins, 2810 - Zona 3</span></p></div>
+        <div class="campo"><label>Cliente</label><p style="margin:0">Supermercado Zanin<span class="secundario">Rua Néo Alves Martins, 2810 - Zona 3</span></p></div>
         <div class="campo"><label>Prazo</label><p style="margin:0">24/09/2026<span class="secundario">faltam 2 dias</span></p></div>
       </div>
       <div class="campo largo">
@@ -1128,9 +1120,9 @@ ORDEM_EXECUCAO = """<div class="cartao">
   <h2>Histórico</h2>
   <div class="cartao-corpo">
     <ul class="tempo">
-      <li><strong>Execução iniciada</strong><span class="quando">22/09/2026 às 10:02, por Elétrica Boratto ME</span></li>
-      <li><strong>Ordem atribuída</strong><span class="quando">21/09/2026 às 16:30, por Marina Prado</span></li>
-      <li><strong>Ordem aberta</strong><span class="quando">21/09/2026 às 15:58, por Supermercado Ponto Certo</span></li>
+      <li><strong>Execução iniciada</strong><span class="quando">22/09/2026 às 10:02, por Elétrica Santos</span></li>
+      <li><strong>Ordem atribuída</strong><span class="quando">21/09/2026 às 16:30, por Rosangela Dias</span></li>
+      <li><strong>Ordem aberta</strong><span class="quando">21/09/2026 às 15:58, por Supermercado Zanin</span></li>
     </ul>
   </div>
 </div>"""
@@ -1285,10 +1277,7 @@ ORDEM_CLIENTE = """<div class="aviso ok">
     <h2>Acompanhamento</h2>
     <div class="cartao-corpo">
       <div class="trilha">
-        <span class="passo feito">Aberta</span><span class="seta">&rsaquo;</span>
-        <span class="passo feito">Atribuída</span><span class="seta">&rsaquo;</span>
-        <span class="passo feito">Em execução</span><span class="seta">&rsaquo;</span>
-        <span class="passo atual">Concluída</span>
+        <span class="passo feito">Aberta</span>  <span class="passo feito">Atribuída</span>  <span class="passo feito">Em execução</span>  <span class="passo atual">Concluída</span>
       </div>
       <ul class="tempo" style="margin-top:16px">
         <li>
@@ -1297,7 +1286,7 @@ ORDEM_CLIENTE = """<div class="aviso ok">
           troquei o disjuntor geral por um de 40A, testei com a camara ligada e identifiquei o quadro com etiqueta nova
         </li>
         <li><strong>Execução iniciada</strong><span class="quando">15/09/2026 às 09:10</span></li>
-        <li><strong>Atribuída a Elétrica Boratto ME</strong><span class="quando">12/09/2026 às 14:05</span></li>
+        <li><strong>Atribuída a Elétrica Santos</strong><span class="quando">12/09/2026 às 14:05</span></li>
         <li><strong>Solicitação enviada</strong><span class="quando">12/09/2026 às 11:32</span></li>
       </ul>
     </div>
