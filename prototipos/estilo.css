@@ -232,6 +232,10 @@ tbody tr:nth-child(even) { background: #fafbfc; }
 tbody tr:hover { background: var(--caneta-clara); }
 tbody tr:last-child td { border-bottom: 0; }
 td.numerico, th.numerico { text-align: right; }
+
+/* numero de ordem, documento e data nao quebram no meio */
+td[data-rotulo="Número"], td[data-rotulo="Prazo"], td[data-rotulo="Validade"],
+td[data-rotulo="Aberta em"], td[data-rotulo="CNPJ"], td[data-rotulo="CPF"] { white-space: nowrap; }
 td .secundario, p .secundario { display: block; color: var(--tinta2); font-size: 12px; }
 td.acoes { text-align: right; white-space: nowrap; width: 1%; }
 
