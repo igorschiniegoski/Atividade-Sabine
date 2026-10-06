@@ -4,20 +4,23 @@ __pycache__/
 .venv/
 venv/
 
-# node e next.js (a partir da implementacao, na 3a entrega)
+# node e next.js (codigo do sistema, na pasta sistema/)
 node_modules/
 .next/
 out/
 build/
 dist/
 *.tsbuildinfo
+next-env.d.ts
+coverage/
 
 # variaveis de ambiente, nunca versionar
 .env
 .env.*
 !.env.example
 
-# banco local e arquivos de upload de teste
+# banco local (npm run banco cria a pasta .banco) e arquivos de upload de teste
+.banco/
 *.sqlite
 *.sqlite3
 uploads/
