@@ -1,7 +1,7 @@
 # sgp - sistema de gestao de prestadores
 ## diagrama de classes, modelo de dados e dicionario de dados
 
-**versao 1.1 - 22/09/2026 - complemento da 2ª entrega**
+**versao 1.2 - 06/10/2026 - revisado na 1ª entrega do 2º bimestre (20/10)**
 unicesumar - analise e desenvolvimento de sistemas
 imersao profissional - projeto de software - equipe 8
 
@@ -212,6 +212,8 @@ guarda quem pode entrar no sistema. prestador e cliente so recebem acesso quando
 | senha_hash | varchar(60) | sim | senha gravada com bcrypt | RNF01, nunca em texto puro |
 | perfil | varchar(15) | sim | administrador, prestador ou cliente | check com os tres valores |
 | ativo | boolean | sim | conta liberada para entrar | padrao verdadeiro |
+| tentativas_falhas | smallint | sim | senhas erradas seguidas desde o ultimo login certo | padrao zero. volta a zero no login certo e quando bloqueia (RNF12) |
+| bloqueado_ate | timestamp | nao | ate quando novas tentativas desse email sao recusadas | preenchido na 5ª senha errada seguida, com 15 minutos (RNF12) |
 | ultimo_acesso_em | timestamp | nao | momento do ultimo login | - |
 | criado_em | timestamp | sim | data de criacao da conta | padrao data atual |
 
@@ -360,7 +362,7 @@ tabela central do sistema. guarda o estado atual da ordem, enquanto o caminho pe
 | local_atendimento | varchar(200) | nao | onde o servico sera executado, quando for diferente do endereco do cadastro do cliente. fica em branco quando é no endereco principal | - |
 | prioridade | varchar(10) | sim | baixa, normal, alta ou urgente | check, padrao normal |
 | prazo | date | sim | prazo combinado, calculado pelo servico quando nao informado | nao pode ser anterior a abertura |
-| status | varchar(12) | sim | aberta, atribuida, em execucao, concluida ou cancelada | check, padrao aberta (RN05) |
+| status | varchar(12) | sim | aberta, atribuida, em_execucao, concluida ou cancelada | check, padrao aberta (RN05) |
 | aberta_por | integer | sim | usuario que registrou a ordem | fk para usuario |
 | data_abertura | timestamp | sim | momento da abertura | padrao data atual |
 | data_atribuicao | timestamp | nao | momento da atribuicao ao prestador | - |
@@ -480,7 +482,7 @@ os demais dados de teste serao ficticios, conforme a restricao de LGPD definida 
 
 | item | quando |
 |---|---|
-| script de criacao das tabelas | gerado pelas migracões do prisma no inicio da 3ª entrega |
+| script de criacao das tabelas | feito: `sistema/prisma/migrations`, com os check do dicionario escritos no final da migracao inicial |
 | ajuste fino dos indices | depois da carga de teste, medindo com a base de 5 mil registros do RNF06 |
 | rotina de anonimizacao para a LGPD | junto do modulo de cadastro, na release 1 |
 
@@ -503,3 +505,4 @@ os demais dados de teste serao ficticios, conforme a restricao de LGPD definida 
 |---|---|---|
 | 1.0 | 22/09/2026 | primeira versao, com o diagrama de classes, o modelo conceitual, o modelo logico e o dicionario de dados que estavam pendentes da 2ª entrega |
 | 1.1 | 22/09/2026 | acrescentados `nome_fantasia` em prestador e cliente e `local_atendimento` na ordem de servico. os tres apareciam nas telas do prototipo e nao existiam no modelo, o que quebrava a rastreabilidade entre tela e banco |
+| 1.2 | 06/10/2026 | `usuario` ganhou `tentativas_falhas` e `bloqueado_ate`, que faltavam pro RNF12. o status "em execucao" passou a ser gravado como `em_execucao`. o modelo virou a migracao inicial do prisma |

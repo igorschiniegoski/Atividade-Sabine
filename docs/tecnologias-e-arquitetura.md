@@ -1,7 +1,7 @@
 # sgp - sistema de gestao de prestadores
 ## especificacao de tecnologias e arquitetura
 
-**versao 1.0 - 21/08/2026 - 2ª entrega**
+**versao 1.1 - 06/10/2026 - 1ª entrega do 2º bimestre (20/10)**
 unicesumar - analise e desenvolvimento de sistemas
 imersao profissional - projeto de software - equipe 8
 
@@ -30,22 +30,22 @@ toda escolha desta secao foi avaliada por quatro criterios, nesta ordem:
 
 ### 3.1 quadro geral
 
-| camada | tecnologia | versao prevista | responsabilidade no sgp |
+| camada | tecnologia | versao em uso (20/10) | responsabilidade no sgp |
 |---|---|---|---|
 | linguagem | typescript | 5.x | tipagem estatica no front e no back, com o mesmo tipo compartilhado entre os dois |
-| framework web | next.js (app router) | 15 ou superior | renderizacao das telas e hospedagem das rotas de api no mesmo projeto |
-| biblioteca de interface | react | 19 | componentes das telas |
-| estilo | tailwind css + shadcn/ui | tailwind 4, shadcn/ui atual | layout responsivo e componentes prontos de formulario, tabela, dialogo e alerta |
-| runtime do servidor | node.js | 20 lts ou superior | execucao das rotas de api do proprio next |
-| acesso a dados | prisma orm | 6.x | mapeamento objeto-relacional, migracões versionadas e tipagem do banco |
-| banco de dados | postgresql | 16 ou superior | persistencia. instancia gerenciada com plano gratuito |
-| autenticacao | auth.js (next-auth) v5, estrategia credentials | 5.x | login por email e senha, sessao em cookie httponly e controle de perfil |
-| hash de senha | bcrypt | 5.x | armazenamento da senha conforme RNF01 |
-| validacao | zod | 3.x | validacao dos dados no cliente e no servidor a partir do mesmo esquema |
-| armazenamento de arquivos | storage de objetos do proprio provedor do banco | - | documentos e contratos em pdf, jpg e png |
-| hospedagem | vercel | plano hobby | publicacao continua a cada push na branch principal |
+| framework web | next.js (app router) | 15.5 | renderizacao das telas e hospedagem das rotas de api no mesmo projeto |
+| biblioteca de interface | react | 19.1 | componentes das telas |
+| estilo | tailwind css | 4. o shadcn/ui ficou pra quando houver dialogo de confirmacao (ver 3.3) | layout responsivo das telas, com as cores do prototipo |
+| runtime do servidor | node.js | 20 ou superior, testado no 22 | execucao das rotas de api do proprio next |
+| acesso a dados | prisma orm | 6.19 | mapeamento objeto-relacional, migracões versionadas e tipagem do banco |
+| banco de dados | postgresql | 18 no ambiente local. o gerenciado sera escolhido ate 06/11 | persistencia |
+| autenticacao | auth.js (next-auth) v5, estrategia credentials | 5.0 beta 32 | login por email e senha, sessao em cookie httponly e controle de perfil |
+| hash de senha | bcryptjs | 3.0 | armazenamento da senha conforme RNF01 |
+| validacao | zod | 3.25 | validacao dos dados no cliente e no servidor a partir do mesmo esquema |
+| armazenamento de arquivos | storage de objetos do proprio provedor do banco | ainda nao usado, entra com o RF07 | documentos e contratos em pdf, jpg e png |
+| hospedagem | vercel | plano hobby, a partir de 06/11 | publicacao continua a cada push na branch principal |
 | versionamento | git + github | - | repositorio unico, com commits identificaveis por integrante (RNF11) |
-| testes | vitest (unidade) e playwright (fluxo) | atual | verificacao das regras de negocio e dos fluxos criticos |
+| testes | vitest (unidade) e playwright (fluxo) | vitest 5. os fluxos estao em casos manuais documentados no testes.md, o playwright entra depois | verificacao das regras de negocio e dos fluxos criticos |
 | modelagem | plantuml | 1.2026 | diagramas versionados como texto junto do codigo |
 
 ### 3.2 justificativa por escolha
@@ -61,11 +61,26 @@ toda escolha desta secao foi avaliada por quatro criterios, nesta ordem:
 | **zod** | o mesmo esquema valida no formulario e na rota de api, o que garante o RNF02 sem duplicar regra | validacao so no formulario | deixaria a api aceitando requisicao manipulada, violando o RNF02 |
 | **vercel** | deploy automatico a cada push, url publica para o professor e integracao direta com o next.js | render, railway | atendem, mas exigem mais configuracao e o plano gratuito hiberna o servico |
 
+### 3.3 ajustes feitos ao comecar a implementacao (versao 1.1)
+
+na hora de escrever o codigo algumas escolhas da versao 1.0 mudaram. nenhuma mexe no estilo da arquitetura nem nos requisitos, sao ajustes de ferramenta.
+
+| o que estava previsto | o que foi feito | por que |
+|---|---|---|
+| postgresql local em docker | pacote `embedded-postgres`, que sobe o postgres com `npm run banco` | nenhum dos dois integrantes tem docker instalado. o pacote baixa o postgres junto com o `npm install` e funciona igual no windows dos dois |
+| `bcrypt` | `bcryptjs` | mesmo algoritmo e mesmo custo 10, so que escrito em javascript. o `bcrypt` precisa compilar codigo nativo no windows, o que costuma falhar na instalacao |
+| rotas de api em `/app/api` | server actions do next nas telas | a action ja roda no servidor e evita escrever uma rota e um fetch pra cada formulario. o RNF02 continua igual: a primeira linha de toda action é `exigirPerfil`. a unica rota de api é a do proprio auth.js |
+| shadcn/ui | tailwind puro, com as cores do `prototipos/estilo.css` | as telas ja estavam desenhadas no prototipo e os componentes do shadcn teriam que ser repintados. ele volta a ser avaliado quando entrar o primeiro dialogo de confirmacao (RNF05) |
+| codigo na raiz do repositorio | pasta `sistema/` | a raiz publica a documentacao e o prototipo. separar evita misturar as duas coisas |
+| primeiro deploy junto com o projeto | deploy em 06/11 | publicar exige o banco gerenciado, e essa escolha ja estava em aberto na secao 8 |
+
 ---
 
 ## 4. arquitetura da aplicacao
 
 ### 4.1 estilo arquitetural
+
+o desenho abaixo é o alvo do projeto inteiro. o que ja existe hoje no codigo esta no diagrama atualizado, logo depois.
 
 o sgp segue uma arquitetura **monolitica em camadas**, publicada como aplicacao unica. a separacao em microsservicos foi descartada por nao haver ganho: o sistema tem um unico dominio, um unico time e uma base de dados so.
 
@@ -99,6 +114,8 @@ o sgp segue uma arquitetura **monolitica em camadas**, publicada como aplicacao 
 |  transacionais |     |  contratos           |
 +----------------+     +----------------------+
 ```
+
+![arquitetura atual](../diagramas/arquitetura.png)
 
 ### 4.2 responsabilidade de cada camada
 
@@ -141,27 +158,33 @@ a regra que sustenta essa divisao é o RNF02: **nenhuma permissao é decidida na
 
 ---
 
-## 6. organizacao prevista do repositorio
+## 6. organizacao do repositorio
 
 ```
-/app                 rotas do next.js (telas e api)
-  /(auth)            login e recuperacao de acesso
-  /(admin)           telas do perfil administrador
-  /(prestador)       telas do perfil prestador
-  /(cliente)         telas do perfil cliente
-  /api               rotas de api
-/components          componentes reutilizaveis de interface
-/lib
-  /dominio           regras de negocio RN01 a RN12
-  /db                cliente prisma e consultas
-  /validacao         esquemas zod
-/prisma
-  schema.prisma      modelo de dados
-  /migrations        migracões versionadas
-/docs                documentacao das entregas
-/diagramas           fontes .puml e imagens geradas
-/prototipos          telas da 3a entrega
+/docs                     documentacao das entregas (este arquivo, testes, backlog...)
+/diagramas                fontes .puml e imagens geradas
+/prototipos               telas da 3a entrega do 1º bimestre
+/ferramentas              scripts python que geram o html dos documentos e o prototipo
+/sistema                  o codigo do sgp
+  /app
+    /login                tela de login e a action de entrar
+    /(admin)              telas do administrador, com o layout que confere o perfil
+      /prestadores        lista, novo, edicao e a action de salvar
+    /api/auth             rota do auth.js
+  /lib
+    /dominio              regras de negocio (RN10, RNF12...) e os testes delas
+    /validacao            esquemas zod
+    db.ts                 cliente prisma
+    permissao.ts          exigirPerfil
+  /prisma
+    schema.prisma         modelo de dados
+    /migrations           migracões versionadas
+    seed.ts               carga inicial
+  /scripts/banco.mjs      sobe o postgres local
+  auth.ts, auth.config.ts, middleware.ts   configuracao do login e da sessao
 ```
+
+as pastas `(prestador)` e `(cliente)` previstas na versao 1.0 entram quando as telas desses perfis forem feitas.
 
 ---
 
@@ -171,20 +194,20 @@ a regra que sustenta essa divisao é o RNF02: **nenhuma permissao é decidida na
 |---|---|
 | editor | vs code, com extensões de eslint, prettier e prisma |
 | gerenciador de pacotes | npm |
-| banco local | instancia postgresql em docker, para nao depender de internet durante o desenvolvimento |
-| variaveis de ambiente | arquivo `.env.local`, fora do versionamento. o repositorio guarda apenas o `.env.example` |
-| fluxo de trabalho | branch por funcionalidade, pull request revisado pelo outro integrante antes do merge na principal |
-| publicacao | automatica na vercel a cada merge na branch principal |
+| banco local | postgresql pelo `embedded-postgres` (`npm run banco`), sem docker e sem instalar nada a parte |
+| variaveis de ambiente | arquivo `.env` dentro de `sistema/`, fora do versionamento. o repositorio guarda apenas o `.env.example`, com os nomes e sem segredo |
+| fluxo de trabalho | commits pequenos citando a tarefa do backlog. branch por funcionalidade e pull request quando os dois estiverem mexendo no codigo ao mesmo tempo |
+| publicacao | na vercel a partir de 06/11 |
 
 ---
 
 ## 8. decisões ainda em aberto
 
-as definicões abaixo nao bloqueiam o inicio do desenvolvimento e serao fechadas ate a 3ª entrega.
+as definicões abaixo nao bloquearam o inicio do desenvolvimento. a do banco gerenciado agora tem data, porque a publicacao depende dela.
 
 | item | opcões em avaliacao | quando decidir |
 |---|---|---|
-| provedor do postgresql gerenciado | neon ou supabase | ao criar o projeto, junto com a definicao do storage, porque a escolha do banco arrasta o storage |
+| provedor do postgresql gerenciado | neon ou supabase | ate 06/11, junto com a definicao do storage, porque a escolha do banco arrasta o storage |
 | storage dos documentos | vercel blob ou storage do supabase | mesmo momento acima |
 | geracao do pdf do relatorio (UC24) | biblioteca no servidor ou impressao pelo navegador | apenas se UC24 sair do backlog |
 | biblioteca de grafico no relatorio | recharts ou tabela simples sem grafico | na construcao do UC20 |
@@ -216,3 +239,4 @@ as definicões abaixo nao bloqueiam o inicio do desenvolvimento e serao fechadas
 | versao | data | alteracao |
 |---|---|---|
 | 1.0 | 21/08/2026 | primeira versao, detalhando a stack que estava indicada apenas em nivel de intencao na 1ª entrega |
+| 1.1 | 06/10/2026 | versões reais em uso, ajustes da secao 3.3, diagrama da arquitetura atual e organizacao real das pastas |

@@ -1,5 +1,6 @@
 @startuml arquitetura
-' sgp - diagrama de arquitetura previsto - equipe 8
+' sgp - diagrama de arquitetura - equipe 8
+' versao 1.1 (20/10): mostra so o que ja existe no codigo. storage e vercel voltam quando forem usados
 !include _estilo.puml
 skinparam ranksep 40
 skinparam nodesep 30
@@ -14,57 +15,44 @@ skinparam database {
   BackgroundColor #eef3f8
   FontColor #1f2328
 }
-skinparam cloud {
-  BorderColor #90a4b8
-  BackgroundColor #ffffff
-  FontColor #1f4e79
-}
 
-title arquitetura prevista - sgp\n<size:11>monolito em camadas publicado como aplicacao unica
+title arquitetura atual - sgp\n<size:11>monolito em camadas, situacao da entrega de 20/10/2026
 
 actor "administrador" as ADM
-actor "prestador" as PRE
-actor "cliente" as CLI
 
 rectangle "navegador\nchrome, edge ou firefox" as NAV #f4f7fb
 
 ADM --> NAV
-PRE --> NAV
-CLI --> NAV
 
-rectangle "next.js 15 hospedado na vercel" as APP {
-  component "camada de apresentacao\ntelas em react 19, componentes shadcn/ui,\nmascaras e mensagens de retorno" as C1
-  component "camada de aplicacao\nrotas de api, sessao do auth.js,\nautorizacao por perfil e validacao com zod" as C2
-  component "camada de dominio\nRN01 a RN12, verificacao de aptidao (UC22)\ne maquina de estado da ordem (RN05)" as C3
-  component "camada de acesso a dados\nprisma orm, transacões e migracões" as C4
+rectangle "next.js 15 na pasta sistema/\nnpm run dev, porta 3000" as APP {
+  component "camada de apresentacao\ntelas em react 19 com tailwind\napp/login e app/(admin)" as C1
+  component "camada de aplicacao\nserver actions, middleware e sessao do auth.js,\nexigirPerfil e validacao com zod" as C2
+  component "camada de dominio (lib/dominio)\nRN10 cpf e cnpj, RNF12 bloqueio do login.\nas demais regras entram com as proximas telas" as C3
+  component "camada de acesso a dados\nprisma orm 6 e migracões" as C4
 
-  C1 --> C2 : chamada http\ninterna
+  C1 --> C2 : envio do formulario\n(server action)
   C2 --> C3 : delega a decisao\nde negocio
   C3 --> C4 : pede e grava\nos dados
 }
 
-database "postgresql 16\n14 tabelas do\nmodelo logico" as DB
-cloud "storage de objetos\ndocumentos e contratos\nem pdf, jpg e png" as ST
+database "postgresql 18 local\nembedded-postgres, porta 5433\n14 tabelas do modelo logico" as DB
 
-NAV --> C1 : https
+NAV --> C1 : http
 C4 --> DB : sql
-C2 --> ST : upload e url assinada
 
 note right of C2
   RNF02 - a permissao é decidida aqui,
-  nunca na tela. esconder o botao é
-  apenas conforto visual
-end note
-
-note bottom of ST
-  RNF09 - o banco guarda somente a url
-  e os metadados do arquivo
+  nunca na tela. toda pagina e toda action
+  chamam exigirPerfil antes de qualquer coisa
 end note
 
 legend bottom
   <b>por que monolito</b>
   um unico dominio, um time de dois integrantes e uma base de dados so.
   dividir em microsservicos acrescentaria deploy e rede sem resolver nenhum problema do projeto.
+  <b>o que ainda nao aparece</b>
+  prestador e cliente ainda nao tem tela. o storage de arquivos entra com o RF07
+  e a publicacao na vercel com banco gerenciado esta prevista para 06/11.
 endlegend
 
 @enduml

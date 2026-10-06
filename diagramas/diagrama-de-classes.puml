@@ -16,6 +16,8 @@ package "acesso" {
     -senhaHash: String
     -perfil: Perfil
     -ativo: Boolean
+    -tentativasFalhas: Integer
+    -bloqueadoAte: DateTime
     -ultimoAcessoEm: DateTime
     +autenticar(senha): Boolean
     +encerrarSessao(): void

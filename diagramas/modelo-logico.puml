@@ -16,6 +16,8 @@ entity "usuario" as usuario {
   *senha_hash : varchar(60)
   *perfil : varchar(15)
   *ativo : boolean
+  *tentativas_falhas : smallint
+  bloqueado_ate : timestamp
   ultimo_acesso_em : timestamp
   *criado_em : timestamp
 }
