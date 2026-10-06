@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* mesmas cores do prototipo (prototipos/estilo.css) */
+@theme {
+  --color-tinta: #22262a;
+  --color-tinta2: #646b72;
+  --color-papel: #f0efec;
+  --color-regua: #d4d2cd;
+  --color-regua-clara: #e6e4df;
+  --color-caneta: #a8480c;
+  --color-caneta-escura: #2b2f33;
+  --color-caneta-clara: #f7eadf;
+  --color-carimbo: #a4231f;
+  --color-carimbo-fundo: #fbeceb;
+  --color-ocre: #8a5a00;
+  --color-ocre-fundo: #fdf4e0;
+  --color-verde: #1c5c37;
+  --color-verde-fundo: #e8f1ea;
+  --color-ardosia: #3c4347;
+  --color-ardosia-fundo: #eceeef;
+  --font-sans: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+}
+
+body {
+  background: var(--color-papel);
+  color: var(--color-tinta);
+}
+
+@layer components {
+  .rotulo {
+    @apply mb-1 block text-sm font-semibold text-tinta;
+  }
+  .campo {
+    @apply w-full rounded border border-regua bg-white px-2.5 py-1.5 text-sm text-tinta outline-none focus:border-caneta;
+  }
+  .campo-erro {
+    @apply border-carimbo bg-carimbo-fundo;
+  }
+  .msg-erro {
+    @apply mt-1 text-xs font-semibold text-carimbo;
+  }
+  .botao {
+    @apply inline-flex cursor-pointer items-center justify-center rounded border border-regua bg-white px-3.5 py-1.5 text-sm font-semibold text-tinta hover:bg-papel;
+  }
+  .botao-principal {
+    @apply inline-flex cursor-pointer items-center justify-center rounded border border-caneta-escura bg-caneta px-3.5 py-1.5 text-sm font-semibold text-white hover:brightness-110 disabled:cursor-wait disabled:opacity-60;
+  }
+  .cartao {
+    @apply rounded border border-regua bg-white;
+  }
+  .cartao-titulo {
+    @apply border-b border-regua-clara bg-[#f7f6f4] px-4 py-2.5 text-sm font-semibold;
+  }
+}
