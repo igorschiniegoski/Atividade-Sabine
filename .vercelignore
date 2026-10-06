@@ -1,0 +1,4 @@
+# o site publicado na vercel é so a documentacao e o prototipo (index.html da raiz).
+# o codigo do sistema nao vai junto: tem o .env e o banco local
+sistema
+ferramentas
