@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>sgp - casos de teste e defeitos - equipe 8</title>
+<style>
+  @page { size: A4; margin: 2.5cm 2.2cm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    font-size: 11.5pt;
+    line-height: 1.45;
+    color: #222;
+    max-width: 21cm;
+    margin: 0 auto;
+    padding: 2.5cm 2.2cm;
+    background: #fff;
+  }
+  h1, h2, h3 { color: #1f4e79; margin-bottom: .4em; }
+  h1 { font-size: 20pt; }
+  h2 { font-size: 14pt; margin-top: 1.6em; border-bottom: 1px solid #d0d7de; padding-bottom: .2em; }
+  h3 { font-size: 12pt; margin-top: 1.2em; }
+  p { margin: .5em 0; text-align: justify; }
+  ul { margin: .4em 0 .8em 0; padding-left: 1.4em; }
+  li { margin: .25em 0; }
+  table { border-collapse: collapse; width: 100%; margin: .8em 0 1.2em 0; font-size: 10.5pt; }
+  th { background: #1f4e79; color: #fff; text-align: left; padding: 6px 8px; font-weight: 600; }
+  td { border: 1px solid #c8d1da; padding: 6px 8px; vertical-align: top; }
+  tr:nth-child(even) td { background: #f6f8fa; }
+  .cod { white-space: nowrap; font-weight: 600; width: 62px; }
+  .capa { text-align: center; page-break-after: always; padding-top: 3cm; }
+  .capa .inst { font-size: 12pt; letter-spacing: .5px; color: #444; }
+  .capa .titulo { font-size: 24pt; color: #1f4e79; font-weight: bold; margin-top: 4cm; }
+  .capa .sub { font-size: 14pt; color: #444; margin-top: .4cm; }
+  .capa .equipe { margin-top: 3.5cm; font-size: 12pt; line-height: 1.9; }
+  .capa .rodape { margin-top: 3cm; font-size: 11pt; color: #555; }
+  .box { background: #eef3f8; border-left: 4px solid #1f4e79; padding: 10px 14px; margin: 1em 0; }
+  .sumario ol { padding-left: 1.4em; }
+  .sumario li { margin: .3em 0; }
+  @media print { body { padding: 0; } h2 { page-break-after: avoid; } table { page-break-inside: avoid; } }
+
+  img { max-width: 100%; height: auto; display: block; margin: 1em auto; }
+  figure { margin: 1.2em 0; text-align: center; page-break-inside: avoid; }
+  pre { background: #f6f8fa; border: 1px solid #d0d7de; padding: 10px 12px;
+        font-family: Consolas, "Courier New", monospace; font-size: 9.5pt;
+        line-height: 1.35; overflow-x: auto; page-break-inside: avoid; }
+  code { font-family: Consolas, "Courier New", monospace; font-size: 10pt;
+         background: #f0f3f6; padding: 1px 4px; border-radius: 3px; }
+  pre code { background: none; padding: 0; font-size: 9.5pt; }
+  h4 { color: #1f4e79; font-size: 11.5pt; margin-top: 1em; margin-bottom: .3em; }
+  hr { border: 0; border-top: 1px solid #d0d7de; margin: 1.6em 0; }
+  ol li, ul li { text-align: justify; }
+</style>
+</head>
+<body>
+
+<div class="capa">
+  <div class="inst">unicesumar<br>analise e desenvolvimento de sistemas<br>imersao profissional - projeto de software</div>
+  <div class="titulo">sgp - sistema de gestao de prestadores</div>
+  <div class="sub">casos de teste e registro de defeitos<br>1&ordf; entrega do 2&ordm; bimestre - equipe 8</div>
+  <div class="equipe">
+    <strong>integrantes</strong><br>
+    luis gustavo boratto de oliveira<br>
+    igor schiniegoski pallisser
+  </div>
+  <div class="rodape">outubro de 2026</div>
+</div>
+
+<h2>1. o que este documento registra</h2>
+<p>os testes do que ja foi implementado: login e cadastro e consulta de prestadores, que é o recorte escolhido pra entrega de 20/10 (ver <a href="entrega-20-10.md">entrega-20-10.md</a>). é um documento vivo, a cada entrega entram os casos das funcionalidades novas e os que ja existem sao executados de novo.</p>
+<p>tem dois tipos de teste:</p>
+<table>
+<thead>
+<tr>
+<th>tipo</th>
+<th>o que cobre</th>
+<th>como roda</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unitario (vitest)</td>
+<td>as regras que ficam em <code>lib/dominio</code>: digito verificador do cpf e do cnpj (RN10) e a contagem do bloqueio de login (RNF12)</td>
+<td><code>npm test</code> dentro da pasta <code>sistema</code></td>
+</tr>
+<tr>
+<td>manual, no navegador</td>
+<td>o uso de verdade pela tela, incluindo banco, sessao e mensagens</td>
+<td>seguindo os passos de cada caso abaixo</td>
+</tr>
+</tbody>
+</table>
+<h2>2. condicões de execucao</h2>
+<table>
+<thead>
+<tr>
+<th>item</th>
+<th>valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>06/10/2026</td>
+</tr>
+<tr>
+<td>versao testada</td>
+<td>commit <code>431d5c7</code> (casos CT01 a CT21). o reteste do defeito D01 foi no commit <code>47172a2</code></td>
+</tr>
+<tr>
+<td>ambiente</td>
+<td>windows 11, node 22.14, google chrome, tela de 1280x800 e de 390x844 (celular)</td>
+</tr>
+<tr>
+<td>como o ambiente foi montado</td>
+<td>clone novo do repositorio numa pasta vazia, seguindo so o readme: <code>npm install</code>, <code>npm run banco</code>, <code>npm run db:migrar</code>, <code>npm run db:carga</code> e <code>npm run dev</code>. serviu tambem pra conferir que o passo a passo do readme funciona do zero</td>
+</tr>
+<tr>
+<td>dados</td>
+<td>os da carga inicial (<code>prisma/seed.ts</code>), todos ficticios. usuarios de teste <code>luis@sgp.teste</code> e <code>igor@sgp.teste</code>, senha <code>sgp@2026</code></td>
+</tr>
+</tbody>
+</table>
+<h2>3. testes unitarios</h2>
+<p>11 testes, todos passando. a saida completa do <code>npm test</code> esta em <a href="evidencias/entrega-20-10/testes-unitarios.txt">evidencias/entrega-20-10/testes-unitarios.txt</a>.</p>
+<table>
+<thead>
+<tr>
+<th>arquivo</th>
+<th>o que testa</th>
+<th>testes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lib/dominio/cpf-cnpj.test.ts</code></td>
+<td>cpf e cnpj validos com e sem mascara, digito errado, numero repetido (111.111.111-11), tamanho errado, escolha entre cpf e cnpj pelo tipo de pessoa e a formatacao pra tela</td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>lib/dominio/login.test.ts</code></td>
+<td>as quatro primeiras senhas erradas so somam, a quinta bloqueia por 15 minutos e zera a contagem, e o bloqueio acaba quando passa o horario</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h2>4. casos de teste manuais</h2>
+<p>a coluna evidencia aponta pro print salvo em <code>docs/evidencias/entrega-20-10/</code>. caso sem print teve o resultado conferido na propria tela ou no banco, e o que apareceu esta descrito na coluna observado.</p>
+<h3>4.1 login e acesso (RF01, RNF02, RNF03, RNF12)</h3>
+<table>
+<thead>
+<tr>
+<th>caso</th>
+<th>requisito</th>
+<th>passos e entrada</th>
+<th>esperado</th>
+<th>observado</th>
+<th>situacao</th>
+<th>evidencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CT01</td>
+<td>RF01</td>
+<td>entrar com <code>luis@sgp.teste</code> e a senha certa</td>
+<td>abrir a lista de prestadores com o nome do usuario no topo</td>
+<td>abriu <code>/prestadores</code>, cabecalho com "Luis Gustavo Boratto - Administrador"</td>
+<td>passou</td>
+<td>CT01-login-valido-lista-de-prestadores.png</td>
+</tr>
+<tr>
+<td>CT02</td>
+<td>RF01</td>
+<td>mesmo email com a senha <code>senhaerrada</code></td>
+<td>ficar no login com "E-mail ou senha inválidos." e manter o email digitado</td>
+<td>ficou no login com a mensagem e o email preenchido (depois da correcao do D01)</td>
+<td>passou no reteste</td>
+<td>CT02-senha-errada.png</td>
+</tr>
+<tr>
+<td>CT03</td>
+<td>RF01, UC01</td>
+<td>email que nao existe, <code>naoexiste@sgp.teste</code></td>
+<td>a mesma mensagem do CT02, sem dizer que o email nao existe</td>
+<td>mesma mensagem, "E-mail ou senha inválidos."</td>
+<td>passou</td>
+<td>-</td>
+</tr>
+<tr>
+<td>CT04</td>
+<td>RNF12</td>
+<td>errar a senha do <code>igor@sgp.teste</code> 5 vezes seguidas e depois tentar com a senha certa</td>
+<td>da 1ª a 4ª: senha invalida. na 5ª e na tentativa com a senha certa: aviso de bloqueio de 15 minutos</td>
+<td>1ª a 4ª "E-mail ou senha inválidos.", 5ª e 6ª "Muitas tentativas erradas para este e-mail. Tente de novo em 15 minutos.", sem entrar</td>
+<td>passou no reteste</td>
+<td>CT04-bloqueio-apos-cinco-erros.png</td>
+</tr>
+<tr>
+<td>CT05</td>
+<td>RNF02</td>
+<td>sem estar logado, abrir direto <code>/prestadores/novo</code></td>
+<td>ser levado pro login</td>
+<td>foi levado pra <code>/login</code></td>
+<td>passou</td>
+<td>CT05-sem-login-volta-para-login.png</td>
+</tr>
+<tr>
+<td>CT18</td>
+<td>RNF03</td>
+<td>depois do login, conferir o cookie de sessao no navegador</td>
+<td>sessao valendo 30 minutos</td>
+<td>cookie <code>authjs.session-token</code> vencendo 30 minutos depois do login. a renovacao a cada requisicao vem do <code>updateAge: 0</code> no <code>auth.config.ts</code></td>
+<td>passou</td>
+<td>-</td>
+</tr>
+<tr>
+<td>CT21</td>
+<td>RNF01</td>
+<td>consultar a tabela <code>usuario</code> no banco</td>
+<td>senha gravada so como hash bcrypt</td>
+<td>as duas senhas gravadas como <code>$2b$10$...</code>, 60 caracteres, nenhuma em texto puro</td>
+<td>passou</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3>4.2 cadastro e consulta de prestadores (RF02, RN10, RNF04, RNF06)</h3>
+<table>
+<thead>
+<tr>
+<th>caso</th>
+<th>requisito</th>
+<th>passos e entrada</th>
+<th>esperado</th>
+<th>observado</th>
+<th>situacao</th>
+<th>evidencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CT12</td>
+<td>RF02</td>
+<td>em novo prestador, clicar em salvar sem preencher nada</td>
+<td>nao salvar e destacar os campos obrigatorios</td>
+<td>nao salvou, 8 campos destacados e o aviso "Confira os campos destacados."</td>
+<td>passou</td>
+<td>CT12-campos-obrigatorios.png</td>
+</tr>
+<tr>
+<td>CT09</td>
+<td>RN10</td>
+<td>pessoa juridica com cnpj <code>42.091.765/0001-00</code> (digito errado) e o resto preenchido</td>
+<td>recusar no campo cnpj e manter o que ja foi digitado</td>
+<td>"CNPJ inválido: o dígito verificador não confere." e a razao social continuou preenchida</td>
+<td>passou</td>
+<td>CT09-cnpj-digito-errado.png</td>
+</tr>
+<tr>
+<td>CT07</td>
+<td>RF02</td>
+<td>o mesmo cadastro com o cnpj certo, <code>42.091.765/0001-24</code></td>
+<td>salvar, voltar pra lista com aviso e o prestador aparecer como pendente</td>
+<td>voltou com "Prestador cadastrado. Ele entra como pendente até a documentação ser conferida." e a linha nova com situacao pendente</td>
+<td>passou</td>
+<td>CT07-cadastro-pj-valido.png</td>
+</tr>
+<tr>
+<td>CT11</td>
+<td>RN10</td>
+<td>outro cadastro usando o mesmo cnpj <code>42091765000124</code>, sem mascara</td>
+<td>recusar porque o cnpj ja existe</td>
+<td>"Já existe um prestador cadastrado com este CNPJ."</td>
+<td>passou</td>
+<td>CT11-cnpj-repetido.png</td>
+</tr>
+<tr>
+<td>CT10</td>
+<td>RN10</td>
+<td>pessoa fisica com cpf <code>562.190.837-00</code> (digito errado)</td>
+<td>o rotulo do campo virar CPF e recusar o numero</td>
+<td>rotulo "CPF" e a mensagem "CPF inválido: o dígito verificador não confere."</td>
+<td>passou</td>
+<td>CT10-cpf-digito-errado.png</td>
+</tr>
+<tr>
+<td>CT08</td>
+<td>RF02</td>
+<td>o mesmo cadastro com o cpf certo, <code>562.190.837-68</code></td>
+<td>salvar</td>
+<td>"Prestador cadastrado..."</td>
+<td>passou</td>
+<td>-</td>
+</tr>
+<tr>
+<td>CT20</td>
+<td>RF02, RF09</td>
+<td>consultar a tabela <code>historico_situacao</code> depois do CT07 e do CT08</td>
+<td>cada cadastro novo ter o primeiro registro do historico</td>
+<td>2 registros: situacao anterior vazia, nova "pendente", motivo "cadastro inicial do prestador", feito pelo luis</td>
+<td>passou</td>
+<td>-</td>
+</tr>
+<tr>
+<td>CT13</td>
+<td>RF02</td>
+<td>buscar por <code>eletrica</code></td>
+<td>trazer so os prestadores com esse nome</td>
+<td>2 encontrados: central eletrica zona sete e eletrica santos</td>
+<td>passou</td>
+<td>CT13-busca-por-nome.png</td>
+</tr>
+<tr>
+<td>CT14</td>
+<td>RF02</td>
+<td>buscar pelo cnpj com mascara <code>07.412.865/0001-04</code></td>
+<td>achar o prestador mesmo com ponto, barra e traco</td>
+<td>trouxe so a eletrica santos</td>
+<td>passou</td>
+<td>-</td>
+</tr>
+<tr>
+<td>CT15</td>
+<td>RF02</td>
+<td>filtrar a situacao pendente</td>
+<td>listar so pendentes</td>
+<td>4 linhas, todas pendentes</td>
+<td>passou</td>
+<td>CT15-filtro-pendente.png</td>
+</tr>
+<tr>
+<td>CT16</td>
+<td>RF02</td>
+<td>abrir o prestador do CT07, trocar o telefone pra <code>(44) 3031-2020</code> e salvar</td>
+<td>salvar e mostrar o telefone novo na lista</td>
+<td>"Alterações salvas." e a linha com o telefone novo</td>
+<td>passou</td>
+<td>CT16-edicao-salva.png</td>
+</tr>
+<tr>
+<td>CT17</td>
+<td>RF02</td>
+<td>desligar o banco (<code>ctrl+c</code> no <code>npm run banco</code>) e o sistema, ligar os dois de novo e buscar <code>zona</code></td>
+<td>o prestador do CT07 continuar la, com o telefone do CT16</td>
+<td>continuou, com o telefone (44) 3031-2020</td>
+<td>passou</td>
+<td>CT17-dados-continuam-apos-reiniciar.png</td>
+</tr>
+<tr>
+<td>CT19</td>
+<td>RNF04</td>
+<td>abrir o cadastro numa tela de 390 px de largura</td>
+<td>nenhuma rolagem horizontal, campos um embaixo do outro</td>
+<td>conteudo com 375 px dentro dos 390, campos empilhados</td>
+<td>passou</td>
+<td>CT19-celular-390px.png</td>
+</tr>
+</tbody>
+</table>
+<p><strong>resumo:</strong> 21 casos manuais executados, 21 passaram (o CT02 e o CT04 depois do reteste do D01). 11 testes unitarios passando.</p>
+<h2>5. defeitos encontrados</h2>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>onde apareceu</th>
+<th>como reproduzir</th>
+<th>esperado</th>
+<th>observado</th>
+<th>situacao</th>
+<th>correcao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D01</td>
+<td>print do CT04</td>
+<td>errar a senha no login</td>
+<td>o email digitado continuar no campo</td>
+<td>o campo de email voltava vazio. o react 19 limpa o formulario depois da action</td>
+<td>corrigido e retestado (CT02 e CT04 passaram)</td>
+<td>commit <code>47172a2</code>. a action do login devolve o email junto com a mensagem</td>
+</tr>
+<tr>
+<td>D02</td>
+<td>conferencia visual do formulario, antes do commit da entrega</td>
+<td>abrir o cadastro numa tela de uns 930 px</td>
+<td>campos legiveis, sem barra de rolagem</td>
+<td>o campo tipo cortava "Pessoa jurídica" e a linha das abas ganhava barra de rolagem</td>
+<td>corrigido antes do commit <code>431d5c7</code></td>
+<td>grade do formulario refeita em 12 colunas e abas quebrando linha</td>
+</tr>
+<tr>
+<td>D03</td>
+<td>conferencia no celular, antes do commit da entrega</td>
+<td>abrir qualquer tela com 390 px</td>
+<td>o menu mostrar prestadores logo de cara</td>
+<td>o menu horizontal comecava pelos itens em desenvolvimento e prestadores ficava escondido na rolagem</td>
+<td>corrigido antes do commit <code>431d5c7</code></td>
+<td>no celular os itens em desenvolvimento ficam ocultos</td>
+</tr>
+<tr>
+<td>D04</td>
+<td>conferencia da tela de edicao, antes do commit da entrega</td>
+<td>abrir um prestador ja cadastrado</td>
+<td>cep no formato 00000-000</td>
+<td>aparecia so os 8 numeros</td>
+<td>corrigido antes do commit <code>431d5c7</code></td>
+<td>a tela formata o cep ao carregar</td>
+</tr>
+</tbody>
+</table>
+<p>nenhum defeito aberto nesta versao.</p>
+<h2>6. o que ainda nao foi testado</h2>
+<table>
+<thead>
+<tr>
+<th>item</th>
+<th>por que</th>
+<th>quando</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RNF06, listagem em ate 3 segundos com 5 mil prestadores</td>
+<td>a paginacao ja é feita no banco, de 20 em 20, mas falta a carga de 5 mil registros pra medir</td>
+<td>06/11, junto com o script de carga grande</td>
+</tr>
+<tr>
+<td>acesso dos perfis prestador e cliente</td>
+<td>as telas desses perfis ainda nao existem. hoje um usuario desses cai na tela "Acesso não liberado"</td>
+<td>quando as telas T13 a T18 forem feitas</td>
+</tr>
+<tr>
+<td>chamada da action de salvar sem sessao, montada fora da tela</td>
+<td>a action chama <code>exigirPerfil</code> antes de tudo (ver <code>app/(admin)/prestadores/actions.ts</code>), mas falta um teste automatizado que prove isso</td>
+<td>06/11</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>historico de alteracões</h2>
+<table>
+<thead>
+<tr>
+<th>versao</th>
+<th>data</th>
+<th>alteracao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>06/10/2026</td>
+<td>primeira versao, com os testes do recorte da 1ª entrega do 2º bimestre</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

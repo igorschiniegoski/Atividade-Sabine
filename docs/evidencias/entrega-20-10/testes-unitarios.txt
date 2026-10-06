@@ -1,0 +1,18 @@
+npm test - commit 7eec2a2 - 06/10/2026 19:34
+
+ RUN  v5.0.3 sistema/
+ ✓ lib/dominio/cpf-cnpj.test.ts > cpf > aceita cpf valido com e sem mascara 2ms
+ ✓ lib/dominio/cpf-cnpj.test.ts > cpf > recusa digito verificador errado 0ms
+ ✓ lib/dominio/cpf-cnpj.test.ts > cpf > recusa numeros repetidos e tamanho errado 0ms
+ ✓ lib/dominio/cpf-cnpj.test.ts > cnpj > aceita cnpj valido 0ms
+ ✓ lib/dominio/cpf-cnpj.test.ts > cnpj > recusa digito verificador errado 0ms
+ ✓ lib/dominio/cpf-cnpj.test.ts > cnpj > recusa numeros repetidos 0ms
+ ✓ lib/dominio/cpf-cnpj.test.ts > documento pelo tipo de pessoa > usa cpf para F e cnpj para J 0ms
+ ✓ lib/dominio/cpf-cnpj.test.ts > documento pelo tipo de pessoa > formata para exibir 0ms
+ ✓ lib/dominio/login.test.ts > bloqueio por tentativas (RNF12) > soma o erro sem bloquear ate a quarta tentativa 2ms
+ ✓ lib/dominio/login.test.ts > bloqueio por tentativas (RNF12) > na quinta tentativa bloqueia por 15 minutos e zera a contagem 0ms
+ ✓ lib/dominio/login.test.ts > bloqueio por tentativas (RNF12) > considera bloqueado so enquanto o horario nao passou 0ms
+ Test Files  2 passed (2)
+      Tests  11 passed (11)
+   Start at  19:34:02
+   Duration  236ms (transform 44%, import 43%, worker 7%, tests 6%)
