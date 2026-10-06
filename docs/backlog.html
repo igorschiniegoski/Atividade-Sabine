@@ -57,13 +57,13 @@
 <div class="capa">
   <div class="inst">unicesumar<br>analise e desenvolvimento de sistemas<br>imersao profissional - projeto de software</div>
   <div class="titulo">sgp - sistema de gestao de prestadores</div>
-  <div class="sub">backlog e quadro de tarefas<br>3&ordf; entrega - equipe 8</div>
+  <div class="sub">backlog e quadro de tarefas<br>3&ordf; entrega, atualizado na 1&ordf; entrega do 2&ordm; bimestre - equipe 8</div>
   <div class="equipe">
     <strong>integrantes</strong><br>
     luis gustavo boratto de oliveira<br>
     igor schiniegoski pallisser
   </div>
-  <div class="rodape">setembro de 2026</div>
+  <div class="rodape">outubro de 2026</div>
 </div>
 
 <h2>1. como o quadro funciona</h2>
@@ -97,12 +97,17 @@
 <td>quem conduz. o outro integrante revisa</td>
 </tr>
 <tr>
+<td>prazo</td>
+<td>a entrega em que a tarefa precisa estar pronta: 20/10, 06/11 ou 27/11. tarefa ja concluida mostra a data em que terminou</td>
+</tr>
+<tr>
 <td>situacao</td>
 <td>a fazer, em andamento ou concluida</td>
 </tr>
 </tbody>
 </table>
 <p>as tarefas de prioridade <strong>alta</strong> sao as que compõem o mvp. media sao os complementos da release 4, e baixa é o que ficou no backlog.</p>
+<p>a partir do 2º bimestre a situacao de cada tarefa tambem fica registrada no git: o commit que fecha a tarefa cita o id dela na mensagem, por exemplo <code>feat: cadastro, edicao e consulta de prestadores (TA22)</code>.</p>
 <h3>1.1 quem faz o que</h3>
 <p>a divisao nao significa que cada integrante conhece apenas a propria parte. as tarefas sao conduzidas por um e revisadas pelo outro, e os dois precisam saber explicar o projeto inteiro.</p>
 <table>
@@ -133,6 +138,7 @@
 <th>requisito</th>
 <th>prioridade</th>
 <th>responsavel</th>
+<th>prazo</th>
 <th>situacao</th>
 </tr>
 </thead>
@@ -143,6 +149,7 @@
 <td>1ª entrega</td>
 <td>alta</td>
 <td>igor</td>
+<td>14/08</td>
 <td>concluida</td>
 </tr>
 <tr>
@@ -151,6 +158,7 @@
 <td>1ª entrega</td>
 <td>alta</td>
 <td>luis</td>
+<td>14/08</td>
 <td>concluida</td>
 </tr>
 <tr>
@@ -159,6 +167,7 @@
 <td>2ª entrega</td>
 <td>alta</td>
 <td>igor</td>
+<td>08/09</td>
 <td>concluida</td>
 </tr>
 <tr>
@@ -167,6 +176,7 @@
 <td>2ª entrega</td>
 <td>alta</td>
 <td>igor</td>
+<td>08/09</td>
 <td>concluida</td>
 </tr>
 <tr>
@@ -175,6 +185,7 @@
 <td>2ª entrega</td>
 <td>alta</td>
 <td>luis</td>
+<td>08/09</td>
 <td>concluida</td>
 </tr>
 <tr>
@@ -183,6 +194,7 @@
 <td>2ª entrega</td>
 <td>alta</td>
 <td>luis</td>
+<td>08/09</td>
 <td>concluida</td>
 </tr>
 <tr>
@@ -191,6 +203,7 @@
 <td>2ª entrega</td>
 <td>alta</td>
 <td>luis</td>
+<td>08/09</td>
 <td>concluida</td>
 </tr>
 <tr>
@@ -199,6 +212,7 @@
 <td>2ª entrega</td>
 <td>alta</td>
 <td>luis</td>
+<td>08/09</td>
 <td>concluida</td>
 </tr>
 <tr>
@@ -207,6 +221,7 @@
 <td>2ª entrega</td>
 <td>alta</td>
 <td>luis</td>
+<td>08/09</td>
 <td>concluida</td>
 </tr>
 <tr>
@@ -215,6 +230,7 @@
 <td>2ª entrega</td>
 <td>alta</td>
 <td>luis</td>
+<td>08/09</td>
 <td>concluida</td>
 </tr>
 <tr>
@@ -223,6 +239,7 @@
 <td>3ª entrega</td>
 <td>alta</td>
 <td>luis</td>
+<td>25/09</td>
 <td>concluida</td>
 </tr>
 <tr>
@@ -231,6 +248,7 @@
 <td>3ª entrega</td>
 <td>alta</td>
 <td>igor</td>
+<td>25/09</td>
 <td>concluida</td>
 </tr>
 <tr>
@@ -239,6 +257,7 @@
 <td>3ª entrega</td>
 <td>alta</td>
 <td>igor</td>
+<td>25/09</td>
 <td>concluida</td>
 </tr>
 <tr>
@@ -247,6 +266,7 @@
 <td>3ª entrega</td>
 <td>media</td>
 <td>luis</td>
+<td>25/09</td>
 <td>concluida</td>
 </tr>
 <tr>
@@ -255,6 +275,7 @@
 <td>3ª entrega</td>
 <td>alta</td>
 <td>igor</td>
+<td>25/09</td>
 <td>concluida</td>
 </tr>
 </tbody>
@@ -270,17 +291,19 @@
 <th>requisito</th>
 <th>prioridade</th>
 <th>responsavel</th>
+<th>prazo</th>
 <th>situacao</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>TA16</td>
-<td>criar o projeto next.js, configurar o prisma e publicar o primeiro deploy na vercel</td>
+<td>criar o projeto next.js, configurar o prisma e publicar o primeiro deploy na vercel. projeto e prisma prontos, falta o deploy</td>
 <td>RNF08, RNF11</td>
 <td>alta</td>
 <td>luis</td>
-<td>a fazer</td>
+<td>06/11</td>
+<td>em andamento</td>
 </tr>
 <tr>
 <td>TA17</td>
@@ -288,7 +311,8 @@
 <td>modelo de dados</td>
 <td>alta</td>
 <td>luis</td>
-<td>a fazer</td>
+<td>20/10</td>
+<td>concluida</td>
 </tr>
 <tr>
 <td>TA18</td>
@@ -296,7 +320,8 @@
 <td>RF01, HU01, HU02, RNF12</td>
 <td>alta</td>
 <td>luis</td>
-<td>a fazer</td>
+<td>20/10</td>
+<td>concluida</td>
 </tr>
 <tr>
 <td>TA19</td>
@@ -304,31 +329,35 @@
 <td>RNF02</td>
 <td>alta</td>
 <td>luis</td>
-<td>a fazer</td>
+<td>20/10</td>
+<td>concluida</td>
 </tr>
 <tr>
 <td>TA20</td>
 <td>montar o layout base: cabecalho, menu por perfil e componentes de tabela e formulario</td>
 <td>RNF04</td>
 <td>alta</td>
-<td>igor</td>
-<td>a fazer</td>
+<td>luis</td>
+<td>20/10</td>
+<td>concluida</td>
 </tr>
 <tr>
 <td>TA21</td>
 <td>construir a tela de login (T01)</td>
 <td>RF01</td>
 <td>alta</td>
-<td>igor</td>
-<td>a fazer</td>
+<td>luis</td>
+<td>20/10</td>
+<td>concluida</td>
 </tr>
 <tr>
 <td>TA22</td>
 <td>construir o cadastro e a listagem de prestadores (T03 e T04)</td>
 <td>RF02, HU03</td>
 <td>alta</td>
-<td>igor</td>
-<td>a fazer</td>
+<td>luis</td>
+<td>20/10</td>
+<td>concluida</td>
 </tr>
 <tr>
 <td>TA23</td>
@@ -336,7 +365,8 @@
 <td>RN10</td>
 <td>alta</td>
 <td>luis</td>
-<td>a fazer</td>
+<td>20/10</td>
+<td>concluida</td>
 </tr>
 <tr>
 <td>TA24</td>
@@ -344,6 +374,7 @@
 <td>RF03, HU04</td>
 <td>alta</td>
 <td>igor</td>
+<td>06/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -352,6 +383,7 @@
 <td>RF04, HU05</td>
 <td>alta</td>
 <td>igor</td>
+<td>06/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -360,6 +392,7 @@
 <td>RF05, HU06</td>
 <td>alta</td>
 <td>igor</td>
+<td>06/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -368,7 +401,101 @@
 <td>RF06, HU07, RN04</td>
 <td>alta</td>
 <td>luis</td>
+<td>06/11</td>
 <td>a fazer</td>
+</tr>
+<tr>
+<td>TA58</td>
+<td>rodar o sistema do zero na maquina do igor seguindo so o readme, e corrigir o readme no que faltar</td>
+<td>RNF11, manual da entrega</td>
+<td>alta</td>
+<td>igor</td>
+<td>20/10</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA59</td>
+<td>escrever e executar os casos de teste do recorte, com evidencias</td>
+<td>manual da entrega</td>
+<td>alta</td>
+<td>luis</td>
+<td>20/10</td>
+<td>concluida</td>
+</tr>
+<tr>
+<td>TA60</td>
+<td>registrar a revisao do 1º bimestre e atualizar tecnologias, modelo de dados e rastreabilidade</td>
+<td>manual da entrega</td>
+<td>alta</td>
+<td>luis</td>
+<td>20/10</td>
+<td>concluida</td>
+</tr>
+<tr>
+<td>TA61</td>
+<td>gerar 5 mil prestadores ficticios e medir o tempo da listagem</td>
+<td>RNF06</td>
+<td>alta</td>
+<td>luis</td>
+<td>06/11</td>
+<td>a fazer</td>
+</tr>
+<tr>
+<td>TA62</td>
+<td>teste automatizado provando que a action de salvar recusa chamada sem sessao ou com outro perfil</td>
+<td>RNF02</td>
+<td>alta</td>
+<td>luis</td>
+<td>06/11</td>
+<td>a fazer</td>
+</tr>
+</tbody>
+</table>
+<h3>3.1 quando uma tarefa do recorte esta concluida</h3>
+<p>criterios verificaveis das tarefas que fazem parte da entrega de 20/10. sao eles que viraram os casos de teste do <a href="testes.md">testes.md</a>.</p>
+<table>
+<thead>
+<tr>
+<th>tarefa</th>
+<th>concluida quando</th>
+<th>casos de teste</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TA17</td>
+<td><code>npm run db:migrar</code> cria as 14 tabelas num banco vazio, com os check do dicionario de dados</td>
+<td>clone novo, testes.md secao 2</td>
+</tr>
+<tr>
+<td>TA18</td>
+<td>login certo entra, errado mostra a mesma mensagem pra email e senha, a 5ª senha errada seguida bloqueia por 15 minutos, a senha so existe em hash e a sessao vence em 30 minutos</td>
+<td>CT01 a CT04, CT18, CT21</td>
+</tr>
+<tr>
+<td>TA19</td>
+<td>nenhuma tela ou action do administrador funciona sem login ou com outro perfil</td>
+<td>CT05</td>
+</tr>
+<tr>
+<td>TA20</td>
+<td>cabecalho com usuario e sair, menu com o que existe e o que esta em desenvolvimento, sem rolagem horizontal no celular</td>
+<td>CT01, CT19</td>
+</tr>
+<tr>
+<td>TA21</td>
+<td>tela de login igual a T01 do prototipo, com a mensagem de erro e sem perder o email digitado</td>
+<td>CT02, CT04</td>
+</tr>
+<tr>
+<td>TA22</td>
+<td>dados validos sao salvos, obrigatorio vazio é recusado com o campo destacado, o cadastro aparece na consulta, a edicao salva e os dados continuam depois de reiniciar</td>
+<td>CT07, CT08, CT12 a CT17</td>
+</tr>
+<tr>
+<td>TA23</td>
+<td>cpf e cnpj com digito errado sao recusados com a mensagem no campo, e documento repetido nao é aceito</td>
+<td>unitarios, CT09 a CT11</td>
 </tr>
 </tbody>
 </table>
@@ -382,6 +509,7 @@
 <th>requisito</th>
 <th>prioridade</th>
 <th>responsavel</th>
+<th>prazo</th>
 <th>situacao</th>
 </tr>
 </thead>
@@ -392,6 +520,7 @@
 <td>RNF09</td>
 <td>alta</td>
 <td>luis</td>
+<td>06/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -400,6 +529,7 @@
 <td>RF07, HU08</td>
 <td>alta</td>
 <td>igor</td>
+<td>06/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -408,6 +538,7 @@
 <td>HU08</td>
 <td>alta</td>
 <td>luis</td>
+<td>06/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -416,6 +547,7 @@
 <td>RF08, HU09</td>
 <td>alta</td>
 <td>igor</td>
+<td>06/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -424,6 +556,7 @@
 <td>RN02</td>
 <td>alta</td>
 <td>luis</td>
+<td>06/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -432,6 +565,7 @@
 <td>RF09, HU11</td>
 <td>alta</td>
 <td>igor</td>
+<td>06/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -440,6 +574,7 @@
 <td>RF12, UC22</td>
 <td>alta</td>
 <td>luis</td>
+<td>06/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -448,6 +583,7 @@
 <td>RN11</td>
 <td>alta</td>
 <td>luis</td>
+<td>06/11</td>
 <td>a fazer</td>
 </tr>
 </tbody>
@@ -462,6 +598,7 @@
 <th>requisito</th>
 <th>prioridade</th>
 <th>responsavel</th>
+<th>prazo</th>
 <th>situacao</th>
 </tr>
 </thead>
@@ -472,6 +609,7 @@
 <td>RF11, HU12</td>
 <td>alta</td>
 <td>igor</td>
+<td>27/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -480,6 +618,7 @@
 <td>RF11</td>
 <td>alta</td>
 <td>luis</td>
+<td>27/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -488,6 +627,7 @@
 <td>RF13, RF16</td>
 <td>alta</td>
 <td>igor</td>
+<td>27/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -496,6 +636,7 @@
 <td>RF13</td>
 <td>alta</td>
 <td>igor</td>
+<td>27/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -504,6 +645,7 @@
 <td>RF12, HU13</td>
 <td>alta</td>
 <td>luis</td>
+<td>27/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -512,6 +654,7 @@
 <td>RF12, HU13</td>
 <td>alta</td>
 <td>igor</td>
+<td>27/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -520,6 +663,7 @@
 <td>RN05, RN06</td>
 <td>alta</td>
 <td>luis</td>
+<td>27/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -528,6 +672,7 @@
 <td>RF13, RF14, HU15, HU16</td>
 <td>alta</td>
 <td>igor</td>
+<td>27/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -536,6 +681,7 @@
 <td>RN12</td>
 <td>alta</td>
 <td>luis</td>
+<td>27/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -544,6 +690,7 @@
 <td>RF13, HU17, RN07</td>
 <td>alta</td>
 <td>igor</td>
+<td>27/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -552,6 +699,7 @@
 <td>RF15, HU18</td>
 <td>alta</td>
 <td>igor</td>
+<td>27/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -560,6 +708,7 @@
 <td>RN08, RN09</td>
 <td>alta</td>
 <td>luis</td>
+<td>27/11</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -568,6 +717,7 @@
 <td>RNF02, RNF11</td>
 <td>alta</td>
 <td>luis</td>
+<td>27/11</td>
 <td>a fazer</td>
 </tr>
 </tbody>
@@ -582,6 +732,7 @@
 <th>requisito</th>
 <th>prioridade</th>
 <th>responsavel</th>
+<th>prazo</th>
 <th>situacao</th>
 </tr>
 </thead>
@@ -592,6 +743,7 @@
 <td>RF19, HU22</td>
 <td>media</td>
 <td>luis</td>
+<td>depois do mvp</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -600,6 +752,7 @@
 <td>RF10, HU10</td>
 <td>media</td>
 <td>igor</td>
+<td>depois do mvp</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -608,6 +761,7 @@
 <td>RN03</td>
 <td>media</td>
 <td>luis</td>
+<td>depois do mvp</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -616,6 +770,7 @@
 <td>RF13, HU14</td>
 <td>media</td>
 <td>igor</td>
+<td>depois do mvp</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -624,6 +779,7 @@
 <td>RF16, HU19</td>
 <td>media</td>
 <td>igor</td>
+<td>depois do mvp</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -632,6 +788,7 @@
 <td>RF17, HU20</td>
 <td>media</td>
 <td>luis</td>
+<td>depois do mvp</td>
 <td>a fazer</td>
 </tr>
 </tbody>
@@ -646,6 +803,7 @@
 <th>requisito</th>
 <th>prioridade</th>
 <th>responsavel</th>
+<th>prazo</th>
 <th>situacao</th>
 </tr>
 </thead>
@@ -656,6 +814,7 @@
 <td>RF18, HU21</td>
 <td>baixa</td>
 <td>a definir</td>
+<td>sem data</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -664,6 +823,7 @@
 <td>HU23</td>
 <td>baixa</td>
 <td>a definir</td>
+<td>sem data</td>
 <td>a fazer</td>
 </tr>
 <tr>
@@ -672,6 +832,7 @@
 <td>RNF10</td>
 <td>baixa</td>
 <td>luis</td>
+<td>sem data</td>
 <td>a fazer</td>
 </tr>
 </tbody>
@@ -688,23 +849,31 @@
 <tbody>
 <tr>
 <td>concluidas</td>
-<td>15</td>
+<td>24</td>
 </tr>
 <tr>
-<td>a fazer, prioridade alta (mvp)</td>
-<td>33</td>
+<td>em andamento</td>
+<td>1 (TA16, falta o deploy)</td>
 </tr>
 <tr>
-<td>a fazer, prioridade media (release 4)</td>
-<td>6</td>
+<td>a fazer ate 20/10</td>
+<td>1 (TA58, o readme na maquina do igor)</td>
 </tr>
 <tr>
-<td>a fazer, prioridade baixa (backlog)</td>
-<td>3</td>
+<td>a fazer ate 06/11</td>
+<td>14</td>
+</tr>
+<tr>
+<td>a fazer ate 27/11</td>
+<td>13</td>
+</tr>
+<tr>
+<td>a fazer depois do mvp e backlog</td>
+<td>9</td>
 </tr>
 <tr>
 <td><strong>total</strong></td>
-<td><strong>57</strong></td>
+<td><strong>62</strong></td>
 </tr>
 </tbody>
 </table>
@@ -718,11 +887,11 @@
 <tbody>
 <tr>
 <td>luis gustavo boratto de oliveira</td>
-<td>27</td>
+<td>37</td>
 </tr>
 <tr>
 <td>igor schiniegoski pallisser</td>
-<td>26</td>
+<td>23</td>
 </tr>
 <tr>
 <td>a definir</td>
@@ -749,6 +918,11 @@
 <td>1.0</td>
 <td>22/09/2026</td>
 <td>primeira versao do quadro de tarefas, com as 15 tarefas ja concluidas e as 42 planejadas</td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>06/10/2026</td>
+<td>coluna de prazo, criterios de conclusao do recorte de 20/10, TA17 a TA23 concluidas. TA20 a TA22 foram feitas junto com o backend pra fechar o recorte, e o igor assumiu TA24 a TA26 pra 06/11. entraram TA58 a TA62</td>
 </tr>
 </tbody>
 </table>

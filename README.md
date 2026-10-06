@@ -3,7 +3,7 @@
 plataforma web pra controlar prestadores de servico terceirizados: cadastro, documentacao, contratos e o acompanhamento das ordens de servico do pedido ate a conclusao.
 
 trabalho da disciplina de projeto de software (imersao profissional) - unicesumar, ads.
-equipe 8 - 1º bimestre de 2026.
+equipe 8 - 1º e 2º bimestre de 2026.
 
 ## equipe
 
@@ -49,28 +49,28 @@ o escopo foi priorizado na **escala moscow**, que tem quatro niveis: **M**ust ha
 
 a definicao de cada nivel, o criterio de decisao e a justificativa item a item estao na secao 6 do [documento de casos de uso](docs/casos-de-uso.md).
 
-## tecnologias previstas
+## tecnologias
 
 | camada | escolha | por que |
 |---|---|---|
 | linguagem | typescript 5 | tipagem compartilhada entre tela e api |
-| interface | next.js 15 (app router) + react 19 | um projeto so entrega tela e api |
-| estilo | tailwind css + shadcn/ui | componentes responsivos prontos (RNF04) |
-| servidor | node.js 20 lts, rotas de api do proprio next | menos configuracao e um deploy so |
+| interface | next.js 15.5 (app router) + react 19 | um projeto so entrega tela e servidor |
+| estilo | tailwind css 4 | telas responsivas no visual do prototipo (RNF04) |
+| servidor | node.js 20 ou mais novo, server actions do proprio next | menos configuracao e um deploy so |
 | acesso a dados | prisma orm | migracões versionadas e schema como documentacao do modelo |
-| banco | postgresql 16 | restricao de unicidade nativa pra RN10 e tipos de data adequados |
-| autenticacao | auth.js v5 (credentials) + bcrypt | login por email e senha, sessao de 30 min (RF01, RNF01, RNF03) |
-| validacao | zod | o mesmo esquema valida no formulario e na api (RNF02) |
-| arquivos | storage de objetos em nuvem | documentos e contratos em pdf, jpg e png, ate 10 mb (RNF09) |
-| hospedagem | vercel | url publica e deploy a cada push |
-| testes | vitest e playwright | regras de negocio e fluxos criticos |
+| banco | postgresql 18 (local pelo embedded-postgres) | restricao de unicidade nativa pra RN10 e tipos de data adequados |
+| autenticacao | auth.js v5 (credentials) + bcryptjs | login por email e senha, sessao de 30 min e bloqueio depois de 5 erros (RF01, RNF01, RNF03, RNF12) |
+| validacao | zod | o mesmo esquema valida no formulario e no servidor (RNF02) |
+| arquivos | storage de objetos em nuvem (ainda nao usado) | documentos e contratos em pdf, jpg e png, ate 10 mb (RNF09) |
+| hospedagem | vercel (o sistema entra no ar em 06/11) | url publica e deploy a cada push |
+| testes | vitest + casos manuais documentados | regras de negocio e fluxos pela tela |
 
-a escolha foi por familiaridade da equipe e por serem ferramentas com plano gratuito, que é o que cabe no prazo e no orcamento do trabalho. o detalhamento de cada decisao, as alternativas descartadas e a arquitetura em camadas estao em [docs/tecnologias-e-arquitetura.md](docs/tecnologias-e-arquitetura.md). continua em aberto apenas o provedor do postgresql gerenciado e do storage.
+a escolha foi por familiaridade da equipe e por serem ferramentas com plano gratuito, que é o que cabe no prazo e no orcamento do trabalho. o detalhamento de cada decisao, as alternativas descartadas e a arquitetura em camadas estao em [docs/tecnologias-e-arquitetura.md](docs/tecnologias-e-arquitetura.md). o que mudou ao comecar a programar esta na secao 3.3 desse documento. continua em aberto apenas o provedor do postgresql gerenciado e do storage, que precisa ser escolhido ate 06/11.
 
 ## o projeto no ar
 
-a versao publicada, com o prototipo navegavel e os documentos, fica em **[sgp-equipe8.vercel.app](https://sgp-equipe8.vercel.app)**.
-a pagina inicial é o arquivo `index.html` da raiz, e o conteudo é o mesmo do repositorio, sem build.
+a documentacao e o prototipo navegavel ficam publicados em **[sgp-equipe8.vercel.app](https://sgp-equipe8.vercel.app)**.
+a pagina inicial é o arquivo `index.html` da raiz, e o conteudo é o mesmo do repositorio, sem build. o sistema em si ainda roda so na maquina, pelos passos da secao "como rodar".
 
 ## organizacao do repositorio
 
@@ -80,7 +80,7 @@ docs/        documentos das entregas, do levantamento de requisitos ao roteiro d
 diagramas/   fontes .puml e imagens dos diagramas, inclusive os do banco e o mapa de navegacao
 prototipos/  prototipo navegavel das 18 telas do mvp, em html
 ferramentas/ scripts que geram a versao imprimivel dos documentos e as telas do prototipo
-src/         codigo fonte (comeca na implementacao)
+sistema/     codigo do sgp (next.js), explicado na secao "como rodar"
 ```
 
 as pastas vao sendo criadas conforme cada entrega.
@@ -93,9 +93,11 @@ as pastas vao sendo criadas conforme cada entrega.
 | [casos-de-uso.md](docs/casos-de-uso.md) | 2ª | atores, diagramas de caso de uso, especificacao dos 24 casos de uso, diagramas de atividade de UC13 e UC16, 23 historias de usuario, priorizacao moscow e matriz de rastreabilidade |
 | [modelo-de-dados.md](docs/modelo-de-dados.md) | 2ª | diagrama de classes do dominio, modelo conceitual, modelo logico e dicionario de dados das 14 tabelas |
 | [mvp-e-prototipos.md](docs/mvp-e-prototipos.md) | 3ª | revisao das entregas anteriores, definicao do mvp, fluxo completo, levantamento das telas, mapa de navegacao, prototipo e rastreabilidade |
-| [backlog.md](docs/backlog.md) | 3ª | quadro com as 57 tarefas do projeto, com requisito, prioridade, responsavel e situacao |
+| [backlog.md](docs/backlog.md) | 3ª, atualizado em 20/10 | quadro com as 62 tarefas do projeto, com requisito, prioridade, responsavel, prazo, situacao e criterio de conclusao |
 | [apresentacao.md](docs/apresentacao.md) | 3ª | roteiro da apresentacao, divisao das falas, perguntas provaveis e checklist final |
-| [tecnologias-e-arquitetura.md](docs/tecnologias-e-arquitetura.md) | 2ª | stack definida com justificativa, arquitetura em camadas e como cada RNF sera atendido |
+| [tecnologias-e-arquitetura.md](docs/tecnologias-e-arquitetura.md) | 2ª, atualizado em 20/10 | stack com as versões em uso, ajustes feitos na implementacao, arquitetura em camadas e como cada RNF é atendido |
+| [entrega-20-10.md](docs/entrega-20-10.md) | 1ª do 2º bimestre | indice da entrega: revisao do 1º bimestre, recorte implementado, rastreabilidade com codigo e teste, pendencias e checklist |
+| [testes.md](docs/testes.md) | 1ª do 2º bimestre | casos de teste executados, resultados, evidencias e defeitos |
 
 ### diagramas
 
@@ -113,7 +115,7 @@ os diagramas sao escritos em plantuml e o arquivo `.puml` fica versionado junto 
 | classes - dominio do sgp | [diagramas/diagrama-de-classes.png](diagramas/diagrama-de-classes.png) |
 | banco - modelo conceitual | [diagramas/modelo-conceitual.png](diagramas/modelo-conceitual.png) |
 | banco - modelo logico | [diagramas/modelo-logico.png](diagramas/modelo-logico.png) |
-| arquitetura prevista | [diagramas/arquitetura.png](diagramas/arquitetura.png) |
+| arquitetura atual | [diagramas/arquitetura.png](diagramas/arquitetura.png) |
 | mapa de navegacao | [diagramas/mapa-de-navegacao.png](diagramas/mapa-de-navegacao.png) |
 
 pra gerar as imagens de novo depois de mexer em um `.puml`:
@@ -152,6 +154,9 @@ python ferramentas/gerar-html.py
 | 1 | 14/08/2026 | documento de visao e requisitos | pronto |
 | 2 | 08/09/2026 | casos de uso, diagramas de atividade, diagrama de classes e modelagem do banco | pronto |
 | 3 | 25/09/2026 | repositorio, backlog, mapa de navegacao, prototipos, mvp e apresentacao | pronto |
+| 4 | 20/10/2026 | planejamento tecnico e implementacao inicial: login e cadastro e consulta de prestadores, com testes. tag `entrega-20-10-2026` | pronto |
+| 5 | 06/11/2026 | implementacao, integracao e testes: resto da release 1 e release 2, publicado na vercel | a fazer |
+| 6 | 27/11/2026 | sistema funcionando e apresentacao final | a fazer |
 
 ## mvp
 
@@ -165,5 +170,63 @@ e o log de acões criticas. o criterio de corte e a justificativa de cada item e
 
 ## como rodar
 
-ainda não tem codigo. as instrucões de instalacao entram aqui quando a implementacao comecar, pela release 1 do
-[quadro de tarefas](docs/backlog.md).
+o codigo fica na pasta `sistema/`. precisa so do **node.js 20 ou mais novo** (o npm vem junto). nao precisa instalar postgres nem docker: o banco local sobe por um pacote do proprio projeto.
+
+### primeira vez
+
+```
+cd sistema
+npm install
+copy .env.example .env        (no linux ou mac: cp .env.example .env)
+```
+
+abrir o `.env` e preencher o `AUTH_SECRET` com um texto aleatorio comprido. esse comando gera um e mostra no terminal:
+
+```
+node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
+```
+
+o `DATABASE_URL` ja vem certo pro banco local.
+
+depois, em um terminal que vai ficar aberto:
+
+```
+npm run banco
+```
+
+e em outro terminal, dentro de `sistema/`:
+
+```
+npm run db:migrar     cria as 14 tabelas
+npm run db:carga      administradores de teste, tipos de documento, categorias e alguns prestadores ficticios
+npm run dev
+```
+
+o sistema abre em http://localhost:3000. usuarios de teste: `luis@sgp.teste` ou `igor@sgp.teste`, senha `sgp@2026`. todos os dados da carga sao inventados.
+
+### no dia a dia
+
+`npm run banco` num terminal e `npm run dev` no outro. pra parar, `ctrl+c` nos dois. os dados ficam na pasta `sistema/.banco`, que nao vai pro git. apagar essa pasta zera o banco (depois é so rodar `db:migrar` e `db:carga` de novo).
+
+### testes
+
+```
+npm test
+```
+
+roda os testes unitarios das regras de negocio. os casos de teste pela tela e os resultados estao em [docs/testes.md](docs/testes.md).
+
+### variaveis de ambiente
+
+| variavel | pra que serve |
+|---|---|
+| `DATABASE_URL` | endereco do postgres. o padrao aponta pro banco local do `npm run banco`, na porta 5433 |
+| `AUTH_SECRET` | chave que assina o cookie da sessao. cada um gera a sua, nunca vai pro repositorio |
+
+### o que ja funciona
+
+- login por email e senha, com bloqueio de 15 minutos depois de 5 senhas erradas e sessao que vence com 30 minutos parado
+- lista de prestadores com busca por nome, cpf ou cnpj, filtro por situacao e paginacao
+- cadastro e edicao de prestador pessoa fisica ou juridica, com validacao do cpf e do cnpj e sem repetir documento
+
+o resto aparece no menu como "em desenvolvimento". o que vem ate 06/11 esta na secao 6 de [docs/entrega-20-10.md](docs/entrega-20-10.md) e no [quadro de tarefas](docs/backlog.md).
