@@ -5,7 +5,8 @@ import { entrar } from "./actions";
 
 // T01 - login
 export default function Login() {
-  const [erro, enviar, enviando] = useActionState(entrar, null);
+  const [estado, enviar, enviando] = useActionState(entrar, { erro: null, email: "" });
+  const erro = estado.erro;
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-caneta-escura px-4">
@@ -16,7 +17,7 @@ export default function Login() {
         <form action={enviar} className="cartao space-y-3 p-4">
           <div>
             <label htmlFor="email" className="rotulo">E-mail</label>
-            <input id="email" name="email" type="email" required autoComplete="username"
+            <input id="email" name="email" type="email" required autoComplete="username" defaultValue={estado.email}
               className={`campo ${erro ? "campo-erro" : ""}`} />
           </div>
           <div>
