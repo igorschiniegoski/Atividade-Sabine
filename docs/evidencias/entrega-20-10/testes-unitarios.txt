@@ -1,4 +1,4 @@
-npm test - commit 7eec2a2 - 06/10/2026 19:34
+npm test - commit 0983e92 - 06/10/2026 19:34
 
  RUN  v5.0.3 sistema/
  ✓ lib/dominio/cpf-cnpj.test.ts > cpf > aceita cpf valido com e sem mascara 2ms

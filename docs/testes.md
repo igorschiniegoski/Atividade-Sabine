@@ -23,7 +23,7 @@ tem dois tipos de teste:
 | item | valor |
 |---|---|
 | data | 06/10/2026 |
-| versao testada | commit `431d5c7` (casos CT01 a CT21). o reteste do defeito D01 foi no commit `47172a2` |
+| versao testada | commit `1239a07` (casos CT01 a CT21). o reteste do defeito D01 foi no commit `87a0287` |
 | ambiente | windows 11, node 22.14, google chrome, tela de 1280x800 e de 390x844 (celular) |
 | como o ambiente foi montado | clone novo do repositorio numa pasta vazia, seguindo so o readme: `npm install`, `npm run banco`, `npm run db:migrar`, `npm run db:carga` e `npm run dev`. serviu tambem pra conferir que o passo a passo do readme funciona do zero |
 | dados | os da carga inicial (`prisma/seed.ts`), todos ficticios. usuarios de teste `luis@sgp.teste` e `igor@sgp.teste`, senha `sgp@2026` |
@@ -77,10 +77,10 @@ a coluna evidencia aponta pro print salvo em `docs/evidencias/entrega-20-10/`. c
 
 | id | onde apareceu | como reproduzir | esperado | observado | situacao | correcao |
 |---|---|---|---|---|---|---|
-| D01 | print do CT04 | errar a senha no login | o email digitado continuar no campo | o campo de email voltava vazio. o react 19 limpa o formulario depois da action | corrigido e retestado (CT02 e CT04 passaram) | commit `47172a2`. a action do login devolve o email junto com a mensagem |
-| D02 | conferencia visual do formulario, antes do commit da entrega | abrir o cadastro numa tela de uns 930 px | campos legiveis, sem barra de rolagem | o campo tipo cortava "Pessoa jurídica" e a linha das abas ganhava barra de rolagem | corrigido antes do commit `431d5c7` | grade do formulario refeita em 12 colunas e abas quebrando linha |
-| D03 | conferencia no celular, antes do commit da entrega | abrir qualquer tela com 390 px | o menu mostrar prestadores logo de cara | o menu horizontal comecava pelos itens em desenvolvimento e prestadores ficava escondido na rolagem | corrigido antes do commit `431d5c7` | no celular os itens em desenvolvimento ficam ocultos |
-| D04 | conferencia da tela de edicao, antes do commit da entrega | abrir um prestador ja cadastrado | cep no formato 00000-000 | aparecia so os 8 numeros | corrigido antes do commit `431d5c7` | a tela formata o cep ao carregar |
+| D01 | print do CT04 | errar a senha no login | o email digitado continuar no campo | o campo de email voltava vazio. o react 19 limpa o formulario depois da action | corrigido e retestado (CT02 e CT04 passaram) | commit `87a0287`. a action do login devolve o email junto com a mensagem |
+| D02 | conferencia visual do formulario, antes do commit da entrega | abrir o cadastro numa tela de uns 930 px | campos legiveis, sem barra de rolagem | o campo tipo cortava "Pessoa jurídica" e a linha das abas ganhava barra de rolagem | corrigido antes do commit `1239a07` | grade do formulario refeita em 12 colunas e abas quebrando linha |
+| D03 | conferencia no celular, antes do commit da entrega | abrir qualquer tela com 390 px | o menu mostrar prestadores logo de cara | o menu horizontal comecava pelos itens em desenvolvimento e prestadores ficava escondido na rolagem | corrigido antes do commit `1239a07` | no celular os itens em desenvolvimento ficam ocultos |
+| D04 | conferencia da tela de edicao, antes do commit da entrega | abrir um prestador ja cadastrado | cep no formato 00000-000 | aparecia so os 8 numeros | corrigido antes do commit `1239a07` | a tela formata o cep ao carregar |
 
 nenhum defeito aberto nesta versao.
 
